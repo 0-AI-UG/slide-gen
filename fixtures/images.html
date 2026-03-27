@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Support Test</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      background: #1a1a2e;
+      color: #eee;
+      font-family: Arial, sans-serif;
+    }
+
+    .title {
+      position: absolute;
+      top: 60px;
+      left: 100px;
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    /* PNG img tag — chart-like graphic via canvas-encoded data URI */
+    .img-tag-test {
+      position: absolute;
+      top: 200px;
+      left: 100px;
+    }
+    .img-tag-test img {
+      width: 400px;
+      height: 300px;
+      border-radius: 12px;
+    }
+
+    /* Inline SVG — actual chart/diagram */
+    .svg-test {
+      position: absolute;
+      top: 200px;
+      left: 580px;
+    }
+    .svg-test svg {
+      width: 400px;
+      height: 300px;
+    }
+
+    /* Background-image url() — pattern/texture */
+    .bg-image-test {
+      position: absolute;
+      top: 200px;
+      left: 1060px;
+      width: 400px;
+      height: 300px;
+      border-radius: 12px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%234488ff'/%3E%3Cstop offset='100%25' stop-color='%2300cc88'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='50' r='30' fill='rgba(255,255,255,0.2)'/%3E%3Ccircle cx='150' cy='100' r='50' fill='rgba(255,255,255,0.15)'/%3E%3Ccircle cx='80' cy='160' r='40' fill='rgba(255,255,255,0.1)'/%3E%3Crect x='120' y='140' width='60' height='40' rx='8' fill='rgba(0,0,0,0.2)'/%3E%3C/svg%3E");
+      background-size: cover;
+    }
+
+    .label {
+      position: absolute;
+      top: 520px;
+      font-size: 24px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+    }
+    .label-img { left: 100px; }
+    .label-svg { left: 580px; }
+    .label-bg { left: 1060px; }
+
+    .sublabel {
+      position: absolute;
+      top: 555px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.4);
+    }
+    .sublabel-img { left: 100px; }
+    .sublabel-svg { left: 580px; }
+    .sublabel-bg { left: 1060px; }
+
+    /* Gradient element — should NOT be treated as image */
+    .gradient-not-image {
+      position: absolute;
+      top: 650px;
+      left: 100px;
+      width: 400px;
+      height: 120px;
+      background-image: linear-gradient(135deg, #ff4444, #4444ff);
+      border-radius: 16px;
+    }
+    .gradient-label {
+      position: absolute;
+      top: 790px;
+      left: 100px;
+      font-size: 18px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* Small icon-sized img */
+    .icon-test {
+      position: absolute;
+      top: 650px;
+      left: 580px;
+    }
+    .icon-test img {
+      width: 64px;
+      height: 64px;
+    }
+    .icon-label {
+      position: absolute;
+      top: 725px;
+      left: 580px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="title">Image Support Test</div>
+
+    <!-- Test 1: <img> tag with a rendered chart (SVG encoded as data URI) -->
+    <div class="img-tag-test">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' rx='12' fill='%23232340'/%3E%3Ctext x='20' y='30' fill='%23aaa' font-size='14' font-family='Arial'%3EMonthly Revenue%3C/text%3E%3Cline x1='40' y1='250' x2='380' y2='250' stroke='%23444' stroke-width='1'/%3E%3Cline x1='40' y1='50' x2='40' y2='250' stroke='%23444' stroke-width='1'/%3E%3Crect x='60' y='180' width='35' height='70' rx='4' fill='%234488ff' opacity='0.7'/%3E%3Crect x='110' y='150' width='35' height='100' rx='4' fill='%234488ff' opacity='0.8'/%3E%3Crect x='160' y='120' width='35' height='130' rx='4' fill='%234488ff' opacity='0.85'/%3E%3Crect x='210' y='90' width='35' height='160' rx='4' fill='%234488ff'/%3E%3Crect x='260' y='70' width='35' height='180' rx='4' fill='%2300cc88'/%3E%3Crect x='310' y='55' width='35' height='195' rx='4' fill='%2300cc88'/%3E%3Ctext x='68' y='270' fill='%23888' font-size='11' font-family='Arial'%3EJan%3C/text%3E%3Ctext x='118' y='270' fill='%23888' font-size='11' font-family='Arial'%3EFeb%3C/text%3E%3Ctext x='166' y='270' fill='%23888' font-size='11' font-family='Arial'%3EMar%3C/text%3E%3Ctext x='218' y='270' fill='%23888' font-size='11' font-family='Arial'%3EApr%3C/text%3E%3Ctext x='266' y='270' fill='%23888' font-size='11' font-family='Arial'%3EMay%3C/text%3E%3Ctext x='318' y='270' fill='%23888' font-size='11' font-family='Arial'%3EJun%3C/text%3E%3Cpolyline points='77,175 127,145 177,115 227,85 277,65 327,50' fill='none' stroke='%23ffaa00' stroke-width='2' stroke-dasharray='6,3'/%3E%3C/svg%3E" alt="Revenue chart" />
+    </div>
+
+    <!-- Test 2: inline SVG — donut chart -->
+    <div class="svg-test">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="300" rx="12" fill="#232340"/>
+        <text x="200" y="30" fill="#aaa" font-size="14" font-family="Arial" text-anchor="middle">User Distribution</text>
+        <!-- Donut chart -->
+        <circle cx="150" cy="170" r="90" fill="none" stroke="#4488ff" stroke-width="30" stroke-dasharray="220 346" stroke-dashoffset="0"/>
+        <circle cx="150" cy="170" r="90" fill="none" stroke="#00cc88" stroke-width="30" stroke-dasharray="120 446" stroke-dashoffset="-220"/>
+        <circle cx="150" cy="170" r="90" fill="none" stroke="#ff6644" stroke-width="30" stroke-dasharray="100 466" stroke-dashoffset="-340"/>
+        <circle cx="150" cy="170" r="90" fill="none" stroke="#aa44ff" stroke-width="30" stroke-dasharray="126 440" stroke-dashoffset="-440"/>
+        <circle cx="150" cy="170" r="60" fill="#232340"/>
+        <text x="150" y="175" fill="#eee" font-size="24" font-family="Arial" text-anchor="middle" font-weight="700">2.4k</text>
+        <!-- Legend -->
+        <rect x="280" y="100" width="12" height="12" rx="2" fill="#4488ff"/>
+        <text x="300" y="111" fill="#ccc" font-size="13" font-family="Arial">Mobile 39%</text>
+        <rect x="280" y="125" width="12" height="12" rx="2" fill="#00cc88"/>
+        <text x="300" y="136" fill="#ccc" font-size="13" font-family="Arial">Desktop 21%</text>
+        <rect x="280" y="150" width="12" height="12" rx="2" fill="#ff6644"/>
+        <text x="300" y="161" fill="#ccc" font-size="13" font-family="Arial">Tablet 18%</text>
+        <rect x="280" y="175" width="12" height="12" rx="2" fill="#aa44ff"/>
+        <text x="300" y="186" fill="#ccc" font-size="13" font-family="Arial">Other 22%</text>
+      </svg>
+    </div>
+
+    <!-- Test 3: background-image url() — pattern texture -->
+    <div class="bg-image-test"></div>
+
+    <div class="label label-img">&lt;img&gt; tag — bar chart</div>
+    <div class="label label-svg">Inline &lt;svg&gt; — donut chart</div>
+    <div class="label label-bg">background-image: url()</div>
+
+    <div class="sublabel sublabel-img">SVG data URI rendered as &lt;img&gt;</div>
+    <div class="sublabel sublabel-svg">Native SVG with shapes and text</div>
+    <div class="sublabel sublabel-bg">SVG pattern via CSS background</div>
+
+    <!-- This gradient should NOT be detected as an image -->
+    <div class="gradient-not-image"></div>
+    <div class="gradient-label">CSS gradient (should render as rect, not image)</div>
+
+    <!-- Small icon-sized image -->
+    <div class="icon-test">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237B61FF'/%3E%3Cpath d='M20 40 L32 22 L44 40 Z' fill='white' opacity='0.9'/%3E%3Ccircle cx='38' cy='26' r='5' fill='white' opacity='0.7'/%3E%3C/svg%3E" alt="Icon" />
+    </div>
+    <div class="icon-label">Small icon (64×64)</div>
+  </div>
+</body>
+</html>

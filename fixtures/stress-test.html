@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pipeline Stress Test — Swiss Design System</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0F1115;
+      --surface-dark: #171B21;
+      --border-dark: #262B33;
+      --text-light: #F0F0F2;
+      --text-dim: rgba(240, 240, 242, 0.5);
+      --text-muted: rgba(240, 240, 242, 0.25);
+      --accent-red: #E8453C;
+      --accent-blue: #2D7FF9;
+      --accent-green: #20C997;
+      --bg-light: #FAFAFA;
+      --surface-light: #FFFFFF;
+      --border-light: #E5E5E5;
+      --text-dark: #1A1A1A;
+      --text-dark-dim: rgba(26, 26, 26, 0.55);
+    }
+
+    body {
+      background: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ============================
+       SLIDE 1 — SPACING & WHITESPACE
+       Testing padding, margins, breathing room
+       ============================ */
+    .slide-1 {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      padding: 80px 100px;
+    }
+
+    .slide-1 .header {
+      margin-bottom: 24px;
+    }
+
+    .slide-1 .slide-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .slide-1 .title {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .slide-1 .subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    .slide-1 .cards-grid {
+      display: flex;
+      gap: 24px;
+      flex: 1;
+      align-items: stretch;
+      margin-top: 32px;
+    }
+
+    .slide-1 .card {
+      flex: 1;
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .slide-1 .card-32 { padding: 32px; }
+    .slide-1 .card-48 { padding: 48px; }
+    .slide-1 .card-64 { padding: 64px; }
+    .slide-1 .card-80 { padding: 80px; }
+
+    .slide-1 .card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    .slide-1 .card-value {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    .slide-1 .card-32 .card-value { color: var(--text-dim); }
+    .slide-1 .card-48 .card-value { color: var(--text-light); }
+    .slide-1 .card-64 .card-value { color: var(--accent-blue); }
+    .slide-1 .card-80 .card-value { color: var(--accent-green); }
+
+    .slide-1 .card-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .slide-1 .card-corner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border-left: 1px solid var(--border-dark);
+      border-top: 1px solid var(--border-dark);
+      border-radius: 12px 0 12px 0;
+    }
+
+    .slide-1 .card-inner-box {
+      width: 100%;
+      height: 4px;
+      background: var(--border-dark);
+      border-radius: 2px;
+      margin-top: 20px;
+    }
+
+    .slide-1 .card-inner-box-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+
+    .slide-1 .fill-25 { width: 25%; background: var(--text-muted); }
+    .slide-1 .fill-50 { width: 50%; background: var(--text-dim); }
+    .slide-1 .fill-75 { width: 75%; background: var(--accent-blue); }
+    .slide-1 .fill-100 { width: 100%; background: var(--accent-green); }
+
+    /* ============================
+       SLIDE 2 — COLOR PALETTE SYSTEMS
+       Flat blocks, opacity, contrast
+       ============================ */
+    .slide-2 {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      padding: 80px 100px;
+    }
+
+    .slide-2 .header {
+      margin-bottom: 48px;
+    }
+
+    .slide-2 .slide-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-blue);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .slide-2 .title {
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .slide-2 .color-sections {
+      display: flex;
+      gap: 32px;
+      flex: 1;
+    }
+
+    .slide-2 .dark-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .slide-2 .light-section {
+      flex: 1;
+      background: var(--bg-light);
+      border-radius: 16px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .slide-2 .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .slide-2 .dark-section .section-label { color: var(--text-muted); }
+    .slide-2 .light-section .section-label { color: var(--text-dark-dim); }
+
+    .slide-2 .swatch-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .slide-2 .swatch {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .slide-2 .swatch-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .slide-2 .swatch-name {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .slide-2 .dark-section .swatch-name { color: var(--text-light); }
+    .slide-2 .light-section .swatch-name { color: var(--text-dark); }
+
+    .slide-2 .swatch-hex {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .slide-2 .dark-section .swatch-hex { color: var(--text-dim); }
+    .slide-2 .light-section .swatch-hex { color: var(--text-dark-dim); }
+
+    .slide-2 .opacity-stack {
+      flex: 0.6;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .slide-2 .opacity-block {
+      flex: 1;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+    }
+
+    .slide-2 .opacity-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .slide-2 .overlay-demo {
+      position: relative;
+      height: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: auto;
+    }
+
+    .slide-2 .overlay-base {
+      position: absolute;
+      inset: 0;
+      background: var(--accent-red);
+    }
+
+    .slide-2 .overlay-mid {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 60px;
+      bottom: 20px;
+      background: rgba(45, 127, 249, 0.6);
+      border-radius: 8px;
+    }
+
+    .slide-2 .overlay-top {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      right: 80px;
+      bottom: 40px;
+      background: rgba(32, 201, 151, 0.7);
+      border-radius: 6px;
+    }
+
+    /* ============================
+       SLIDE 3 — TYPOGRAPHY HIERARCHY
+       Type scale, spacing, weights
+       ============================ */
+    .slide-3 {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      padding: 80px 100px;
+      gap: 80px;
+    }
+
+    .slide-3 .left-col {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-3 .slide-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .slide-3 .scale-line {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(240, 240, 242, 0.06);
+    }
+
+    .slide-3 .scale-size {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      width: 48px;
+      flex-shrink: 0;
+    }
+
+    .slide-3 .scale-sample-96 { font-size: 96px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .slide-3 .scale-sample-72 { font-size: 72px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+    .slide-3 .scale-sample-48 { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+    .slide-3 .scale-sample-36 { font-size: 36px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+    .slide-3 .scale-sample-24 { font-size: 24px; font-weight: 500; letter-spacing: 0; line-height: 1.3; }
+    .slide-3 .scale-sample-18 { font-size: 18px; font-weight: 400; letter-spacing: 0; line-height: 1.4; color: var(--text-dim); }
+    .slide-3 .scale-sample-14 { font-size: 14px; font-weight: 400; letter-spacing: 0.01em; line-height: 1.5; color: var(--text-dim); }
+    .slide-3 .scale-sample-12 { font-size: 12px; font-weight: 400; letter-spacing: 0.02em; line-height: 1.5; color: var(--text-muted); }
+
+    .slide-3 .right-col {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .slide-3 .spacing-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .slide-3 .spacing-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .slide-3 .tracking-tight { font-size: 32px; font-weight: 700; letter-spacing: -0.04em; }
+    .slide-3 .tracking-normal { font-size: 32px; font-weight: 700; letter-spacing: 0; }
+    .slide-3 .tracking-wide { font-size: 32px; font-weight: 700; letter-spacing: 0.08em; }
+    .slide-3 .tracking-ultra { font-size: 32px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+
+    .slide-3 .body-text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.75;
+      color: var(--text-dim);
+      margin-top: 8px;
+    }
+
+    .slide-3 .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border-dark);
+    }
+
+    /* ============================
+       SLIDE 4 — MINIMAL DATA VIZ
+       Bar chart with divs, gradient fills
+       ============================ */
+    .slide-4 {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      padding: 80px 100px;
+    }
+
+    .slide-4 .header {
+      margin-bottom: 48px;
+    }
+
+    .slide-4 .slide-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .slide-4 .title {
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .slide-4 .subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dim);
+    }
+
+    .slide-4 .chart-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .slide-4 .chart-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .slide-4 .chart-label {
+      width: 160px;
+      text-align: right;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-light);
+      flex-shrink: 0;
+    }
+
+    .slide-4 .chart-bar-track {
+      flex: 1;
+      height: 40px;
+      background: rgba(240, 240, 242, 0.04);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-4 .chart-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 16px;
+    }
+
+    .slide-4 .chart-bar-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .slide-4 .bar-blue { background: linear-gradient(90deg, rgba(45, 127, 249, 0.3), #2D7FF9); }
+    .slide-4 .bar-red { background: linear-gradient(90deg, rgba(232, 69, 60, 0.3), #E8453C); }
+    .slide-4 .bar-green { background: linear-gradient(90deg, rgba(32, 201, 151, 0.3), #20C997); }
+    .slide-4 .bar-dim { background: linear-gradient(90deg, rgba(240, 240, 242, 0.08), rgba(240, 240, 242, 0.2)); }
+
+    .slide-4 .chart-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(240, 240, 242, 0.06);
+    }
+
+    .slide-4 .chart-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .slide-4 .chart-legend {
+      display: flex;
+      gap: 32px;
+    }
+
+    .slide-4 .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-4 .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    .slide-4 .legend-text {
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .slide-4 .chart-source {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ============================
+       SLIDE 5 — CARD LAYOUTS
+       3-column grid, borders, rounded corners
+       ============================ */
+    .slide-5 {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      padding: 80px 100px;
+    }
+
+    .slide-5 .header {
+      margin-bottom: 40px;
+    }
+
+    .slide-5 .slide-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-blue);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .slide-5 .title {
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .slide-5 .cards-row {
+      display: flex;
+      gap: 24px;
+      flex: 1;
+    }
+
+    .slide-5 .card {
+      flex: 1;
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .slide-5 .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .slide-5 .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide-5 .icon-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      background: var(--text-light);
+    }
+
+    .slide-5 .card-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: rgba(240, 240, 242, 0.06);
+    }
+
+    .slide-5 .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 4px;
+    }
+
+    .slide-5 .status-green { background: var(--accent-green); }
+    .slide-5 .status-blue { background: var(--accent-blue); }
+    .slide-5 .status-red { background: var(--accent-red); }
+
+    .slide-5 .status-text {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-dim);
+    }
+
+    .slide-5 .card-title {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .slide-5 .card-desc {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .slide-5 .card-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border-dark);
+    }
+
+    .slide-5 .card-metrics {
+      display: flex;
+      gap: 24px;
+    }
+
+    .slide-5 .metric {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slide-5 .metric-value {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .slide-5 .metric-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .slide-5 .card-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .slide-5 .tag {
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      background: rgba(240, 240, 242, 0.06);
+      color: var(--text-dim);
+    }
+
+    /* ============================
+       SLIDE 6 — EDGE CASES
+       Small text, dense data, thin borders
+       ============================ */
+    .slide-6 {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      padding: 64px 100px;
+    }
+
+    .slide-6 .header {
+      margin-bottom: 32px;
+    }
+
+    .slide-6 .slide-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-green);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .slide-6 .title {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .slide-6 .content-split {
+      display: flex;
+      gap: 40px;
+      flex: 1;
+    }
+
+    .slide-6 .table-section {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-6 .table-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .slide-6 .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .slide-6 .data-table th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .slide-6 .data-table td {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-dim);
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(240, 240, 242, 0.04);
+    }
+
+    .slide-6 .data-table tr:nth-child(even) td {
+      background: rgba(240, 240, 242, 0.02);
+    }
+
+    .slide-6 .cell-highlight {
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .slide-6 .cell-green { color: var(--accent-green); }
+    .slide-6 .cell-red { color: var(--accent-red); }
+
+    .slide-6 .side-section {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .slide-6 .size-test {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px;
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 10px;
+    }
+
+    .slide-6 .size-test-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .slide-6 .text-10 { font-size: 10px; color: var(--text-dim); line-height: 1.5; }
+    .slide-6 .text-12 { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+    .slide-6 .text-14 { font-size: 14px; color: var(--text-light); line-height: 1.5; }
+
+    .slide-6 .mono-test {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .slide-6 .subtle-borders {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px;
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 10px;
+    }
+
+    .slide-6 .subtle-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slide-6 .subtle-box {
+      width: 64px;
+      height: 32px;
+      border-radius: 4px;
+      border: 1px solid rgba(240, 240, 242, 0.06);
+    }
+
+    .slide-6 .opacity-05 { background: rgba(240, 240, 242, 0.05); }
+    .slide-6 .opacity-08 { background: rgba(240, 240, 242, 0.08); }
+    .slide-6 .opacity-10 { background: rgba(240, 240, 242, 0.10); }
+    .slide-6 .opacity-15 { background: rgba(240, 240, 242, 0.15); }
+
+    .slide-6 .subtle-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    /* ============================
+       SLIDE 7 — ROTATION & POSITIONING
+       Transform rotate, absolute position, z-index
+       ============================ */
+    .slide-7 {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .slide-7 .slide-number {
+      position: absolute;
+      top: 80px;
+      left: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .slide-7 .title {
+      position: absolute;
+      top: 110px;
+      left: 100px;
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .slide-7 .rotated-text-45 {
+      position: absolute;
+      top: 300px;
+      left: 180px;
+      font-size: 72px;
+      font-weight: 800;
+      color: rgba(240, 240, 242, 0.06);
+      transform: rotate(45deg);
+      letter-spacing: -0.02em;
+    }
+
+    .slide-7 .rotated-text-neg15 {
+      position: absolute;
+      top: 400px;
+      left: 500px;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      transform: rotate(-15deg);
+      letter-spacing: -0.01em;
+    }
+
+    .slide-7 .rotated-text-90 {
+      position: absolute;
+      top: 300px;
+      right: 120px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-dim);
+      transform: rotate(90deg);
+      transform-origin: right top;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .slide-7 .positioned-box-1 {
+      position: absolute;
+      top: 260px;
+      left: 720px;
+      width: 320px;
+      height: 240px;
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .slide-7 .positioned-box-2 {
+      position: absolute;
+      top: 340px;
+      left: 820px;
+      width: 320px;
+      height: 240px;
+      background: rgba(45, 127, 249, 0.12);
+      border: 1px solid rgba(45, 127, 249, 0.25);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .slide-7 .positioned-box-3 {
+      position: absolute;
+      top: 420px;
+      left: 920px;
+      width: 320px;
+      height: 240px;
+      background: rgba(232, 69, 60, 0.1);
+      border: 1px solid rgba(232, 69, 60, 0.2);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .slide-7 .box-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .slide-7 .box-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .slide-7 .deco-dot {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .slide-7 .dot-1 {
+      top: 220px;
+      left: 140px;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-red);
+    }
+
+    .slide-7 .dot-2 {
+      top: 240px;
+      left: 160px;
+      width: 6px;
+      height: 6px;
+      background: var(--accent-blue);
+    }
+
+    .slide-7 .dot-3 {
+      top: 230px;
+      left: 180px;
+      width: 10px;
+      height: 10px;
+      background: var(--accent-green);
+    }
+
+    .slide-7 .deco-line-h {
+      position: absolute;
+      height: 1px;
+      background: var(--border-dark);
+    }
+
+    .slide-7 .line-1 {
+      top: 200px;
+      left: 100px;
+      width: 600px;
+    }
+
+    .slide-7 .line-2 {
+      bottom: 200px;
+      left: 100px;
+      width: 1720px;
+    }
+
+    .slide-7 .deco-line-v {
+      position: absolute;
+      width: 1px;
+      background: var(--border-dark);
+    }
+
+    .slide-7 .line-3 {
+      top: 200px;
+      left: 700px;
+      height: 680px;
+    }
+
+    .slide-7 .corner-element {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+    }
+
+    .slide-7 .corner-tl {
+      bottom: 80px;
+      left: 100px;
+      border-left: 2px solid var(--accent-red);
+      border-top: 2px solid var(--accent-red);
+    }
+
+    .slide-7 .corner-br {
+      bottom: 80px;
+      left: 140px;
+      border-right: 2px solid var(--accent-red);
+      border-bottom: 2px solid var(--accent-red);
+    }
+
+    .slide-7 .rotated-card {
+      position: absolute;
+      bottom: 120px;
+      left: 260px;
+      width: 280px;
+      padding: 24px;
+      background: var(--surface-dark);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      transform: rotate(-3deg);
+    }
+
+    .slide-7 .rotated-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .slide-7 .rotated-card-text {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    .slide-7 .floating-number {
+      position: absolute;
+      font-size: 200px;
+      font-weight: 800;
+      color: rgba(240, 240, 242, 0.03);
+      letter-spacing: -0.05em;
+      right: 80px;
+      bottom: 40px;
+      line-height: 1;
+    }
+
+    /* ============================
+       SLIDE 8 — LIGHT THEME SHOWCASE
+       White/cream, timeline, Inter weights
+       ============================ */
+    .slide-8 {
+      background: var(--bg-light);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      padding: 80px 100px;
+    }
+
+    .slide-8 .header {
+      margin-bottom: 48px;
+    }
+
+    .slide-8 .slide-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--accent-red);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .slide-8 .title {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .slide-8 .subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dark-dim);
+      line-height: 1.5;
+    }
+
+    .slide-8 .content-area {
+      display: flex;
+      gap: 64px;
+      flex: 1;
+    }
+
+    .slide-8 .timeline {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-left: 48px;
+    }
+
+    .slide-8 .timeline-line {
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--border-light);
+    }
+
+    .slide-8 .timeline-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+
+    .slide-8 .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .slide-8 .timeline-dot {
+      position: absolute;
+      left: -42px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 7px;
+      border: 3px solid var(--bg-light);
+    }
+
+    .slide-8 .dot-active { background: var(--accent-blue); }
+    .slide-8 .dot-complete { background: var(--accent-green); }
+    .slide-8 .dot-pending { background: var(--border-light); }
+
+    .slide-8 .timeline-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dark-dim);
+      letter-spacing: 0.06em;
+    }
+
+    .slide-8 .timeline-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .slide-8 .timeline-desc {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-dark-dim);
+      line-height: 1.6;
+    }
+
+    .slide-8 .weight-showcase {
+      flex: 0.8;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .slide-8 .weight-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dark-dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .slide-8 .weight-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .slide-8 .weight-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-dark-dim);
+      width: 36px;
+      flex-shrink: 0;
+    }
+
+    .slide-8 .weight-sample-300 { font-size: 28px; font-weight: 300; color: var(--text-dark); }
+    .slide-8 .weight-sample-400 { font-size: 28px; font-weight: 400; color: var(--text-dark); }
+    .slide-8 .weight-sample-500 { font-size: 28px; font-weight: 500; color: var(--text-dark); }
+    .slide-8 .weight-sample-600 { font-size: 28px; font-weight: 600; color: var(--text-dark); }
+    .slide-8 .weight-sample-700 { font-size: 28px; font-weight: 700; color: var(--text-dark); }
+
+    .slide-8 .light-card {
+      background: var(--surface-light);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: auto;
+    }
+
+    .slide-8 .light-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .slide-8 .light-card-text {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-dark-dim);
+      line-height: 1.6;
+    }
+
+    .slide-8 .light-card-footer {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .slide-8 .light-tag {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      background: rgba(45, 127, 249, 0.08);
+      color: var(--accent-blue);
+    }
+
+    .slide-8 .light-tag-green {
+      background: rgba(32, 201, 151, 0.08);
+      color: var(--accent-green);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==============================
+       SLIDE 1 — SPACING & WHITESPACE
+       ============================== -->
+  <div class="slide slide-1">
+    <div class="header">
+      <div class="slide-number">01 / Stress Test</div>
+      <div class="title">Spacing &amp; Whitespace</div>
+      <div class="subtitle">Breathing room defines hierarchy. Four padding scales from compact to generous.</div>
+    </div>
+    <div class="cards-grid">
+      <div class="card card-32">
+        <div>
+          <div class="card-label">padding: 32px</div>
+          <div class="card-value">32</div>
+          <div class="card-desc">Compact. Suitable for dense data displays and secondary information panels.</div>
+        </div>
+        <div class="card-inner-box">
+          <div class="card-inner-box-fill fill-25"></div>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+      <div class="card card-48">
+        <div>
+          <div class="card-label">padding: 48px</div>
+          <div class="card-value">48</div>
+          <div class="card-desc">Standard. The default comfortable spacing for card-based layouts.</div>
+        </div>
+        <div class="card-inner-box">
+          <div class="card-inner-box-fill fill-50"></div>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+      <div class="card card-64">
+        <div>
+          <div class="card-label">padding: 64px</div>
+          <div class="card-value">64</div>
+          <div class="card-desc">Spacious. Ideal for feature highlights and key metrics that need emphasis.</div>
+        </div>
+        <div class="card-inner-box">
+          <div class="card-inner-box-fill fill-75"></div>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+      <div class="card card-80">
+        <div>
+          <div class="card-label">padding: 80px</div>
+          <div class="card-value">80</div>
+          <div class="card-desc">Generous. Maximum breathing room for hero content and statements.</div>
+        </div>
+        <div class="card-inner-box">
+          <div class="card-inner-box-fill fill-100"></div>
+        </div>
+        <div class="card-corner"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       SLIDE 2 — COLOR PALETTE SYSTEMS
+       ============================== -->
+  <div class="slide slide-2">
+    <div class="header">
+      <div class="slide-number">02 / Stress Test</div>
+      <div class="title">Color Palette Systems</div>
+    </div>
+    <div class="color-sections">
+      <div class="dark-section">
+        <div class="section-label">Dark Palette</div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #0F1115;border:1px solid #262B33;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Background</div>
+            <div class="swatch-hex">#0F1115</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #171B21;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Surface</div>
+            <div class="swatch-hex">#171B21</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #E8453C;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Accent Red</div>
+            <div class="swatch-hex">#E8453C</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #2D7FF9;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Accent Blue</div>
+            <div class="swatch-hex">#2D7FF9</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #20C997;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Accent Green</div>
+            <div class="swatch-hex">#20C997</div>
+          </div>
+        </div>
+        <div class="overlay-demo">
+          <div class="overlay-base"></div>
+          <div class="overlay-mid"></div>
+          <div class="overlay-top"></div>
+        </div>
+      </div>
+      <div class="light-section">
+        <div class="section-label">Light Palette</div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #FAFAFA;border:1px solid #E5E5E5;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Background</div>
+            <div class="swatch-hex">#FAFAFA</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #FFFFFF;border:1px solid #E5E5E5;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Surface</div>
+            <div class="swatch-hex">#FFFFFF</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #E5E5E5;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Border</div>
+            <div class="swatch-hex">#E5E5E5</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: #1A1A1A;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Text Primary</div>
+            <div class="swatch-hex">#1A1A1A</div>
+          </div>
+        </div>
+        <div class="swatch-row">
+          <div class="swatch" style="background: rgba(26,26,26,0.55);"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Text Dim</div>
+            <div class="swatch-hex">rgba(26,26,26,0.55)</div>
+          </div>
+        </div>
+      </div>
+      <div class="opacity-stack">
+        <div class="section-label" style="color:var(--text-muted);margin-bottom:4px;">Opacity Scale</div>
+        <div class="opacity-block" style="background: rgba(45, 127, 249, 1.0);">
+          <div class="opacity-label">100%</div>
+        </div>
+        <div class="opacity-block" style="background: rgba(45, 127, 249, 0.7);">
+          <div class="opacity-label">70%</div>
+        </div>
+        <div class="opacity-block" style="background: rgba(45, 127, 249, 0.4);">
+          <div class="opacity-label">40%</div>
+        </div>
+        <div class="opacity-block" style="background: rgba(45, 127, 249, 0.2);">
+          <div class="opacity-label">20%</div>
+        </div>
+        <div class="opacity-block" style="background: rgba(45, 127, 249, 0.08);">
+          <div class="opacity-label">8%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       SLIDE 3 — TYPOGRAPHY HIERARCHY
+       ============================== -->
+  <div class="slide slide-3">
+    <div class="left-col">
+      <div class="slide-number">03 / Stress Test</div>
+      <div class="scale-line">
+        <div class="scale-size">96</div>
+        <div class="scale-sample-96">Ag</div>
+      </div>
+      <div class="scale-line">
+        <div class="scale-size">72</div>
+        <div class="scale-sample-72">Headline</div>
+      </div>
+      <div class="scale-line">
+        <div class="scale-size">48</div>
+        <div class="scale-sample-48">Section Title</div>
+      </div>
+      <div class="scale-line">
+        <div class="scale-size">36</div>
+        <div class="scale-sample-36">Subheading Text</div>
+      </div>
+      <div class="scale-line">
+        <div class="scale-size">24</div>
+        <div class="scale-sample-24">Card Title or Label</div>
+      </div>
+      <div class="scale-line">
+        <div class="scale-size">18</div>
+        <div class="scale-sample-18">Body text for standard paragraphs</div>
+      </div>
+      <div class="scale-line">
+        <div class="scale-size">14</div>
+        <div class="scale-sample-14">Secondary text, descriptions, and supporting content</div>
+      </div>
+      <div class="scale-line">
+        <div class="scale-size">12</div>
+        <div class="scale-sample-12">Captions, footnotes, and metadata labels</div>
+      </div>
+    </div>
+    <div class="right-col">
+      <div class="spacing-section">
+        <div class="spacing-label">Letter Spacing</div>
+        <div class="tracking-tight">Tight -0.04em</div>
+        <div class="tracking-normal">Normal 0em</div>
+        <div class="tracking-wide">Wide 0.08em</div>
+        <div class="tracking-ultra">Ultra 0.2em</div>
+      </div>
+      <div class="divider"></div>
+      <div class="spacing-section">
+        <div class="spacing-label">Paragraph Readability</div>
+        <div class="body-text">
+          Good typography is invisible. It creates a seamless reading experience where the content flows naturally.
+          Line height at 1.75 with 16px body text provides generous vertical rhythm, ensuring each line breathes
+          without feeling disconnected from the paragraph as a whole.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       SLIDE 4 — MINIMAL DATA VISUALIZATION
+       ============================== -->
+  <div class="slide slide-4">
+    <div class="header">
+      <div class="slide-number">04 / Stress Test</div>
+      <div class="title">Minimal Data Visualization</div>
+      <div class="subtitle">Horizontal bar chart built with divs and gradient fills</div>
+    </div>
+    <div class="chart-area">
+      <div class="chart-row">
+        <div class="chart-label">Conversion Rate</div>
+        <div class="chart-bar-track">
+          <div class="chart-bar-fill bar-blue" style="width: 87%;">
+            <div class="chart-bar-value">87%</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-divider"></div>
+      <div class="chart-row">
+        <div class="chart-label">User Retention</div>
+        <div class="chart-bar-track">
+          <div class="chart-bar-fill bar-green" style="width: 73%;">
+            <div class="chart-bar-value">73%</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-divider"></div>
+      <div class="chart-row">
+        <div class="chart-label">Bounce Rate</div>
+        <div class="chart-bar-track">
+          <div class="chart-bar-fill bar-red" style="width: 42%;">
+            <div class="chart-bar-value">42%</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-divider"></div>
+      <div class="chart-row">
+        <div class="chart-label">Page Load Time</div>
+        <div class="chart-bar-track">
+          <div class="chart-bar-fill bar-dim" style="width: 28%;">
+            <div class="chart-bar-value">28%</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-divider"></div>
+      <div class="chart-row">
+        <div class="chart-label">Error Rate</div>
+        <div class="chart-bar-track">
+          <div class="chart-bar-fill bar-red" style="width: 12%;">
+            <div class="chart-bar-value">12%</div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-divider"></div>
+      <div class="chart-row">
+        <div class="chart-label">API Latency</div>
+        <div class="chart-bar-track">
+          <div class="chart-bar-fill bar-blue" style="width: 56%;">
+            <div class="chart-bar-value">56ms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chart-footer">
+      <div class="chart-legend">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--accent-blue);"></div>
+          <div class="legend-text">Performance</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--accent-green);"></div>
+          <div class="legend-text">Engagement</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: var(--accent-red);"></div>
+          <div class="legend-text">Attention</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: rgba(240,240,242,0.2);"></div>
+          <div class="legend-text">Baseline</div>
+        </div>
+      </div>
+      <div class="chart-source">Source: System Analytics Q4 2025</div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       SLIDE 5 — CARD LAYOUTS
+       ============================== -->
+  <div class="slide slide-5">
+    <div class="header">
+      <div class="slide-number">05 / Stress Test</div>
+      <div class="title">Card Layouts</div>
+    </div>
+    <div class="cards-row">
+      <div class="card">
+        <div class="card-top">
+          <div class="card-icon" style="background: rgba(45, 127, 249, 0.12);">
+            <div class="icon-dot" style="background: var(--accent-blue);"></div>
+          </div>
+          <div class="card-status">
+            <div class="status-dot status-green"></div>
+            <div class="status-text">Active</div>
+          </div>
+        </div>
+        <div class="card-title">Authentication</div>
+        <div class="card-desc">Secure token-based authentication with refresh rotation and session management across distributed services.</div>
+        <div class="card-divider"></div>
+        <div class="card-metrics">
+          <div class="metric">
+            <div class="metric-value" style="color: var(--accent-blue);">99.9</div>
+            <div class="metric-label">Uptime %</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">14ms</div>
+            <div class="metric-label">Avg Latency</div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <div class="tag">OAuth 2.0</div>
+          <div class="tag">JWT</div>
+          <div class="tag">MFA</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-icon" style="background: rgba(32, 201, 151, 0.12);">
+            <div class="icon-dot" style="background: var(--accent-green);"></div>
+          </div>
+          <div class="card-status">
+            <div class="status-dot status-blue"></div>
+            <div class="status-text">Deploying</div>
+          </div>
+        </div>
+        <div class="card-title">Data Pipeline</div>
+        <div class="card-desc">Real-time event streaming with automatic schema validation, dead letter queues, and backpressure handling.</div>
+        <div class="card-divider"></div>
+        <div class="card-metrics">
+          <div class="metric">
+            <div class="metric-value" style="color: var(--accent-green);">2.4M</div>
+            <div class="metric-label">Events / hr</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">340</div>
+            <div class="metric-label">Partitions</div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <div class="tag">Kafka</div>
+          <div class="tag">Avro</div>
+          <div class="tag">Stream</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-top">
+          <div class="card-icon" style="background: rgba(232, 69, 60, 0.12);">
+            <div class="icon-dot" style="background: var(--accent-red);"></div>
+          </div>
+          <div class="card-status">
+            <div class="status-dot status-red"></div>
+            <div class="status-text">Degraded</div>
+          </div>
+        </div>
+        <div class="card-title">Search Index</div>
+        <div class="card-desc">Full-text search with faceted filtering, fuzzy matching, and real-time index synchronization from primary store.</div>
+        <div class="card-divider"></div>
+        <div class="card-metrics">
+          <div class="metric">
+            <div class="metric-value" style="color: var(--accent-red);">847K</div>
+            <div class="metric-label">Documents</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">62ms</div>
+            <div class="metric-label">P99 Query</div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <div class="tag">Elastic</div>
+          <div class="tag">Facets</div>
+          <div class="tag">Fuzzy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       SLIDE 6 — EDGE CASES
+       ============================== -->
+  <div class="slide slide-6">
+    <div class="header">
+      <div class="slide-number">06 / Stress Test</div>
+      <div class="title">Edge Cases &mdash; Small Text &amp; Dense Content</div>
+    </div>
+    <div class="content-split">
+      <div class="table-section">
+        <div class="table-label">System Metrics — Dense Tabular Data</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Status</th>
+              <th>Latency</th>
+              <th>Requests</th>
+              <th>Error %</th>
+              <th>CPU</th>
+              <th>Memory</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell-highlight">api-gateway</td>
+              <td class="cell-green">healthy</td>
+              <td>12ms</td>
+              <td>1,284,032</td>
+              <td class="cell-green">0.02%</td>
+              <td>34%</td>
+              <td>2.1 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">auth-service</td>
+              <td class="cell-green">healthy</td>
+              <td>8ms</td>
+              <td>892,441</td>
+              <td class="cell-green">0.01%</td>
+              <td>22%</td>
+              <td>1.4 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">user-service</td>
+              <td class="cell-green">healthy</td>
+              <td>15ms</td>
+              <td>543,219</td>
+              <td class="cell-green">0.04%</td>
+              <td>41%</td>
+              <td>3.2 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">search-index</td>
+              <td class="cell-red">degraded</td>
+              <td>142ms</td>
+              <td>328,102</td>
+              <td class="cell-red">2.31%</td>
+              <td>89%</td>
+              <td>7.8 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">payment-svc</td>
+              <td class="cell-green">healthy</td>
+              <td>23ms</td>
+              <td>98,432</td>
+              <td class="cell-green">0.00%</td>
+              <td>18%</td>
+              <td>0.9 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">notification</td>
+              <td class="cell-green">healthy</td>
+              <td>31ms</td>
+              <td>2,104,891</td>
+              <td class="cell-green">0.08%</td>
+              <td>56%</td>
+              <td>4.1 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">cache-layer</td>
+              <td class="cell-green">healthy</td>
+              <td>2ms</td>
+              <td>8,921,044</td>
+              <td class="cell-green">0.00%</td>
+              <td>12%</td>
+              <td>16.0 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">ml-inference</td>
+              <td class="cell-red">degraded</td>
+              <td>287ms</td>
+              <td>41,203</td>
+              <td class="cell-red">1.12%</td>
+              <td>94%</td>
+              <td>11.2 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">cdn-origin</td>
+              <td class="cell-green">healthy</td>
+              <td>4ms</td>
+              <td>12,450,321</td>
+              <td class="cell-green">0.00%</td>
+              <td>8%</td>
+              <td>0.5 GB</td>
+            </tr>
+            <tr>
+              <td class="cell-highlight">queue-worker</td>
+              <td class="cell-green">healthy</td>
+              <td>45ms</td>
+              <td>672,110</td>
+              <td class="cell-green">0.06%</td>
+              <td>67%</td>
+              <td>5.4 GB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="side-section">
+        <div class="size-test">
+          <div class="size-test-label">Font Size Rendering</div>
+          <div class="text-14">14px — Standard UI text, comfortable for extended reading on screens.</div>
+          <div class="text-12">12px — Secondary labels, metadata, timestamps. Still legible at distance.</div>
+          <div class="text-10">10px — Footnotes and fine print. Approaches minimum readable threshold for slide projection.</div>
+          <div class="text-12 mono-test">12px mono — JetBrains Mono for code: const x = 42;</div>
+          <div class="text-10 mono-test">10px mono — Smallest monospace: function hash(s) { return s.split('').reduce((a,b) => a + b.charCodeAt(0), 0); }</div>
+        </div>
+        <div class="subtle-borders">
+          <div class="size-test-label">Subtle Color Differences</div>
+          <div class="subtle-row">
+            <div class="subtle-box opacity-05"></div>
+            <div class="subtle-label">opacity: 0.05</div>
+          </div>
+          <div class="subtle-row">
+            <div class="subtle-box opacity-08"></div>
+            <div class="subtle-label">opacity: 0.08</div>
+          </div>
+          <div class="subtle-row">
+            <div class="subtle-box opacity-10"></div>
+            <div class="subtle-label">opacity: 0.10</div>
+          </div>
+          <div class="subtle-row">
+            <div class="subtle-box opacity-15"></div>
+            <div class="subtle-label">opacity: 0.15</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================
+       SLIDE 7 — ROTATION & POSITIONING
+       ============================== -->
+  <div class="slide slide-7">
+    <div class="slide-number">07 / Stress Test</div>
+    <div class="title">Rotation &amp; Positioning</div>
+
+    <!-- Horizontal and vertical grid lines -->
+    <div class="deco-line-h line-1"></div>
+    <div class="deco-line-h line-2"></div>
+    <div class="deco-line-v line-3"></div>
+
+    <!-- Decorative dots -->
+    <div class="deco-dot dot-1"></div>
+    <div class="deco-dot dot-2"></div>
+    <div class="deco-dot dot-3"></div>
+
+    <!-- Rotated text elements -->
+    <div class="rotated-text-45">ROTATE</div>
+    <div class="rotated-text-neg15">Tilted Label</div>
+    <div class="rotated-text-90">Vertical Axis Title</div>
+
+    <!-- Overlapping positioned boxes (z-order via DOM order) -->
+    <div class="positioned-box-1">
+      <div class="box-label">Layer 1 — Base</div>
+      <div class="box-title">Background Layer</div>
+    </div>
+    <div class="positioned-box-2">
+      <div class="box-label">Layer 2 — Middle</div>
+      <div class="box-title">Overlapping Blue</div>
+    </div>
+    <div class="positioned-box-3">
+      <div class="box-label">Layer 3 — Front</div>
+      <div class="box-title">Overlapping Red</div>
+    </div>
+
+    <!-- Corner decorations -->
+    <div class="corner-element corner-tl"></div>
+    <div class="corner-element corner-br"></div>
+
+    <!-- Rotated card -->
+    <div class="rotated-card">
+      <div class="rotated-card-title">Slightly Rotated Card</div>
+      <div class="rotated-card-text">This card tests a subtle -3deg rotation combined with border-radius and padding.</div>
+    </div>
+
+    <!-- Large background number -->
+    <div class="floating-number">07</div>
+  </div>
+
+  <!-- ==============================
+       SLIDE 8 — LIGHT THEME SHOWCASE
+       ============================== -->
+  <div class="slide slide-8">
+    <div class="header">
+      <div class="slide-number">08 / Stress Test</div>
+      <div class="title">Light Theme Showcase</div>
+      <div class="subtitle">Dark text on light backgrounds with a process timeline and weight scale</div>
+    </div>
+    <div class="content-area">
+      <div class="timeline">
+        <div class="timeline-line"></div>
+        <div class="timeline-item">
+          <div class="timeline-dot dot-complete"></div>
+          <div class="timeline-date">Jan 2025</div>
+          <div class="timeline-title">Research &amp; Discovery</div>
+          <div class="timeline-desc">Stakeholder interviews, competitive analysis, and user journey mapping across three market segments.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot dot-complete"></div>
+          <div class="timeline-date">Mar 2025</div>
+          <div class="timeline-title">Design System Foundation</div>
+          <div class="timeline-desc">Token architecture, component primitives, and accessibility standards established for multi-platform delivery.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot dot-active"></div>
+          <div class="timeline-date">Jun 2025</div>
+          <div class="timeline-title">Implementation Sprint</div>
+          <div class="timeline-desc">Core components built, integration testing with API layer, and performance benchmarks validated.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot dot-pending"></div>
+          <div class="timeline-date">Sep 2025</div>
+          <div class="timeline-title">Beta Launch</div>
+          <div class="timeline-desc">Limited rollout to design partners with telemetry, feedback loops, and iterative refinement cycles.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot dot-pending"></div>
+          <div class="timeline-date">Dec 2025</div>
+          <div class="timeline-title">General Availability</div>
+          <div class="timeline-desc">Full public launch with documentation, migration guides, and community support infrastructure.</div>
+        </div>
+      </div>
+      <div class="weight-showcase">
+        <div class="weight-label">Inter Weight Scale</div>
+        <div class="weight-row">
+          <div class="weight-num">300</div>
+          <div class="weight-sample-300">Light Weight</div>
+        </div>
+        <div class="weight-row">
+          <div class="weight-num">400</div>
+          <div class="weight-sample-400">Regular Weight</div>
+        </div>
+        <div class="weight-row">
+          <div class="weight-num">500</div>
+          <div class="weight-sample-500">Medium Weight</div>
+        </div>
+        <div class="weight-row">
+          <div class="weight-num">600</div>
+          <div class="weight-sample-600">Semibold Weight</div>
+        </div>
+        <div class="weight-row">
+          <div class="weight-num">700</div>
+          <div class="weight-sample-700">Bold Weight</div>
+        </div>
+        <div class="light-card">
+          <div class="light-card-title">Component Status</div>
+          <div class="light-card-text">All design tokens validated against WCAG 2.1 AA contrast requirements. Light theme passes with a minimum ratio of 4.8:1 for body text.</div>
+          <div class="light-card-footer">
+            <div class="light-tag">Accessible</div>
+            <div class="light-tag light-tag-green">Validated</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "name": "@0-ai/slide-gen",
+  "version": "0.1.0",
+  "description": "Convert HTML slide decks to PPTX, PDF, and PNG",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "bin": {
+    "slide-gen": "src/cli.ts"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md",
+    "TECHNICAL-GUIDE.md"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "cli": "bun run src/cli.ts"
+  },
+  "keywords": [
+    "slides",
+    "pptx",
+    "powerpoint",
+    "pdf",
+    "html-to-pptx",
+    "presentation",
+    "converter",
+    "bun"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0-AI-UG/slide-gen.git"
+  },
+  "homepage": "https://github.com/0-AI-UG/slide-gen",
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "playwright": "^1.52.0"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.10",
+    "typescript": "^5.9.3"
+  }
+}

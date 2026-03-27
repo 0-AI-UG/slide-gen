@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanta Labs — Pulse v2.0</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --void: #0C0C14;
+      --void-light: #12121E;
+      --slate: #3A3A52;
+      --slate-light: #52526E;
+      --ghost: #E8E6F0;
+      --ghost-dim: rgba(232, 230, 240, 0.4);
+      --violet: #7B61FF;
+      --violet-dim: rgba(123, 97, 255, 0.15);
+      --cyan: #00E5CC;
+      --cyan-dim: rgba(0, 229, 204, 0.08);
+    }
+
+    body {
+      background: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      font-family: 'Instrument Sans', sans-serif;
+    }
+
+    /* ============================
+       SLIDE 1 — TITLE
+       Dark void + grid artifact
+       ============================ */
+    .slide-1 {
+      background: var(--void);
+      color: var(--ghost);
+    }
+
+    .slide-1 .brand {
+      position: absolute;
+      top: 64px;
+      left: 100px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ghost);
+    }
+
+    .slide-1 .brand-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--violet);
+      margin-left: 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+    }
+
+    .slide-1 .version-tag {
+      position: absolute;
+      top: 68px;
+      left: 340px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--slate-light);
+      letter-spacing: 0.05em;
+    }
+
+    .slide-1 .grid-decoration {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 640px;
+      height: 1080px;
+      opacity: 0.12;
+    }
+
+    .slide-1 .grid-decoration .grid-line-h {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--violet);
+    }
+
+    .slide-1 .grid-decoration .grid-line-v {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--violet);
+    }
+
+    .slide-1 .grid-accent {
+      position: absolute;
+      top: 180px;
+      right: 120px;
+      width: 280px;
+      height: 280px;
+      border: 2px solid var(--violet);
+      opacity: 0.2;
+    }
+
+    .slide-1 .grid-accent-inner {
+      position: absolute;
+      top: 320px;
+      right: 240px;
+      width: 140px;
+      height: 140px;
+      background: var(--violet-dim);
+    }
+
+    .slide-1 .headline {
+      position: absolute;
+      top: 260px;
+      left: 100px;
+      max-width: 1100px;
+    }
+
+    .slide-1 .headline h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 112px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ghost);
+    }
+
+    .slide-1 .headline h1 em {
+      font-style: normal;
+      color: var(--violet);
+    }
+
+    .slide-1 .subtitle {
+      position: absolute;
+      top: 660px;
+      left: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--slate-light);
+      letter-spacing: 0.02em;
+    }
+
+    .slide-1 .bottom-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--void-light);
+      display: flex;
+      align-items: center;
+      padding: 0 100px;
+    }
+
+    .slide-1 .bottom-bar span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--slate-light);
+      letter-spacing: 0.04em;
+    }
+
+    .slide-1 .bottom-bar .separator {
+      width: 1px;
+      height: 20px;
+      background: var(--slate);
+      margin: 0 32px;
+    }
+
+    .slide-1 .pulse-line {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--violet);
+      opacity: 0.6;
+    }
+
+    /* ============================
+       SLIDE 2 — THE PROBLEM
+       Giant stat + explanation
+       ============================ */
+    .slide-2 {
+      background: var(--void);
+      color: var(--ghost);
+      display: flex;
+    }
+
+    .slide-2 .left {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px;
+      position: relative;
+    }
+
+    .slide-2 .left::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 120px;
+      bottom: 120px;
+      width: 1px;
+      background: var(--slate);
+      opacity: 0.3;
+    }
+
+    .slide-2 .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--violet);
+      margin-bottom: 48px;
+    }
+
+    .slide-2 .big-number {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 240px;
+      line-height: 0.85;
+      letter-spacing: -0.04em;
+      color: var(--violet);
+    }
+
+    .slide-2 .big-unit {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 100px;
+      color: var(--slate-light);
+      margin-left: 8px;
+    }
+
+    .slide-2 .stat-context {
+      margin-top: 32px;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--ghost-dim);
+      line-height: 1.6;
+      max-width: 540px;
+    }
+
+    .slide-2 .right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 100px 100px 80px;
+    }
+
+    .slide-2 .right h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--ghost);
+      margin-bottom: 40px;
+    }
+
+    .slide-2 .right p {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--ghost-dim);
+      max-width: 640px;
+    }
+
+    .slide-2 .footnote {
+      position: absolute;
+      bottom: 64px;
+      right: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--slate);
+      letter-spacing: 0.02em;
+    }
+
+    .slide-2 .accent-block {
+      width: 48px;
+      height: 4px;
+      background: var(--cyan);
+      margin-top: 48px;
+    }
+
+    /* ============================
+       SLIDE 3 — THE SOLUTION
+       Horizontal banded layout
+       ============================ */
+    .slide-3 {
+      background: var(--void);
+      color: var(--ghost);
+    }
+
+    .slide-3 .slide-header {
+      position: absolute;
+      top: 72px;
+      left: 100px;
+      right: 100px;
+      display: flex;
+      align-items: baseline;
+      gap: 32px;
+    }
+
+    .slide-3 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--violet);
+    }
+
+    .slide-3 .slide-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 52px;
+      letter-spacing: -0.01em;
+    }
+
+    .slide-3 .divider-top {
+      position: absolute;
+      top: 200px;
+      left: 100px;
+      right: 100px;
+      height: 1px;
+      background: var(--slate);
+      opacity: 0.25;
+    }
+
+    .slide-3 .bands {
+      position: absolute;
+      top: 220px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .slide-3 .band {
+      display: flex;
+      align-items: center;
+      height: 270px;
+      padding: 0 100px;
+      position: relative;
+    }
+
+    .slide-3 .band:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 100px;
+      right: 100px;
+      height: 1px;
+      background: var(--slate);
+      opacity: 0.2;
+    }
+
+    .slide-3 .band-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--violet);
+      letter-spacing: 0.05em;
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    .slide-3 .band-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 44px;
+      letter-spacing: -0.01em;
+      color: var(--ghost);
+      width: 520px;
+      flex-shrink: 0;
+    }
+
+    .slide-3 .band-line {
+      width: 1px;
+      height: 80px;
+      background: var(--slate);
+      opacity: 0.3;
+      margin: 0 64px;
+      flex-shrink: 0;
+    }
+
+    .slide-3 .band-desc {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ghost-dim);
+      max-width: 640px;
+    }
+
+    .slide-3 .band:hover {
+      background: var(--violet-dim);
+    }
+
+    /* ============================
+       SLIDE 4 — METRICS
+       2×2 oversized numbers
+       ============================ */
+    .slide-4 {
+      background: var(--void);
+      color: var(--ghost);
+    }
+
+    .slide-4 .slide-header {
+      position: absolute;
+      top: 72px;
+      left: 100px;
+      right: 100px;
+      display: flex;
+      align-items: baseline;
+      gap: 32px;
+    }
+
+    .slide-4 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--violet);
+    }
+
+    .slide-4 .slide-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 52px;
+      letter-spacing: -0.01em;
+    }
+
+    .slide-4 .header-line {
+      position: absolute;
+      top: 200px;
+      left: 100px;
+      right: 100px;
+      height: 2px;
+      background: var(--violet);
+      opacity: 0.5;
+    }
+
+    .slide-4 .metrics-grid {
+      position: absolute;
+      top: 240px;
+      left: 100px;
+      right: 100px;
+      bottom: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0;
+    }
+
+    .slide-4 .metric-cell {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 48px 64px;
+      position: relative;
+    }
+
+    .slide-4 .metric-cell:nth-child(1),
+    .slide-4 .metric-cell:nth-child(2) {
+      border-bottom: 1px solid rgba(58, 58, 82, 0.3);
+    }
+
+    .slide-4 .metric-cell:nth-child(1),
+    .slide-4 .metric-cell:nth-child(3) {
+      border-right: 1px solid rgba(58, 58, 82, 0.3);
+    }
+
+    .slide-4 .metric-value {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 120px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ghost);
+    }
+
+    .slide-4 .metric-cell:nth-child(1) .metric-value {
+      color: var(--violet);
+    }
+
+    .slide-4 .metric-label {
+      margin-top: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--slate-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .slide-4 .metric-detail {
+      margin-top: 8px;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--ghost-dim);
+    }
+
+    /* ============================
+       SLIDE 5 — CTA / CONTACT
+       Split: message + action
+       ============================ */
+    .slide-5 {
+      background: var(--void);
+      color: var(--ghost);
+      display: flex;
+    }
+
+    .slide-5 .left-side {
+      width: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px;
+      position: relative;
+    }
+
+    .slide-5 .left-side::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--slate);
+      opacity: 0.2;
+    }
+
+    .slide-5 .left-side h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 760px;
+    }
+
+    .slide-5 .left-side h2 em {
+      font-style: normal;
+      color: var(--violet);
+    }
+
+    .slide-5 .left-prompt {
+      margin-top: 48px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--slate-light);
+      letter-spacing: 0.02em;
+    }
+
+    .slide-5 .left-prompt .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 24px;
+      background: var(--violet);
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .slide-5 .right-side {
+      width: 45%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 100px 100px 80px;
+    }
+
+    .slide-5 .cta-box {
+      background: var(--violet);
+      padding: 40px 48px;
+      margin-bottom: 64px;
+    }
+
+    .slide-5 .cta-box span {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      color: var(--void);
+      letter-spacing: 0.02em;
+    }
+
+    .slide-5 .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .slide-5 .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .slide-5 .contact-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--slate-light);
+    }
+
+    .slide-5 .contact-value {
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--ghost);
+    }
+
+    .slide-5 .brand-footer {
+      position: absolute;
+      bottom: 64px;
+      left: 100px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+    }
+
+    .slide-5 .copyright {
+      position: absolute;
+      bottom: 64px;
+      right: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--slate);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Title -->
+  <div class="slide slide-1">
+    <div class="brand">Vanta Labs<span class="brand-dot"></span></div>
+    <span class="version-tag">pulse v2.0</span>
+
+    <!-- Decorative grid -->
+    <div class="grid-decoration">
+      <div class="grid-line-h" style="top: 0"></div>
+      <div class="grid-line-h" style="top: 120px"></div>
+      <div class="grid-line-h" style="top: 240px"></div>
+      <div class="grid-line-h" style="top: 360px"></div>
+      <div class="grid-line-h" style="top: 480px"></div>
+      <div class="grid-line-h" style="top: 600px"></div>
+      <div class="grid-line-h" style="top: 720px"></div>
+      <div class="grid-line-h" style="top: 840px"></div>
+      <div class="grid-line-h" style="top: 960px"></div>
+      <div class="grid-line-h" style="top: 1080px"></div>
+      <div class="grid-line-v" style="left: 0"></div>
+      <div class="grid-line-v" style="left: 128px"></div>
+      <div class="grid-line-v" style="left: 256px"></div>
+      <div class="grid-line-v" style="left: 384px"></div>
+      <div class="grid-line-v" style="left: 512px"></div>
+      <div class="grid-line-v" style="left: 640px"></div>
+    </div>
+    <div class="grid-accent"></div>
+    <div class="grid-accent-inner"></div>
+
+    <div class="headline">
+      <h1>Inference at<br>the Edge. In<br><em>Real Time.</em></h1>
+    </div>
+
+    <p class="subtitle">Pulse v2.0 — Sub-10ms latency at global scale</p>
+
+    <div class="pulse-line"></div>
+    <div class="bottom-bar">
+      <span>Series B</span>
+      <div class="separator"></div>
+      <span>$48M raised</span>
+      <div class="separator"></div>
+      <span>March 2026</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: The Problem -->
+  <div class="slide slide-2">
+    <div class="left">
+      <div class="section-tag">The Problem</div>
+      <div class="big-number">840<span class="big-unit">ms</span></div>
+      <p class="stat-context">Average inference latency across production ML deployments today.</p>
+    </div>
+    <div class="right">
+      <h2>The Latency Tax</h2>
+      <p>Every millisecond of inference delay costs revenue, loses users, and erodes trust. At 840ms, you're not running AI — you're running a queue. Your models are fast. Your infrastructure isn't. That's the gap we close.</p>
+      <div class="accent-block"></div>
+    </div>
+    <span class="footnote">Sources: Akamai 2025 State of the Edge, Google Research</span>
+  </div>
+
+  <!-- SLIDE 3: The Solution -->
+  <div class="slide slide-3">
+    <div class="slide-header">
+      <span class="tag">The Solution</span>
+      <h2>How Pulse Works</h2>
+    </div>
+    <div class="divider-top"></div>
+    <div class="bands">
+      <div class="band">
+        <span class="band-num">01</span>
+        <span class="band-title">Edge Mesh Network</span>
+        <div class="band-line"></div>
+        <p class="band-desc">142 globally distributed inference nodes that form an adaptive mesh. Traffic routes to the nearest healthy node with sub-millisecond failover.</p>
+      </div>
+      <div class="band">
+        <span class="band-num">02</span>
+        <span class="band-title">Adaptive Model Routing</span>
+        <div class="band-line"></div>
+        <p class="band-desc">Requests are matched to the optimal model variant and hardware in real time based on payload complexity, latency budget, and node load.</p>
+      </div>
+      <div class="band">
+        <span class="band-num">03</span>
+        <span class="band-title">Zero-Copy Inference</span>
+        <div class="band-line"></div>
+        <p class="band-desc">Shared memory architecture eliminates serialization overhead. Model weights stay resident, tensors move through lock-free ring buffers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Metrics -->
+  <div class="slide slide-4">
+    <div class="slide-header">
+      <span class="tag">Performance</span>
+      <h2>The Numbers</h2>
+    </div>
+    <div class="header-line"></div>
+    <div class="metrics-grid">
+      <div class="metric-cell">
+        <div class="metric-value">9.2ms</div>
+        <div class="metric-label">P99 Latency</div>
+        <div class="metric-detail">End-to-end, globally</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-value">142</div>
+        <div class="metric-label">Edge Nodes</div>
+        <div class="metric-detail">Across 6 continents</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-value">99.997%</div>
+        <div class="metric-label">Uptime</div>
+        <div class="metric-detail">Trailing 12 months</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-value">3.1M</div>
+        <div class="metric-label">Requests / Sec</div>
+        <div class="metric-detail">Peak sustained throughput</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: CTA / Contact -->
+  <div class="slide slide-5">
+    <div class="left-side">
+      <h2>Ready to<br>eliminate<br><em>latency?</em></h2>
+      <div class="left-prompt">$ pulse deploy --global<span class="cursor"></span></div>
+    </div>
+    <div class="right-side">
+      <div class="cta-box">
+        <span>Book a Demo</span>
+      </div>
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">hello@vantalabs.dev</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Web</span>
+          <span class="contact-value">vantalabs.dev</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Github</span>
+          <span class="contact-value">github.com/vantalabs</span>
+        </div>
+      </div>
+    </div>
+    <div class="brand-footer">Vanta Labs</div>
+    <span class="copyright">&copy; 2026 Vanta Labs Inc. All rights reserved.</span>
+  </div>
+
+</body>
+</html>

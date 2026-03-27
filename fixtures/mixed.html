@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edge Cases — HTML→PPTX Stress Test</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #0F1117;
+      --ink-light: #1A1D27;
+      --ink-subtle: #242836;
+      --border: #2E3345;
+      --border-light: #3D4359;
+      --text: #E8EAF0;
+      --text-dim: rgba(232, 234, 240, 0.5);
+      --text-muted: rgba(232, 234, 240, 0.3);
+      --blue: #4F8FF7;
+      --blue-dim: rgba(79, 143, 247, 0.12);
+      --emerald: #34D399;
+      --emerald-dim: rgba(52, 211, 153, 0.10);
+      --amber: #FBBF24;
+      --amber-dim: rgba(251, 191, 36, 0.10);
+      --rose: #F472B6;
+      --rose-dim: rgba(244, 114, 182, 0.10);
+      --violet: #A78BFA;
+      --violet-dim: rgba(167, 139, 250, 0.10);
+      --cyan: #22D3EE;
+      --orange: #FB923C;
+      --white: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --card-border: #E2E5EC;
+      --card-shadow: #F0F1F5;
+      --light-bg: #F7F8FB;
+      --light-text: #1A1D27;
+      --light-text-dim: rgba(26, 29, 39, 0.55);
+      --light-text-muted: rgba(26, 29, 39, 0.3);
+    }
+
+    body {
+      background: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ============================
+       SLIDE 1 — IMAGE PLACEHOLDERS
+       Photo grid with colored rects
+       ============================ */
+    .slide-1 {
+      background: var(--ink);
+      color: var(--text);
+    }
+
+    .slide-1 .slide-header {
+      position: absolute;
+      top: 64px;
+      left: 88px;
+      right: 88px;
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .slide-1 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--blue-dim);
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    .slide-1 .slide-header h2 {
+      font-weight: 800;
+      font-size: 48px;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+
+    .slide-1 .slide-header .subtitle {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+
+    .slide-1 .header-line {
+      position: absolute;
+      top: 160px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .slide-1 .photo-grid {
+      position: absolute;
+      top: 196px;
+      left: 88px;
+      right: 88px;
+      bottom: 88px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .slide-1 .photo-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .slide-1 .photo-item .placeholder {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px 8px 0 0;
+      position: relative;
+    }
+
+    .slide-1 .photo-item .placeholder .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .slide-1 .photo-item .placeholder .dimensions {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .slide-1 .photo-item .caption-bar {
+      background: var(--ink-subtle);
+      padding: 14px 18px;
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .slide-1 .photo-item .caption-bar .cap-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .slide-1 .photo-item .caption-bar .cap-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-dim);
+    }
+
+    /* Span items across grid */
+    .slide-1 .photo-item.wide { grid-column: span 2; }
+    .slide-1 .photo-item.tall { grid-row: span 2; }
+
+    .slide-1 .slide-footer {
+      position: absolute;
+      bottom: 36px;
+      left: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================
+       SLIDE 2 — CSS BAR CHART
+       Horizontal bars with labels
+       ============================ */
+    .slide-2 {
+      background: var(--ink);
+      color: var(--text);
+    }
+
+    .slide-2 .slide-header {
+      position: absolute;
+      top: 64px;
+      left: 88px;
+      right: 88px;
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .slide-2 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--emerald);
+      background: var(--emerald-dim);
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    .slide-2 .slide-header h2 {
+      font-weight: 800;
+      font-size: 48px;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+
+    .slide-2 .header-line {
+      position: absolute;
+      top: 160px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .slide-2 .chart-area {
+      position: absolute;
+      top: 196px;
+      left: 88px;
+      right: 88px;
+      bottom: 100px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-2 .chart-title {
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .slide-2 .chart-subtitle {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+
+    .slide-2 .axis-label-x {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: right;
+      margin-top: 16px;
+    }
+
+    .slide-2 .bars {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .slide-2 .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .slide-2 .bar-label {
+      width: 220px;
+      flex-shrink: 0;
+      text-align: right;
+      padding-right: 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .slide-2 .bar-track {
+      flex: 1;
+      height: 44px;
+      background: var(--ink-subtle);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-2 .bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding-left: 16px;
+    }
+
+    .slide-2 .bar-fill .bar-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .slide-2 .bar-pct {
+      width: 80px;
+      flex-shrink: 0;
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dim);
+      padding-left: 16px;
+    }
+
+    .slide-2 .chart-legend {
+      position: absolute;
+      bottom: 40px;
+      left: 88px;
+      display: flex;
+      gap: 32px;
+    }
+
+    .slide-2 .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-2 .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    .slide-2 .legend-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-dim);
+    }
+
+    .slide-2 .slide-num {
+      position: absolute;
+      bottom: 40px;
+      right: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ============================
+       SLIDE 3 — DEEP NESTING
+       Nested levels + tag cloud
+       ============================ */
+    .slide-3 {
+      background: var(--ink);
+      color: var(--text);
+    }
+
+    .slide-3 .slide-header {
+      position: absolute;
+      top: 64px;
+      left: 88px;
+      right: 88px;
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .slide-3 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber);
+      background: var(--amber-dim);
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    .slide-3 .slide-header h2 {
+      font-weight: 800;
+      font-size: 48px;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+
+    .slide-3 .header-line {
+      position: absolute;
+      top: 160px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .slide-3 .content-split {
+      position: absolute;
+      top: 196px;
+      left: 88px;
+      right: 88px;
+      bottom: 80px;
+      display: flex;
+      gap: 48px;
+    }
+
+    .slide-3 .nest-panel {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .slide-3 .nest-panel .panel-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .slide-3 .nest-box {
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+    }
+
+    .slide-3 .n-level-0 { background: rgba(79, 143, 247, 0.25); color: var(--blue); }
+    .slide-3 .n-level-1 { background: rgba(167, 139, 250, 0.22); color: var(--violet); }
+    .slide-3 .n-level-2 { background: rgba(52, 211, 153, 0.20); color: var(--emerald); }
+    .slide-3 .n-level-3 { background: rgba(251, 191, 36, 0.18); color: var(--amber); }
+    .slide-3 .n-level-4 { background: rgba(244, 114, 182, 0.16); color: var(--rose); }
+    .slide-3 .n-level-5 { background: rgba(34, 211, 238, 0.14); color: var(--cyan); }
+    .slide-3 .n-level-6 { background: rgba(251, 146, 60, 0.12); color: var(--orange); }
+
+    .slide-3 .tag-panel {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .slide-3 .tag-panel .panel-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .slide-3 .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-content: flex-start;
+    }
+
+    .slide-3 .pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .slide-3 .slide-num {
+      position: absolute;
+      bottom: 36px;
+      right: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* ============================
+       SLIDE 4 — LIGHT DASHBOARD
+       White bg, cards, stats
+       ============================ */
+    .slide-4 {
+      background: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    .slide-4 .slide-header {
+      position: absolute;
+      top: 64px;
+      left: 88px;
+      right: 88px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .slide-4 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(79, 143, 247, 0.08);
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    .slide-4 .slide-header h2 {
+      font-weight: 800;
+      font-size: 48px;
+      letter-spacing: -0.025em;
+      color: var(--light-text);
+    }
+
+    .slide-4 .slide-header .date-badge {
+      margin-left: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--light-text-dim);
+      background: rgba(0,0,0,0.04);
+      padding: 6px 16px;
+      border-radius: 4px;
+    }
+
+    .slide-4 .header-line {
+      position: absolute;
+      top: 152px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: var(--card-border);
+    }
+
+    .slide-4 .stats-row {
+      position: absolute;
+      top: 184px;
+      left: 88px;
+      right: 88px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .slide-4 .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+      position: relative;
+    }
+
+    .slide-4 .stat-card .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--light-text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .slide-4 .stat-card .stat-value {
+      font-weight: 900;
+      font-size: 44px;
+      letter-spacing: -0.03em;
+      color: var(--light-text);
+      line-height: 1;
+    }
+
+    .slide-4 .stat-card .stat-change {
+      display: inline-block;
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    .slide-4 .stat-card .stat-change.up {
+      color: #059669;
+      background: rgba(52, 211, 153, 0.12);
+    }
+
+    .slide-4 .stat-card .stat-change.down {
+      color: #DC2626;
+      background: rgba(244, 114, 182, 0.12);
+    }
+
+    .slide-4 .stat-card .stat-bar-track {
+      margin-top: 14px;
+      height: 6px;
+      background: var(--light-bg);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .slide-4 .stat-card .stat-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+
+    .slide-4 .cards-grid {
+      position: absolute;
+      top: 420px;
+      left: 88px;
+      right: 88px;
+      bottom: 80px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .slide-4 .dash-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-4 .dash-card .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .slide-4 .dash-card .card-header .card-title {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--light-text);
+    }
+
+    .slide-4 .dash-card .card-header .card-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: rgba(79, 143, 247, 0.08);
+      color: var(--blue);
+    }
+
+    .slide-4 .dash-card .card-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .slide-4 .dash-card .card-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .slide-4 .dash-card .card-row:last-child {
+      border-bottom: none;
+    }
+
+    .slide-4 .dash-card .row-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--light-text-dim);
+    }
+
+    .slide-4 .dash-card .row-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--light-text);
+    }
+
+    .slide-4 .dash-card .mini-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .slide-4 .dash-card .mini-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slide-4 .dash-card .mini-bar-label {
+      width: 80px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--light-text-dim);
+    }
+
+    .slide-4 .dash-card .mini-bar-track {
+      flex: 1;
+      height: 8px;
+      background: var(--light-bg);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .slide-4 .dash-card .mini-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .slide-4 .dash-card .mini-bar-val {
+      width: 48px;
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--light-text-dim);
+    }
+
+    .slide-4 .slide-footer {
+      position: absolute;
+      bottom: 32px;
+      left: 88px;
+      right: 88px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .slide-4 .slide-footer span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--light-text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Image Placeholders -->
+  <div class="slide slide-1">
+    <div class="slide-header">
+      <span class="tag">Edge Case 01</span>
+      <h2>Image Placeholders</h2>
+      <span class="subtitle">Colored divs documenting the &lt;img&gt; extraction gap</span>
+    </div>
+    <div class="header-line"></div>
+
+    <div class="photo-grid">
+      <!-- Item 1: Wide landscape -->
+      <div class="photo-item wide">
+        <div class="placeholder" style="background: linear-gradient(135deg, #4F8FF7, #6C63FF);">
+          <span class="label">Photo &mdash; Hero Banner</span>
+          <span class="dimensions">800 &times; 400</span>
+        </div>
+        <div class="caption-bar">
+          <span class="cap-title">Hero banner placeholder</span>
+          <span class="cap-meta">2:1 landscape</span>
+        </div>
+      </div>
+
+      <!-- Item 2: Square -->
+      <div class="photo-item">
+        <div class="placeholder" style="background: linear-gradient(135deg, #34D399, #059669);">
+          <span class="label">Image</span>
+          <span class="dimensions">400 &times; 400</span>
+        </div>
+        <div class="caption-bar">
+          <span class="cap-title">Square thumbnail</span>
+          <span class="cap-meta">1:1</span>
+        </div>
+      </div>
+
+      <!-- Item 3: Portrait -->
+      <div class="photo-item">
+        <div class="placeholder" style="background: linear-gradient(135deg, #F472B6, #DB2777);">
+          <span class="label">Photo</span>
+          <span class="dimensions">400 &times; 400</span>
+        </div>
+        <div class="caption-bar">
+          <span class="cap-title">Profile avatar</span>
+          <span class="cap-meta">1:1 crop</span>
+        </div>
+      </div>
+
+      <!-- Item 4: Muted rectangle -->
+      <div class="photo-item">
+        <div class="placeholder" style="background: linear-gradient(135deg, #FBBF24, #D97706);">
+          <span class="label">Image</span>
+          <span class="dimensions">400 &times; 360</span>
+        </div>
+        <div class="caption-bar">
+          <span class="cap-title">Product shot</span>
+          <span class="cap-meta">10:9</span>
+        </div>
+      </div>
+
+      <!-- Item 5: Wide bottom -->
+      <div class="photo-item wide">
+        <div class="placeholder" style="background: linear-gradient(135deg, #A78BFA, #7C3AED);">
+          <span class="label">Photo &mdash; Feature Screenshot</span>
+          <span class="dimensions">800 &times; 360</span>
+        </div>
+        <div class="caption-bar">
+          <span class="cap-title">App screenshot placeholder</span>
+          <span class="cap-meta">16:9 wide</span>
+        </div>
+      </div>
+
+      <!-- Item 6: Accent -->
+      <div class="photo-item">
+        <div class="placeholder" style="background: linear-gradient(135deg, #22D3EE, #0891B2);">
+          <span class="label">Photo</span>
+          <span class="dimensions">400 &times; 360</span>
+        </div>
+        <div class="caption-bar">
+          <span class="cap-title">Team photo</span>
+          <span class="cap-meta">4:3 crop</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">Note: These colored divs simulate &lt;img&gt; tags that cannot be extracted into PPTX natively</div>
+  </div>
+
+  <!-- SLIDE 2: CSS Bar Chart -->
+  <div class="slide slide-2">
+    <div class="slide-header">
+      <span class="tag">Edge Case 02</span>
+      <h2>CSS Bar Chart</h2>
+    </div>
+    <div class="header-line"></div>
+
+    <div class="chart-area">
+      <div class="chart-title">Inference Latency by Region</div>
+      <div class="chart-subtitle">P95 response times in milliseconds &mdash; Q1 2026</div>
+
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-label">US East</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 92%; background: linear-gradient(90deg, #4F8FF7, #6C63FF);">
+              <span class="bar-value">184ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">92%</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">EU West</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 78%; background: linear-gradient(90deg, #34D399, #059669);">
+              <span class="bar-value">156ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">78%</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">APAC Tokyo</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 65%; background: linear-gradient(90deg, #A78BFA, #7C3AED);">
+              <span class="bar-value">130ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">65%</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">APAC Sydney</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 54%; background: linear-gradient(90deg, #22D3EE, #0891B2);">
+              <span class="bar-value">108ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">54%</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">LATAM Sao Paulo</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 41%; background: linear-gradient(90deg, #FBBF24, #D97706);">
+              <span class="bar-value">82ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">41%</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">ME Bahrain</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 35%; background: linear-gradient(90deg, #F472B6, #DB2777);">
+              <span class="bar-value">70ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">35%</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">AF Cape Town</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 28%; background: linear-gradient(90deg, #FB923C, #EA580C);">
+              <span class="bar-value">56ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">28%</span>
+        </div>
+
+        <div class="bar-row">
+          <span class="bar-label">IN Mumbai</span>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 48%; background: linear-gradient(90deg, #F87171, #DC2626);">
+              <span class="bar-value">96ms</span>
+            </div>
+          </div>
+          <span class="bar-pct">48%</span>
+        </div>
+      </div>
+
+      <div class="axis-label-x">Relative traffic volume &rarr;</div>
+    </div>
+
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-dot" style="background: #4F8FF7;"></div><span class="legend-text">Americas</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background: #34D399;"></div><span class="legend-text">Europe</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background: #A78BFA;"></div><span class="legend-text">Asia-Pacific</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background: #F472B6;"></div><span class="legend-text">Middle East</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background: #FB923C;"></div><span class="legend-text">Africa</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background: #F87171;"></div><span class="legend-text">South Asia</span></div>
+    </div>
+
+    <span class="slide-num">02 / 04</span>
+  </div>
+
+  <!-- SLIDE 3: Deep Nesting -->
+  <div class="slide slide-3">
+    <div class="slide-header">
+      <span class="tag">Edge Case 03</span>
+      <h2>Deep Nesting</h2>
+    </div>
+    <div class="header-line"></div>
+
+    <div class="content-split">
+      <!-- Left: Nested boxes -->
+      <div class="nest-panel">
+        <div class="panel-title">7-Level DOM Depth</div>
+        <div class="nest-box n-level-0">
+          Level 0 &mdash; Container
+          <div class="nest-box n-level-1" style="margin-top: 12px;">
+            Level 1 &mdash; Section
+            <div class="nest-box n-level-2" style="margin-top: 10px;">
+              Level 2 &mdash; Card
+              <div class="nest-box n-level-3" style="margin-top: 8px;">
+                Level 3 &mdash; Content
+                <div class="nest-box n-level-4" style="margin-top: 8px;">
+                  Level 4 &mdash; Row
+                  <div class="nest-box n-level-5" style="margin-top: 6px;">
+                    Level 5 &mdash; Cell
+                    <div class="nest-box n-level-6" style="margin-top: 6px;">
+                      Level 6 &mdash; Inline
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Tag cloud (50+ pills) -->
+      <div class="tag-panel">
+        <div class="panel-title">50+ Small Elements</div>
+        <div class="tag-cloud">
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">kubernetes</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">docker</span>
+          <span class="pill" style="background: rgba(167,139,250,0.15); color: #A78BFA;">terraform</span>
+          <span class="pill" style="background: rgba(244,114,182,0.15); color: #F472B6;">graphql</span>
+          <span class="pill" style="background: rgba(251,191,36,0.15); color: #D97706;">rust</span>
+          <span class="pill" style="background: rgba(34,211,238,0.15); color: #22D3EE;">typescript</span>
+          <span class="pill" style="background: rgba(251,146,60,0.15); color: #FB923C;">python</span>
+          <span class="pill" style="background: rgba(248,113,113,0.15); color: #F87171;">redis</span>
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">postgres</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">nginx</span>
+          <span class="pill" style="background: rgba(167,139,250,0.15); color: #A78BFA;">grpc</span>
+          <span class="pill" style="background: rgba(244,114,182,0.15); color: #F472B6;">react</span>
+          <span class="pill" style="background: rgba(251,191,36,0.15); color: #D97706;">vue</span>
+          <span class="pill" style="background: rgba(34,211,238,0.15); color: #22D3EE;">svelte</span>
+          <span class="pill" style="background: rgba(251,146,60,0.15); color: #FB923C;">next.js</span>
+          <span class="pill" style="background: rgba(248,113,113,0.15); color: #F87171;">remix</span>
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">prisma</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">drizzle</span>
+          <span class="pill" style="background: rgba(167,139,250,0.15); color: #A78BFA;">trpc</span>
+          <span class="pill" style="background: rgba(244,114,182,0.15); color: #F472B6;">zod</span>
+          <span class="pill" style="background: rgba(251,191,36,0.15); color: #D97706;">vitest</span>
+          <span class="pill" style="background: rgba(34,211,238,0.15); color: #22D3EE;">playwright</span>
+          <span class="pill" style="background: rgba(251,146,60,0.15); color: #FB923C;">cypress</span>
+          <span class="pill" style="background: rgba(248,113,113,0.15); color: #F87171;">jest</span>
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">webpack</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">vite</span>
+          <span class="pill" style="background: rgba(167,139,250,0.15); color: #A78BFA;">esbuild</span>
+          <span class="pill" style="background: rgba(244,114,182,0.15); color: #F472B6;">turbo</span>
+          <span class="pill" style="background: rgba(251,191,36,0.15); color: #D97706;">pnpm</span>
+          <span class="pill" style="background: rgba(34,211,238,0.15); color: #22D3EE;">bun</span>
+          <span class="pill" style="background: rgba(251,146,60,0.15); color: #FB923C;">deno</span>
+          <span class="pill" style="background: rgba(248,113,113,0.15); color: #F87171;">node</span>
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">aws</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">gcp</span>
+          <span class="pill" style="background: rgba(167,139,250,0.15); color: #A78BFA;">azure</span>
+          <span class="pill" style="background: rgba(244,114,182,0.15); color: #F472B6;">vercel</span>
+          <span class="pill" style="background: rgba(251,191,36,0.15); color: #D97706;">cloudflare</span>
+          <span class="pill" style="background: rgba(34,211,238,0.15); color: #22D3EE;">fastly</span>
+          <span class="pill" style="background: rgba(251,146,60,0.15); color: #FB923C;">datadog</span>
+          <span class="pill" style="background: rgba(248,113,113,0.15); color: #F87171;">grafana</span>
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">prometheus</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">loki</span>
+          <span class="pill" style="background: rgba(167,139,250,0.15); color: #A78BFA;">kafka</span>
+          <span class="pill" style="background: rgba(244,114,182,0.15); color: #F472B6;">rabbitmq</span>
+          <span class="pill" style="background: rgba(251,191,36,0.15); color: #D97706;">nats</span>
+          <span class="pill" style="background: rgba(34,211,238,0.15); color: #22D3EE;">pulsar</span>
+          <span class="pill" style="background: rgba(251,146,60,0.15); color: #FB923C;">clickhouse</span>
+          <span class="pill" style="background: rgba(248,113,113,0.15); color: #F87171;">elastic</span>
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">mongodb</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">cockroachdb</span>
+          <span class="pill" style="background: rgba(167,139,250,0.15); color: #A78BFA;">planetscale</span>
+          <span class="pill" style="background: rgba(244,114,182,0.15); color: #F472B6;">supabase</span>
+          <span class="pill" style="background: rgba(251,191,36,0.15); color: #D97706;">neon</span>
+          <span class="pill" style="background: rgba(34,211,238,0.15); color: #22D3EE;">turso</span>
+          <span class="pill" style="background: rgba(251,146,60,0.15); color: #FB923C;">wasm</span>
+          <span class="pill" style="background: rgba(248,113,113,0.15); color: #F87171;">zig</span>
+          <span class="pill" style="background: rgba(79,143,247,0.15); color: #4F8FF7;">go</span>
+          <span class="pill" style="background: rgba(52,211,153,0.15); color: #34D399;">elixir</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="slide-num">03 / 04</span>
+  </div>
+
+  <!-- SLIDE 4: Light Theme Dashboard -->
+  <div class="slide slide-4">
+    <div class="slide-header">
+      <span class="tag">Edge Case 04</span>
+      <h2>Light Theme Dashboard</h2>
+      <span class="date-badge">Mar 2026</span>
+    </div>
+    <div class="header-line"></div>
+
+    <!-- Top stats row -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Total Revenue</div>
+        <div class="stat-value">$2.4M</div>
+        <span class="stat-change up">+18.2%</span>
+        <div class="stat-bar-track"><div class="stat-bar-fill" style="width: 82%; background: #4F8FF7;"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Active Users</div>
+        <div class="stat-value">48.2K</div>
+        <span class="stat-change up">+7.4%</span>
+        <div class="stat-bar-track"><div class="stat-bar-fill" style="width: 68%; background: #34D399;"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Churn Rate</div>
+        <div class="stat-value">1.8%</div>
+        <span class="stat-change down">+0.3%</span>
+        <div class="stat-bar-track"><div class="stat-bar-fill" style="width: 18%; background: #F472B6;"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Avg. ARPU</div>
+        <div class="stat-value">$49</div>
+        <span class="stat-change up">+4.1%</span>
+        <div class="stat-bar-track"><div class="stat-bar-fill" style="width: 55%; background: #A78BFA;"></div></div>
+      </div>
+    </div>
+
+    <!-- Bottom cards grid -->
+    <div class="cards-grid">
+      <!-- Card 1: Revenue by Plan -->
+      <div class="dash-card">
+        <div class="card-header">
+          <span class="card-title">Revenue by Plan</span>
+          <span class="card-badge">Monthly</span>
+        </div>
+        <div class="card-rows">
+          <div class="card-row">
+            <span class="row-label">Enterprise</span>
+            <span class="row-value">$1.24M</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">Professional</span>
+            <span class="row-value">$680K</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">Starter</span>
+            <span class="row-value">$340K</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">Free Trial</span>
+            <span class="row-value">$0</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">Add-ons</span>
+            <span class="row-value">$140K</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Traffic Sources -->
+      <div class="dash-card">
+        <div class="card-header">
+          <span class="card-title">Traffic Sources</span>
+          <span class="card-badge">Last 30d</span>
+        </div>
+        <div class="mini-bars">
+          <div class="mini-bar-row">
+            <span class="mini-bar-label">Organic</span>
+            <div class="mini-bar-track"><div class="mini-bar-fill" style="width: 72%; background: #4F8FF7;"></div></div>
+            <span class="mini-bar-val">72%</span>
+          </div>
+          <div class="mini-bar-row">
+            <span class="mini-bar-label">Direct</span>
+            <div class="mini-bar-track"><div class="mini-bar-fill" style="width: 48%; background: #34D399;"></div></div>
+            <span class="mini-bar-val">14%</span>
+          </div>
+          <div class="mini-bar-row">
+            <span class="mini-bar-label">Referral</span>
+            <div class="mini-bar-track"><div class="mini-bar-fill" style="width: 32%; background: #A78BFA;"></div></div>
+            <span class="mini-bar-val">8%</span>
+          </div>
+          <div class="mini-bar-row">
+            <span class="mini-bar-label">Paid</span>
+            <div class="mini-bar-track"><div class="mini-bar-fill" style="width: 20%; background: #FBBF24;"></div></div>
+            <span class="mini-bar-val">4%</span>
+          </div>
+          <div class="mini-bar-row">
+            <span class="mini-bar-label">Social</span>
+            <div class="mini-bar-track"><div class="mini-bar-fill" style="width: 12%; background: #F472B6;"></div></div>
+            <span class="mini-bar-val">2%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: System Health -->
+      <div class="dash-card">
+        <div class="card-header">
+          <span class="card-title">System Health</span>
+          <span class="card-badge">Live</span>
+        </div>
+        <div class="card-rows">
+          <div class="card-row">
+            <span class="row-label">API Uptime</span>
+            <span class="row-value" style="color: #059669;">99.98%</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">P99 Latency</span>
+            <span class="row-value">142ms</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">Error Rate</span>
+            <span class="row-value" style="color: #059669;">0.02%</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">Throughput</span>
+            <span class="row-value">3.1K rps</span>
+          </div>
+          <div class="card-row">
+            <span class="row-label">Active Pods</span>
+            <span class="row-value">24 / 32</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>Edge Cases Stress Test &mdash; HTML to PPTX Pipeline</span>
+      <span>04 / 04</span>
+    </div>
+  </div>
+
+</body>
+</html>

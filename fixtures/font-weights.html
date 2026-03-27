@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Font Weight Test</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; }
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      background: #ffffff;
+      color: #111;
+    }
+
+    .title {
+      position: absolute;
+      top: 40px;
+      left: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+    }
+
+    /* Inter weight tests */
+    .inter-section {
+      position: absolute;
+      top: 120px;
+      left: 100px;
+    }
+    .inter-section .heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 16px;
+    }
+    .inter-300 { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 32px; margin-bottom: 8px; }
+    .inter-400 { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 32px; margin-bottom: 8px; }
+    .inter-500 { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 32px; margin-bottom: 8px; }
+    .inter-600 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 32px; margin-bottom: 8px; }
+    .inter-700 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 32px; margin-bottom: 8px; }
+    .inter-800 { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 32px; margin-bottom: 8px; }
+
+    /* Playfair Display weight tests (serif) */
+    .playfair-section {
+      position: absolute;
+      top: 120px;
+      left: 800px;
+    }
+    .playfair-section .heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 16px;
+    }
+    .playfair-400 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 32px; margin-bottom: 8px; }
+    .playfair-500 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 32px; margin-bottom: 8px; }
+    .playfair-600 { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 32px; margin-bottom: 8px; }
+    .playfair-700 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 32px; margin-bottom: 8px; }
+    .playfair-800 { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 32px; margin-bottom: 8px; }
+    .playfair-900 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 32px; margin-bottom: 8px; }
+
+    /* Mixed weights in one line */
+    .mixed-section {
+      position: absolute;
+      top: 600px;
+      left: 100px;
+    }
+    .mixed-section .heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 16px;
+    }
+    .mixed-line {
+      font-family: 'Inter', sans-serif;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="title">Font Weight Comparison — Google Fonts Only</div>
+
+    <div class="inter-section">
+      <div class="heading">Inter (sans-serif)</div>
+      <div class="inter-300">Inter 300 Light — The quick brown fox</div>
+      <div class="inter-400">Inter 400 Regular — The quick brown fox</div>
+      <div class="inter-500">Inter 500 Medium — The quick brown fox</div>
+      <div class="inter-600">Inter 600 SemiBold — The quick brown fox</div>
+      <div class="inter-700">Inter 700 Bold — The quick brown fox</div>
+      <div class="inter-800">Inter 800 ExtraBold — The quick brown fox</div>
+    </div>
+
+    <div class="playfair-section">
+      <div class="heading">Playfair Display (serif)</div>
+      <div class="playfair-400">Playfair 400 Regular — The quick brown fox</div>
+      <div class="playfair-500">Playfair 500 Medium — The quick brown fox</div>
+      <div class="playfair-600">Playfair 600 SemiBold — The quick brown fox</div>
+      <div class="playfair-700">Playfair 700 Bold — The quick brown fox</div>
+      <div class="playfair-800">Playfair 800 ExtraBold — The quick brown fox</div>
+      <div class="playfair-900">Playfair 900 Black — The quick brown fox</div>
+    </div>
+
+    <div class="mixed-section">
+      <div class="heading">Mixed weights in context</div>
+      <div class="mixed-line">
+        <span style="font-weight: 300">Light intro,</span>
+        <span style="font-weight: 400"> regular body,</span>
+        <span style="font-weight: 600"> semibold emphasis,</span>
+        <span style="font-weight: 800"> extrabold headline.</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

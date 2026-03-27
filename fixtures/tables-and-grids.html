@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Analytics — Tables & Grids Stress Test</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deep: #0B0E1A;
+      --bg-card: #111528;
+      --bg-elevated: #171C34;
+      --bg-row-alt: #131730;
+      --border: rgba(99, 102, 241, 0.15);
+      --border-strong: rgba(99, 102, 241, 0.3);
+      --text-primary: #E8EAF6;
+      --text-secondary: rgba(232, 234, 246, 0.55);
+      --text-dim: rgba(232, 234, 246, 0.35);
+      --indigo: #6366F1;
+      --indigo-dim: rgba(99, 102, 241, 0.12);
+      --cyan: #22D3EE;
+      --cyan-dim: rgba(34, 211, 238, 0.10);
+      --emerald: #34D399;
+      --emerald-dim: rgba(52, 211, 153, 0.10);
+      --amber: #FBBF24;
+      --amber-dim: rgba(251, 191, 36, 0.10);
+      --rose: #FB7185;
+      --rose-dim: rgba(251, 113, 133, 0.10);
+    }
+
+    body {
+      background: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ============================
+       SHARED ELEMENTS
+       ============================ */
+    .slide-header {
+      position: absolute;
+      top: 56px;
+      left: 80px;
+      right: 80px;
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--indigo);
+      background: var(--indigo-dim);
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    .slide-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .slide-footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 52px;
+      background: var(--bg-card);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 80px;
+      border-top: 1px solid var(--border);
+    }
+
+    .slide-footer span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-dim);
+      letter-spacing: 0.03em;
+    }
+
+    .header-rule {
+      position: absolute;
+      top: 130px;
+      left: 80px;
+      right: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--indigo) 0%, transparent 100%);
+      opacity: 0.4;
+    }
+
+    /* ============================
+       SLIDE 1 — DATA OVERVIEW
+       Standard HTML table
+       ============================ */
+    .slide-1 {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+    }
+
+    .slide-1 .table-container {
+      position: absolute;
+      top: 158px;
+      left: 80px;
+      right: 80px;
+      bottom: 72px;
+    }
+
+    .slide-1 table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 20px;
+    }
+
+    .slide-1 thead th {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--bg-elevated);
+      padding: 22px 28px;
+      text-align: left;
+      border-bottom: 2px solid var(--indigo);
+      white-space: nowrap;
+    }
+
+    .slide-1 thead th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .slide-1 thead th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .slide-1 tbody td {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 400;
+      color: var(--text-primary);
+      font-size: 19px;
+    }
+
+    .slide-1 tbody tr:nth-child(even) {
+      background: var(--bg-row-alt);
+    }
+
+    .slide-1 tbody tr:nth-child(odd) {
+      background: var(--bg-deep);
+    }
+
+    .slide-1 .status-badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .slide-1 .status-active {
+      background: var(--emerald-dim);
+      color: var(--emerald);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+    }
+
+    .slide-1 .status-warning {
+      background: var(--amber-dim);
+      color: var(--amber);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+    }
+
+    .slide-1 .status-critical {
+      background: var(--rose-dim);
+      color: var(--rose);
+      border: 1px solid rgba(251, 113, 133, 0.25);
+    }
+
+    .slide-1 .mono {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 17px;
+      color: var(--cyan);
+    }
+
+    .slide-1 .num-right {
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+    }
+
+    /* ============================
+       SLIDE 2 — COMPLEX TABLE
+       Merged cells, varied styles
+       ============================ */
+    .slide-2 {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+    }
+
+    .slide-2 .table-container {
+      position: absolute;
+      top: 158px;
+      left: 80px;
+      right: 80px;
+      bottom: 72px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .slide-2 table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 19px;
+    }
+
+    .slide-2 th,
+    .slide-2 td {
+      padding: 20px 24px;
+      border: 1px solid var(--border-strong);
+    }
+
+    .slide-2 .group-header {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      background: var(--indigo);
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    .slide-2 .sub-header {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: var(--bg-elevated);
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .slide-2 .region-cell {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      text-align: center;
+      vertical-align: middle;
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
+      letter-spacing: 0.06em;
+      width: 60px;
+    }
+
+    .slide-2 .cell-highlight-cyan {
+      background: var(--cyan-dim);
+      color: var(--cyan);
+      font-weight: 600;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .slide-2 .cell-highlight-emerald {
+      background: var(--emerald-dim);
+      color: var(--emerald);
+      font-weight: 600;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .slide-2 .cell-highlight-amber {
+      background: var(--amber-dim);
+      color: var(--amber);
+      font-weight: 600;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .slide-2 .cell-highlight-rose {
+      background: var(--rose-dim);
+      color: var(--rose);
+      font-weight: 600;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .slide-2 .cell-default {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+    }
+
+    .slide-2 .cell-right {
+      text-align: right;
+    }
+
+    .slide-2 .cell-left {
+      text-align: left;
+    }
+
+    .slide-2 .total-row {
+      font-weight: 700;
+      background: var(--bg-elevated);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+    }
+
+    .slide-2 .total-row td {
+      border-top: 2px solid var(--indigo);
+    }
+
+    /* ============================
+       SLIDE 3 — GRID LAYOUT
+       CSS Grid + Flexbox
+       ============================ */
+    .slide-3 {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+    }
+
+    .slide-3 .grid-section {
+      position: absolute;
+      top: 150px;
+      left: 80px;
+      right: 80px;
+      height: 440px;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 24px;
+    }
+
+    .slide-3 .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .slide-3 .stat-card .card-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .slide-3 .stat-card .card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+    }
+
+    .slide-3 .stat-card .card-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 52px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .slide-3 .stat-card .card-delta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+
+    .slide-3 .stat-card .card-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .slide-3 .stat-card.accent-indigo {
+      border-color: rgba(99, 102, 241, 0.35);
+      background: linear-gradient(160deg, var(--indigo-dim) 0%, var(--bg-card) 60%);
+    }
+
+    .slide-3 .stat-card.accent-cyan {
+      border-color: rgba(34, 211, 238, 0.35);
+      background: linear-gradient(160deg, var(--cyan-dim) 0%, var(--bg-card) 60%);
+    }
+
+    .slide-3 .stat-card.accent-emerald {
+      border-color: rgba(52, 211, 153, 0.35);
+      background: linear-gradient(160deg, var(--emerald-dim) 0%, var(--bg-card) 60%);
+    }
+
+    .slide-3 .stat-card.accent-rose {
+      border-color: rgba(251, 113, 133, 0.35);
+      background: linear-gradient(160deg, var(--rose-dim) 0%, var(--bg-card) 60%);
+    }
+
+    .slide-3 .stat-card.accent-amber {
+      border-color: rgba(251, 191, 36, 0.35);
+      background: linear-gradient(160deg, var(--amber-dim) 0%, var(--bg-card) 60%);
+    }
+
+    .slide-3 .center-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      padding: 0;
+      background: none;
+      border: none;
+      border-radius: 0;
+    }
+
+    .slide-3 .center-card .mini-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .slide-3 .center-card .mini-card .card-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .slide-3 .center-card .mini-card .card-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+
+    .slide-3 .center-card .mini-card .card-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .slide-3 .center-card .mini-card .card-delta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: 6px;
+    }
+
+    .slide-3 .flex-section-label {
+      position: absolute;
+      top: 610px;
+      left: 80px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .slide-3 .flex-section {
+      position: absolute;
+      top: 644px;
+      left: 80px;
+      right: 80px;
+      height: 360px;
+      display: flex;
+      gap: 24px;
+    }
+
+    .slide-3 .flex-col {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-3 .flex-col .col-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .slide-3 .flex-col .col-subtitle {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+
+    .slide-3 .flex-col .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .slide-3 .flex-col .bar-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--text-secondary);
+      width: 80px;
+      flex-shrink: 0;
+    }
+
+    .slide-3 .flex-col .bar-track {
+      flex: 1;
+      height: 22px;
+      background: var(--bg-elevated);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .slide-3 .flex-col .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .slide-3 .flex-col .bar-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      width: 52px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* ============================
+       SLIDE 4 — DENSE DATA
+       Financial analytics table
+       ============================ */
+    .slide-4 {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+    }
+
+    .slide-4 .table-container {
+      position: absolute;
+      top: 150px;
+      left: 80px;
+      right: 80px;
+      bottom: 72px;
+      overflow: hidden;
+    }
+
+    .slide-4 table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .slide-4 thead th {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      background: var(--bg-elevated);
+      padding: 12px 14px;
+      text-align: right;
+      border-bottom: 2px solid var(--indigo);
+      white-space: nowrap;
+      position: sticky;
+      top: 0;
+    }
+
+    .slide-4 thead th:first-child {
+      text-align: left;
+      border-radius: 6px 0 0 0;
+    }
+
+    .slide-4 thead th:last-child {
+      border-radius: 0 6px 0 0;
+    }
+
+    .slide-4 tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.08);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-primary);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .slide-4 tbody td:first-child {
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .slide-4 tbody tr:nth-child(even) {
+      background: var(--bg-row-alt);
+    }
+
+    .slide-4 tbody tr:nth-child(odd) {
+      background: var(--bg-deep);
+    }
+
+    .slide-4 .positive {
+      color: var(--emerald);
+    }
+
+    .slide-4 .negative {
+      color: var(--rose);
+    }
+
+    .slide-4 .neutral {
+      color: var(--amber);
+    }
+
+    .slide-4 .ticker {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: var(--cyan);
+      font-size: 13px;
+    }
+
+    .slide-4 .summary-row td {
+      border-top: 2px solid var(--indigo);
+      border-bottom: none;
+      background: var(--bg-elevated);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    .slide-4 .summary-row td:first-child {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Data Overview — Standard HTML Table -->
+  <div class="slide slide-1">
+    <div class="slide-header">
+      <span class="tag">Data Overview</span>
+      <h2>Infrastructure Health Monitor</h2>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Endpoint</th>
+            <th>Region</th>
+            <th>Uptime</th>
+            <th>Avg Latency</th>
+            <th>Req / min</th>
+            <th>Error Rate</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600;">Auth Gateway</td>
+            <td class="mono">/api/v2/auth</td>
+            <td>US-East-1</td>
+            <td class="num-right">99.998%</td>
+            <td class="num-right">4.2 ms</td>
+            <td class="num-right">84,210</td>
+            <td class="num-right">0.002%</td>
+            <td><span class="status-badge status-active">Healthy</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">Inference Core</td>
+            <td class="mono">/ml/predict</td>
+            <td>EU-West-1</td>
+            <td class="num-right">99.971%</td>
+            <td class="num-right">9.8 ms</td>
+            <td class="num-right">42,880</td>
+            <td class="num-right">0.029%</td>
+            <td><span class="status-badge status-active">Healthy</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">Data Pipeline</td>
+            <td class="mono">/stream/ingest</td>
+            <td>AP-South-1</td>
+            <td class="num-right">99.944%</td>
+            <td class="num-right">18.3 ms</td>
+            <td class="num-right">127,500</td>
+            <td class="num-right">0.056%</td>
+            <td><span class="status-badge status-warning">Degraded</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">Cache Layer</td>
+            <td class="mono">/cache/query</td>
+            <td>US-West-2</td>
+            <td class="num-right">99.999%</td>
+            <td class="num-right">0.8 ms</td>
+            <td class="num-right">312,000</td>
+            <td class="num-right">0.001%</td>
+            <td><span class="status-badge status-active">Healthy</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">Search Index</td>
+            <td class="mono">/search/v3</td>
+            <td>EU-Central-1</td>
+            <td class="num-right">99.812%</td>
+            <td class="num-right">34.7 ms</td>
+            <td class="num-right">18,420</td>
+            <td class="num-right">0.188%</td>
+            <td><span class="status-badge status-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">Edge CDN</td>
+            <td class="mono">/cdn/assets</td>
+            <td>Global</td>
+            <td class="num-right">99.997%</td>
+            <td class="num-right">1.1 ms</td>
+            <td class="num-right">2,840,000</td>
+            <td class="num-right">0.003%</td>
+            <td><span class="status-badge status-active">Healthy</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">Billing Service</td>
+            <td class="mono">/billing/calc</td>
+            <td>US-East-1</td>
+            <td class="num-right">99.990%</td>
+            <td class="num-right">22.6 ms</td>
+            <td class="num-right">6,320</td>
+            <td class="num-right">0.010%</td>
+            <td><span class="status-badge status-active">Healthy</span></td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;">Webhook Relay</td>
+            <td class="mono">/hooks/dispatch</td>
+            <td>US-West-2</td>
+            <td class="num-right">99.923%</td>
+            <td class="num-right">48.1 ms</td>
+            <td class="num-right">9,870</td>
+            <td class="num-right">0.077%</td>
+            <td><span class="status-badge status-warning">Degraded</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="slide-footer">
+      <span>Nexus Analytics</span>
+      <span>Last updated: 2026-03-16 09:42 UTC</span>
+      <span>1 / 4</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Complex Table — Merged cells, varied backgrounds -->
+  <div class="slide slide-2">
+    <div class="slide-header">
+      <span class="tag">Complex Table</span>
+      <h2>Quarterly Revenue by Region & Segment</h2>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th class="group-header" rowspan="2" style="width:60px;">Region</th>
+            <th class="group-header" rowspan="2" style="min-width:160px;">Segment</th>
+            <th class="group-header" colspan="4">2025 Revenue ($M)</th>
+            <th class="group-header" colspan="2">YoY Growth</th>
+          </tr>
+          <tr>
+            <th class="sub-header">Q1</th>
+            <th class="sub-header">Q2</th>
+            <th class="sub-header">Q3</th>
+            <th class="sub-header">Q4</th>
+            <th class="sub-header">H1</th>
+            <th class="sub-header">H2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="region-cell" rowspan="3">AMER</td>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">Enterprise</td>
+            <td class="cell-highlight-cyan">48.2</td>
+            <td class="cell-highlight-cyan">52.7</td>
+            <td class="cell-highlight-emerald">61.3</td>
+            <td class="cell-highlight-emerald">68.9</td>
+            <td class="cell-highlight-emerald">+14.2%</td>
+            <td class="cell-highlight-emerald">+18.6%</td>
+          </tr>
+          <tr>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">Mid-Market</td>
+            <td class="cell-default">22.1</td>
+            <td class="cell-default">24.8</td>
+            <td class="cell-default">26.4</td>
+            <td class="cell-highlight-cyan">31.2</td>
+            <td class="cell-highlight-amber">+8.1%</td>
+            <td class="cell-highlight-emerald">+12.3%</td>
+          </tr>
+          <tr>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">SMB</td>
+            <td class="cell-default">8.4</td>
+            <td class="cell-default">7.9</td>
+            <td class="cell-highlight-rose">6.2</td>
+            <td class="cell-highlight-rose">5.8</td>
+            <td class="cell-highlight-rose">-3.8%</td>
+            <td class="cell-highlight-rose">-11.4%</td>
+          </tr>
+          <tr>
+            <td class="region-cell" rowspan="3">EMEA</td>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">Enterprise</td>
+            <td class="cell-default">31.6</td>
+            <td class="cell-highlight-cyan">35.4</td>
+            <td class="cell-highlight-cyan">38.8</td>
+            <td class="cell-highlight-emerald">44.1</td>
+            <td class="cell-highlight-emerald">+11.9%</td>
+            <td class="cell-highlight-emerald">+15.7%</td>
+          </tr>
+          <tr>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">Mid-Market</td>
+            <td class="cell-default">14.3</td>
+            <td class="cell-default">15.1</td>
+            <td class="cell-default">16.7</td>
+            <td class="cell-default">17.9</td>
+            <td class="cell-highlight-amber">+5.6%</td>
+            <td class="cell-highlight-amber">+7.2%</td>
+          </tr>
+          <tr>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">SMB</td>
+            <td class="cell-default">5.2</td>
+            <td class="cell-default">5.5</td>
+            <td class="cell-default">5.8</td>
+            <td class="cell-default">6.1</td>
+            <td class="cell-highlight-amber">+4.2%</td>
+            <td class="cell-highlight-amber">+5.8%</td>
+          </tr>
+          <tr>
+            <td class="region-cell" rowspan="2">APAC</td>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">Enterprise</td>
+            <td class="cell-highlight-emerald">19.8</td>
+            <td class="cell-highlight-emerald">24.3</td>
+            <td class="cell-highlight-emerald">29.1</td>
+            <td class="cell-highlight-emerald">36.7</td>
+            <td class="cell-highlight-emerald">+28.4%</td>
+            <td class="cell-highlight-emerald">+34.1%</td>
+          </tr>
+          <tr>
+            <td class="cell-default cell-left" style="font-family:'Inter',sans-serif;font-weight:500;">Mid-Market</td>
+            <td class="cell-default">7.9</td>
+            <td class="cell-default">9.2</td>
+            <td class="cell-highlight-cyan">11.4</td>
+            <td class="cell-highlight-cyan">13.8</td>
+            <td class="cell-highlight-emerald">+22.1%</td>
+            <td class="cell-highlight-emerald">+26.9%</td>
+          </tr>
+          <tr class="total-row">
+            <td colspan="2" style="text-align:center;background:var(--bg-elevated);">TOTAL</td>
+            <td style="text-align:center;background:var(--bg-elevated);">157.5</td>
+            <td style="text-align:center;background:var(--bg-elevated);">174.9</td>
+            <td style="text-align:center;background:var(--bg-elevated);">195.7</td>
+            <td style="text-align:center;background:var(--bg-elevated);">224.5</td>
+            <td class="cell-highlight-emerald" style="font-weight:700;">+12.8%</td>
+            <td class="cell-highlight-emerald" style="font-weight:700;">+17.4%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="slide-footer">
+      <span>Nexus Analytics</span>
+      <span>Fiscal Year 2025 — Unaudited</span>
+      <span>2 / 4</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Grid Layout — CSS Grid + Flexbox -->
+  <div class="slide slide-3">
+    <div class="slide-header">
+      <span class="tag">Grid Layout</span>
+      <h2>Platform Performance Dashboard</h2>
+    </div>
+    <div class="header-rule"></div>
+
+    <!-- CSS Grid: 1fr 2fr 1fr asymmetric -->
+    <div class="grid-section">
+      <!-- Left column (1fr) -->
+      <div class="stat-card accent-indigo">
+        <div>
+          <div class="card-icon">&#9889;</div>
+          <div class="card-label">Throughput</div>
+          <div class="card-value" style="color:var(--indigo);">3.1M</div>
+          <div class="card-delta" style="color:var(--emerald);">&#9650; 24.8% vs last month</div>
+        </div>
+        <div class="card-desc">Peak sustained requests per second across all edge nodes globally.</div>
+      </div>
+
+      <!-- Center column (2fr) — 2x2 mini-card grid -->
+      <div class="stat-card center-card">
+        <div class="mini-card" style="border-color:rgba(34,211,238,0.3);background:linear-gradient(160deg,var(--cyan-dim) 0%,var(--bg-card) 60%);">
+          <div class="card-icon">&#128640;</div>
+          <div class="card-label">P50 Latency</div>
+          <div class="card-value" style="color:var(--cyan);">2.4ms</div>
+          <div class="card-delta" style="color:var(--emerald);">&#9650; 31% faster</div>
+        </div>
+        <div class="mini-card" style="border-color:rgba(52,211,153,0.3);background:linear-gradient(160deg,var(--emerald-dim) 0%,var(--bg-card) 60%);">
+          <div class="card-icon">&#9989;</div>
+          <div class="card-label">Success Rate</div>
+          <div class="card-value" style="color:var(--emerald);">99.97%</div>
+          <div class="card-delta" style="color:var(--emerald);">&#9650; 0.12pp</div>
+        </div>
+        <div class="mini-card" style="border-color:rgba(251,191,36,0.3);background:linear-gradient(160deg,var(--amber-dim) 0%,var(--bg-card) 60%);">
+          <div class="card-icon">&#128202;</div>
+          <div class="card-label">Active Models</div>
+          <div class="card-value" style="color:var(--amber);">847</div>
+          <div class="card-delta" style="color:var(--emerald);">&#9650; 142 new</div>
+        </div>
+        <div class="mini-card" style="border-color:rgba(251,113,133,0.3);background:linear-gradient(160deg,var(--rose-dim) 0%,var(--bg-card) 60%);">
+          <div class="card-icon">&#128276;</div>
+          <div class="card-label">Alerts (24h)</div>
+          <div class="card-value" style="color:var(--rose);">12</div>
+          <div class="card-delta" style="color:var(--rose);">&#9650; 3 vs yesterday</div>
+        </div>
+      </div>
+
+      <!-- Right column (1fr) -->
+      <div class="stat-card accent-emerald">
+        <div>
+          <div class="card-icon">&#127760;</div>
+          <div class="card-label">Edge Nodes</div>
+          <div class="card-value" style="color:var(--emerald);">142</div>
+          <div class="card-delta" style="color:var(--cyan);">6 continents, 42 countries</div>
+        </div>
+        <div class="card-desc">Fully meshed topology with automatic failover and geographic load balancing.</div>
+      </div>
+    </div>
+
+    <!-- Flexbox multi-column section -->
+    <div class="flex-section-label">Model Performance by Type</div>
+    <div class="flex-section">
+      <div class="flex-col">
+        <div class="col-title">Vision Models</div>
+        <div class="col-subtitle">Image classification & detection</div>
+        <div class="bar-row">
+          <span class="bar-label">ResNet</span>
+          <div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--indigo);"></div></div>
+          <span class="bar-value" style="color:var(--indigo);">92%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">YOLO v9</span>
+          <div class="bar-track"><div class="bar-fill" style="width:87%;background:var(--cyan);"></div></div>
+          <span class="bar-value" style="color:var(--cyan);">87%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">ViT-L</span>
+          <div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--emerald);"></div></div>
+          <span class="bar-value" style="color:var(--emerald);">78%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">CLIP</span>
+          <div class="bar-track"><div class="bar-fill" style="width:71%;background:var(--amber);"></div></div>
+          <span class="bar-value" style="color:var(--amber);">71%</span>
+        </div>
+      </div>
+      <div class="flex-col">
+        <div class="col-title">Language Models</div>
+        <div class="col-subtitle">Text generation & embeddings</div>
+        <div class="bar-row">
+          <span class="bar-label">GPT-4o</span>
+          <div class="bar-track"><div class="bar-fill" style="width:96%;background:var(--indigo);"></div></div>
+          <span class="bar-value" style="color:var(--indigo);">96%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Claude</span>
+          <div class="bar-track"><div class="bar-fill" style="width:94%;background:var(--cyan);"></div></div>
+          <span class="bar-value" style="color:var(--cyan);">94%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Llama 3</span>
+          <div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--emerald);"></div></div>
+          <span class="bar-value" style="color:var(--emerald);">82%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Mistral</span>
+          <div class="bar-track"><div class="bar-fill" style="width:79%;background:var(--amber);"></div></div>
+          <span class="bar-value" style="color:var(--amber);">79%</span>
+        </div>
+      </div>
+      <div class="flex-col">
+        <div class="col-title">Audio Models</div>
+        <div class="col-subtitle">Speech recognition & synthesis</div>
+        <div class="bar-row">
+          <span class="bar-label">Whisper</span>
+          <div class="bar-track"><div class="bar-fill" style="width:91%;background:var(--indigo);"></div></div>
+          <span class="bar-value" style="color:var(--indigo);">91%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Bark</span>
+          <div class="bar-track"><div class="bar-fill" style="width:74%;background:var(--cyan);"></div></div>
+          <span class="bar-value" style="color:var(--cyan);">74%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Tortoise</span>
+          <div class="bar-track"><div class="bar-fill" style="width:68%;background:var(--emerald);"></div></div>
+          <span class="bar-value" style="color:var(--emerald);">68%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">XTTS</span>
+          <div class="bar-track"><div class="bar-fill" style="width:63%;background:var(--amber);"></div></div>
+          <span class="bar-value" style="color:var(--amber);">63%</span>
+        </div>
+      </div>
+      <div class="flex-col">
+        <div class="col-title">Multimodal</div>
+        <div class="col-subtitle">Cross-domain reasoning</div>
+        <div class="bar-row">
+          <span class="bar-label">GPT-4V</span>
+          <div class="bar-track"><div class="bar-fill" style="width:89%;background:var(--indigo);"></div></div>
+          <span class="bar-value" style="color:var(--indigo);">89%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Gemini</span>
+          <div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--cyan);"></div></div>
+          <span class="bar-value" style="color:var(--cyan);">85%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">LLaVA</span>
+          <div class="bar-track"><div class="bar-fill" style="width:72%;background:var(--emerald);"></div></div>
+          <span class="bar-value" style="color:var(--emerald);">72%</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Fuyu</span>
+          <div class="bar-track"><div class="bar-fill" style="width:58%;background:var(--amber);"></div></div>
+          <span class="bar-value" style="color:var(--amber);">58%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-footer">
+      <span>Nexus Analytics</span>
+      <span>Real-time dashboard — auto-refresh 30s</span>
+      <span>3 / 4</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Dense Data — Financial/Analytics Table -->
+  <div class="slide slide-4">
+    <div class="slide-header">
+      <span class="tag">Dense Data</span>
+      <h2>Portfolio Performance — March 2026</h2>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align:left;">Asset</th>
+            <th>Ticker</th>
+            <th>Allocation</th>
+            <th>Mkt Value ($M)</th>
+            <th>Cost Basis ($M)</th>
+            <th>Unrlzd P&L</th>
+            <th>1D Chg</th>
+            <th>7D Chg</th>
+            <th>30D Chg</th>
+            <th>YTD Chg</th>
+            <th>Sharpe</th>
+            <th>Beta</th>
+            <th>Vol (30D)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>NVIDIA Corporation</td>
+            <td class="ticker">NVDA</td>
+            <td>18.4%</td>
+            <td>247.2</td>
+            <td>128.6</td>
+            <td class="positive">+92.2%</td>
+            <td class="positive">+2.34%</td>
+            <td class="positive">+6.81%</td>
+            <td class="positive">+14.2%</td>
+            <td class="positive">+38.7%</td>
+            <td>2.41</td>
+            <td>1.82</td>
+            <td>42.1%</td>
+          </tr>
+          <tr>
+            <td>Microsoft Corp</td>
+            <td class="ticker">MSFT</td>
+            <td>14.2%</td>
+            <td>190.8</td>
+            <td>142.1</td>
+            <td class="positive">+34.3%</td>
+            <td class="positive">+0.87%</td>
+            <td class="positive">+2.14%</td>
+            <td class="positive">+5.6%</td>
+            <td class="positive">+12.4%</td>
+            <td>1.89</td>
+            <td>1.12</td>
+            <td>24.3%</td>
+          </tr>
+          <tr>
+            <td>Apple Inc</td>
+            <td class="ticker">AAPL</td>
+            <td>12.1%</td>
+            <td>162.4</td>
+            <td>134.8</td>
+            <td class="positive">+20.5%</td>
+            <td class="negative">-0.42%</td>
+            <td class="positive">+1.23%</td>
+            <td class="positive">+3.8%</td>
+            <td class="positive">+8.9%</td>
+            <td>1.54</td>
+            <td>1.04</td>
+            <td>21.8%</td>
+          </tr>
+          <tr>
+            <td>Alphabet Inc</td>
+            <td class="ticker">GOOGL</td>
+            <td>9.8%</td>
+            <td>131.7</td>
+            <td>98.4</td>
+            <td class="positive">+33.8%</td>
+            <td class="positive">+1.56%</td>
+            <td class="positive">+3.92%</td>
+            <td class="positive">+8.1%</td>
+            <td class="positive">+18.2%</td>
+            <td>1.72</td>
+            <td>1.18</td>
+            <td>28.7%</td>
+          </tr>
+          <tr>
+            <td>Amazon.com Inc</td>
+            <td class="ticker">AMZN</td>
+            <td>8.6%</td>
+            <td>115.5</td>
+            <td>89.2</td>
+            <td class="positive">+29.5%</td>
+            <td class="positive">+0.93%</td>
+            <td class="negative">-1.08%</td>
+            <td class="positive">+4.2%</td>
+            <td class="positive">+15.6%</td>
+            <td>1.61</td>
+            <td>1.24</td>
+            <td>31.4%</td>
+          </tr>
+          <tr>
+            <td>Meta Platforms</td>
+            <td class="ticker">META</td>
+            <td>7.4%</td>
+            <td>99.3</td>
+            <td>72.8</td>
+            <td class="positive">+36.4%</td>
+            <td class="negative">-1.21%</td>
+            <td class="positive">+2.67%</td>
+            <td class="positive">+9.3%</td>
+            <td class="positive">+22.8%</td>
+            <td>1.83</td>
+            <td>1.38</td>
+            <td>35.2%</td>
+          </tr>
+          <tr>
+            <td>Tesla Inc</td>
+            <td class="ticker">TSLA</td>
+            <td>5.2%</td>
+            <td>69.8</td>
+            <td>84.3</td>
+            <td class="negative">-17.2%</td>
+            <td class="negative">-3.14%</td>
+            <td class="negative">-7.82%</td>
+            <td class="negative">-12.4%</td>
+            <td class="negative">-21.8%</td>
+            <td>0.42</td>
+            <td>1.94</td>
+            <td>58.6%</td>
+          </tr>
+          <tr>
+            <td>Broadcom Inc</td>
+            <td class="ticker">AVGO</td>
+            <td>4.8%</td>
+            <td>64.5</td>
+            <td>41.2</td>
+            <td class="positive">+56.6%</td>
+            <td class="positive">+1.78%</td>
+            <td class="positive">+4.51%</td>
+            <td class="positive">+11.8%</td>
+            <td class="positive">+28.4%</td>
+            <td>2.12</td>
+            <td>1.46</td>
+            <td>38.9%</td>
+          </tr>
+          <tr>
+            <td>Taiwan Semiconductor</td>
+            <td class="ticker">TSM</td>
+            <td>4.1%</td>
+            <td>55.1</td>
+            <td>38.7</td>
+            <td class="positive">+42.4%</td>
+            <td class="positive">+0.64%</td>
+            <td class="positive">+3.28%</td>
+            <td class="positive">+7.9%</td>
+            <td class="positive">+19.1%</td>
+            <td>1.94</td>
+            <td>1.32</td>
+            <td>33.1%</td>
+          </tr>
+          <tr>
+            <td>Palantir Technologies</td>
+            <td class="ticker">PLTR</td>
+            <td>3.8%</td>
+            <td>51.0</td>
+            <td>28.4</td>
+            <td class="positive">+79.6%</td>
+            <td class="positive">+4.21%</td>
+            <td class="positive">+9.14%</td>
+            <td class="positive">+18.7%</td>
+            <td class="positive">+52.3%</td>
+            <td>2.28</td>
+            <td>1.76</td>
+            <td>54.2%</td>
+          </tr>
+          <tr>
+            <td>Snowflake Inc</td>
+            <td class="ticker">SNOW</td>
+            <td>3.2%</td>
+            <td>43.0</td>
+            <td>51.6</td>
+            <td class="negative">-16.7%</td>
+            <td class="neutral">+0.12%</td>
+            <td class="negative">-2.34%</td>
+            <td class="negative">-5.8%</td>
+            <td class="negative">-9.4%</td>
+            <td>0.68</td>
+            <td>1.58</td>
+            <td>48.7%</td>
+          </tr>
+          <tr>
+            <td>CrowdStrike Holdings</td>
+            <td class="ticker">CRWD</td>
+            <td>2.9%</td>
+            <td>38.9</td>
+            <td>32.1</td>
+            <td class="positive">+21.2%</td>
+            <td class="positive">+1.08%</td>
+            <td class="positive">+3.46%</td>
+            <td class="positive">+6.2%</td>
+            <td class="positive">+14.8%</td>
+            <td>1.47</td>
+            <td>1.28</td>
+            <td>36.4%</td>
+          </tr>
+          <tr>
+            <td>US Treasury 10Y</td>
+            <td class="ticker">UST10Y</td>
+            <td>5.5%</td>
+            <td>73.9</td>
+            <td>74.2</td>
+            <td class="negative">-0.4%</td>
+            <td class="neutral">+0.02%</td>
+            <td class="negative">-0.18%</td>
+            <td class="negative">-0.42%</td>
+            <td class="positive">+1.2%</td>
+            <td>0.31</td>
+            <td>-0.12</td>
+            <td>4.8%</td>
+          </tr>
+          <tr class="summary-row">
+            <td>PORTFOLIO TOTAL</td>
+            <td></td>
+            <td>100.0%</td>
+            <td>1,343.1</td>
+            <td>1,016.4</td>
+            <td class="positive">+32.1%</td>
+            <td class="positive">+0.84%</td>
+            <td class="positive">+2.18%</td>
+            <td class="positive">+6.4%</td>
+            <td class="positive">+17.2%</td>
+            <td>1.82</td>
+            <td>1.24</td>
+            <td>28.4%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="slide-footer">
+      <span>Nexus Analytics</span>
+      <span>Data as of 2026-03-16 market close (simulated) &bull; Not investment advice</span>
+      <span>4 / 4</span>
+    </div>
+  </div>
+
+</body>
+</html>

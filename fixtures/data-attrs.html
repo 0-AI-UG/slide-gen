@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: #1a1a2e;
+    }
+    .slide + .slide { page-break-before: always; }
+  </style>
+</head>
+<body>
+
+  <!-- Slide 1: data-sg-wrap tests -->
+  <div class="slide">
+    <h1 data-sg-wrap="false" style="position: absolute; top: 100px; left: 100px; font-size: 64px;">
+      Single Line Heading
+    </h1>
+    <p data-sg-wrap="true" style="position: absolute; top: 300px; left: 100px; width: 800px; font-size: 24px; line-height: 1.6;">
+      This is a paragraph that should wrap in the PPTX text box. It contains
+      enough text to span multiple lines when rendered at this width.
+    </p>
+    <span data-sg-wrap="false" style="position: absolute; top: 600px; left: 100px; font-size: 48px; font-weight: 700;">
+      $1,234,567
+    </span>
+  </div>
+
+  <!-- Slide 2: data-sg-group tests -->
+  <div class="slide">
+    <div data-sg-group="metric-revenue" style="position: absolute; top: 200px; left: 200px;">
+      <span style="font-size: 72px; font-weight: 700; color: #4ade80;">$2.4M</span>
+      <span style="font-size: 24px; color: #a3a3a3;"> revenue</span>
+    </div>
+    <div data-sg-group="metric-users" style="position: absolute; top: 400px; left: 200px;">
+      <span style="font-size: 72px; font-weight: 700; color: #60a5fa;">12,345</span>
+      <span style="font-size: 24px; color: #a3a3a3;"> active users</span>
+    </div>
+    <div style="position: absolute; top: 600px; left: 200px;">
+      <span style="font-size: 36px;">No group attribute</span>
+    </div>
+  </div>
+
+</body>
+</html>

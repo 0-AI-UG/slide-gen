@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typography Stress Test</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-dark: #0A0A10;
+      --bg-dark-raised: #111118;
+      --bg-dark-surface: #18181F;
+      --bg-light: #FAF9F6;
+      --bg-light-warm: #F3F1EC;
+      --bg-light-surface: #EDEAE4;
+      --text-primary: #E8E6F0;
+      --text-secondary: rgba(232, 230, 240, 0.55);
+      --text-tertiary: rgba(232, 230, 240, 0.3);
+      --text-dark-primary: #1A1A22;
+      --text-dark-secondary: rgba(26, 26, 34, 0.6);
+      --text-dark-tertiary: rgba(26, 26, 34, 0.3);
+      --accent: #E85D3A;
+      --accent-dim: rgba(232, 93, 58, 0.12);
+      --accent-secondary: #3A8EE8;
+      --accent-secondary-dim: rgba(58, 142, 232, 0.10);
+      --code-bg: #0D0D14;
+      --code-border: rgba(232, 230, 240, 0.06);
+      --syn-keyword: #E85D3A;
+      --syn-string: #8BC47A;
+      --syn-comment: rgba(232, 230, 240, 0.28);
+      --syn-function: #3A8EE8;
+      --syn-type: #D4A843;
+      --syn-number: #C490E4;
+      --syn-operator: rgba(232, 230, 240, 0.5);
+      --syn-punctuation: rgba(232, 230, 240, 0.35);
+      --line-num: rgba(232, 230, 240, 0.15);
+      --divider: rgba(232, 230, 240, 0.08);
+    }
+
+    body {
+      background: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    /* ============================
+       SLIDE 1 — CODE BLOCK
+       Dark terminal aesthetic
+       ============================ */
+    .slide-1 {
+      background: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    .slide-1 .slide-tag {
+      position: absolute;
+      top: 56px;
+      left: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .slide-1 .slide-title {
+      position: absolute;
+      top: 48px;
+      left: 280px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .slide-1 .header-line {
+      position: absolute;
+      top: 120px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    .slide-1 .code-container {
+      position: absolute;
+      top: 156px;
+      left: 88px;
+      right: 88px;
+      bottom: 72px;
+      background: var(--code-bg);
+      border: 1px solid var(--code-border);
+      border-radius: 8px;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .slide-1 .code-gutter {
+      width: 72px;
+      flex-shrink: 0;
+      padding: 36px 0;
+      background: rgba(0,0,0,0.2);
+      border-right: 1px solid var(--code-border);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 18px;
+      gap: 0;
+    }
+
+    .slide-1 .code-gutter span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 17px;
+      line-height: 32px;
+      font-weight: 400;
+      color: var(--line-num);
+      user-select: none;
+    }
+
+    .slide-1 .code-body {
+      flex: 1;
+      padding: 36px 40px;
+      overflow: hidden;
+    }
+
+    .slide-1 .code-body pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 17px;
+      line-height: 32px;
+      font-weight: 400;
+      color: var(--text-primary);
+      white-space: pre;
+      tab-size: 2;
+    }
+
+    .slide-1 .code-body .kw { color: var(--syn-keyword); font-weight: 500; }
+    .slide-1 .code-body .str { color: var(--syn-string); }
+    .slide-1 .code-body .cmt { color: var(--syn-comment); font-style: italic; }
+    .slide-1 .code-body .fn { color: var(--syn-function); }
+    .slide-1 .code-body .tp { color: var(--syn-type); }
+    .slide-1 .code-body .num { color: var(--syn-number); }
+    .slide-1 .code-body .op { color: var(--syn-operator); }
+    .slide-1 .code-body .pn { color: var(--syn-punctuation); }
+
+    .slide-1 .file-tab {
+      position: absolute;
+      top: 156px;
+      left: 88px;
+      background: var(--bg-dark-surface);
+      border: 1px solid var(--code-border);
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+      padding: 8px 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      transform: translateY(-100%);
+    }
+
+    .slide-1 .file-tab .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-right: 10px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+
+    .slide-1 .lang-badge {
+      position: absolute;
+      bottom: 88px;
+      right: 104px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+
+    /* ============================
+       SLIDE 2 — NESTED LISTS
+       Structured hierarchy
+       ============================ */
+    .slide-2 {
+      background: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    .slide-2 .slide-tag {
+      position: absolute;
+      top: 56px;
+      left: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .slide-2 .slide-title {
+      position: absolute;
+      top: 48px;
+      left: 280px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .slide-2 .header-line {
+      position: absolute;
+      top: 120px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    .slide-2 .lists-container {
+      position: absolute;
+      top: 160px;
+      left: 88px;
+      right: 88px;
+      bottom: 72px;
+      display: flex;
+      gap: 80px;
+    }
+
+    .slide-2 .list-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide-2 .list-col-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .slide-2 .list-col ul,
+    .slide-2 .list-col ol {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Level 1 — Unordered */
+    .slide-2 .l1 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-primary);
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .slide-2 .l1::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* Level 2 — Dashes */
+    .slide-2 .l2 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      padding-left: 56px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .slide-2 .l2::before {
+      content: '\2014';
+      position: absolute;
+      left: 28px;
+      color: var(--text-tertiary);
+      font-weight: 300;
+    }
+
+    /* Level 3 — Small dots */
+    .slide-2 .l3 {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-tertiary);
+      padding-left: 88px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .slide-2 .l3::before {
+      content: '';
+      position: absolute;
+      left: 62px;
+      top: 12px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      border: 1px solid var(--text-tertiary);
+    }
+
+    /* Level 4 — Tiny squares */
+    .slide-2 .l4 {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(232, 230, 240, 0.22);
+      padding-left: 116px;
+      position: relative;
+      margin-bottom: 3px;
+      font-style: italic;
+    }
+    .slide-2 .l4::before {
+      content: '';
+      position: absolute;
+      left: 94px;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      background: rgba(232, 230, 240, 0.18);
+    }
+
+    /* Ordered list levels */
+    .slide-2 .o1 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-primary);
+      padding-left: 40px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .slide-2 .o1 .num {
+      position: absolute;
+      left: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      top: 5px;
+    }
+
+    .slide-2 .o2 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      padding-left: 72px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+    .slide-2 .o2 .num {
+      position: absolute;
+      left: 40px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      top: 5px;
+    }
+
+    .slide-2 .o3 {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-tertiary);
+      padding-left: 104px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+    .slide-2 .o3 .num {
+      position: absolute;
+      left: 72px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(232, 230, 240, 0.2);
+      top: 5px;
+    }
+
+    .slide-2 em { font-style: italic; }
+    .slide-2 strong { font-weight: 700; color: var(--text-primary); }
+
+    .slide-2 .col-divider {
+      width: 1px;
+      background: var(--divider);
+      flex-shrink: 0;
+    }
+
+    /* ============================
+       SLIDE 3 — TYPE SCALE
+       Size specimens
+       ============================ */
+    .slide-3 {
+      background: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    .slide-3 .slide-tag {
+      position: absolute;
+      top: 56px;
+      left: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .slide-3 .slide-title {
+      position: absolute;
+      top: 48px;
+      left: 280px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .slide-3 .header-line {
+      position: absolute;
+      top: 120px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: var(--divider);
+    }
+
+    .slide-3 .scale-area {
+      position: absolute;
+      top: 148px;
+      left: 88px;
+      right: 88px;
+      bottom: 56px;
+      overflow: hidden;
+    }
+
+    .slide-3 .scale-row {
+      display: flex;
+      align-items: baseline;
+      border-bottom: 1px solid var(--divider);
+      padding: 6px 0;
+    }
+
+    .slide-3 .scale-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      width: 72px;
+      flex-shrink: 0;
+      text-align: right;
+      padding-right: 24px;
+    }
+
+    .slide-3 .scale-sample {
+      flex: 1;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slide-3 .scale-row-giant {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+    }
+
+    .slide-3 .scale-row-giant .scale-sample {
+      font-size: 200px;
+      font-weight: 700;
+      line-height: 0.85;
+      letter-spacing: -0.05em;
+      color: var(--accent-dim);
+      white-space: nowrap;
+    }
+
+    .slide-3 .scale-row-giant .scale-label {
+      position: absolute;
+      top: 8px;
+      left: 0;
+    }
+
+    .slide-3 .wrap-block {
+      padding: 12px 0 8px;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .slide-3 .wrap-block .wrap-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--accent-secondary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .slide-3 .wrap-block p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 1400px;
+    }
+
+    .slide-3 .transform-row {
+      display: flex;
+      gap: 64px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .slide-3 .transform-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .slide-3 .transform-item .t-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+
+    .slide-3 .transform-item .t-sample {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    /* ============================
+       SLIDE 4 — LIGHT THEME
+       Cream / warm white
+       ============================ */
+    .slide-4 {
+      background: var(--bg-light);
+      color: var(--text-dark-primary);
+    }
+
+    .slide-4 .slide-tag {
+      position: absolute;
+      top: 56px;
+      left: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .slide-4 .slide-title {
+      position: absolute;
+      top: 48px;
+      left: 280px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 42px;
+      letter-spacing: -0.02em;
+      color: var(--text-dark-primary);
+    }
+
+    .slide-4 .header-line {
+      position: absolute;
+      top: 120px;
+      left: 88px;
+      right: 88px;
+      height: 1px;
+      background: rgba(26, 26, 34, 0.1);
+    }
+
+    .slide-4 .light-content {
+      position: absolute;
+      top: 152px;
+      left: 88px;
+      right: 88px;
+      bottom: 64px;
+      display: flex;
+      gap: 64px;
+    }
+
+    .slide-4 .light-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .slide-4 .light-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .slide-4 .light-heading-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .slide-4 .light-h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 56px;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text-dark-primary);
+    }
+
+    .slide-4 .light-h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-dark-primary);
+    }
+
+    .slide-4 .light-h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.3;
+      color: var(--text-dark-secondary);
+    }
+
+    .slide-4 .light-body {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text-dark-secondary);
+      max-width: 760px;
+    }
+
+    .slide-4 .light-code-block {
+      background: var(--text-dark-primary);
+      border-radius: 8px;
+      padding: 32px 36px;
+      overflow: hidden;
+    }
+
+    .slide-4 .light-code-block pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      line-height: 28px;
+      font-weight: 400;
+      color: #E8E6F0;
+      white-space: pre;
+    }
+
+    .slide-4 .light-code-block .kw { color: var(--syn-keyword); font-weight: 500; }
+    .slide-4 .light-code-block .str { color: var(--syn-string); }
+    .slide-4 .light-code-block .cmt { color: rgba(232,230,240,0.35); font-style: italic; }
+    .slide-4 .light-code-block .fn { color: var(--syn-function); }
+    .slide-4 .light-code-block .tp { color: var(--syn-type); }
+    .slide-4 .light-code-block .num { color: var(--syn-number); }
+    .slide-4 .light-code-block .op { color: var(--syn-operator); }
+    .slide-4 .light-code-block .pn { color: var(--syn-punctuation); }
+
+    .slide-4 .light-code-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(26, 26, 34, 0.3);
+      margin-bottom: 12px;
+    }
+
+    .slide-4 .light-right .list-section {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(26, 26, 34, 0.08);
+    }
+
+    .slide-4 .light-right .list-section:first-child {
+      padding-top: 0;
+    }
+
+    .slide-4 .light-list-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-secondary);
+      margin-bottom: 14px;
+    }
+
+    .slide-4 .light-list-item {
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--text-dark-secondary);
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .slide-4 .light-list-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .slide-4 .light-list-item.nested {
+      padding-left: 52px;
+      font-size: 16px;
+      color: var(--text-dark-tertiary);
+    }
+
+    .slide-4 .light-list-item.nested::before {
+      left: 28px;
+      top: 9px;
+      width: 5px;
+      height: 5px;
+      background: none;
+      border: 1px solid var(--text-dark-tertiary);
+    }
+
+    .slide-4 .light-accent-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    }
+
+    .slide-4 .light-footer {
+      position: absolute;
+      bottom: 24px;
+      right: 88px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-dark-tertiary);
+      letter-spacing: 0.04em;
+    }
+
+    .slide-4 .col-divider {
+      width: 1px;
+      background: rgba(26, 26, 34, 0.1);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Code Block -->
+  <div class="slide slide-1">
+    <span class="slide-tag">01 / Syntax</span>
+    <span class="slide-title">Code Block</span>
+    <div class="header-line"></div>
+
+    <div class="file-tab"><span class="dot"></span>pipeline.ts</div>
+
+    <div class="code-container">
+      <div class="code-gutter">
+        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+        <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+        <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+        <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+        <span>26</span>
+      </div>
+      <div class="code-body"><pre><span class="kw">import</span> <span class="pn">{</span> <span class="tp">Pipeline</span><span class="pn">,</span> <span class="tp">Stage</span><span class="pn">,</span> <span class="tp">TransformResult</span> <span class="pn">}</span> <span class="kw">from</span> <span class="str">"@core/engine"</span><span class="pn">;</span>
+<span class="kw">import</span> <span class="pn">{</span> <span class="fn">compress</span><span class="pn">,</span> <span class="fn">validate</span> <span class="pn">}</span> <span class="kw">from</span> <span class="str">"./utils"</span><span class="pn">;</span>
+
+<span class="cmt">// Configure the extraction pipeline with retry logic</span>
+<span class="cmt">// and adaptive backoff for rate-limited endpoints</span>
+<span class="kw">interface</span> <span class="tp">PipelineConfig</span> <span class="pn">{</span>
+  <span class="fn">maxRetries</span><span class="pn">:</span> <span class="tp">number</span><span class="pn">;</span>
+  <span class="fn">backoffMs</span><span class="pn">:</span> <span class="tp">number</span><span class="pn">;</span>
+  <span class="fn">concurrency</span><span class="pn">:</span> <span class="tp">number</span><span class="pn">;</span>
+  <span class="fn">onError</span><span class="pn">?:</span> <span class="pn">(</span><span class="fn">err</span><span class="pn">:</span> <span class="tp">Error</span><span class="pn">)</span> <span class="op">=&gt;</span> <span class="tp">void</span><span class="pn">;</span>
+<span class="pn">}</span>
+
+<span class="kw">export</span> <span class="kw">async</span> <span class="kw">function</span> <span class="fn">runPipeline</span><span class="pn">&lt;</span><span class="tp">T</span><span class="pn">&gt;(</span>
+  <span class="fn">stages</span><span class="pn">:</span> <span class="tp">Stage</span><span class="pn">&lt;</span><span class="tp">T</span><span class="pn">&gt;[],</span>
+  <span class="fn">config</span><span class="pn">:</span> <span class="tp">PipelineConfig</span> <span class="op">=</span> <span class="pn">{</span> <span class="fn">maxRetries</span><span class="pn">:</span> <span class="num">3</span><span class="pn">,</span> <span class="fn">backoffMs</span><span class="pn">:</span> <span class="num">150</span><span class="pn">,</span> <span class="fn">concurrency</span><span class="pn">:</span> <span class="num">8</span> <span class="pn">}</span>
+<span class="pn">):</span> <span class="tp">Promise</span><span class="pn">&lt;</span><span class="tp">TransformResult</span><span class="pn">&lt;</span><span class="tp">T</span><span class="pn">&gt;&gt;</span> <span class="pn">{</span>
+  <span class="kw">const</span> pipeline <span class="op">=</span> <span class="kw">new</span> <span class="tp">Pipeline</span><span class="pn">(</span><span class="fn">stages</span><span class="pn">,</span> <span class="fn">config</span><span class="pn">);</span>
+
+  <span class="kw">for</span> <span class="pn">(</span><span class="kw">const</span> stage <span class="kw">of</span> pipeline<span class="pn">.</span><span class="fn">ordered</span><span class="pn">())</span> <span class="pn">{</span>
+    <span class="kw">const</span> result <span class="op">=</span> <span class="kw">await</span> stage<span class="pn">.</span><span class="fn">execute</span><span class="pn">({</span>
+      <span class="fn">timeout</span><span class="pn">:</span> <span class="num">30_000</span><span class="pn">,</span>
+      <span class="fn">signal</span><span class="pn">:</span> <span class="tp">AbortSignal</span><span class="pn">.</span><span class="fn">timeout</span><span class="pn">(</span><span class="num">30_000</span><span class="pn">),</span>
+    <span class="pn">});</span>
+    <span class="kw">if</span> <span class="pn">(!</span>result<span class="pn">.</span>ok<span class="pn">)</span> <span class="kw">throw</span> <span class="kw">new</span> <span class="tp">Error</span><span class="pn">(</span><span class="str">`Stage failed: </span><span class="pn">${</span>stage<span class="pn">.</span>name<span class="pn">}</span><span class="str">`</span><span class="pn">);</span>
+  <span class="pn">}</span>
+
+  <span class="kw">return</span> <span class="fn">compress</span><span class="pn">(</span><span class="kw">await</span> <span class="fn">validate</span><span class="pn">(</span>pipeline<span class="pn">.</span><span class="fn">collect</span><span class="pn">()));</span>
+<span class="pn">}</span></pre>
+      </div>
+    </div>
+
+    <span class="lang-badge">TypeScript</span>
+  </div>
+
+  <!-- SLIDE 2: Nested Lists -->
+  <div class="slide slide-2">
+    <span class="slide-tag">02 / Hierarchy</span>
+    <span class="slide-title">Nested Lists</span>
+    <div class="header-line"></div>
+
+    <div class="lists-container">
+      <div class="list-col">
+        <div class="list-col-label">Unordered &mdash; 4 levels</div>
+        <ul>
+          <li class="l1"><strong>Infrastructure</strong> layer</li>
+          <li class="l2">Container orchestration with <em>health checks</em></li>
+          <li class="l3">Kubernetes pods auto-scale on CPU threshold</li>
+          <li class="l4">Uses HPA with custom metrics adapter</li>
+          <li class="l2">Service mesh for <strong>inter-service</strong> routing</li>
+          <li class="l3">Istio sidecar injection enabled</li>
+          <li class="l3">mTLS enforced across namespaces</li>
+          <li class="l4">Certificate rotation every 24h</li>
+          <li class="l1">Application layer</li>
+          <li class="l2">Event-driven <em>microservices</em></li>
+          <li class="l3">NATS JetStream for durable messaging</li>
+          <li class="l3">Dead letter queues with <strong>retry policies</strong></li>
+          <li class="l4">Exponential backoff, max 5 attempts</li>
+          <li class="l2">API gateway with <strong>rate limiting</strong></li>
+          <li class="l3">Token bucket algorithm, 1000 req/s burst</li>
+          <li class="l1">Observability</li>
+          <li class="l2">Distributed tracing with <em>OpenTelemetry</em></li>
+          <li class="l3">Jaeger backend, 72h retention</li>
+          <li class="l2">Metrics pipeline</li>
+          <li class="l3">Prometheus + Grafana dashboards</li>
+          <li class="l4">Custom alerting rules via Alertmanager</li>
+        </ul>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="list-col">
+        <div class="list-col-label">Ordered &mdash; 3 levels</div>
+        <ul>
+          <li class="o1"><span class="num">01</span> <strong>Data ingestion</strong></li>
+          <li class="o2"><span class="num">1.1</span> Parse incoming payloads (<em>JSON, Protobuf</em>)</li>
+          <li class="o3"><span class="num">1.1.a</span> Schema validation against registry</li>
+          <li class="o3"><span class="num">1.1.b</span> Type coercion and null handling</li>
+          <li class="o2"><span class="num">1.2</span> <strong>Normalize</strong> field names to snake_case</li>
+          <li class="o3"><span class="num">1.2.a</span> Preserve original keys in metadata</li>
+          <li class="o1"><span class="num">02</span> Transformation pipeline</li>
+          <li class="o2"><span class="num">2.1</span> Apply <em>business rules</em> engine</li>
+          <li class="o3"><span class="num">2.1.a</span> Rule priority: explicit &gt; derived &gt; default</li>
+          <li class="o2"><span class="num">2.2</span> Enrich with <strong>external lookups</strong></li>
+          <li class="o3"><span class="num">2.2.a</span> Cache-first strategy, 5m TTL</li>
+          <li class="o3"><span class="num">2.2.b</span> Fallback to stale data on timeout</li>
+          <li class="o1"><span class="num">03</span> Output &amp; delivery</li>
+          <li class="o2"><span class="num">3.1</span> Batch writes to data warehouse</li>
+          <li class="o3"><span class="num">3.1.a</span> Parquet format, Snappy compression</li>
+          <li class="o2"><span class="num">3.2</span> Real-time <em>stream</em> to consumers</li>
+          <li class="o3"><span class="num">3.2.a</span> At-least-once delivery guarantee</li>
+          <li class="o1"><span class="num">04</span> <strong>Monitoring</strong> &amp; alerting</li>
+          <li class="o2"><span class="num">4.1</span> Latency histograms per stage</li>
+          <li class="o2"><span class="num">4.2</span> Error rate thresholds with PagerDuty</li>
+          <li class="o3"><span class="num">4.2.a</span> P1 &gt; 1%, P2 &gt; 5%, P3 &gt; 10%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Type Scale -->
+  <div class="slide slide-3">
+    <span class="slide-tag">03 / Scale</span>
+    <span class="slide-title">Type Scale</span>
+    <div class="header-line"></div>
+
+    <div class="scale-area">
+      <div class="scale-row">
+        <span class="scale-label">8px</span>
+        <span class="scale-sample" style="font-size: 8px; font-weight: 400; color: var(--text-tertiary);">The quick brown fox jumps over the lazy dog &mdash; 0123456789 &mdash; ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">12px</span>
+        <span class="scale-sample" style="font-size: 12px; font-weight: 400; color: var(--text-secondary);">The quick brown fox jumps over the lazy dog &mdash; 0123456789 &mdash; ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">16px</span>
+        <span class="scale-sample" style="font-size: 16px; font-weight: 400;">The quick brown fox jumps over the lazy dog &mdash; 0123456789</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">20px</span>
+        <span class="scale-sample" style="font-size: 20px; font-weight: 500;">The quick brown fox jumps over the lazy dog &mdash; 0123456789</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">28px</span>
+        <span class="scale-sample" style="font-size: 28px; font-weight: 500;">The quick brown fox jumps over the lazy dog</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">40px</span>
+        <span class="scale-sample" style="font-size: 40px; font-weight: 600; letter-spacing: -0.01em;">The quick brown fox jumps over the lazy dog</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">64px</span>
+        <span class="scale-sample" style="font-size: 64px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;">Typography at scale</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-label">96px</span>
+        <span class="scale-sample" style="font-size: 96px; font-weight: 700; letter-spacing: -0.04em; line-height: 1;">Edge cases</span>
+      </div>
+
+      <div class="transform-row">
+        <div class="transform-item">
+          <span class="t-label">text-transform: uppercase</span>
+          <span class="t-sample" style="text-transform: uppercase; letter-spacing: 0.12em;">Uppercased text sample</span>
+        </div>
+        <div class="transform-item">
+          <span class="t-label">letter-spacing: 0.3em</span>
+          <span class="t-sample" style="letter-spacing: 0.3em;">Wide tracking</span>
+        </div>
+        <div class="transform-item">
+          <span class="t-label">letter-spacing: -0.06em</span>
+          <span class="t-sample" style="letter-spacing: -0.06em; font-weight: 700; font-size: 28px;">Tight tracking</span>
+        </div>
+        <div class="transform-item">
+          <span class="t-label">text-transform: lowercase</span>
+          <span class="t-sample" style="text-transform: lowercase;">ORIGINALLY UPPERCASE</span>
+        </div>
+      </div>
+
+      <div class="wrap-block">
+        <div class="wrap-label">Long wrapping paragraph</div>
+        <p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing (leading), and letter-spacing (tracking), as well as adjusting the space between pairs of letters (kerning). This paragraph intentionally wraps across multiple lines to stress-test how the HTML-to-PPTX pipeline handles line breaks, word wrapping, and paragraph reflow at various container widths. It should maintain consistent leading and produce clean, readable output regardless of the rendering engine.</p>
+      </div>
+
+      <div class="scale-row-giant">
+        <span class="scale-label">200px</span>
+        <span class="scale-sample">Ag</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: Light Theme -->
+  <div class="slide slide-4">
+    <span class="slide-tag">04 / Light</span>
+    <span class="slide-title">Light Theme</span>
+    <div class="header-line"></div>
+
+    <div class="light-content">
+      <div class="light-left">
+        <div class="light-heading-group">
+          <div class="light-h1">Headings on<br>Light Background</div>
+          <div class="light-h2">Secondary heading at 36px</div>
+          <div class="light-h3">Tertiary heading at 24px weight 500</div>
+        </div>
+
+        <p class="light-body">Body text on a light background must maintain sufficient contrast while feeling warm and approachable. This paragraph tests how the pipeline renders dark-on-light text with proper anti-aliasing and font smoothing. The line-height is set to 1.7 for generous leading.</p>
+
+        <div>
+          <div class="light-code-label">Code on light theme</div>
+          <div class="light-code-block"><pre><span class="kw">async function</span> <span class="fn">fetchData</span><span class="pn">(</span><span class="fn">url</span><span class="pn">:</span> <span class="tp">string</span><span class="pn">)</span> <span class="pn">{</span>
+  <span class="kw">const</span> res <span class="op">=</span> <span class="kw">await</span> <span class="fn">fetch</span><span class="pn">(</span><span class="fn">url</span><span class="pn">,</span> <span class="pn">{</span>
+    <span class="fn">headers</span><span class="pn">:</span> <span class="pn">{</span> <span class="str">"Accept"</span><span class="pn">:</span> <span class="str">"application/json"</span> <span class="pn">},</span>
+    <span class="fn">cache</span><span class="pn">:</span> <span class="str">"no-store"</span><span class="pn">,</span>
+  <span class="pn">});</span>
+  <span class="cmt">// Parse and validate response</span>
+  <span class="kw">return</span> res<span class="pn">.</span><span class="fn">json</span><span class="pn">()</span> <span class="kw">as</span> <span class="tp">Promise</span><span class="pn">&lt;</span><span class="tp">ApiResponse</span><span class="pn">&gt;;</span>
+<span class="pn">}</span></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-divider"></div>
+
+      <div class="light-right">
+        <div class="list-section">
+          <div class="light-list-label">Features</div>
+          <div class="light-list-item">Automatic font detection and embedding</div>
+          <div class="light-list-item">Color space preservation across themes</div>
+          <div class="light-list-item nested">sRGB and Display P3 support</div>
+          <div class="light-list-item nested">Automatic contrast ratio checking</div>
+          <div class="light-list-item">Responsive text reflow in containers</div>
+        </div>
+        <div class="list-section">
+          <div class="light-list-label">Edge Cases</div>
+          <div class="light-list-item"><strong>Bold text</strong> mixed with <em>italic text</em></div>
+          <div class="light-list-item">Text with <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; background: var(--bg-light-surface); padding: 2px 8px; border-radius: 4px;">inline code</span> elements</div>
+          <div class="light-list-item nested">Nested item with longer text that may wrap to a second line depending on container width</div>
+          <div class="light-list-item">Numbers: 1,234,567.89 and symbols: @#$%</div>
+        </div>
+        <div class="list-section">
+          <div class="light-list-label">Typography Specimens</div>
+          <div class="light-list-item" style="font-size: 14px; color: var(--text-dark-tertiary);">Small caption text at 14px</div>
+          <div class="light-list-item" style="font-weight: 700;">Heavy weight at 700</div>
+          <div class="light-list-item" style="font-weight: 300; font-style: italic;">Light italic at weight 300</div>
+          <div class="light-list-item" style="letter-spacing: 0.15em; text-transform: uppercase; font-size: 14px;">Spaced uppercase label</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="light-accent-bar"></div>
+    <span class="light-footer">Typography stress test &mdash; Light theme variant</span>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Stress Test — Chromatic Systems</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0A0A12;
+      --bg-raised: #111120;
+      --surface: #1A1A2E;
+      --border: rgba(255, 255, 255, 0.06);
+      --text-primary: #F0EEF6;
+      --text-secondary: rgba(240, 238, 246, 0.5);
+      --text-tertiary: rgba(240, 238, 246, 0.25);
+      --accent-violet: #8B5CF6;
+      --accent-rose: #F43F5E;
+      --accent-cyan: #06B6D4;
+      --accent-amber: #F59E0B;
+      --accent-emerald: #10B981;
+    }
+
+    body {
+      background: #000;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ============================
+       SLIDE 1 — GRADIENT SHOWCASE
+       Linear gradients at various angles
+       ============================ */
+    .slide-1 {
+      background: var(--bg);
+      color: var(--text-primary);
+    }
+
+    .slide-1 .topbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 100px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .slide-1 .topbar .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .slide-1 .topbar .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      letter-spacing: 0.04em;
+    }
+
+    .slide-1 .hero-title {
+      position: absolute;
+      top: 120px;
+      left: 100px;
+      z-index: 10;
+    }
+
+    .slide-1 .hero-title .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-violet);
+      margin-bottom: 20px;
+    }
+
+    .slide-1 .hero-title h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 88px;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+    }
+
+    .slide-1 .hero-title h1 span {
+      background: linear-gradient(135deg, #8B5CF6, #06B6D4, #10B981);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .slide-1 .hero-subtitle {
+      position: absolute;
+      top: 380px;
+      left: 100px;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--text-secondary);
+      max-width: 560px;
+      line-height: 1.6;
+      z-index: 10;
+    }
+
+    /* Gradient rectangles — various angles */
+    .slide-1 .grad-panel {
+      position: absolute;
+      border-radius: 2px;
+    }
+
+    .slide-1 .grad-0deg {
+      top: 100px;
+      right: 100px;
+      width: 480px;
+      height: 320px;
+      background: linear-gradient(0deg, #0A0A12, #8B5CF6 40%, #F43F5E);
+    }
+
+    .slide-1 .grad-45deg {
+      top: 280px;
+      right: 340px;
+      width: 380px;
+      height: 260px;
+      background: linear-gradient(45deg, #06B6D4, #8B5CF6, #F43F5E);
+      opacity: 0.85;
+    }
+
+    .slide-1 .grad-135deg {
+      top: 500px;
+      right: 80px;
+      width: 560px;
+      height: 200px;
+      background: linear-gradient(135deg, #10B981, #06B6D4 50%, #8B5CF6);
+    }
+
+    .slide-1 .grad-270deg {
+      top: 520px;
+      right: 520px;
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(270deg, #F59E0B, #F43F5E 60%, #8B5CF6);
+      opacity: 0.75;
+    }
+
+    .slide-1 .grad-overlay-text {
+      position: absolute;
+      bottom: 160px;
+      left: 100px;
+      z-index: 10;
+    }
+
+    .slide-1 .grad-overlay-text .angle-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .slide-1 .angle-chips {
+      display: flex;
+      gap: 16px;
+    }
+
+    .slide-1 .angle-chip {
+      padding: 8px 20px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--accent-violet);
+      letter-spacing: 0.02em;
+    }
+
+    .slide-1 .bottom-line {
+      position: absolute;
+      bottom: 80px;
+      left: 100px;
+      right: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent-violet), var(--accent-cyan), transparent);
+    }
+
+    .slide-1 .slide-num {
+      position: absolute;
+      bottom: 32px;
+      right: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    /* ============================
+       SLIDE 2 — MULTI-STOP & RADIAL
+       Complex gradient compositions
+       ============================ */
+    .slide-2 {
+      background: var(--bg);
+      color: var(--text-primary);
+    }
+
+    .slide-2 .slide-header {
+      position: absolute;
+      top: 64px;
+      left: 100px;
+      right: 100px;
+      display: flex;
+      align-items: baseline;
+      gap: 28px;
+    }
+
+    .slide-2 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+    }
+
+    .slide-2 .slide-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 52px;
+      letter-spacing: -0.02em;
+    }
+
+    .slide-2 .header-rule {
+      position: absolute;
+      top: 180px;
+      left: 100px;
+      right: 100px;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .slide-2 .card-grid {
+      position: absolute;
+      top: 220px;
+      left: 100px;
+      right: 100px;
+      bottom: 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .slide-2 .grad-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .slide-2 .grad-card .card-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* Card 1: Multi-stop linear with rgba */
+    .slide-2 .card-1 .card-bg {
+      background: linear-gradient(180deg,
+        rgba(139, 92, 246, 0.9) 0%,
+        rgba(6, 182, 212, 0.6) 35%,
+        rgba(16, 185, 129, 0.4) 65%,
+        rgba(10, 10, 18, 0.95) 100%
+      );
+    }
+
+    /* Card 2: Radial gradient */
+    .slide-2 .card-2 .card-bg {
+      background: radial-gradient(ellipse at 30% 40%,
+        rgba(244, 63, 94, 0.7),
+        rgba(139, 92, 246, 0.3) 50%,
+        rgba(10, 10, 18, 0.95) 100%
+      );
+    }
+
+    /* Card 3: Multi-stop linear, different angle */
+    .slide-2 .card-3 .card-bg {
+      background: linear-gradient(225deg,
+        #F59E0B 0%,
+        rgba(245, 158, 11, 0.4) 25%,
+        rgba(244, 63, 94, 0.3) 50%,
+        rgba(139, 92, 246, 0.5) 75%,
+        #0A0A12 100%
+      );
+    }
+
+    .slide-2 .card-content {
+      position: relative;
+      z-index: 2;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+    }
+
+    .slide-2 .card-type {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(240, 238, 246, 0.6);
+      margin-bottom: 12px;
+    }
+
+    .slide-2 .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .slide-2 .card-desc {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(240, 238, 246, 0.45);
+    }
+
+    /* Transparent overlay elements on cards */
+    .slide-2 .card-overlay-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 1;
+    }
+
+    .slide-2 .card-1 .card-overlay-ring {
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+    }
+
+    .slide-2 .card-2 .card-overlay-ring {
+      bottom: 80px;
+      left: -60px;
+      width: 280px;
+      height: 280px;
+    }
+
+    .slide-2 .card-3 .card-overlay-ring {
+      top: 20px;
+      right: 20px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15), transparent 70%);
+      border: none;
+    }
+
+    .slide-2 .slide-num {
+      position: absolute;
+      bottom: 32px;
+      right: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+
+    /* ============================
+       SLIDE 3 — GRADIENT COMPOSITION
+       Full-width backgrounds, accents, bars
+       ============================ */
+    .slide-3 {
+      background: linear-gradient(to bottom, #0A0A12, #111120 60%, #0A0A12);
+      color: var(--text-primary);
+    }
+
+    .slide-3 .full-bg-gradient {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(139, 92, 246, 0.12), transparent 60%);
+    }
+
+    .slide-3 .slide-header {
+      position: absolute;
+      top: 64px;
+      left: 100px;
+      right: 100px;
+      display: flex;
+      align-items: baseline;
+      gap: 28px;
+      z-index: 5;
+    }
+
+    .slide-3 .slide-header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent-emerald);
+    }
+
+    .slide-3 .slide-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 52px;
+      letter-spacing: -0.02em;
+    }
+
+    .slide-3 .header-rule {
+      position: absolute;
+      top: 180px;
+      left: 100px;
+      right: 100px;
+      height: 1px;
+      background: linear-gradient(to right, var(--accent-emerald), rgba(139, 92, 246, 0.4), transparent);
+      z-index: 5;
+    }
+
+    /* Gradient stripe bars */
+    .slide-3 .stripe-row {
+      position: absolute;
+      top: 220px;
+      left: 100px;
+      right: 100px;
+      display: flex;
+      gap: 8px;
+      height: 6px;
+      z-index: 5;
+    }
+
+    .slide-3 .stripe {
+      height: 100%;
+      border-radius: 1px;
+    }
+
+    .slide-3 .stripe-1 {
+      flex: 3;
+      background: linear-gradient(to right, #8B5CF6, #06B6D4);
+    }
+
+    .slide-3 .stripe-2 {
+      flex: 2;
+      background: linear-gradient(to right, #F43F5E, #F59E0B);
+    }
+
+    .slide-3 .stripe-3 {
+      flex: 1;
+      background: linear-gradient(to right, #10B981, #06B6D4);
+    }
+
+    .slide-3 .stripe-4 {
+      flex: 4;
+      background: linear-gradient(to right, rgba(139, 92, 246, 0.6), rgba(244, 63, 94, 0.3), transparent);
+    }
+
+    /* Content grid */
+    .slide-3 .content-area {
+      position: absolute;
+      top: 280px;
+      left: 100px;
+      right: 100px;
+      bottom: 120px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      z-index: 5;
+    }
+
+    .slide-3 .composition-block {
+      position: relative;
+    }
+
+    .slide-3 .composition-block .block-gradient {
+      position: absolute;
+      inset: 0;
+      border-radius: 2px;
+    }
+
+    .slide-3 .block-1 .block-gradient {
+      background: linear-gradient(to bottom left, rgba(139, 92, 246, 0.25), rgba(6, 182, 212, 0.1), transparent);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+    }
+
+    .slide-3 .block-2 .block-gradient {
+      background: linear-gradient(to right, rgba(244, 63, 94, 0.2), rgba(245, 158, 11, 0.1), transparent);
+      border: 1px solid rgba(244, 63, 94, 0.12);
+    }
+
+    .slide-3 .block-inner {
+      position: relative;
+      z-index: 2;
+      padding: 48px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .slide-3 .block-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .slide-3 .block-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-top: 24px;
+    }
+
+    .slide-3 .block-body {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-top: 16px;
+    }
+
+    /* Accent gradient elements inside blocks */
+    .slide-3 .accent-bar {
+      height: 4px;
+      border-radius: 2px;
+      margin-top: auto;
+    }
+
+    .slide-3 .block-1 .accent-bar {
+      width: 180px;
+      background: linear-gradient(to right, #8B5CF6, #06B6D4, transparent);
+    }
+
+    .slide-3 .block-2 .accent-bar {
+      width: 140px;
+      background: linear-gradient(to right, #F43F5E, #F59E0B);
+    }
+
+    /* Small radial accent blob */
+    .slide-3 .radial-accent {
+      position: absolute;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .slide-3 .radial-accent-1 {
+      bottom: 140px;
+      right: 180px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.1), transparent 70%);
+    }
+
+    .slide-3 .radial-accent-2 {
+      top: 300px;
+      left: 40px;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.08), transparent 70%);
+    }
+
+    /* Footer gradient bar */
+    .slide-3 .footer-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: linear-gradient(to right, var(--bg), var(--surface), var(--bg));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 100px;
+      z-index: 5;
+    }
+
+    .slide-3 .footer-bar .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+
+    .slide-3 .footer-bar .slide-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: Gradient Showcase -->
+  <div class="slide slide-1">
+    <div class="topbar">
+      <span class="brand">Chromatic Systems</span>
+      <span class="tag">gradient-test / v1.0</span>
+    </div>
+
+    <div class="hero-title">
+      <div class="section-label">Slide 01 / 03</div>
+      <h1>Gradient<br><span>Showcase</span></h1>
+    </div>
+
+    <p class="hero-subtitle">Linear gradients rendered at 0&deg;, 45&deg;, 135&deg;, and 270&deg; angles with overlapping compositions and rich modern palettes.</p>
+
+    <!-- Gradient panels at various angles -->
+    <div class="grad-panel grad-0deg"></div>
+    <div class="grad-panel grad-45deg"></div>
+    <div class="grad-panel grad-135deg"></div>
+    <div class="grad-panel grad-270deg"></div>
+
+    <div class="grad-overlay-text">
+      <div class="angle-label">Angles tested</div>
+      <div class="angle-chips">
+        <span class="angle-chip">0deg</span>
+        <span class="angle-chip">45deg</span>
+        <span class="angle-chip">135deg</span>
+        <span class="angle-chip">270deg</span>
+      </div>
+    </div>
+
+    <div class="bottom-line"></div>
+    <span class="slide-num">01 / 03</span>
+  </div>
+
+  <!-- SLIDE 2: Multi-Stop & Radial -->
+  <div class="slide slide-2">
+    <div class="slide-header">
+      <span class="tag">02 &mdash; Analysis</span>
+      <h2>Multi-Stop &amp; Radial</h2>
+    </div>
+    <div class="header-rule"></div>
+
+    <div class="card-grid">
+      <div class="grad-card card-1">
+        <div class="card-bg"></div>
+        <div class="card-overlay-ring"></div>
+        <div class="card-content">
+          <span class="card-type">4-Stop Linear &middot; rgba()</span>
+          <div class="card-title">Vertical Depth Map</div>
+          <p class="card-desc">Four rgba() color stops transitioning from violet through cyan to emerald, fading into the void.</p>
+        </div>
+      </div>
+
+      <div class="grad-card card-2">
+        <div class="card-bg"></div>
+        <div class="card-overlay-ring"></div>
+        <div class="card-content">
+          <span class="card-type">Radial &middot; Ellipse</span>
+          <div class="card-title">Focal Point Radial</div>
+          <p class="card-desc">Elliptical radial gradient with off-center focal point, using rgba() for soft edge falloff.</p>
+        </div>
+      </div>
+
+      <div class="grad-card card-3">
+        <div class="card-bg"></div>
+        <div class="card-overlay-ring"></div>
+        <div class="card-content">
+          <span class="card-type">5-Stop Linear &middot; 225deg</span>
+          <div class="card-title">Warm Cascade</div>
+          <p class="card-desc">Five-stop diagonal gradient mixing amber, rose, and violet with varying alpha channels.</p>
+        </div>
+      </div>
+    </div>
+
+    <span class="slide-num">02 / 03</span>
+  </div>
+
+  <!-- SLIDE 3: Gradient Composition -->
+  <div class="slide slide-3">
+    <div class="full-bg-gradient"></div>
+
+    <div class="radial-accent radial-accent-1"></div>
+    <div class="radial-accent radial-accent-2"></div>
+
+    <div class="slide-header">
+      <span class="tag">03 &mdash; Composition</span>
+      <h2>Gradient Composition</h2>
+    </div>
+    <div class="header-rule"></div>
+
+    <!-- Gradient stripe bars -->
+    <div class="stripe-row">
+      <div class="stripe stripe-1"></div>
+      <div class="stripe stripe-2"></div>
+      <div class="stripe stripe-3"></div>
+      <div class="stripe stripe-4"></div>
+    </div>
+
+    <!-- Content blocks -->
+    <div class="content-area">
+      <div class="composition-block block-1">
+        <div class="block-gradient"></div>
+        <div class="block-inner">
+          <div>
+            <span class="block-label">Keyword Directions</span>
+            <div class="block-heading">Layered Linear<br>Compositions</div>
+            <p class="block-body">Full-width background gradients using keyword directions like <code>to bottom left</code> and <code>to right</code>, combined with transparent overlays for depth.</p>
+          </div>
+          <div class="accent-bar"></div>
+        </div>
+      </div>
+
+      <div class="composition-block block-2">
+        <div class="block-gradient"></div>
+        <div class="block-inner">
+          <div>
+            <span class="block-label">Mixed Modes</span>
+            <div class="block-heading">Radial &amp; Linear<br>Interplay</div>
+            <p class="block-body">Small radial accent blobs layered beneath linear gradient containers. Stripe bars with multi-directional gradient fills for visual rhythm.</p>
+          </div>
+          <div class="accent-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="brand">Chromatic Systems</span>
+      <span class="slide-num">03 / 03</span>
+    </div>
+  </div>
+
+</body>
+</html>
