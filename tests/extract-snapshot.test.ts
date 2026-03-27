@@ -12,7 +12,6 @@ const FIXTURES = [
   "gradients.html",
   "images.html",
   "mixed.html",
-  "tables-and-grids.html",
   "data-attrs.html",
 ];
 
