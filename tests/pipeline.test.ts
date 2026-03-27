@@ -25,7 +25,7 @@ describe("pipeline error handling", () => {
 });
 
 describe("pipeline integration", () => {
-  test("converts slide.html to PDF and PNG (no PPTX to skip font download)", async () => {
+  test.skipIf(!!process.env.CI)("converts slide.html to PDF and PNG (no PPTX to skip font download)", async () => {
     const htmlPath = resolve(FIXTURES_DIR, "slide.html");
     if (!existsSync(htmlPath)) {
       console.log("Skipping: fixture not found");
