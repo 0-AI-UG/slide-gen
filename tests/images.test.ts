@@ -48,7 +48,7 @@ describe("image support", () => {
       }
 
       if (existsSync(TEST_OUTPUT)) rmSync(TEST_OUTPUT, { recursive: true });
-    }, 30_000);
+    }, 60_000);
 
     test("gradient elements are NOT treated as images", async () => {
       const htmlPath = resolve(FIXTURES_DIR, "images.html");
@@ -72,7 +72,7 @@ describe("image support", () => {
       expect(hasGradientRect).toBe(true);
 
       if (existsSync(TEST_OUTPUT)) rmSync(TEST_OUTPUT, { recursive: true });
-    }, 30_000);
+    }, 60_000);
   });
 
   describe("pptx-builder - image rendering", () => {

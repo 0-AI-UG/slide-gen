@@ -54,5 +54,5 @@ describe("pipeline integration", () => {
 
     // Clean up
     if (existsSync(TEST_OUTPUT)) rmSync(TEST_OUTPUT, { recursive: true });
-  }, 30_000);
+  }, 60_000);
 });

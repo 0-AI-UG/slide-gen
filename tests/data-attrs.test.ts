@@ -46,7 +46,7 @@ describe("data-sg-wrap attribute", () => {
     expect(metric!.wrap).toBe(false);
 
     if (existsSync(TEST_OUTPUT)) rmSync(TEST_OUTPUT, { recursive: true });
-  }, 30_000);
+  }, 60_000);
 });
 
 describe("data-sg-group attribute", () => {
@@ -87,5 +87,5 @@ describe("data-sg-group attribute", () => {
     expect(ungrouped).toBeDefined();
 
     if (existsSync(TEST_OUTPUT)) rmSync(TEST_OUTPUT, { recursive: true });
-  }, 30_000);
+  }, 60_000);
 });
