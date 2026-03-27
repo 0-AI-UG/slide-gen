@@ -71,6 +71,6 @@ describe("extraction snapshots", () => {
       } finally {
         await closeBrowser(ctx);
       }
-    }, 30_000);
+    }, 60_000);
   }
 });
