@@ -1,5 +1,5 @@
 import JSZip from "jszip";
-import type { SlideData, FontPrepResult } from "./types";
+import type { SlideData, FontPrepResult, MasterSlideConfig } from "./types";
 import {
   SLIDE_W_IN, SLIDE_H_IN,
   FONT_SIZE_MIN_PT, FONT_SIZE_MAX_PT,
@@ -8,22 +8,24 @@ import {
   MIN_RECT_DIM_PX, MIN_TEXT_DIM_PX, MIN_SHAPE_DIM_IN,
   BOLD_THRESHOLD_DEFAULT,
 } from "./constants";
-import { parseCssColor, parseCssAlpha } from "./color";
+import { parseCssColor, parseCssAlpha, parseCssColorAndAlpha } from "./color";
 import { RelationshipManager, REL_TYPES } from "./pptx-rels";
 import {
   contentTypesXml, rootRelsXml, presentationXml,
   presPropsXml, viewPropsXml, tableStylesXml, themeXml,
   slideMasterXml, slideLayoutXml, slideXml,
   appXml, coreXml,
+  notesSlideXml, notesMasterXml,
 } from "./pptx-xml";
 import {
-  buildRectShapeXml, buildImageShapeXml, buildTextBoxXml, buildBackgroundXml,
+  buildRectShapeXml, buildImageShapeXml, buildTextBoxXml, buildTableXml, buildBackgroundXml,
   inToEmu,
   type TextRunOpts,
 } from "./pptx-shapes";
 
 export interface PptxBuildOptions {
   fontPrepResult?: FontPrepResult;
+  masterSlide?: MasterSlideConfig;
 }
 
 export interface PptxBuildResult {
@@ -47,16 +49,18 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
 
   const zip = new JSZip();
 
+  const masterSlide = options.masterSlide;
+
   // ── Static boilerplate ──────────────────────────────────────────────
   zip.file("_rels/.rels", rootRelsXml());
   zip.file("docProps/app.xml", appXml(slideData.length));
   zip.file("docProps/core.xml", coreXml());
-  zip.file("ppt/theme/theme1.xml", themeXml());
+  zip.file("ppt/theme/theme1.xml", masterSlide?.themeXml ?? themeXml());
   zip.file("ppt/presProps.xml", presPropsXml());
   zip.file("ppt/viewProps.xml", viewPropsXml());
   zip.file("ppt/tableStyles.xml", tableStylesXml());
-  zip.file("ppt/slideMasters/slideMaster1.xml", slideMasterXml());
-  zip.file("ppt/slideLayouts/slideLayout1.xml", slideLayoutXml());
+  zip.file("ppt/slideMasters/slideMaster1.xml", masterSlide?.masterXml ?? slideMasterXml());
+  zip.file("ppt/slideLayouts/slideLayout1.xml", masterSlide?.layoutXml ?? slideLayoutXml());
 
   // Slide master rels (layout + theme)
   const masterRels = new RelationshipManager();
@@ -75,6 +79,17 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
 
   let imageCounter = 0;
   const slideRIds: string[] = [];
+  let notesSlideCount = 0;
+  let hasNotesMaster = false;
+
+  // Pre-register logo image media if provided
+  let logoMediaIndex: number | undefined;
+  if (masterSlide?.logoImage) {
+    imageCounter++;
+    logoMediaIndex = imageCounter;
+    const mediaPath = `ppt/media/image${logoMediaIndex}.png`;
+    zip.file(mediaPath, Buffer.from(masterSlide.logoImage.base64, "base64"));
+  }
 
   // ── Build each slide ────────────────────────────────────────────────
   for (let slideIdx = 0; slideIdx < slideData.length; slideIdx++) {
@@ -96,10 +111,28 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
     // ── Rectangles ──
     for (const rect of sd.rects) {
       const hasGradient = rect.gradient && rect.gradient.stops.length >= 2;
+      const hasBorder = rect.borderColor && rect.borderWidth;
       const fillColor = parseCssColor(rect.backgroundColor);
-      if (!hasGradient && (!fillColor || parseCssAlpha(rect.backgroundColor) <= ALPHA_VISIBLE_THRESHOLD)) {
+      const fillAlpha = parseCssAlpha(rect.backgroundColor);
+      if (!hasGradient && !hasBorder && (!fillColor || fillAlpha <= ALPHA_VISIBLE_THRESHOLD)) {
         warnings.push(`Slide ${slideIdx + 1}: dropped invisible rect at (${rect.x}, ${rect.y})`);
         continue;
+      }
+
+      // Drop repeating gradients where non-opaque-black stops are nearly invisible —
+      // these create fine CSS stripe textures that OOXML can't reproduce faithfully
+      if (hasGradient && rect.gradient!.repeating) {
+        const maxVisibleAlpha = Math.max(...rect.gradient!.stops.map(s => {
+          const { hex, alpha } = parseCssColorAndAlpha(s.color);
+          // Ignore fully opaque black (blends into dark backgrounds) and fully transparent
+          if (hex === "000000" && alpha > 0.99) return 0;
+          if (alpha < 0.01) return 0;
+          return alpha;
+        }));
+        if (maxVisibleAlpha < 0.1) {
+          warnings.push(`Slide ${slideIdx + 1}: dropped subtle repeating gradient at (${rect.x}, ${rect.y}) — can't reproduce fine CSS stripes in OOXML`);
+          continue;
+        }
       }
 
       const x = rect.x;
@@ -113,28 +146,72 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
 
       let shapeColor: string;
       let fillTransparency: number;
+      const isTransparentFill = fillAlpha <= ALPHA_VISIBLE_THRESHOLD;
 
       if (hasGradient) {
         shapeColor = "000000"; // unused when gradient is set
         fillTransparency = 0;
+      } else if (isTransparentFill) {
+        shapeColor = "000000";
+        fillTransparency = 0;
       } else {
         shapeColor = fillColor!;
-        const fillAlpha = parseCssAlpha(rect.backgroundColor);
         fillTransparency = Math.round((1 - fillAlpha) * 100);
       }
 
-      shapesXml += buildRectShapeXml({
-        id: shapeId++,
+      // Parse border properties
+      let borderColorHex: string | undefined;
+      let borderWidthIn: number | undefined;
+      if (hasBorder) {
+        borderColorHex = parseCssColor(rect.borderColor!);
+        borderWidthIn = rect.borderWidth! * sx;
+      }
+
+      const commonRectOpts = {
         x: x * sx,
         y: y * sy,
         w: Math.max(w * sx, MIN_SHAPE_DIM_IN),
         h: Math.max(h * sy, MIN_SHAPE_DIM_IN),
-        fillColor: shapeColor,
-        fillTransparency,
-        gradient: hasGradient ? rect.gradient : undefined,
         borderRadius: (rect.borderRadius ?? 0) > 0 ? rect.borderRadius! * sx * BORDER_RADIUS_SCALE : undefined,
+        borderRadii: rect.borderRadii ? {
+          topLeft: rect.borderRadii.topLeft * sx * BORDER_RADIUS_SCALE,
+          topRight: rect.borderRadii.topRight * sx * BORDER_RADIUS_SCALE,
+          bottomRight: rect.borderRadii.bottomRight * sx * BORDER_RADIUS_SCALE,
+          bottomLeft: rect.borderRadii.bottomLeft * sx * BORDER_RADIUS_SCALE,
+        } : undefined,
+        borderColor: borderColorHex,
+        borderWidth: borderWidthIn,
+        noFill: isTransparentFill && !hasGradient,
         warnings,
-      });
+      };
+
+      if (rect.gradients && rect.gradients.length > 1) {
+        // Multiple gradient layers: emit stacked shapes (bottom layer first)
+        // First shape gets the background color + shadow + first gradient (bottom-most)
+        // CSS layers are painted top-to-bottom, so gradients[0] is on top
+        // OOXML shapes stack later-on-top, so we reverse the order
+        const reversed = [...rect.gradients].reverse();
+        for (let gi = 0; gi < reversed.length; gi++) {
+          const grad = reversed[gi];
+          shapesXml += buildRectShapeXml({
+            id: shapeId++,
+            ...commonRectOpts,
+            fillColor: gi === 0 ? shapeColor : "000000",
+            fillTransparency: gi === 0 ? fillTransparency : 0,
+            gradient: grad.stops.length >= 2 ? grad : undefined,
+            boxShadow: gi === 0 ? rect.boxShadow : undefined,
+          });
+        }
+      } else {
+        shapesXml += buildRectShapeXml({
+          id: shapeId++,
+          ...commonRectOpts,
+          fillColor: shapeColor,
+          fillTransparency,
+          gradient: hasGradient ? rect.gradient : undefined,
+          boxShadow: rect.boxShadow,
+        });
+      }
     }
 
     // ── Images ──
@@ -246,6 +323,17 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
         const textAlpha = parseCssAlpha(run.color);
         const textTransparency = textAlpha < ALPHA_OPAQUE_THRESHOLD ? Math.round((1 - textAlpha) * 100) : undefined;
 
+        // Parse text-decoration
+        const dec = run.textDecoration || "";
+        const hasUnderline = dec.includes("underline") || undefined;
+        const hasStrike = dec.includes("line-through") || undefined;
+
+        // Handle hyperlinks
+        let hlinkRId: string | undefined;
+        if (run.href) {
+          hlinkRId = slideRels.add(REL_TYPES.hyperlink, run.href, "External");
+        }
+
         pptxRuns.push({
           text: displayText,
           fontSize: clampedFontSize,
@@ -255,6 +343,11 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
           italic: run.fontStyle === "italic" || undefined,
           charSpacing,
           transparency: textTransparency,
+          underline: hasUnderline,
+          strikethrough: hasStrike,
+          hlinkRId,
+          textShadow: run.textShadow,
+          gradientFill: run.gradientFill,
         });
       }
 
@@ -285,8 +378,19 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
       const shouldWrap = t.wrap;
       let wIn: number, hIn: number;
 
+      // For aligned text, reconstruct the parent container's x position
+      // since the extracted x is the text content bounding box, not the container
+      let containerX = x;
+      if (t.parentWidth > w + 1) {
+        if (t.textAlign === "center") {
+          containerX = x - (t.parentWidth - w) / 2;
+        } else if (t.textAlign === "right") {
+          containerX = x - (t.parentWidth - w);
+        }
+      }
+
       if (shouldWrap) {
-        wIn = Math.min(t.parentWidth, htmlW - x) * sx * 1.05;
+        wIn = Math.min(t.parentWidth, htmlW - Math.max(0, containerX)) * sx * 1.05;
         hIn = Math.max(t.parentHeight * sy, h * sy);
       } else {
         wIn = w * 1.25 * sx;
@@ -294,7 +398,7 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
         hIn = Math.max(h * sy, minH);
       }
 
-      let finalX = x * sx;
+      let finalX = (align === "ctr" || align === "r" ? containerX : x) * sx;
       let finalY = y * sy;
       let finalW = wIn;
       let finalH = hIn;
@@ -333,7 +437,61 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
         rotate,
         lineSpacingMultiple,
         shrinkToFit: true,
+        bulletType: t.bulletType,
+        bulletChar: t.bulletChar,
+        bulletAutoNumType: t.bulletAutoNumType,
+        indentLevel: t.indentLevel,
       });
+    }
+
+    // ── Tables ──
+    for (const table of sd.tables ?? []) {
+      shapesXml += buildTableXml({
+        id: shapeId++,
+        table,
+        sx,
+        sy,
+        fontScale: 0.75 * scale,
+      });
+    }
+
+    // ── Logo image ──
+    if (logoMediaIndex !== undefined && masterSlide?.logoImage) {
+      const logo = masterSlide.logoImage;
+      const logoRId = slideRels.add(REL_TYPES.image, `../media/image${logoMediaIndex}.png`);
+      shapesXml += buildImageShapeXml({
+        id: shapeId++,
+        x: logo.x * sx,
+        y: logo.y * sy,
+        w: logo.width * sx,
+        h: logo.height * sy,
+        rId: logoRId,
+      });
+    }
+
+    // ── Notes slide ──
+    if (sd.notes) {
+      notesSlideCount++;
+      const notesNum = notesSlideCount;
+
+      // Ensure notes master exists
+      if (!hasNotesMaster) {
+        hasNotesMaster = true;
+        zip.file("ppt/notesMasters/notesMaster1.xml", notesMasterXml());
+        const notesMasterRels = new RelationshipManager();
+        notesMasterRels.add(REL_TYPES.theme, "../theme/theme1.xml");
+        zip.file("ppt/notesMasters/_rels/notesMaster1.xml.rels", notesMasterRels.toXml());
+      }
+
+      // Create notes slide
+      slideRels.add(REL_TYPES.notesSlide, `../notesSlides/notesSlide${notesNum}.xml`);
+      zip.file(`ppt/notesSlides/notesSlide${notesNum}.xml`, notesSlideXml(sd.notes));
+
+      // Notes slide rels: link back to slide and to notes master
+      const notesRels = new RelationshipManager();
+      notesRels.add(REL_TYPES.slide, `../slides/slide${slideIdx + 1}.xml`);
+      notesRels.add(REL_TYPES.notesMaster, "../notesMasters/notesMaster1.xml");
+      zip.file(`ppt/notesSlides/_rels/notesSlide${notesNum}.xml.rels`, notesRels.toXml());
     }
 
     // ── Write slide XML ──
@@ -352,6 +510,11 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
   const themeRId = presRels.add(REL_TYPES.theme, "theme/theme1.xml");
   const tableStylesRId = presRels.add(REL_TYPES.tableStyles, "tableStyles.xml");
 
+  // Add notes master to presentation rels if any notes exist
+  if (hasNotesMaster) {
+    presRels.add(REL_TYPES.notesMaster, "notesMasters/notesMaster1.xml");
+  }
+
   zip.file("ppt/_rels/presentation.xml.rels", presRels.toXml());
   zip.file("ppt/presentation.xml", presentationXml(
     slideData.length,
@@ -359,7 +522,7 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
     slideSizeCx,
     slideSizeCy,
   ));
-  zip.file("[Content_Types].xml", contentTypesXml(slideData.length));
+  zip.file("[Content_Types].xml", contentTypesXml(slideData.length, notesSlideCount));
 
   // ── Generate ZIP buffer ─────────────────────────────────────────────
   const buffer = Buffer.from(await zip.generateAsync({ type: "nodebuffer" }));

@@ -1,0 +1,4667 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(10, 10, 15)"
+      },
+      {
+        "x": 1120,
+        "y": -200,
+        "width": 900,
+        "height": 900,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.15)",
+              "position": 33.33333333333333
+            },
+            {
+              "color": "rgba(124, 58, 237, 0.08)",
+              "position": 50
+            },
+            {
+              "color": "rgba(0, 0, 0, 0)",
+              "position": 70
+            }
+          ],
+          "radialShape": "circle"
+        },
+        "borderRadius": 450
+      },
+      {
+        "x": 120,
+        "y": 0,
+        "width": 1,
+        "height": 1080,
+        "backgroundColor": "rgba(255, 107, 53, 0.08)"
+      },
+      {
+        "x": 480,
+        "y": 0,
+        "width": 1,
+        "height": 1080,
+        "backgroundColor": "rgba(255, 107, 53, 0.08)"
+      },
+      {
+        "x": 840,
+        "y": 0,
+        "width": 1,
+        "height": 1080,
+        "backgroundColor": "rgba(255, 107, 53, 0.08)"
+      },
+      {
+        "x": 120,
+        "y": 80,
+        "width": 36,
+        "height": 36,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(255, 107, 53)",
+              "position": 0
+            },
+            {
+              "color": "rgb(124, 58, 237)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 8
+      },
+      {
+        "x": 1552.1875,
+        "y": 84,
+        "width": 247.8125,
+        "height": 36,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(255, 107, 53, 0.3)",
+        "borderWidth": 1,
+        "borderRadius": 20
+      },
+      {
+        "x": 0,
+        "y": 939.5,
+        "width": 1920,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 524.25,
+        "y": 980.5,
+        "width": 1,
+        "height": 60,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 989.5,
+        "y": 980.5,
+        "width": 1,
+        "height": 60,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 1454.75,
+        "y": 980.5,
+        "width": 1,
+        "height": 60,
+        "backgroundColor": "rgb(42, 42, 58)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "Luminar",
+            "fontSize": 22,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0.44,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 168,
+        "y": 84,
+        "width": 87.9375,
+        "height": 28,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 87.9375,
+        "parentHeight": 28,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Luminar",
+        "fontSize": 22,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0.44,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Series B · $42M Raise ",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 1.4,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1573.1875,
+        "y": 93,
+        "width": 205.8125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 247.8125,
+        "parentHeight": 36,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Series B · $42M Raise ",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 1.4,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Infrastructure for the AI Era ",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 2.25,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 120,
+        "y": 300,
+        "width": 326.25,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 1200,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Infrastructure for the AI Era ",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 2.25,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Deploy models",
+            "fontSize": 96,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -2.88,
+            "textTransform": "none",
+            "lineHeight": 1
+          },
+          {
+            "text": "\n",
+            "fontSize": 96,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -2.88,
+            "textTransform": "none",
+            "lineHeight": 1
+          },
+          {
+            "text": "at the speed",
+            "fontSize": 96,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -2.88,
+            "textTransform": "none",
+            "lineHeight": 1
+          },
+          {
+            "text": "\n",
+            "fontSize": 96,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -2.88,
+            "textTransform": "none",
+            "lineHeight": 1
+          },
+          {
+            "text": "of thought. ",
+            "fontSize": 96,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -2.88,
+            "textTransform": "none",
+            "lineHeight": 1
+          }
+        ],
+        "x": 120,
+        "y": 335,
+        "width": 644.171875,
+        "height": 314,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 1200,
+        "parentHeight": 288,
+        "wrap": true,
+        "lineHeight": 1,
+        "text": " Deploy modelsat the speedof thought. ",
+        "fontSize": 96,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": -2.88,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "ARR",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 120,
+        "y": 979.5,
+        "width": 25.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "ARR",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "$18.4M",
+            "fontSize": 36,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 120,
+        "y": 995.5,
+        "width": 125.078125,
+        "height": 46,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 46,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$18.4M",
+        "fontSize": 36,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Customers",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 585.25,
+        "y": 979.5,
+        "width": 75.609375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Customers",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "340+",
+            "fontSize": 36,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 585.25,
+        "y": 995.5,
+        "width": 90.4375,
+        "height": 46,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 46,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "340+",
+        "fontSize": 36,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Team",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1050.5,
+        "y": 979.5,
+        "width": 33.609375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Team",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "86",
+            "fontSize": 36,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1050.5,
+        "y": 995.5,
+        "width": 43.859375,
+        "height": 46,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 46,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "86",
+        "fontSize": 36,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "NRR",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1515.75,
+        "y": 979.5,
+        "width": 25.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "NRR",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "142%",
+            "fontSize": 36,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(16, 185, 129)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1515.75,
+        "y": 995.5,
+        "width": 87.84375,
+        "height": 46,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 404.25,
+        "parentHeight": 46,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "142%",
+        "fontSize": 36,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(16, 185, 129)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Open with energy. Pause after the tagline."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(10, 10, 15)"
+      },
+      {
+        "x": 120,
+        "y": 85,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(255, 107, 53)",
+        "borderRadius": 4
+      },
+      {
+        "x": 120,
+        "y": 440,
+        "width": 544,
+        "height": 245,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 688,
+        "y": 440,
+        "width": 544,
+        "height": 245,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 1256,
+        "y": 440,
+        "width": 544,
+        "height": 245,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "01 / The Problem",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.68,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 144,
+        "y": 80,
+        "width": 161.28125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 161.28125,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "01 / The Problem",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.68,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " ML teams waste ",
+            "fontSize": 64,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.28,
+            "textTransform": "none",
+            "lineHeight": 1.15
+          },
+          {
+            "text": "73% of their time",
+            "fontSize": 64,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": -1.28,
+            "textTransform": "none",
+            "lineHeight": 1.15
+          },
+          {
+            "text": " on infrastructure. ",
+            "fontSize": 64,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.28,
+            "textTransform": "none",
+            "lineHeight": 1.15
+          }
+        ],
+        "x": 120,
+        "y": 175,
+        "width": 847.6875,
+        "height": 155.59375,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 900,
+        "parentHeight": 147.1875,
+        "wrap": true,
+        "lineHeight": 1.15,
+        "text": " ML teams waste 73% of their time on infrastructure. ",
+        "fontSize": 64,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": -1.28,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "6 weeks",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 161,
+        "y": 489,
+        "width": 217.40625,
+        "height": 71,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 462,
+        "parentHeight": 71,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "6 weeks",
+        "fontSize": 56,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Average time from model training to first production deployment ",
+            "fontSize": 20,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 161,
+        "y": 578,
+        "width": 392.609375,
+        "height": 56,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 462,
+        "parentHeight": 60,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": " Average time from model training to first production deployment ",
+        "fontSize": 20,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "$2.1M",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(124, 58, 237)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 729,
+        "y": 489,
+        "width": 155.6875,
+        "height": 71,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 462,
+        "parentHeight": 71,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$2.1M",
+        "fontSize": 56,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(124, 58, 237)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Annual cost of idle GPU compute from poor orchestration ",
+            "fontSize": 20,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 729,
+        "y": 578,
+        "width": 417.234375,
+        "height": 56,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 462,
+        "parentHeight": 60,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": " Annual cost of idle GPU compute from poor orchestration ",
+        "fontSize": 20,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "4.2×",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1297,
+        "y": 489,
+        "width": 120.296875,
+        "height": 71,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 462,
+        "parentHeight": 71,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "4.2×",
+        "fontSize": 56,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " More engineers needed vs. companies with modern MLOps tooling ",
+            "fontSize": 20,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 1297,
+        "y": 578,
+        "width": 416.765625,
+        "height": 56,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 462,
+        "parentHeight": 60,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": " More engineers needed vs. companies with modern MLOps tooling ",
+        "fontSize": 20,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Source: Gartner MLOps Survey 2025 · n=1,200 ML teams ",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(107, 114, 128, 0.6)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 120,
+        "y": 1004,
+        "width": 374.40625,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 374.40625,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Source: Gartner MLOps Survey 2025 · n=1,200 ML teams ",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(107, 114, 128, 0.6)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "02",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1783.1875,
+        "y": 1002,
+        "width": 16.8125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 16.8125,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "02",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Emphasize the pain. Each point should resonate with technical buyers."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(10, 10, 15)"
+      },
+      {
+        "x": 120,
+        "y": 85,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(255, 107, 53)",
+        "borderRadius": 4
+      },
+      {
+        "x": 980,
+        "y": 160,
+        "width": 820,
+        "height": 420,
+        "backgroundColor": "rgb(13, 13, 18)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 981,
+        "y": 161,
+        "width": 818,
+        "height": 44,
+        "backgroundColor": "rgb(17, 17, 24)"
+      },
+      {
+        "x": 981,
+        "y": 204.5,
+        "width": 818,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 997,
+        "y": 176.5,
+        "width": 12,
+        "height": 12,
+        "backgroundColor": "rgb(239, 68, 68)",
+        "borderRadius": 6
+      },
+      {
+        "x": 1017,
+        "y": 176.5,
+        "width": 12,
+        "height": 12,
+        "backgroundColor": "rgb(245, 158, 11)",
+        "borderRadius": 6
+      },
+      {
+        "x": 1037,
+        "y": 176.5,
+        "width": 12,
+        "height": 12,
+        "backgroundColor": "rgb(34, 197, 94)",
+        "borderRadius": 6
+      },
+      {
+        "x": 120,
+        "y": 640,
+        "width": 405,
+        "height": 179.5,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 545,
+        "y": 640,
+        "width": 405,
+        "height": 179.5,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 970,
+        "y": 640,
+        "width": 405,
+        "height": 179.5,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 1395,
+        "y": 640,
+        "width": 405,
+        "height": 179.5,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "02 / The Solution",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.68,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 144,
+        "y": 80,
+        "width": 171.375,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 171.375,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "02 / The Solution",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.68,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " One command.",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.1500000000000001
+          },
+          {
+            "text": "\n",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.1500000000000001
+          },
+          {
+            "text": "Production-ready. ",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.1500000000000001
+          }
+        ],
+        "x": 120,
+        "y": 166,
+        "width": 477.96875,
+        "height": 135.390625,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 700,
+        "parentHeight": 128.78125,
+        "wrap": true,
+        "lineHeight": 1.1500000000000001,
+        "text": " One command.Production-ready. ",
+        "fontSize": 56,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": -1.12,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Luminar abstracts away GPU provisioning, model packaging, traffic routing, and monitoring — so your team ships models, not YAML. ",
+            "fontSize": 20,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 120,
+        "y": 325.78125,
+        "width": 556.21875,
+        "height": 90,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 560,
+        "parentHeight": 96,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Luminar abstracts away GPU provisioning, model packaging, traffic routing, and monitoring — so your team ships models, not YAML. ",
+        "fontSize": 20,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "terminal",
+            "fontSize": 13,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1069,
+        "y": 174,
+        "width": 62.40625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 62.40625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "terminal",
+        "fontSize": 13,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "$",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(34, 197, 94)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          },
+          {
+            "text": "luminar deploy ./model",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          }
+        ],
+        "x": 1009,
+        "y": 238,
+        "width": 216,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 762,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 2,
+        "text": "$luminar deploy ./model",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(34, 197, 94)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " ⣾ Packaging model artifacts...",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          }
+        ],
+        "x": 1009,
+        "y": 268,
+        "width": 271.265625,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 762,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 2,
+        "text": " ⣾ Packaging model artifacts...",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " ✓ Container built (2.1s)",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          }
+        ],
+        "x": 1009,
+        "y": 298,
+        "width": 216.03125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 762,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 2,
+        "text": " ✓ Container built (2.1s)",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " ✓ GPU cluster allocated (A100×4)",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          }
+        ],
+        "x": 1009,
+        "y": 328,
+        "width": 288.03125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 762,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 2,
+        "text": " ✓ GPU cluster allocated (A100×4)",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " ✓ Canary deployed → 100% traffic",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          }
+        ],
+        "x": 1009,
+        "y": 358,
+        "width": 288.0625,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 762,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 2,
+        "text": " ✓ Canary deployed → 100% traffic",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " ✓ Live at api.luminar.ai/v1/predict",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(34, 197, 94)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          }
+        ],
+        "x": 1009,
+        "y": 388,
+        "width": 315.03125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 762,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 2,
+        "text": " ✓ Live at api.luminar.ai/v1/predict",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(34, 197, 94)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "$",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(34, 197, 94)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          },
+          {
+            "text": "_",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 2
+          }
+        ],
+        "x": 1009,
+        "y": 448,
+        "width": 27,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 762,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 2,
+        "text": "$_",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(34, 197, 94)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Auto-scaling",
+            "fontSize": 13,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 153,
+        "y": 677,
+        "width": 109.203125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Auto-scaling",
+        "fontSize": 13,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Scale from zero to thousands of GPUs based on real-time demand. Pay only for what you use. ",
+            "fontSize": 17,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.7)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 153,
+        "y": 707,
+        "width": 331.78125,
+        "height": 73,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 76.5,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": " Scale from zero to thousands of GPUs based on real-time demand. Pay only for what you use. ",
+        "fontSize": 17,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.7)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Model Registry",
+            "fontSize": 13,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 578,
+        "y": 677,
+        "width": 127.40625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Model Registry",
+        "fontSize": 13,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Version, tag, and rollback any model with full lineage tracking and audit logs. ",
+            "fontSize": 17,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.7)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 578,
+        "y": 707,
+        "width": 334.765625,
+        "height": 47.5,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 51,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": " Version, tag, and rollback any model with full lineage tracking and audit logs. ",
+        "fontSize": 17,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.7)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Observability",
+            "fontSize": 13,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1003,
+        "y": 677,
+        "width": 118.3125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Observability",
+        "fontSize": 13,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Latency, throughput, drift detection — built-in dashboards with PagerDuty integration. ",
+            "fontSize": 17,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.7)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 1003,
+        "y": 707,
+        "width": 319.828125,
+        "height": 73,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 76.5,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": " Latency, throughput, drift detection — built-in dashboards with PagerDuty integration. ",
+        "fontSize": 17,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.7)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Multi-Cloud",
+            "fontSize": 13,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1428,
+        "y": 677,
+        "width": 100.109375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Multi-Cloud",
+        "fontSize": 13,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Deploy across AWS, GCP, and Azure with unified networking and cost management. ",
+            "fontSize": 17,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.7)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 1428,
+        "y": 707,
+        "width": 324.125,
+        "height": 73,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 339,
+        "parentHeight": 76.5,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": " Deploy across AWS, GCP, and Azure with unified networking and cost management. ",
+        "fontSize": 17,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.7)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "03",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1783.1875,
+        "y": 1002,
+        "width": 16.8125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 16.8125,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "03",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Demo the product here. Show the CLI flow live if possible."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(10, 10, 15)"
+      },
+      {
+        "x": 120,
+        "y": 85,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(255, 107, 53)",
+        "borderRadius": 4
+      },
+      {
+        "x": 120,
+        "y": 864,
+        "width": 164.5625,
+        "height": 32,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.3)",
+              "position": 0
+            },
+            {
+              "color": "rgba(255, 107, 53, 0.1)",
+              "position": 100
+            }
+          ],
+          "angle": 180
+        },
+        "borderRadius": 6,
+        "borderRadii": {
+          "topLeft": 6,
+          "topRight": 6,
+          "bottomRight": 0,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 302.5625,
+        "y": 838,
+        "width": 164.578125,
+        "height": 58,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.35)",
+              "position": 0
+            },
+            {
+              "color": "rgba(255, 107, 53, 0.12)",
+              "position": 100
+            }
+          ],
+          "angle": 180
+        },
+        "borderRadius": 6,
+        "borderRadii": {
+          "topLeft": 6,
+          "topRight": 6,
+          "bottomRight": 0,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 485.140625,
+        "y": 796,
+        "width": 164.5625,
+        "height": 100,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.4)",
+              "position": 0
+            },
+            {
+              "color": "rgba(255, 107, 53, 0.15)",
+              "position": 100
+            }
+          ],
+          "angle": 180
+        },
+        "borderRadius": 6,
+        "borderRadii": {
+          "topLeft": 6,
+          "topRight": 6,
+          "bottomRight": 0,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 667.703125,
+        "y": 731,
+        "width": 164.578125,
+        "height": 165,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.5)",
+              "position": 0
+            },
+            {
+              "color": "rgba(255, 107, 53, 0.18)",
+              "position": 100
+            }
+          ],
+          "angle": 180
+        },
+        "borderRadius": 6,
+        "borderRadii": {
+          "topLeft": 6,
+          "topRight": 6,
+          "bottomRight": 0,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 850.28125,
+        "y": 636,
+        "width": 164.5625,
+        "height": 260,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.6)",
+              "position": 0
+            },
+            {
+              "color": "rgba(255, 107, 53, 0.2)",
+              "position": 100
+            }
+          ],
+          "angle": 180
+        },
+        "borderRadius": 6,
+        "borderRadii": {
+          "topLeft": 6,
+          "topRight": 6,
+          "bottomRight": 0,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 1032.84375,
+        "y": 516,
+        "width": 164.578125,
+        "height": 380,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.7)",
+              "position": 0
+            },
+            {
+              "color": "rgba(255, 107, 53, 0.25)",
+              "position": 100
+            }
+          ],
+          "angle": 180
+        },
+        "borderRadius": 6,
+        "borderRadii": {
+          "topLeft": 6,
+          "topRight": 6,
+          "bottomRight": 0,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 1215.421875,
+        "y": 396,
+        "width": 164.578125,
+        "height": 500,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(255, 107, 53)",
+              "position": 0
+            },
+            {
+              "color": "rgba(255, 107, 53, 0.3)",
+              "position": 100
+            }
+          ],
+          "angle": 180
+        },
+        "borderRadius": 6,
+        "borderRadii": {
+          "topLeft": 6,
+          "topRight": 6,
+          "bottomRight": 0,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 1440,
+        "y": 469.5,
+        "width": 360,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 1440,
+        "y": 619.5,
+        "width": 360,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 1440,
+        "y": 769.5,
+        "width": 360,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "03 / Traction",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.68,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 144,
+        "y": 80,
+        "width": 131.046875,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 131.046875,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "03 / Traction",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.68,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Hockey-stick ",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "revenue",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": ". ",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 120,
+        "y": 170,
+        "width": 581.1875,
+        "height": 71,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 581.1875,
+        "parentHeight": 71,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Hockey-stick revenue. ",
+        "fontSize": 56,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": -1.12,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q1 '24",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 180.671875,
+        "y": 904,
+        "width": 43.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 43.203125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q1 '24",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q2 '24",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 363.25,
+        "y": 904,
+        "width": 43.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 43.203125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q2 '24",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q3 '24",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 545.8125,
+        "y": 904,
+        "width": 43.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 43.203125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q3 '24",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q4 '24",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 728.390625,
+        "y": 904,
+        "width": 43.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 43.203125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q4 '24",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q1 '25",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 910.953125,
+        "y": 904,
+        "width": 43.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 43.203125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q1 '25",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q2 '25",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1093.53125,
+        "y": 904,
+        "width": 43.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 43.203125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q2 '25",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q3 '25",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1276.109375,
+        "y": 904,
+        "width": 43.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 43.203125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q3 '25",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Annual Recurring Revenue",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 352,
+        "width": 201.609375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Annual Recurring Revenue",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "$18.4M",
+            "fontSize": 48,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 376,
+        "width": 166.765625,
+        "height": 61,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 61,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$18.4M",
+        "fontSize": 48,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "QoQ Growth",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 502,
+        "width": 84,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "QoQ Growth",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "38%",
+            "fontSize": 48,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(16, 185, 129)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 526,
+        "width": 94.375,
+        "height": 61,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 61,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "38%",
+        "fontSize": 48,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(16, 185, 129)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Net Revenue Retention",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 652,
+        "width": 176.40625,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Net Revenue Retention",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "142%",
+            "fontSize": 48,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 676,
+        "width": 117.125,
+        "height": 61,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 61,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "142%",
+        "fontSize": 48,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Gross Margin",
+            "fontSize": 12,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.2,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 802,
+        "width": 100.8125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Gross Margin",
+        "fontSize": 12,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.2,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "78%",
+            "fontSize": 48,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1440,
+        "y": 826,
+        "width": 91.78125,
+        "height": 61,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 360,
+        "parentHeight": 61,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "78%",
+        "fontSize": 48,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "04",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1783.1875,
+        "y": 1002,
+        "width": 16.8125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 16.8125,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "04",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Revenue chart is the star. Let the numbers speak."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(10, 10, 15)"
+      },
+      {
+        "x": 120,
+        "y": 85,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(255, 107, 53)",
+        "borderRadius": 4
+      },
+      {
+        "x": 120,
+        "y": 380,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 545,
+        "y": 380,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 970,
+        "y": 380,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 1395,
+        "y": 380,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 120,
+        "y": 520,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 545,
+        "y": 520,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 970,
+        "y": 520,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 1395,
+        "y": 520,
+        "width": 405,
+        "height": 120,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 120,
+        "y": 827.625,
+        "width": 1680,
+        "height": 152.375,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderRadii": {
+          "topLeft": 0,
+          "topRight": 12,
+          "bottomRight": 12,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 120,
+        "y": 827.125,
+        "width": 1680,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 120,
+        "y": 979.5,
+        "width": 1680,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 118.5,
+        "y": 827.625,
+        "width": 3,
+        "height": 152.375,
+        "backgroundColor": "rgb(255, 107, 53)"
+      },
+      {
+        "x": 1799.5,
+        "y": 827.625,
+        "width": 1,
+        "height": 152.375,
+        "backgroundColor": "rgb(42, 42, 58)"
+      },
+      {
+        "x": 1462,
+        "y": 873.8125,
+        "width": 1,
+        "height": 60,
+        "backgroundColor": "rgb(42, 42, 58)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "04 / Customers",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.68,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 144,
+        "y": 80,
+        "width": 141.125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 141.125,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "04 / Customers",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.68,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Trusted by teams who",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.1500000000000001
+          },
+          {
+            "text": "\n",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.1500000000000001
+          },
+          {
+            "text": "ship models at scale. ",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.1500000000000001
+          }
+        ],
+        "x": 120,
+        "y": 166,
+        "width": 576.703125,
+        "height": 135.390625,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 1000,
+        "parentHeight": 128.78125,
+        "wrap": true,
+        "lineHeight": 1.1500000000000001,
+        "text": " Trusted by teams whoship models at scale. ",
+        "fontSize": 56,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": -1.12,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Stripe",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 281.40625,
+        "y": 422,
+        "width": 82.1875,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Stripe",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Datadog",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 689.75,
+        "y": 422,
+        "width": 115.5,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Datadog",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Coinbase",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1110.171875,
+        "y": 422,
+        "width": 124.640625,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Coinbase",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Figma",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1557.375,
+        "y": 422,
+        "width": 80.25,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Figma",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Notion",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 277.59375,
+        "y": 562,
+        "width": 89.796875,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Notion",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Ramp",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 709.609375,
+        "y": 562,
+        "width": 75.765625,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Ramp",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Vercel",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1130.90625,
+        "y": 562,
+        "width": 83.171875,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Vercel",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Scale AI",
+            "fontSize": 28,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1545.03125,
+        "y": 562,
+        "width": 104.921875,
+        "height": 36,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 405,
+        "parentHeight": 120,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Scale AI",
+        "fontSize": 28,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " \"Luminar cut our deployment time from 3 weeks to under 10 minutes. Our ML team can finally focus on models instead of infrastructure.\" ",
+            "fontSize": 22,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "italic",
+            "color": "rgba(245, 245, 240, 0.85)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 171,
+        "y": 871.625,
+        "width": 1168.984375,
+        "height": 63.1875,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 1243,
+        "parentHeight": 70.375,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " \"Luminar cut our deployment time from 3 weeks to under 10 minutes. Our ML team can finally focus on models instead of infrastructure.\" ",
+        "fontSize": 22,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "italic",
+        "color": "rgba(245, 245, 240, 0.85)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Sarah Chen",
+            "fontSize": 18,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1511,
+        "y": 880.8125,
+        "width": 98.375,
+        "height": 23,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 240,
+        "parentHeight": 23,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Sarah Chen",
+        "fontSize": 18,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "VP of Engineering, Stripe",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1511,
+        "y": 907.8125,
+        "width": 178.75,
+        "height": 19,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 240,
+        "parentHeight": 19,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "VP of Engineering, Stripe",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "05",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1783.1875,
+        "y": 1002,
+        "width": 16.8125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 16.8125,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "05",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Name-drop the big logos. Mention Stripe case study."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(10, 10, 15)"
+      },
+      {
+        "x": 120,
+        "y": 85,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(255, 107, 53)",
+        "borderRadius": 4
+      },
+      {
+        "x": 120,
+        "y": 320,
+        "width": 402,
+        "height": 314,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 157,
+        "y": 369,
+        "width": 72,
+        "height": 72,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(255, 107, 53)",
+              "position": 0
+            },
+            {
+              "color": "rgb(245, 158, 11)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 36
+      },
+      {
+        "x": 546,
+        "y": 320,
+        "width": 402,
+        "height": 314,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 583,
+        "y": 369,
+        "width": 72,
+        "height": 72,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(124, 58, 237)",
+              "position": 0
+            },
+            {
+              "color": "rgb(59, 130, 246)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 36
+      },
+      {
+        "x": 972,
+        "y": 320,
+        "width": 402,
+        "height": 314,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 1009,
+        "y": 369,
+        "width": 72,
+        "height": 72,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(16, 185, 129)",
+              "position": 0
+            },
+            {
+              "color": "rgb(6, 182, 212)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 36
+      },
+      {
+        "x": 1398,
+        "y": 320,
+        "width": 402,
+        "height": 314,
+        "backgroundColor": "rgb(22, 22, 31)",
+        "borderRadius": 12,
+        "borderColor": "rgb(42, 42, 58)",
+        "borderWidth": 1
+      },
+      {
+        "x": 1435,
+        "y": 369,
+        "width": 72,
+        "height": 72,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(244, 63, 94)",
+              "position": 0
+            },
+            {
+              "color": "rgb(255, 107, 53)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 36
+      },
+      {
+        "x": 120,
+        "y": 910.5,
+        "width": 1680,
+        "height": 1,
+        "backgroundColor": "rgb(42, 42, 58)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "05 / Team",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.68,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 144,
+        "y": 80,
+        "width": 90.734375,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 90.734375,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "05 / Team",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.68,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Built by operators. ",
+            "fontSize": 56,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -1.12,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 120,
+        "y": 170,
+        "width": 484.90625,
+        "height": 71,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 484.90625,
+        "parentHeight": 71,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Built by operators. ",
+        "fontSize": 56,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": -1.12,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Alex Rivera",
+            "fontSize": 24,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 157,
+        "y": 465,
+        "width": 125.96875,
+        "height": 31,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 31,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Alex Rivera",
+        "fontSize": 24,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "CEO & Co-founder",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 157,
+        "y": 502,
+        "width": 128.296875,
+        "height": 19,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 19,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "CEO & Co-founder",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Ex-Google Brain. Led TFX serving infra (10B+ predictions/day). Stanford CS PhD. ",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 157,
+        "y": 539,
+        "width": 316.828125,
+        "height": 43,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 48,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Ex-Google Brain. Led TFX serving infra (10B+ predictions/day). Stanford CS PhD. ",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Priya Mehta",
+            "fontSize": 24,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 583,
+        "y": 465,
+        "width": 139.109375,
+        "height": 31,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 31,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Priya Mehta",
+        "fontSize": 24,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "CTO & Co-founder",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 583,
+        "y": 502,
+        "width": 127.953125,
+        "height": 19,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 19,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "CTO & Co-founder",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Ex-Meta AI. Built PyTorch distributed training. 40+ papers. MIT EECS. ",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 583,
+        "y": 539,
+        "width": 265.25,
+        "height": 43,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 48,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Ex-Meta AI. Built PyTorch distributed training. 40+ papers. MIT EECS. ",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "James Park",
+            "fontSize": 24,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1009,
+        "y": 465,
+        "width": 131.671875,
+        "height": 31,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 31,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "James Park",
+        "fontSize": 24,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "VP Engineering",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1009,
+        "y": 502,
+        "width": 108.234375,
+        "height": 19,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 19,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "VP Engineering",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Ex-Databricks. Scaled MLflow from 0→50M downloads. UC Berkeley EECS. ",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 1009,
+        "y": 539,
+        "width": 310.5625,
+        "height": 43,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 48,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Ex-Databricks. Scaled MLflow from 0→50M downloads. UC Berkeley EECS. ",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Maria Santos",
+            "fontSize": 24,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1435,
+        "y": 465,
+        "width": 151.265625,
+        "height": 31,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 31,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Maria Santos",
+        "fontSize": 24,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "VP Sales",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1435,
+        "y": 502,
+        "width": 60.4375,
+        "height": 19,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 19,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "VP Sales",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Ex-Snowflake. Built enterprise sales from $20M→$400M ARR. Wharton MBA. ",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 1435,
+        "y": 539,
+        "width": 296.078125,
+        "height": 43,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 328,
+        "parentHeight": 48,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Ex-Snowflake. Built enterprise sales from $20M→$400M ARR. Wharton MBA. ",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Backed by",
+            "fontSize": 13,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 120,
+        "y": 957.5,
+        "width": 81.90625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 81.90625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Backed by",
+        "fontSize": 13,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "a16z",
+            "fontSize": 22,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.35)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 249.90625,
+        "y": 952,
+        "width": 47.234375,
+        "height": 28,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 47.234375,
+        "parentHeight": 28,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "a16z",
+        "fontSize": 22,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.35)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Sequoia",
+            "fontSize": 22,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.35)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 337.140625,
+        "y": 952,
+        "width": 85.71875,
+        "height": 28,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 85.71875,
+        "parentHeight": 28,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Sequoia",
+        "fontSize": 22,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.35)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Lightspeed",
+            "fontSize": 22,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.35)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 462.859375,
+        "y": 952,
+        "width": 120.4375,
+        "height": 28,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 120.4375,
+        "parentHeight": 28,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Lightspeed",
+        "fontSize": 22,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.35)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Index Ventures",
+            "fontSize": 22,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.35)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 623.296875,
+        "y": 952,
+        "width": 158.796875,
+        "height": 28,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 158.796875,
+        "parentHeight": 28,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Index Ventures",
+        "fontSize": 22,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.35)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "GV",
+            "fontSize": 22,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgba(245, 245, 240, 0.35)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 822.09375,
+        "y": 952,
+        "width": 27.765625,
+        "height": 28,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 27.765625,
+        "parentHeight": 28,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "GV",
+        "fontSize": 22,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgba(245, 245, 240, 0.35)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "06",
+            "fontSize": 14,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1783.1875,
+        "y": 1002,
+        "width": 16.8125,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 16.8125,
+        "parentHeight": 18,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "06",
+        "fontSize": 14,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Highlight the Google Brain and Meta AI pedigree."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(10, 10, 15)"
+      },
+      {
+        "x": 360,
+        "y": -60,
+        "width": 1200,
+        "height": 1200,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "radial",
+          "stops": [
+            {
+              "color": "rgba(255, 107, 53, 0.1)",
+              "position": 33.33333333333333
+            },
+            {
+              "color": "rgba(124, 58, 237, 0.05)",
+              "position": 40
+            },
+            {
+              "color": "rgba(0, 0, 0, 0)",
+              "position": 65
+            }
+          ],
+          "radialShape": "circle"
+        },
+        "borderRadius": 600
+      },
+      {
+        "x": 360,
+        "y": 560,
+        "width": 598,
+        "height": 48,
+        "backgroundColor": "rgb(255, 107, 53)"
+      },
+      {
+        "x": 960,
+        "y": 560,
+        "width": 358.796875,
+        "height": 48,
+        "backgroundColor": "rgb(124, 58, 237)"
+      },
+      {
+        "x": 1320.796875,
+        "y": 560,
+        "width": 239.203125,
+        "height": 48,
+        "backgroundColor": "rgb(16, 185, 129)"
+      },
+      {
+        "x": 360,
+        "y": 659,
+        "width": 384,
+        "height": 2,
+        "backgroundColor": "rgb(255, 107, 53)"
+      },
+      {
+        "x": 768,
+        "y": 659,
+        "width": 384,
+        "height": 2,
+        "backgroundColor": "rgb(124, 58, 237)"
+      },
+      {
+        "x": 1176,
+        "y": 659,
+        "width": 384,
+        "height": 2,
+        "backgroundColor": "rgb(16, 185, 129)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": " Series B ",
+            "fontSize": 15,
+            "fontFamily": "DM Mono",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(255, 107, 53)",
+            "letterSpacing": 2.25,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 915,
+        "y": 200,
+        "width": 90,
+        "height": 20,
+        "textAlign": "center",
+        "rotation": 0,
+        "parentWidth": 1920,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Series B ",
+        "fontSize": 15,
+        "fontFamily": "DM Mono",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(255, 107, 53)",
+        "letterSpacing": 2.25,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "$42M",
+            "fontSize": 120,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": -3.6,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 804.109375,
+        "y": 248,
+        "width": 311.765625,
+        "height": 153,
+        "textAlign": "center",
+        "rotation": 0,
+        "parentWidth": 1920,
+        "parentHeight": 153,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$42M",
+        "fontSize": 120,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": -3.6,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "$420M pre-money valuation",
+            "fontSize": 24,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 796.328125,
+        "y": 413,
+        "width": 327.34375,
+        "height": 31,
+        "textAlign": "center",
+        "rotation": 0,
+        "parentWidth": 1920,
+        "parentHeight": 31,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$420M pre-money valuation",
+        "fontSize": 24,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "R&D — 50%",
+            "fontSize": 14,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(10, 10, 15)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 622.25,
+        "y": 575,
+        "width": 73.484375,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 598,
+        "parentHeight": 48,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "R&D — 50%",
+        "fontSize": 14,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(10, 10, 15)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "GTM — 30%",
+            "fontSize": 14,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1101.15625,
+        "y": 575,
+        "width": 76.46875,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 358.796875,
+        "parentHeight": 48,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "GTM — 30%",
+        "fontSize": 14,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Ops — 20%",
+            "fontSize": 14,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(10, 10, 15)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1404.046875,
+        "y": 575,
+        "width": 72.6875,
+        "height": 18,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 239.203125,
+        "parentHeight": 48,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Ops — 20%",
+        "fontSize": 14,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(10, 10, 15)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "$50M ARR",
+            "fontSize": 20,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 360,
+        "y": 690,
+        "width": 97.421875,
+        "height": 26,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 384,
+        "parentHeight": 26,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$50M ARR",
+        "fontSize": 20,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Hit $50M ARR by Q4 2026 with enterprise expansion",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 360,
+        "y": 725,
+        "width": 376.6875,
+        "height": 19,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 384,
+        "parentHeight": 22.5,
+        "wrap": false,
+        "lineHeight": 1.5,
+        "text": "Hit $50M ARR by Q4 2026 with enterprise expansion",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "EU Launch",
+            "fontSize": 20,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 768,
+        "y": 690,
+        "width": 100.46875,
+        "height": 26,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 384,
+        "parentHeight": 26,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "EU Launch",
+        "fontSize": 20,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Open London & Berlin offices, SOC 2 Type II + GDPR",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 768,
+        "y": 725,
+        "width": 361.671875,
+        "height": 19,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 384,
+        "parentHeight": 22.5,
+        "wrap": false,
+        "lineHeight": 1.5,
+        "text": "Open London & Berlin offices, SOC 2 Type II + GDPR",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Platform V2",
+            "fontSize": 20,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(245, 245, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1176,
+        "y": 690,
+        "width": 111.5,
+        "height": 26,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 384,
+        "parentHeight": 26,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Platform V2",
+        "fontSize": 20,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(245, 245, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Fine-tuning pipelines, multi-modal, and edge deployment",
+            "fontSize": 15,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 1176,
+        "y": 725,
+        "width": 322.875,
+        "height": 41.5,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 384,
+        "parentHeight": 45,
+        "wrap": true,
+        "lineHeight": 1.5,
+        "text": "Fine-tuning pipelines, multi-modal, and edge deployment",
+        "fontSize": 15,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " alex@luminar.ai · luminar.ai/investors ",
+            "fontSize": 18,
+            "fontFamily": "Space Grotesk",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(107, 114, 128)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 801.765625,
+        "y": 977,
+        "width": 316.453125,
+        "height": 23,
+        "textAlign": "center",
+        "rotation": 0,
+        "parentWidth": 1920,
+        "parentHeight": 23,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " alex@luminar.ai · luminar.ai/investors ",
+        "fontSize": 18,
+        "fontFamily": "Space Grotesk",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(107, 114, 128)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Be direct about the ask. $42M at $420M pre-money."
+  }
+]

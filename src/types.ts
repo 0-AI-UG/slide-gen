@@ -1,3 +1,73 @@
+export interface ShadowInfo {
+  offsetX: number;    // px
+  offsetY: number;    // px
+  blurRadius: number; // px
+  spreadRadius?: number; // px (box-shadow only)
+  color: string;      // CSS color string
+}
+
+export interface CornerRadii {
+  topLeft: number;
+  topRight: number;
+  bottomRight: number;
+  bottomLeft: number;
+}
+
+export interface CellBorder {
+  width: number;   // px
+  style: string;   // "solid" | "dashed" | "dotted" | "none" etc.
+  color: string;   // CSS color string
+}
+
+export interface TableCell {
+  width: number;
+  text: string;
+  textRuns?: TextRun[];
+  backgroundColor?: string;
+  colSpan?: number;
+  rowSpan?: number;
+  borderTop?: CellBorder;
+  borderRight?: CellBorder;
+  borderBottom?: CellBorder;
+  borderLeft?: CellBorder;
+  paddingTop?: number;    // px
+  paddingRight?: number;  // px
+  paddingBottom?: number; // px
+  paddingLeft?: number;   // px
+  textAlign?: string;     // "left" | "right" | "center" | "justify"
+}
+
+export interface TableRow {
+  height: number;
+  cells: TableCell[];
+}
+
+export interface TableElement {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  rows: TableRow[];
+  columnWidths: number[];
+}
+
+export interface MasterSlideConfig {
+  masterXml?: string;
+  layoutXml?: string;
+  themeXml?: string;
+  backgroundColor?: string;
+  logoImage?: { base64: string; x: number; y: number; width: number; height: number };
+}
+
+export interface ProgressEvent {
+  phase: "browser" | "extract" | "fonts" | "pptx" | "pdf" | "png" | "render";
+  message: string;
+  current?: number;
+  total?: number;
+}
+
+export type ProgressCallback = (event: ProgressEvent) => void;
+
 export interface TextRun {
   text: string;
   fontSize: number;
@@ -8,6 +78,10 @@ export interface TextRun {
   letterSpacing: number;
   textTransform: string;
   lineHeight?: number;
+  textDecoration?: string;
+  textShadow?: ShadowInfo;
+  href?: string;
+  gradientFill?: GradientInfo;
 }
 
 export interface TextElement {
@@ -22,6 +96,10 @@ export interface TextElement {
   parentHeight: number;
   wrap: boolean;
   lineHeight?: number;
+  bulletType?: "char" | "autoNum" | "none";
+  bulletChar?: string;
+  bulletAutoNumType?: string;
+  indentLevel?: number;
   // Legacy single-run fields (kept for backward compat with slide-data.json consumers)
   text: string;
   fontSize: number;
@@ -39,11 +117,14 @@ export interface GradientStop {
 }
 
 export interface GradientInfo {
-  type: "linear" | "radial";
+  type: "linear" | "radial" | "conic";
   angle?: number; // CSS degrees (0=to top, 90=to right)
   stops: GradientStop[];
   radialPosition?: { x: number; y: number }; // percentage 0-100
   radialShape?: "circle" | "ellipse";
+  radialExtent?: "closest-side" | "closest-corner" | "farthest-side" | "farthest-corner";
+  repeating?: boolean;
+  conicAngle?: number; // starting angle for conic gradients
 }
 
 export interface RectElement {
@@ -53,7 +134,12 @@ export interface RectElement {
   height: number;
   backgroundColor: string;
   gradient?: GradientInfo;
+  gradients?: GradientInfo[];
   borderRadius?: number;
+  borderRadii?: CornerRadii;
+  boxShadow?: ShadowInfo;
+  borderColor?: string;
+  borderWidth?: number;
 }
 
 export interface ImageElement {
@@ -81,6 +167,8 @@ export interface SlideData {
   rects: RectElement[];
   texts: TextElement[];
   images: ImageElement[];
+  tables: TableElement[];
+  notes?: string;
 }
 
 export interface BoldThresholdEntry {
@@ -119,6 +207,10 @@ export interface ConvertOptions {
   fontsDir?: string;
   /** Progress callback (replaces console.log in library mode) */
   onProgress?: (message: string) => void;
+  /** Structured progress callback with phase/current/total info */
+  onProgressEvent?: ProgressCallback;
+  /** Custom master slide/layout/theme configuration */
+  masterSlide?: MasterSlideConfig;
 }
 
 export interface ConvertResult {
@@ -146,6 +238,10 @@ export interface ConvertBufferOptions {
   fontsDir?: string;
   /** Progress callback */
   onProgress?: (message: string) => void;
+  /** Structured progress callback with phase/current/total info */
+  onProgressEvent?: ProgressCallback;
+  /** Custom master slide/layout/theme configuration */
+  masterSlide?: MasterSlideConfig;
 }
 
 /** Result from the buffer-based pipeline — all outputs are in-memory. */

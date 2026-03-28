@@ -1,0 +1,5224 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(248, 246, 240)"
+      },
+      {
+        "x": 80,
+        "y": 60,
+        "width": 1760,
+        "height": 1,
+        "backgroundColor": "rgba(26, 26, 26, 0.1)"
+      },
+      {
+        "x": 80,
+        "y": 1019,
+        "width": 1760,
+        "height": 1,
+        "backgroundColor": "rgba(26, 26, 26, 0.1)"
+      },
+      {
+        "x": 100,
+        "y": 220,
+        "width": 6,
+        "height": 240,
+        "backgroundColor": "rgb(180, 83, 9)",
+        "borderRadius": 3
+      },
+      {
+        "x": 100,
+        "y": 838,
+        "width": 430,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 530,
+        "y": 838,
+        "width": 430,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 960,
+        "y": 838,
+        "width": 430,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 1390,
+        "y": 838,
+        "width": 430,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "$34.2M",
+            "fontSize": 42,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "+24% YoY",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(22, 163, 74)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 140,
+        "y": 897,
+        "width": 260.71875,
+        "height": 51,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 51,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$34.2M+24% YoY",
+        "fontSize": 42,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "$6.8M",
+            "fontSize": 42,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "20% margin",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(22, 163, 74)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 570,
+        "y": 897,
+        "width": 246.0625,
+        "height": 51,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 51,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$6.8M20% margin",
+        "fontSize": 42,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "248",
+            "fontSize": 42,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "+18 net new",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1000,
+        "y": 897,
+        "width": 192.640625,
+        "height": 51,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 51,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "248+18 net new",
+        "fontSize": 42,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "72",
+            "fontSize": 42,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "+8 pts",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(22, 163, 74)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1430,
+        "y": 897,
+        "width": 117.328125,
+        "height": 51,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 51,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "72+8 pts",
+        "fontSize": 42,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Meridian",
+            "fontSize": 18,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 2.16,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 90,
+        "width": 107.078125,
+        "height": 21,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 107.078125,
+        "parentHeight": 21,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Meridian",
+        "fontSize": 18,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 2.16,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": " Board Presentation · March 2026 ",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "500",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0.7,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1577.609375,
+        "y": 88,
+        "width": 242.390625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 242.390625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Board Presentation · March 2026 ",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "500",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0.7,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Q1 2026",
+            "fontSize": 88,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -1.76,
+            "textTransform": "none",
+            "lineHeight": 1.0999999999999999
+          },
+          {
+            "text": "\n",
+            "fontSize": 88,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -1.76,
+            "textTransform": "none",
+            "lineHeight": 1.0999999999999999
+          },
+          {
+            "text": "Business Review ",
+            "fontSize": 88,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -1.76,
+            "textTransform": "none",
+            "lineHeight": 1.0999999999999999
+          }
+        ],
+        "x": 140,
+        "y": 214,
+        "width": 705.0625,
+        "height": 204.796875,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 705.0625,
+        "parentHeight": 193.59375,
+        "wrap": true,
+        "lineHeight": 1.0999999999999999,
+        "text": " Q1 2026Business Review ",
+        "fontSize": 88,
+        "fontFamily": "Fraunces",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": -1.76,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Strong revenue growth paired with operational efficiency gains. On track for full-year targets. ",
+            "fontSize": 22,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 140,
+        "y": 449.59375,
+        "width": 589.8125,
+        "height": 61.1875,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 600,
+        "parentHeight": 70.375,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Strong revenue growth paired with operational efficiency gains. On track for full-year targets. ",
+        "fontSize": 22,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Revenue",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 140,
+        "y": 873,
+        "width": 68.28125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Revenue",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "EBITDA",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 570,
+        "y": 873,
+        "width": 53.203125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "EBITDA",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "Headcount",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1000,
+        "y": 873,
+        "width": 93.359375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Headcount",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "NPS",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1430,
+        "y": 873,
+        "width": 29.84375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 350,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "NPS",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Keep it brief. The cover sets the tone — warm, confident, editorial."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(248, 246, 240)"
+      },
+      {
+        "x": 100,
+        "y": 121.5,
+        "width": 1720,
+        "height": 1,
+        "backgroundColor": "rgba(26, 26, 26, 0.1)"
+      },
+      {
+        "x": 100,
+        "y": 409,
+        "width": 830,
+        "height": 2,
+        "backgroundColor": "rgb(22, 163, 74)"
+      },
+      {
+        "x": 990,
+        "y": 409,
+        "width": 830,
+        "height": 2,
+        "backgroundColor": "rgb(220, 38, 38)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "Executive Summary",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.4,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 80,
+        "width": 180.90625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 180.90625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Executive Summary",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.4,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "02",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1802.625,
+        "y": 80,
+        "width": 17.375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 17.375,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "02",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " A quarter of disciplined",
+            "fontSize": 52,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.52,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "\n",
+            "fontSize": 52,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.52,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "growth and margin expansion. ",
+            "fontSize": 52,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.52,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 169,
+        "width": 777.640625,
+        "height": 126.390625,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 800,
+        "parentHeight": 124.78125,
+        "wrap": true,
+        "lineHeight": 1.2,
+        "text": " A quarter of disciplinedgrowth and margin expansion. ",
+        "fontSize": 52,
+        "fontFamily": "Fraunces",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": -0.52,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Highlights",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(22, 163, 74)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 380,
+        "width": 93.421875,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Highlights",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(22, 163, 74)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "Enterprise pipeline doubled",
+            "fontSize": 20,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 438,
+        "width": 265.34375,
+        "height": 24,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 24,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Enterprise pipeline doubled",
+        "fontSize": 20,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " New outbound motion generated $14M in qualified pipeline. 6 deals >$500K in late stage. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 100,
+        "y": 472,
+        "width": 676.59375,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 25.59375,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " New outbound motion generated $14M in qualified pipeline. 6 deals >$500K in late stage. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "APAC launch ahead of plan",
+            "fontSize": 20,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 523.59375,
+        "width": 260.703125,
+        "height": 24,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 24,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "APAC launch ahead of plan",
+        "fontSize": 20,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Tokyo office opened Feb 3. First three deals closed (Rakuten, SoftBank, MUFG). $1.2M TCV in 7 weeks. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 100,
+        "y": 557.59375,
+        "width": 779.703125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 25.59375,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Tokyo office opened Feb 3. First three deals closed (Rakuten, SoftBank, MUFG). $1.2M TCV in 7 weeks. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Platform V3 shipped on schedule",
+            "fontSize": 20,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 609.1875,
+        "width": 319.78125,
+        "height": 24,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 24,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Platform V3 shipped on schedule",
+        "fontSize": 20,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Real-time analytics, custom dashboards, and SSO/SCIM. Reduced churn driver #1 by 40%. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 100,
+        "y": 643.1875,
+        "width": 685.09375,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 25.59375,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Real-time analytics, custom dashboards, and SSO/SCIM. Reduced churn driver #1 by 40%. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Watch Items",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(220, 38, 38)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 990,
+        "y": 380,
+        "width": 106.9375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 30,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Watch Items",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(220, 38, 38)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "SMB churn ticked up",
+            "fontSize": 20,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 990,
+        "y": 438,
+        "width": 200.203125,
+        "height": 24,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 24,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "SMB churn ticked up",
+        "fontSize": 20,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Logo churn rose to 4.2% (from 3.1%). Root cause: pricing sensitivity in sub-$10K cohort. Mitigation plan in place — launching starter tier in April. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 990,
+        "y": 472,
+        "width": 800.59375,
+        "height": 45.59375,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 51.1875,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Logo churn rose to 4.2% (from 3.1%). Root cause: pricing sensitivity in sub-$10K cohort. Mitigation plan in place — launching starter tier in April. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Engineering hiring behind",
+            "fontSize": 20,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 990,
+        "y": 549.1875,
+        "width": 248.140625,
+        "height": 24,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 24,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Engineering hiring behind",
+        "fontSize": 20,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Filled 6 of 12 planned roles. Senior backend remains competitive. Adjusted comp bands and added referral bonus ($10K → $15K). ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 990,
+        "y": 583.1875,
+        "width": 804.84375,
+        "height": 45.59375,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 51.1875,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Filled 6 of 12 planned roles. Senior backend remains competitive. Adjusted comp bands and added referral bonus ($10K → $15K). ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Infrastructure costs rising",
+            "fontSize": 20,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 990,
+        "y": 660.375,
+        "width": 250.375,
+        "height": 24,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 24,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Infrastructure costs rising",
+        "fontSize": 20,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Cloud spend grew 32% QoQ vs. 24% revenue growth. Migration to reserved instances underway — expect 20% savings by Q3. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 990,
+        "y": 694.375,
+        "width": 809.34375,
+        "height": 45.59375,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 830,
+        "parentHeight": 51.1875,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Cloud spend grew 32% QoQ vs. 24% revenue growth. Migration to reserved instances underway — expect 20% savings by Q3. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Three wins, one challenge. Frame the narrative upfront."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(248, 246, 240)"
+      },
+      {
+        "x": 100,
+        "y": 121.5,
+        "width": 1720,
+        "height": 1,
+        "backgroundColor": "rgba(26, 26, 26, 0.1)"
+      },
+      {
+        "x": 100,
+        "y": 906.5,
+        "width": 1720,
+        "height": 73.5,
+        "backgroundColor": "rgba(22, 163, 74, 0.06)",
+        "borderRadius": 8,
+        "borderRadii": {
+          "topLeft": 0,
+          "topRight": 8,
+          "bottomRight": 8,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 98.5,
+        "y": 906.5,
+        "width": 3,
+        "height": 73.5,
+        "backgroundColor": "rgb(22, 163, 74)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "Financial Performance",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.4,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 80,
+        "width": 216.046875,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 216.046875,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Financial Performance",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.4,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "03",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1802.515625,
+        "y": 80,
+        "width": 17.484375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 17.484375,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "03",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Revenue & profitability trending up. ",
+            "fontSize": 44,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.44,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 160,
+        "width": 777,
+        "height": 54,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 777,
+        "parentHeight": 54,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Revenue & profitability trending up. ",
+        "fontSize": 44,
+        "fontFamily": "Fraunces",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": -0.44,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Key takeaway:",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          },
+          {
+            "text": " EBITDA margin expanded from 12% to 20% in four quarters while revenue grew 24% — demonstrating that growth and profitability are not tradeoffs at our scale. ",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 135,
+        "y": 932.5,
+        "width": 1417.65625,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 1653,
+        "parentHeight": 25.5,
+        "wrap": false,
+        "lineHeight": 1.5,
+        "text": "Key takeaway: EBITDA margin expanded from 12% to 20% in four quarters while revenue grew 24% — demonstrating that growth and profitability are not tradeoffs at our scale. ",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [
+      {
+        "x": 100,
+        "y": 280,
+        "width": 1720,
+        "height": 334,
+        "rows": [
+          {
+            "height": 49,
+            "cells": [
+              {
+                "width": 361.921875,
+                "text": "Metric",
+                "textRuns": [
+                  {
+                    "text": "Metric",
+                    "fontSize": 13,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 2,
+                  "style": "solid",
+                  "color": "rgb(26, 26, 26)"
+                },
+                "paddingTop": 16,
+                "paddingRight": 20,
+                "paddingBottom": 16,
+                "paddingLeft": 20
+              },
+              {
+                "width": 224.71875,
+                "text": "Q1 '25",
+                "textRuns": [
+                  {
+                    "text": "Q1 '25",
+                    "fontSize": 13,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 2,
+                  "style": "solid",
+                  "color": "rgb(26, 26, 26)"
+                },
+                "paddingTop": 16,
+                "paddingRight": 20,
+                "paddingBottom": 16,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.9375,
+                "text": "Q2 '25",
+                "textRuns": [
+                  {
+                    "text": "Q2 '25",
+                    "fontSize": 13,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 2,
+                  "style": "solid",
+                  "color": "rgb(26, 26, 26)"
+                },
+                "paddingTop": 16,
+                "paddingRight": 20,
+                "paddingBottom": 16,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.703125,
+                "text": "Q3 '25",
+                "textRuns": [
+                  {
+                    "text": "Q3 '25",
+                    "fontSize": 13,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 2,
+                  "style": "solid",
+                  "color": "rgb(26, 26, 26)"
+                },
+                "paddingTop": 16,
+                "paddingRight": 20,
+                "paddingBottom": 16,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 228.75,
+                "text": "Q4 '25",
+                "textRuns": [
+                  {
+                    "text": "Q4 '25",
+                    "fontSize": 13,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 2,
+                  "style": "solid",
+                  "color": "rgb(26, 26, 26)"
+                },
+                "paddingTop": 16,
+                "paddingRight": 20,
+                "paddingBottom": 16,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 233.71875,
+                "text": "Q1 '26",
+                "textRuns": [
+                  {
+                    "text": "Q1 '26",
+                    "fontSize": 13,
+                    "fontFamily": "Inter",
+                    "fontWeight": "700",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "backgroundColor": "rgba(26, 26, 26, 0.04)",
+                "borderBottom": {
+                  "width": 2,
+                  "style": "solid",
+                  "color": "rgb(26, 26, 26)"
+                },
+                "paddingTop": 16,
+                "paddingRight": 20,
+                "paddingBottom": 16,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 217.25,
+                "text": "YoY",
+                "textRuns": [
+                  {
+                    "text": "YoY",
+                    "fontSize": 13,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 2,
+                  "style": "solid",
+                  "color": "rgb(26, 26, 26)"
+                },
+                "paddingTop": 16,
+                "paddingRight": 20,
+                "paddingBottom": 16,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              }
+            ]
+          },
+          {
+            "height": 57.5,
+            "cells": [
+              {
+                "width": 361.921875,
+                "text": "Revenue",
+                "textRuns": [
+                  {
+                    "text": "Revenue",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20
+              },
+              {
+                "width": 224.71875,
+                "text": "$27.6M",
+                "textRuns": [
+                  {
+                    "text": "$27.6M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.9375,
+                "text": "$29.1M",
+                "textRuns": [
+                  {
+                    "text": "$29.1M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.703125,
+                "text": "$30.8M",
+                "textRuns": [
+                  {
+                    "text": "$30.8M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 228.75,
+                "text": "$32.4M",
+                "textRuns": [
+                  {
+                    "text": "$32.4M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 233.71875,
+                "text": "$34.2M",
+                "textRuns": [
+                  {
+                    "text": "$34.2M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "700",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "backgroundColor": "rgba(26, 26, 26, 0.04)",
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 217.25,
+                "text": "+24%",
+                "textRuns": [
+                  {
+                    "text": "+24%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(22, 163, 74)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              }
+            ]
+          },
+          {
+            "height": 57,
+            "cells": [
+              {
+                "width": 361.921875,
+                "text": "Gross Profit",
+                "textRuns": [
+                  {
+                    "text": "Gross Profit",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20
+              },
+              {
+                "width": 224.71875,
+                "text": "$20.7M",
+                "textRuns": [
+                  {
+                    "text": "$20.7M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.9375,
+                "text": "$22.0M",
+                "textRuns": [
+                  {
+                    "text": "$22.0M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.703125,
+                "text": "$23.6M",
+                "textRuns": [
+                  {
+                    "text": "$23.6M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 228.75,
+                "text": "$25.1M",
+                "textRuns": [
+                  {
+                    "text": "$25.1M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 233.71875,
+                "text": "$26.7M",
+                "textRuns": [
+                  {
+                    "text": "$26.7M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "700",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "backgroundColor": "rgba(26, 26, 26, 0.04)",
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 217.25,
+                "text": "+29%",
+                "textRuns": [
+                  {
+                    "text": "+29%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(22, 163, 74)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              }
+            ]
+          },
+          {
+            "height": 57,
+            "cells": [
+              {
+                "width": 361.921875,
+                "text": "Gross Margin",
+                "textRuns": [
+                  {
+                    "text": "Gross Margin",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20
+              },
+              {
+                "width": 224.71875,
+                "text": "75%",
+                "textRuns": [
+                  {
+                    "text": "75%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.9375,
+                "text": "76%",
+                "textRuns": [
+                  {
+                    "text": "76%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.703125,
+                "text": "77%",
+                "textRuns": [
+                  {
+                    "text": "77%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 228.75,
+                "text": "77%",
+                "textRuns": [
+                  {
+                    "text": "77%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 233.71875,
+                "text": "78%",
+                "textRuns": [
+                  {
+                    "text": "78%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "700",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "backgroundColor": "rgba(26, 26, 26, 0.04)",
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 217.25,
+                "text": "+3pp",
+                "textRuns": [
+                  {
+                    "text": "+3pp",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(22, 163, 74)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              }
+            ]
+          },
+          {
+            "height": 57,
+            "cells": [
+              {
+                "width": 361.921875,
+                "text": "EBITDA",
+                "textRuns": [
+                  {
+                    "text": "EBITDA",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20
+              },
+              {
+                "width": 224.71875,
+                "text": "$3.3M",
+                "textRuns": [
+                  {
+                    "text": "$3.3M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.9375,
+                "text": "$4.1M",
+                "textRuns": [
+                  {
+                    "text": "$4.1M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.703125,
+                "text": "$5.2M",
+                "textRuns": [
+                  {
+                    "text": "$5.2M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 228.75,
+                "text": "$5.9M",
+                "textRuns": [
+                  {
+                    "text": "$5.9M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 233.71875,
+                "text": "$6.8M",
+                "textRuns": [
+                  {
+                    "text": "$6.8M",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "700",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "backgroundColor": "rgba(26, 26, 26, 0.04)",
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 217.25,
+                "text": "+106%",
+                "textRuns": [
+                  {
+                    "text": "+106%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(22, 163, 74)"
+                  }
+                ],
+                "borderBottom": {
+                  "width": 1,
+                  "style": "solid",
+                  "color": "rgba(26, 26, 26, 0.08)"
+                },
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              }
+            ]
+          },
+          {
+            "height": 56.5,
+            "cells": [
+              {
+                "width": 361.921875,
+                "text": "EBITDA Margin",
+                "textRuns": [
+                  {
+                    "text": "EBITDA Margin",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20
+              },
+              {
+                "width": 224.71875,
+                "text": "12%",
+                "textRuns": [
+                  {
+                    "text": "12%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.9375,
+                "text": "14%",
+                "textRuns": [
+                  {
+                    "text": "14%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 226.703125,
+                "text": "17%",
+                "textRuns": [
+                  {
+                    "text": "17%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 228.75,
+                "text": "18%",
+                "textRuns": [
+                  {
+                    "text": "18%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "400",
+                    "fontStyle": "normal",
+                    "color": "rgb(120, 113, 108)"
+                  }
+                ],
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 233.71875,
+                "text": "20%",
+                "textRuns": [
+                  {
+                    "text": "20%",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "700",
+                    "fontStyle": "normal",
+                    "color": "rgb(26, 26, 26)"
+                  }
+                ],
+                "backgroundColor": "rgba(26, 26, 26, 0.04)",
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              },
+              {
+                "width": 217.25,
+                "text": "+8pp",
+                "textRuns": [
+                  {
+                    "text": "+8pp",
+                    "fontSize": 17,
+                    "fontFamily": "Inter",
+                    "fontWeight": "600",
+                    "fontStyle": "normal",
+                    "color": "rgb(22, 163, 74)"
+                  }
+                ],
+                "paddingTop": 18,
+                "paddingRight": 20,
+                "paddingBottom": 18,
+                "paddingLeft": 20,
+                "textAlign": "right"
+              }
+            ]
+          }
+        ],
+        "columnWidths": [
+          361.921875,
+          224.71875,
+          226.9375,
+          226.703125,
+          228.75,
+          233.71875,
+          217.25
+        ]
+      }
+    ],
+    "notes": "Walk through the table row by row. Highlight EBITDA improvement."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 100,
+        "y": 121.5,
+        "width": 1720,
+        "height": 1,
+        "backgroundColor": "rgba(255, 255, 255, 0.1)"
+      },
+      {
+        "x": 100,
+        "y": 280,
+        "width": 412,
+        "height": 167,
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "borderRadius": 12,
+        "borderColor": "rgba(255, 255, 255, 0.08)",
+        "borderWidth": 1
+      },
+      {
+        "x": 536,
+        "y": 280,
+        "width": 412,
+        "height": 167,
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "borderRadius": 12,
+        "borderColor": "rgba(255, 255, 255, 0.08)",
+        "borderWidth": 1
+      },
+      {
+        "x": 972,
+        "y": 280,
+        "width": 412,
+        "height": 167,
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "borderRadius": 12,
+        "borderColor": "rgba(255, 255, 255, 0.08)",
+        "borderWidth": 1
+      },
+      {
+        "x": 1408,
+        "y": 280,
+        "width": 412,
+        "height": 167,
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "borderRadius": 12,
+        "borderColor": "rgba(255, 255, 255, 0.08)",
+        "borderWidth": 1
+      },
+      {
+        "x": 100,
+        "y": 540,
+        "width": 840,
+        "height": 81,
+        "backgroundColor": "rgba(255, 255, 255, 0.04)",
+        "borderRadius": 8
+      },
+      {
+        "x": 124,
+        "y": 576.5,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(22, 163, 74)",
+        "borderRadius": 4
+      },
+      {
+        "x": 100,
+        "y": 637,
+        "width": 840,
+        "height": 81,
+        "backgroundColor": "rgba(255, 255, 255, 0.04)",
+        "borderRadius": 8
+      },
+      {
+        "x": 124,
+        "y": 673.5,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(22, 163, 74)",
+        "borderRadius": 4
+      },
+      {
+        "x": 100,
+        "y": 734,
+        "width": 840,
+        "height": 81,
+        "backgroundColor": "rgba(255, 255, 255, 0.04)",
+        "borderRadius": 8
+      },
+      {
+        "x": 124,
+        "y": 770.5,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(22, 163, 74)",
+        "borderRadius": 4
+      },
+      {
+        "x": 980,
+        "y": 540,
+        "width": 840,
+        "height": 81,
+        "backgroundColor": "rgba(255, 255, 255, 0.04)",
+        "borderRadius": 8
+      },
+      {
+        "x": 1004,
+        "y": 576.5,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(37, 99, 235)",
+        "borderRadius": 4
+      },
+      {
+        "x": 980,
+        "y": 637,
+        "width": 840,
+        "height": 81,
+        "backgroundColor": "rgba(255, 255, 255, 0.04)",
+        "borderRadius": 8
+      },
+      {
+        "x": 1004,
+        "y": 673.5,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(37, 99, 235)",
+        "borderRadius": 4
+      },
+      {
+        "x": 980,
+        "y": 734,
+        "width": 840,
+        "height": 81,
+        "backgroundColor": "rgba(255, 255, 255, 0.04)",
+        "borderRadius": 8
+      },
+      {
+        "x": 1004,
+        "y": 770.5,
+        "width": 8,
+        "height": 8,
+        "backgroundColor": "rgb(37, 99, 235)",
+        "borderRadius": 4
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "Product & Engineering",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 1.4,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 80,
+        "width": 209.78125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 209.78125,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Product & Engineering",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 1.4,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "04",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1802.109375,
+        "y": 80,
+        "width": 17.890625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 17.890625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "04",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Platform V3: shipped & adopted. ",
+            "fontSize": 44,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": -0.44,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 160,
+        "width": 698.296875,
+        "height": 54,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 698.296875,
+        "parentHeight": 54,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Platform V3: shipped & adopted. ",
+        "fontSize": 44,
+        "fontFamily": "Fraunces",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": -0.44,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "94%",
+            "fontSize": 48,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 133,
+        "y": 313,
+        "width": 114.21875,
+        "height": 59,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 59,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "94%",
+        "fontSize": 48,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Sprint velocity (story points delivered vs. committed)",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 133,
+        "y": 380,
+        "width": 270.046875,
+        "height": 34,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 34,
+        "wrap": true,
+        "lineHeight": 1.2,
+        "text": "Sprint velocity (story points delivered vs. committed)",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "99.97%",
+            "fontSize": 48,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 569,
+        "y": 313,
+        "width": 186.703125,
+        "height": 59,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 59,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "99.97%",
+        "fontSize": 48,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Uptime SLA maintained across all tiers",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 569,
+        "y": 380,
+        "width": 253.84375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Uptime SLA maintained across all tiers",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "3.2×",
+            "fontSize": 48,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1005,
+        "y": 313,
+        "width": 111.015625,
+        "height": 59,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 59,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "3.2×",
+        "fontSize": 48,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Deploy frequency increase after CI/CD overhaul",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1005,
+        "y": 380,
+        "width": 316.5625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Deploy frequency increase after CI/CD overhaul",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "-40%",
+            "fontSize": 48,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(22, 163, 74)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1441,
+        "y": 313,
+        "width": 138.28125,
+        "height": 59,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 59,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "-40%",
+        "fontSize": 48,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(22, 163, 74)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Reduction in #1 churn driver (reporting gaps)",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1441,
+        "y": 380,
+        "width": 296.125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 346,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Reduction in #1 churn driver (reporting gaps)",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Shipped This Quarter",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(22, 163, 74)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 500,
+        "width": 181.4375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 840,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Shipped This Quarter",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(22, 163, 74)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "Real-time analytics engine",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 148,
+        "y": 560,
+        "width": 218.078125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 301.1875,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Real-time analytics engine",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Sub-second dashboards replacing batch jobs",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 148,
+        "y": 584,
+        "width": 301.1875,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 301.1875,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Sub-second dashboards replacing batch jobs",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "SSO + SCIM provisioning",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 148,
+        "y": 657,
+        "width": 204.90625,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 291.859375,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "SSO + SCIM provisioning",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Okta, Azure AD, OneLogin — auto user sync",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 148,
+        "y": 681,
+        "width": 291.859375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 291.859375,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Okta, Azure AD, OneLogin — auto user sync",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Custom dashboard builder",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 148,
+        "y": 754,
+        "width": 217.65625,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 270.703125,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Custom dashboard builder",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Drag-and-drop widgets, shareable views",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 148,
+        "y": 778,
+        "width": 270.703125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 270.703125,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Drag-and-drop widgets, shareable views",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Q2 Roadmap",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(37, 99, 235)",
+            "letterSpacing": 1.3,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 980,
+        "y": 500,
+        "width": 101.71875,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 840,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Q2 Roadmap",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(37, 99, 235)",
+        "letterSpacing": 1.3,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "AI-powered anomaly detection",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1028,
+        "y": 560,
+        "width": 253.203125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 258.4375,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "AI-powered anomaly detection",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Automatic alerting on metric deviations",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1028,
+        "y": 584,
+        "width": 258.4375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 258.4375,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Automatic alerting on metric deviations",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Starter tier ($49/mo)",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1028,
+        "y": 657,
+        "width": 170.453125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 293.140625,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Starter tier ($49/mo)",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "SMB retention play — self-serve onboarding",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1028,
+        "y": 681,
+        "width": 293.140625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 293.140625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "SMB retention play — self-serve onboarding",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Workflow automation engine",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(248, 246, 240)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1028,
+        "y": 754,
+        "width": 236.140625,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 261.03125,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Workflow automation engine",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(248, 246, 240)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "If-this-then-that rules for data pipelines",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgba(255, 255, 255, 0.4)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1028,
+        "y": 778,
+        "width": 261.03125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 261.03125,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "If-this-then-that rules for data pipelines",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgba(255, 255, 255, 0.4)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Full product changelog available at meridian.io/changelog ",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "italic",
+            "color": "rgba(255, 255, 255, 0.3)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 983,
+        "width": 381.75,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 381.75,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Full product changelog available at meridian.io/changelog ",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "italic",
+        "color": "rgba(255, 255, 255, 0.3)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Focus on the V3 launch. Mention customer-requested features."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(248, 246, 240)"
+      },
+      {
+        "x": 100,
+        "y": 121.5,
+        "width": 1720,
+        "height": 1,
+        "backgroundColor": "rgba(26, 26, 26, 0.1)"
+      },
+      {
+        "x": 100,
+        "y": 290,
+        "width": 415,
+        "height": 190,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(26, 26, 26, 0.1)",
+        "borderWidth": 1,
+        "borderRadius": 12
+      },
+      {
+        "x": 133,
+        "y": 417,
+        "width": 349,
+        "height": 6,
+        "backgroundColor": "rgba(26, 26, 26, 0.06)",
+        "borderRadius": 3
+      },
+      {
+        "x": 133,
+        "y": 417,
+        "width": 146.578125,
+        "height": 6,
+        "backgroundColor": "rgb(37, 99, 235)",
+        "borderRadius": 3
+      },
+      {
+        "x": 535,
+        "y": 290,
+        "width": 415,
+        "height": 190,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(26, 26, 26, 0.1)",
+        "borderWidth": 1,
+        "borderRadius": 12
+      },
+      {
+        "x": 568,
+        "y": 417,
+        "width": 349,
+        "height": 6,
+        "backgroundColor": "rgba(26, 26, 26, 0.06)",
+        "borderRadius": 3
+      },
+      {
+        "x": 568,
+        "y": 417,
+        "width": 94.21875,
+        "height": 6,
+        "backgroundColor": "rgb(22, 163, 74)",
+        "borderRadius": 3
+      },
+      {
+        "x": 970,
+        "y": 290,
+        "width": 415,
+        "height": 190,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(26, 26, 26, 0.1)",
+        "borderWidth": 1,
+        "borderRadius": 12
+      },
+      {
+        "x": 1003,
+        "y": 417,
+        "width": 349,
+        "height": 6,
+        "backgroundColor": "rgba(26, 26, 26, 0.06)",
+        "borderRadius": 3
+      },
+      {
+        "x": 1003,
+        "y": 417,
+        "width": 52.34375,
+        "height": 6,
+        "backgroundColor": "rgb(180, 83, 9)",
+        "borderRadius": 3
+      },
+      {
+        "x": 1405,
+        "y": 290,
+        "width": 415,
+        "height": 190,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(26, 26, 26, 0.1)",
+        "borderWidth": 1,
+        "borderRadius": 12
+      },
+      {
+        "x": 1438,
+        "y": 417,
+        "width": 349,
+        "height": 6,
+        "backgroundColor": "rgba(26, 26, 26, 0.06)",
+        "borderRadius": 3
+      },
+      {
+        "x": 1438,
+        "y": 417,
+        "width": 52.34375,
+        "height": 6,
+        "backgroundColor": "rgb(120, 113, 108)",
+        "borderRadius": 3
+      },
+      {
+        "x": 100,
+        "y": 559,
+        "width": 400,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 540,
+        "y": 559,
+        "width": 400,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 980,
+        "y": 559,
+        "width": 400,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 1420,
+        "y": 559,
+        "width": 400,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      },
+      {
+        "x": 100,
+        "y": 906.5,
+        "width": 1720,
+        "height": 73.5,
+        "backgroundColor": "rgba(180, 83, 9, 0.06)",
+        "borderRadius": 8,
+        "borderRadii": {
+          "topLeft": 0,
+          "topRight": 8,
+          "bottomRight": 8,
+          "bottomLeft": 0
+        }
+      },
+      {
+        "x": 98.5,
+        "y": 906.5,
+        "width": 3,
+        "height": 73.5,
+        "backgroundColor": "rgb(180, 83, 9)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "People & Culture",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.4,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 80,
+        "width": 156.8125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 156.8125,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "People & Culture",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.4,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "05",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1802.859375,
+        "y": 80,
+        "width": 17.140625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 17.140625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "05",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Growing the team thoughtfully. ",
+            "fontSize": 44,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.44,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 160,
+        "width": 678.3125,
+        "height": 54,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 678.3125,
+        "parentHeight": 54,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": " Growing the team thoughtfully. ",
+        "fontSize": 44,
+        "fontFamily": "Fraunces",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": -0.44,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Engineering",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0.84,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 133,
+        "y": 323,
+        "width": 104.40625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Engineering",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0.84,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "104",
+            "fontSize": 40,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 133,
+        "y": 352,
+        "width": 72.875,
+        "height": 49,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 49,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "104",
+        "fontSize": 40,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "42% of company",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 133,
+        "y": 431,
+        "width": 105.8125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "42% of company",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Sales & CS",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0.84,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 568,
+        "y": 323,
+        "width": 88.796875,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Sales & CS",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0.84,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "68",
+            "fontSize": 40,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 568,
+        "y": 352,
+        "width": 53.046875,
+        "height": 49,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 49,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "68",
+        "fontSize": 40,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "27% of company",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 568,
+        "y": 431,
+        "width": 104.765625,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "27% of company",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Product & Design",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0.84,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1003,
+        "y": 323,
+        "width": 151.34375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Product & Design",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0.84,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "38",
+            "fontSize": 40,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1003,
+        "y": 352,
+        "width": 52.84375,
+        "height": 49,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 49,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "38",
+        "fontSize": 40,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "15% of company",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1003,
+        "y": 431,
+        "width": 102.484375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "15% of company",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "G&A",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0.84,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1438,
+        "y": 323,
+        "width": 32.484375,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "G&A",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0.84,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "38",
+            "fontSize": 40,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1438,
+        "y": 352,
+        "width": 52.84375,
+        "height": 49,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 49,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "38",
+        "fontSize": 40,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "15% of company",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1438,
+        "y": 431,
+        "width": 102.484375,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 349,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "15% of company",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Voluntary attrition",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 601,
+        "width": 148.3125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 148.3125,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Voluntary attrition",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "8%",
+            "fontSize": 24,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(22, 163, 74)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 460,
+        "y": 594,
+        "width": 40,
+        "height": 29,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 40,
+        "parentHeight": 29,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "8%",
+        "fontSize": 24,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(22, 163, 74)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Annualized. Down from 12% in Q1 '25.",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 631,
+        "width": 250.640625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 400,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Annualized. Down from 12% in Q1 '25.",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "eNPS score",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 540,
+        "y": 601,
+        "width": 95.296875,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 95.296875,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "eNPS score",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "+62",
+            "fontSize": 24,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 893,
+        "y": 594,
+        "width": 47,
+        "height": 29,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 47,
+        "parentHeight": 29,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "+62",
+        "fontSize": 24,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Top quartile for SaaS companies of our size.",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 540,
+        "y": 631,
+        "width": 292.796875,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 400,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Top quartile for SaaS companies of our size.",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Offer acceptance rate",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 980,
+        "y": 601,
+        "width": 179.25,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 179.25,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Offer acceptance rate",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "88%",
+            "fontSize": 24,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1324.375,
+        "y": 594,
+        "width": 55.625,
+        "height": 29,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 55.625,
+        "parentHeight": 29,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "88%",
+        "fontSize": 24,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Up 6pp after comp refresh in January.",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 980,
+        "y": 631,
+        "width": 252.0625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 400,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Up 6pp after comp refresh in January.",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Diversity (URG)",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1420,
+        "y": 601,
+        "width": 126.65625,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 126.65625,
+        "parentHeight": 20,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Diversity (URG)",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "36%",
+            "fontSize": 24,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1764.546875,
+        "y": 594,
+        "width": 55.453125,
+        "height": 29,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 55.453125,
+        "parentHeight": 29,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "36%",
+        "fontSize": 24,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Leadership: 44%. Target: 40% overall by EOY.",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1420,
+        "y": 631,
+        "width": 306.8125,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 400,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Leadership: 44%. Target: 40% overall by EOY.",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Hiring update:",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          },
+          {
+            "text": " 22 open roles, 6 of 12 engineering positions filled. Increased referral bonus to $15K and expanded recruiting partnerships to address senior backend pipeline. ",
+            "fontSize": 17,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.5
+          }
+        ],
+        "x": 135,
+        "y": 932.5,
+        "width": 1386.203125,
+        "height": 20,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 1653,
+        "parentHeight": 25.5,
+        "wrap": false,
+        "lineHeight": 1.5,
+        "text": "Hiring update: 22 open roles, 6 of 12 engineering positions filled. Increased referral bonus to $15K and expanded recruiting partnerships to address senior backend pipeline. ",
+        "fontSize": 17,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "Acknowledge the hiring gap honestly. Show the plan to close it."
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "rects": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 1920,
+        "height": 1080,
+        "backgroundColor": "rgb(248, 246, 240)"
+      },
+      {
+        "x": 100,
+        "y": 121.5,
+        "width": 1720,
+        "height": 1,
+        "backgroundColor": "rgba(26, 26, 26, 0.1)"
+      },
+      {
+        "x": 100,
+        "y": 380,
+        "width": 557.328125,
+        "height": 243.1875,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(26, 26, 26, 0.1)",
+        "borderWidth": 1,
+        "borderRadius": 12
+      },
+      {
+        "x": 133,
+        "y": 421,
+        "width": 48,
+        "height": 48,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(180, 83, 9)",
+              "position": 0
+            },
+            {
+              "color": "rgb(245, 158, 11)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 10
+      },
+      {
+        "x": 681.328125,
+        "y": 380,
+        "width": 557.328125,
+        "height": 243.1875,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(26, 26, 26, 0.1)",
+        "borderWidth": 1,
+        "borderRadius": 12
+      },
+      {
+        "x": 714.328125,
+        "y": 421,
+        "width": 48,
+        "height": 48,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(37, 99, 235)",
+              "position": 0
+            },
+            {
+              "color": "rgb(6, 182, 212)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 10
+      },
+      {
+        "x": 1262.65625,
+        "y": 380,
+        "width": 557.328125,
+        "height": 243.1875,
+        "backgroundColor": "rgba(0,0,0,0)",
+        "borderColor": "rgba(26, 26, 26, 0.1)",
+        "borderWidth": 1,
+        "borderRadius": 12
+      },
+      {
+        "x": 1295.65625,
+        "y": 421,
+        "width": 48,
+        "height": 48,
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "gradient": {
+          "type": "linear",
+          "stops": [
+            {
+              "color": "rgb(22, 163, 74)",
+              "position": 0
+            },
+            {
+              "color": "rgb(16, 185, 129)",
+              "position": 100
+            }
+          ],
+          "angle": 135
+        },
+        "borderRadius": 10
+      },
+      {
+        "x": 100,
+        "y": 877,
+        "width": 1720,
+        "height": 2,
+        "backgroundColor": "rgb(26, 26, 26)"
+      }
+    ],
+    "texts": [
+      {
+        "runs": [
+          {
+            "text": "Looking Ahead",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.4,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 80,
+        "width": 135,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 135,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Looking Ahead",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.4,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "06",
+            "fontSize": 14,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1802.484375,
+        "y": 80,
+        "width": 17.515625,
+        "height": 17,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 17.515625,
+        "parentHeight": 17,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "06",
+        "fontSize": 14,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " On track for ",
+            "fontSize": 52,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.52,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "$145M ARR",
+            "fontSize": 52,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "italic",
+            "color": "rgb(180, 83, 9)",
+            "letterSpacing": -0.52,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "\n",
+            "fontSize": 52,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.52,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          },
+          {
+            "text": "by year-end. ",
+            "fontSize": 52,
+            "fontFamily": "Fraunces",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": -0.52,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 159,
+        "width": 586.78125,
+        "height": 126.390625,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 900,
+        "parentHeight": 124.78125,
+        "wrap": true,
+        "lineHeight": 1.2,
+        "text": " On track for $145M ARRby year-end. ",
+        "fontSize": 52,
+        "fontFamily": "Fraunces",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": -0.52,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Enterprise expansion",
+            "fontSize": 22,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 133,
+        "y": 493,
+        "width": 228.109375,
+        "height": 26,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 491.328125,
+        "parentHeight": 26,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Enterprise expansion",
+        "fontSize": 22,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Close 10+ deals over $500K. Launch dedicated enterprise CS team with named accounts. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 133,
+        "y": 533,
+        "width": 465.1875,
+        "height": 45.59375,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 491.328125,
+        "parentHeight": 51.1875,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Close 10+ deals over $500K. Launch dedicated enterprise CS team with named accounts. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "APAC acceleration",
+            "fontSize": 22,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 714.328125,
+        "y": 493,
+        "width": 199.328125,
+        "height": 26,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 491.328125,
+        "parentHeight": 26,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "APAC acceleration",
+        "fontSize": 22,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Grow Tokyo team to 12. Open Sydney office in Q3. Target $8M APAC ARR by EOY. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 714.328125,
+        "y": 533,
+        "width": 471.1875,
+        "height": 45.59375,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 491.328125,
+        "parentHeight": 51.1875,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Grow Tokyo team to 12. Open Sydney office in Q3. Target $8M APAC ARR by EOY. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Platform moat",
+            "fontSize": 22,
+            "fontFamily": "Inter",
+            "fontWeight": "700",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 1295.65625,
+        "y": 493,
+        "width": 151.140625,
+        "height": 26,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 491.328125,
+        "parentHeight": 26,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Platform moat",
+        "fontSize": 22,
+        "fontFamily": "Inter",
+        "fontWeight": "700",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": " Ship AI features, workflow engine, and marketplace. Increase switching costs for enterprise. ",
+            "fontSize": 16,
+            "fontFamily": "Inter",
+            "fontWeight": "400",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.6
+          }
+        ],
+        "x": 1295.65625,
+        "y": 533,
+        "width": 463.625,
+        "height": 45.59375,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 491.328125,
+        "parentHeight": 51.1875,
+        "wrap": true,
+        "lineHeight": 1.6,
+        "text": " Ship AI features, workflow engine, and marketplace. Increase switching costs for enterprise. ",
+        "fontSize": 16,
+        "fontFamily": "Inter",
+        "fontWeight": "400",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "FY26 Revenue Target",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 912,
+        "width": 172.21875,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 172.21875,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "FY26 Revenue Target",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "$145M",
+            "fontSize": 36,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 100,
+        "y": 936,
+        "width": 121.234375,
+        "height": 44,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 172.21875,
+        "parentHeight": 44,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$145M",
+        "fontSize": 36,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "EBITDA Target",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 332.21875,
+        "y": 912,
+        "width": 115.328125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 115.328125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "EBITDA Target",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "$29M",
+            "fontSize": 36,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 332.21875,
+        "y": 936,
+        "width": 104.515625,
+        "height": 44,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 115.328125,
+        "parentHeight": 44,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "$29M",
+        "fontSize": 36,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Headcount EOY",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 507.546875,
+        "y": 912,
+        "width": 127.421875,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 127.421875,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Headcount EOY",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "320",
+            "fontSize": 36,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 507.546875,
+        "y": 936,
+        "width": 71.5,
+        "height": 44,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 127.421875,
+        "parentHeight": 44,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "320",
+        "fontSize": 36,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      },
+      {
+        "runs": [
+          {
+            "text": "Net Magic Number",
+            "fontSize": 13,
+            "fontFamily": "Inter",
+            "fontWeight": "600",
+            "fontStyle": "normal",
+            "color": "rgb(120, 113, 108)",
+            "letterSpacing": 1.04,
+            "textTransform": "uppercase",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 694.96875,
+        "y": 912,
+        "width": 149.703125,
+        "height": 16,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 149.703125,
+        "parentHeight": 16,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "Net Magic Number",
+        "fontSize": 13,
+        "fontFamily": "Inter",
+        "fontWeight": "600",
+        "fontStyle": "normal",
+        "color": "rgb(120, 113, 108)",
+        "letterSpacing": 1.04,
+        "textTransform": "uppercase"
+      },
+      {
+        "runs": [
+          {
+            "text": "1.4×",
+            "fontSize": 36,
+            "fontFamily": "Inter",
+            "fontWeight": "800",
+            "fontStyle": "normal",
+            "color": "rgb(26, 26, 26)",
+            "letterSpacing": 0,
+            "textTransform": "none",
+            "lineHeight": 1.2
+          }
+        ],
+        "x": 694.96875,
+        "y": 936,
+        "width": 78.0625,
+        "height": 44,
+        "textAlign": "start",
+        "rotation": 0,
+        "parentWidth": 149.703125,
+        "parentHeight": 44,
+        "wrap": false,
+        "lineHeight": 1.2,
+        "text": "1.4×",
+        "fontSize": 36,
+        "fontFamily": "Inter",
+        "fontWeight": "800",
+        "fontStyle": "normal",
+        "color": "rgb(26, 26, 26)",
+        "letterSpacing": 0,
+        "textTransform": "none"
+      }
+    ],
+    "images": [],
+    "tables": [],
+    "notes": "End with confidence. Reiterate the full-year targets."
+  }
+]

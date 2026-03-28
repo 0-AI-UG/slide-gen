@@ -1,0 +1,14 @@
+{
+  "SpaceGrotesk": {
+    "regularWeight": 400,
+    "boldWeight": 700,
+    "boldThreshold": 550,
+    "internalName": "Space Grotesk"
+  },
+  "DMMono": {
+    "regularWeight": 400,
+    "boldWeight": 400,
+    "boldThreshold": 600,
+    "internalName": "DM Mono"
+  }
+}

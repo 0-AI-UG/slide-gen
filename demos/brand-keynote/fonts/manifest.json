@@ -1,0 +1,14 @@
+{
+  "Outfit": {
+    "regularWeight": 300,
+    "boldWeight": 900,
+    "boldThreshold": 600,
+    "internalName": "Outfit"
+  },
+  "InstrumentSerif": {
+    "regularWeight": 400,
+    "boldWeight": 400,
+    "boldThreshold": 600,
+    "internalName": "Instrument Serif"
+  }
+}

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: 'Outfit', sans-serif;
+    }
+    .slide + .slide { page-break-before: always; }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 1 — Bold Opening                                       -->
+  <!-- ============================================================ -->
+  <div class="slide">
+    <!-- Full bleed gradient background -->
+    <div style="position: absolute; inset: 0;
+                background: linear-gradient(160deg, #0F0F0F 0%, #1A0A2E 40%, #2D1B69 70%, #1A0A2E 100%);"></div>
+
+    <!-- Decorative radial -->
+    <div style="position: absolute; top: -300px; right: -200px; width: 1100px; height: 1100px;
+                background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.2), transparent 60%);
+                border-radius: 50%;"></div>
+
+    <!-- Thin top border accent -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px;
+                background: linear-gradient(90deg, #A855F7, #EC4899, #F97316);"></div>
+
+    <!-- Brand wordmark -->
+    <div style="position: absolute; top: 80px; left: 100px;
+                font-size: 20px; font-weight: 700; color: white; letter-spacing: 0.15em; text-transform: uppercase;">
+      Prism
+    </div>
+
+    <!-- Year / event -->
+    <div style="position: absolute; top: 80px; right: 100px;
+                font-family: 'Instrument Serif', serif; font-size: 20px; color: rgba(255, 255, 255, 0.5); font-style: italic;">
+      Product Summit 2026
+    </div>
+
+    <!-- Giant headline -->
+    <div style="position: absolute; top: 280px; left: 100px; right: 100px;">
+      <div style="font-size: 140px; font-weight: 900; line-height: 0.95; letter-spacing: -0.04em; color: white;">
+        The future is<br/><span style="background: linear-gradient(90deg, #A855F7, #EC4899, #F97316);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;">multi-modal.</span>
+      </div>
+    </div>
+
+    <!-- Subtitle -->
+    <div style="position: absolute; bottom: 160px; left: 100px; width: 700px;">
+      <div style="font-size: 24px; font-weight: 300; color: rgba(255, 255, 255, 0.6); line-height: 1.6;">
+        Introducing Prism 3.0 — the platform that sees, hears, reads, and understands. Built for the next decade of human-computer interaction.
+      </div>
+    </div>
+
+    <!-- Bottom accent dots -->
+    <div style="position: absolute; bottom: 80px; left: 100px; display: flex; gap: 12px;">
+      <div style="width: 10px; height: 10px; border-radius: 50%; background: #A855F7;"></div>
+      <div style="width: 10px; height: 10px; border-radius: 50%; background: #EC4899;"></div>
+      <div style="width: 10px; height: 10px; border-radius: 50%; background: #F97316;"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 2 — The Vision (editorial / magazine style)            -->
+  <!-- ============================================================ -->
+  <div class="slide">
+    <div style="position: absolute; inset: 0; background: #FAFAFA;"></div>
+
+    <!-- Large serif pull-quote taking up most of the slide -->
+    <div style="position: absolute; top: 140px; left: 160px; right: 160px;">
+      <div style="font-family: 'Instrument Serif', serif; font-size: 72px; line-height: 1.35;
+                  color: #1A1A1A; font-style: italic;">
+        "We don't build tools<br/>for machines. We build<br/>tools that make machines<br/><span style="color: #A855F7;">understand people.</span>"
+      </div>
+    </div>
+
+    <!-- Attribution -->
+    <div style="position: absolute; bottom: 200px; left: 160px; display: flex; align-items: center; gap: 24px;">
+      <div style="width: 64px; height: 64px; border-radius: 50%;
+                  background: linear-gradient(135deg, #A855F7, #EC4899);"></div>
+      <div>
+        <div style="font-size: 20px; font-weight: 600; color: #1A1A1A;">Elara Nakamura</div>
+        <div style="font-size: 16px; color: #78716C; margin-top: 4px;">CEO & Founder, Prism</div>
+      </div>
+    </div>
+
+    <!-- Decorative vertical line -->
+    <div style="position: absolute; top: 120px; right: 120px; width: 3px; height: 840px;
+                background: linear-gradient(180deg, #A855F7, #EC4899, transparent);
+                border-radius: 2px;"></div>
+
+    <!-- Page number -->
+    <div style="position: absolute; bottom: 80px; right: 120px;
+                font-size: 14px; font-weight: 500; color: #D4D4D8;">02</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 3 — Product Capabilities (asymmetric grid)             -->
+  <!-- ============================================================ -->
+  <div class="slide">
+    <div style="position: absolute; inset: 0; background: #0F0F0F;"></div>
+
+    <!-- Section label -->
+    <div style="position: absolute; top: 80px; left: 100px;
+                font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.3);
+                text-transform: uppercase; letter-spacing: 0.15em;">Prism 3.0 Capabilities</div>
+
+    <!-- Main title -->
+    <div style="position: absolute; top: 150px; left: 100px;">
+      <div style="font-size: 64px; font-weight: 800; color: white; letter-spacing: -0.02em;">
+        Four senses. One platform.
+      </div>
+    </div>
+
+    <!-- Asymmetric capability grid -->
+    <!-- Large card left -->
+    <div style="position: absolute; top: 300px; left: 100px; width: 740px; height: 640px;
+                background: linear-gradient(160deg, #2D1B69, #1A0A2E);
+                border: 1px solid rgba(168, 85, 247, 0.2); border-radius: 20px;
+                padding: 60px;">
+      <div style="font-size: 15px; font-weight: 600; color: #A855F7; text-transform: uppercase;
+                  letter-spacing: 0.12em; margin-bottom: 24px;">Vision</div>
+      <div style="font-size: 48px; font-weight: 700; color: white; line-height: 1.2; letter-spacing: -0.01em;">
+        See and understand<br/>any visual input.
+      </div>
+      <div style="margin-top: 32px; font-size: 18px; color: rgba(255, 255, 255, 0.5); line-height: 1.7; width: 500px;" data-sg-wrap="true">
+        Real-time image, video, and document analysis. From handwritten notes to satellite imagery — Prism sees what humans see, and extracts meaning instantly.
+      </div>
+      <!-- Decorative stat -->
+      <div style="position: absolute; bottom: 60px; left: 60px;">
+        <div style="font-size: 72px; font-weight: 900; color: rgba(168, 85, 247, 0.15);">98.7%</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.3); margin-top: -4px;">accuracy on ImageNet-X benchmark</div>
+      </div>
+    </div>
+
+    <!-- Three smaller cards stacked right -->
+    <div style="position: absolute; top: 300px; left: 864px; right: 100px;
+                display: flex; flex-direction: column; gap: 16px;">
+      <!-- Audio -->
+      <div style="height: 200px; background: #1A1A1A; border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 16px; padding: 40px 44px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -40px; right: -40px; width: 200px; height: 200px;
+                    background: radial-gradient(circle, rgba(236, 72, 153, 0.12), transparent 70%);
+                    border-radius: 50%;"></div>
+        <div style="font-size: 14px; font-weight: 600; color: #EC4899; text-transform: uppercase;
+                    letter-spacing: 0.12em; margin-bottom: 12px;">Audio</div>
+        <div style="font-size: 28px; font-weight: 700; color: white; line-height: 1.3;">
+          Transcribe, translate, and<br/>analyze any audio stream.
+        </div>
+      </div>
+
+      <!-- Language -->
+      <div style="height: 200px; background: #1A1A1A; border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 16px; padding: 40px 44px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -40px; right: -40px; width: 200px; height: 200px;
+                    background: radial-gradient(circle, rgba(249, 115, 22, 0.12), transparent 70%);
+                    border-radius: 50%;"></div>
+        <div style="font-size: 14px; font-weight: 600; color: #F97316; text-transform: uppercase;
+                    letter-spacing: 0.12em; margin-bottom: 12px;">Language</div>
+        <div style="font-size: 28px; font-weight: 700; color: white; line-height: 1.3;">
+          Read, write, reason —<br/>in 97 languages natively.
+        </div>
+      </div>
+
+      <!-- Structured Data -->
+      <div style="height: 200px; background: #1A1A1A; border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 16px; padding: 40px 44px; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -40px; right: -40px; width: 200px; height: 200px;
+                    background: radial-gradient(circle, rgba(34, 197, 94, 0.12), transparent 70%);
+                    border-radius: 50%;"></div>
+        <div style="font-size: 14px; font-weight: 600; color: #22C55E; text-transform: uppercase;
+                    letter-spacing: 0.12em; margin-bottom: 12px;">Structured Data</div>
+        <div style="font-size: 28px; font-weight: 700; color: white; line-height: 1.3;">
+          Query databases, APIs, and<br/>spreadsheets with natural language.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 4 — By the Numbers (bold typographic)                  -->
+  <!-- ============================================================ -->
+  <div class="slide">
+    <div style="position: absolute; inset: 0; background: white;"></div>
+
+    <!-- Accent stripe top -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px;
+                background: linear-gradient(90deg, #A855F7, #EC4899, #F97316);"></div>
+
+    <!-- Section label -->
+    <div style="position: absolute; top: 80px; left: 100px;
+                font-size: 13px; font-weight: 600; color: #A1A1AA;
+                text-transform: uppercase; letter-spacing: 0.15em;">By the Numbers</div>
+
+    <!-- Giant number grid -->
+    <div style="position: absolute; top: 180px; left: 100px; right: 100px;
+                display: grid; grid-template-columns: repeat(2, 1fr); gap: 0;">
+
+      <!-- Cell 1 -->
+      <div style="padding: 60px 48px; border-bottom: 1px solid #E4E4E7; border-right: 1px solid #E4E4E7;">
+        <div style="font-size: 96px; font-weight: 900; letter-spacing: -0.04em; color: #0F0F0F;">2.4B</div>
+        <div style="font-size: 20px; font-weight: 400; color: #71717A; margin-top: 8px;">API calls processed daily across all endpoints</div>
+      </div>
+
+      <!-- Cell 2 -->
+      <div style="padding: 60px 48px; border-bottom: 1px solid #E4E4E7;">
+        <div style="font-size: 96px; font-weight: 900; letter-spacing: -0.04em; color: #A855F7;">12ms</div>
+        <div style="font-size: 20px; font-weight: 400; color: #71717A; margin-top: 8px;">Median response time (P50) — 3× faster than v2</div>
+      </div>
+
+      <!-- Cell 3 -->
+      <div style="padding: 60px 48px; border-bottom: 1px solid #E4E4E7; border-right: 1px solid #E4E4E7;">
+        <div style="font-size: 96px; font-weight: 900; letter-spacing: -0.04em; color: #EC4899;">97</div>
+        <div style="font-size: 20px; font-weight: 400; color: #71717A; margin-top: 8px;">Languages supported with native-quality output</div>
+      </div>
+
+      <!-- Cell 4 -->
+      <div style="padding: 60px 48px; border-bottom: 1px solid #E4E4E7;">
+        <div style="font-size: 96px; font-weight: 900; letter-spacing: -0.04em; color: #F97316;">4,200+</div>
+        <div style="font-size: 20px; font-weight: 400; color: #71717A; margin-top: 8px;">Enterprise customers trusting Prism in production</div>
+      </div>
+    </div>
+
+    <!-- Bottom tagline -->
+    <div style="position: absolute; bottom: 80px; left: 100px;">
+      <div style="font-family: 'Instrument Serif', serif; font-size: 28px; font-style: italic; color: #A1A1AA;">
+        Scale that speaks for itself.
+      </div>
+    </div>
+
+    <!-- Page number -->
+    <div style="position: absolute; bottom: 80px; right: 100px;
+                font-size: 14px; font-weight: 500; color: #D4D4D8;">04</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 5 — Architecture (technical diagram style)             -->
+  <!-- ============================================================ -->
+  <div class="slide">
+    <div style="position: absolute; inset: 0; background: #0A0A0F;"></div>
+
+    <!-- Grid background effect -->
+    <div style="position: absolute; inset: 0; opacity: 0.04;">
+      <div style="position: absolute; top: 0; left: 240px; width: 1px; height: 100%; background: white;"></div>
+      <div style="position: absolute; top: 0; left: 480px; width: 1px; height: 100%; background: white;"></div>
+      <div style="position: absolute; top: 0; left: 720px; width: 1px; height: 100%; background: white;"></div>
+      <div style="position: absolute; top: 0; left: 960px; width: 1px; height: 100%; background: white;"></div>
+      <div style="position: absolute; top: 0; left: 1200px; width: 1px; height: 100%; background: white;"></div>
+      <div style="position: absolute; top: 0; left: 1440px; width: 1px; height: 100%; background: white;"></div>
+      <div style="position: absolute; top: 0; left: 1680px; width: 1px; height: 100%; background: white;"></div>
+      <div style="position: absolute; top: 180px; left: 0; width: 100%; height: 1px; background: white;"></div>
+      <div style="position: absolute; top: 360px; left: 0; width: 100%; height: 1px; background: white;"></div>
+      <div style="position: absolute; top: 540px; left: 0; width: 100%; height: 1px; background: white;"></div>
+      <div style="position: absolute; top: 720px; left: 0; width: 100%; height: 1px; background: white;"></div>
+      <div style="position: absolute; top: 900px; left: 0; width: 100%; height: 1px; background: white;"></div>
+    </div>
+
+    <!-- Label -->
+    <div style="position: absolute; top: 80px; left: 100px;
+                font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.3);
+                text-transform: uppercase; letter-spacing: 0.15em;">Platform Architecture</div>
+
+    <div style="position: absolute; top: 140px; left: 100px;">
+      <div style="font-size: 48px; font-weight: 800; color: white; letter-spacing: -0.02em;">
+        Built for scale. Designed for developers.
+      </div>
+    </div>
+
+    <!-- Architecture layers -->
+    <!-- Input layer -->
+    <div style="position: absolute; top: 280px; left: 100px; right: 100px;
+                display: flex; gap: 12px;">
+      <div style="flex: 1; height: 80px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3);
+                  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+                  font-size: 15px; font-weight: 600; color: #A855F7;">Images</div>
+      <div style="flex: 1; height: 80px; background: rgba(236, 72, 153, 0.1); border: 1px solid rgba(236, 72, 153, 0.3);
+                  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+                  font-size: 15px; font-weight: 600; color: #EC4899;">Audio</div>
+      <div style="flex: 1; height: 80px; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3);
+                  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+                  font-size: 15px; font-weight: 600; color: #F97316;">Text</div>
+      <div style="flex: 1; height: 80px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);
+                  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+                  font-size: 15px; font-weight: 600; color: #22C55E;">Video</div>
+      <div style="flex: 1; height: 80px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3);
+                  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+                  font-size: 15px; font-weight: 600; color: #3B82F6;">Documents</div>
+    </div>
+
+    <!-- Arrow zone -->
+    <div style="position: absolute; top: 372px; left: 0; right: 0; height: 40px;
+                display: flex; align-items: center; justify-content: center;">
+      <div style="font-size: 20px; color: rgba(255, 255, 255, 0.15);">▼  ▼  ▼  ▼  ▼</div>
+    </div>
+
+    <!-- Processing layer -->
+    <div style="position: absolute; top: 420px; left: 100px; right: 100px; height: 160px;
+                background: linear-gradient(90deg, rgba(168, 85, 247, 0.08), rgba(236, 72, 153, 0.08), rgba(249, 115, 22, 0.08));
+                border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px;
+                display: flex; align-items: center; justify-content: center; gap: 80px;">
+      <div style="text-align: center;">
+        <div style="font-size: 24px; font-weight: 700; color: white;">Prism Core Engine</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 8px;">Unified multi-modal transformer · 1.2T parameters</div>
+      </div>
+      <div style="width: 1px; height: 80px; background: rgba(255, 255, 255, 0.08);"></div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; font-weight: 700; color: white;">Routing Layer</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 8px;">Intelligent model selection · Auto-batching</div>
+      </div>
+      <div style="width: 1px; height: 80px; background: rgba(255, 255, 255, 0.08);"></div>
+      <div style="text-align: center;">
+        <div style="font-size: 24px; font-weight: 700; color: white;">Safety Filters</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 8px;">Content moderation · PII detection</div>
+      </div>
+    </div>
+
+    <!-- Arrow zone 2 -->
+    <div style="position: absolute; top: 592px; left: 0; right: 0; height: 40px;
+                display: flex; align-items: center; justify-content: center;">
+      <div style="font-size: 20px; color: rgba(255, 255, 255, 0.15);">▼  ▼  ▼  ▼  ▼</div>
+    </div>
+
+    <!-- Output layer -->
+    <div style="position: absolute; top: 640px; left: 100px; right: 100px;
+                display: flex; gap: 16px;">
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px;">REST API</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.35); line-height: 1.5;">
+          JSON endpoints with streaming support, webhooks, and retry logic.
+        </div>
+      </div>
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px;">SDKs</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.35); line-height: 1.5;">
+          Python, Node, Go, Rust, Java — first-class support with type safety.
+        </div>
+      </div>
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px;">Embeddings</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.35); line-height: 1.5;">
+          Multi-modal vector embeddings for search, clustering, and RAG pipelines.
+        </div>
+      </div>
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px;">Fine-tuning</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.35); line-height: 1.5;">
+          Custom models trained on your data with one-click deployment.
+        </div>
+      </div>
+    </div>
+
+    <!-- Infra bar -->
+    <div style="position: absolute; bottom: 60px; left: 100px; right: 100px;
+                height: 60px; background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04);
+                border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 48px;">
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.25); text-transform: uppercase; letter-spacing: 0.1em;">AWS</span>
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.25); text-transform: uppercase; letter-spacing: 0.1em;">GCP</span>
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.25); text-transform: uppercase; letter-spacing: 0.1em;">Azure</span>
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.15);">·</span>
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.25); text-transform: uppercase; letter-spacing: 0.1em;">SOC 2</span>
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.25); text-transform: uppercase; letter-spacing: 0.1em;">HIPAA</span>
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.25); text-transform: uppercase; letter-spacing: 0.1em;">GDPR</span>
+      <span style="font-size: 13px; color: rgba(255, 255, 255, 0.25); text-transform: uppercase; letter-spacing: 0.1em;">ISO 27001</span>
+    </div>
+
+    <!-- Page number -->
+    <div style="position: absolute; bottom: 80px; right: 100px;
+                font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, 0.2);">05</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 6 — Pricing (clean comparison)                         -->
+  <!-- ============================================================ -->
+  <div class="slide">
+    <div style="position: absolute; inset: 0; background: #FAFAFA;"></div>
+
+    <!-- Label -->
+    <div style="position: absolute; top: 80px; left: 100px;
+                font-size: 13px; font-weight: 600; color: #A1A1AA;
+                text-transform: uppercase; letter-spacing: 0.15em;">Pricing</div>
+
+    <div style="position: absolute; top: 140px; left: 100px;">
+      <div style="font-size: 56px; font-weight: 800; color: #0F0F0F; letter-spacing: -0.02em;">
+        Simple, predictable pricing.
+      </div>
+    </div>
+
+    <!-- Three pricing cards -->
+    <div style="position: absolute; top: 300px; left: 100px; right: 100px;
+                display: flex; gap: 24px; align-items: flex-start;">
+      <!-- Starter -->
+      <div style="flex: 1; background: white; border: 1px solid #E4E4E7; border-radius: 16px; padding: 48px 40px;">
+        <div style="font-size: 15px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.1em;">Starter</div>
+        <div data-sg-group="starter-price" style="margin-top: 16px;">
+          <span style="font-size: 56px; font-weight: 900; color: #0F0F0F;">$0</span>
+          <span style="font-size: 18px; color: #A1A1AA;">/month</span>
+        </div>
+        <div style="font-size: 16px; color: #71717A; margin-top: 12px; line-height: 1.5;">
+          For developers exploring multi-modal AI.
+        </div>
+        <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #E4E4E7;">
+          <div style="font-size: 15px; color: #3F3F46; line-height: 2.2;">
+            1,000 API calls/day<br/>
+            All modalities<br/>
+            Community support<br/>
+            Standard rate limits<br/>
+            Playground access
+          </div>
+        </div>
+      </div>
+
+      <!-- Pro (highlighted) -->
+      <div style="flex: 1; background: #0F0F0F; border: 2px solid #A855F7; border-radius: 16px; padding: 48px 40px;
+                  position: relative;">
+        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+                    background: linear-gradient(90deg, #A855F7, #EC4899); border-radius: 20px;
+                    padding: 6px 20px; font-size: 12px; font-weight: 700; color: white;
+                    text-transform: uppercase; letter-spacing: 0.1em;">Most Popular</div>
+        <div style="font-size: 15px; font-weight: 600; color: #A855F7; text-transform: uppercase; letter-spacing: 0.1em;">Pro</div>
+        <div data-sg-group="pro-price" style="margin-top: 16px;">
+          <span style="font-size: 56px; font-weight: 900; color: white;">$299</span>
+          <span style="font-size: 18px; color: rgba(255, 255, 255, 0.4);">/month</span>
+        </div>
+        <div style="font-size: 16px; color: rgba(255, 255, 255, 0.5); margin-top: 12px; line-height: 1.5;">
+          For teams building production applications.
+        </div>
+        <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <div style="font-size: 15px; color: rgba(255, 255, 255, 0.7); line-height: 2.2;">
+            100K API calls/day<br/>
+            Fine-tuning access<br/>
+            Priority support (4h SLA)<br/>
+            Custom rate limits<br/>
+            Team management
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprise -->
+      <div style="flex: 1; background: white; border: 1px solid #E4E4E7; border-radius: 16px; padding: 48px 40px;">
+        <div style="font-size: 15px; font-weight: 600; color: #A1A1AA; text-transform: uppercase; letter-spacing: 0.1em;">Enterprise</div>
+        <div style="margin-top: 16px;">
+          <span style="font-size: 56px; font-weight: 900; color: #0F0F0F;">Custom</span>
+        </div>
+        <div style="font-size: 16px; color: #71717A; margin-top: 12px; line-height: 1.5;">
+          For organizations with specific requirements.
+        </div>
+        <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid #E4E4E7;">
+          <div style="font-size: 15px; color: #3F3F46; line-height: 2.2;">
+            Unlimited API calls<br/>
+            Dedicated infrastructure<br/>
+            24/7 support + TAM<br/>
+            SSO / SCIM / audit logs<br/>
+            On-prem deployment
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page number -->
+    <div style="position: absolute; bottom: 80px; right: 100px;
+                font-size: 14px; font-weight: 500; color: #D4D4D8;">06</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 7 — Closing CTA                                        -->
+  <!-- ============================================================ -->
+  <div class="slide">
+    <div style="position: absolute; inset: 0;
+                background: linear-gradient(160deg, #0F0F0F 0%, #1A0A2E 50%, #2D1B69 100%);"></div>
+
+    <!-- Bottom gradient accent -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+                background: linear-gradient(90deg, #A855F7, #EC4899, #F97316);"></div>
+
+    <!-- Large radial glow -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                width: 1400px; height: 1400px;
+                background: radial-gradient(circle, rgba(168, 85, 247, 0.08), transparent 60%);
+                border-radius: 50%;"></div>
+
+    <!-- Centered content -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div style="font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.3);
+                  text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 40px;">Start Building Today</div>
+      <div style="font-size: 100px; font-weight: 900; color: white; letter-spacing: -0.03em;
+                  text-align: center; line-height: 1.05;">
+        The platform that<br/>understands <span style="background: linear-gradient(90deg, #A855F7, #EC4899, #F97316);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;">everything.</span>
+      </div>
+      <div style="margin-top: 48px; font-size: 22px; color: rgba(255, 255, 255, 0.4);">
+        prism.ai/start
+      </div>
+    </div>
+
+    <!-- Bottom accent dots -->
+    <div style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
+                display: flex; gap: 12px;">
+      <div style="width: 10px; height: 10px; border-radius: 50%; background: #A855F7;"></div>
+      <div style="width: 10px; height: 10px; border-radius: 50%; background: #EC4899;"></div>
+      <div style="width: 10px; height: 10px; border-radius: 50%; background: #F97316;"></div>
+    </div>
+  </div>
+
+</body>
+</html>

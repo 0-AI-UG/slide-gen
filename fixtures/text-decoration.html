@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background: #0d1117;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  .title {
+    position: absolute;
+    top: 80px;
+    left: 160px;
+    font-size: 64px;
+    color: #ffffff;
+  }
+  .underline {
+    position: absolute;
+    top: 250px;
+    left: 160px;
+    font-size: 40px;
+    color: #58a6ff;
+    text-decoration: underline;
+  }
+  .strikethrough {
+    position: absolute;
+    top: 380px;
+    left: 160px;
+    font-size: 40px;
+    color: #f85149;
+    text-decoration: line-through;
+  }
+  .both {
+    position: absolute;
+    top: 510px;
+    left: 160px;
+    font-size: 40px;
+    color: #d2a8ff;
+    text-decoration: underline line-through;
+  }
+  .mixed {
+    position: absolute;
+    top: 660px;
+    left: 160px;
+    font-size: 36px;
+    color: #e0e0e0;
+  }
+  .mixed .u { text-decoration: underline; color: #7ee787; }
+  .mixed .s { text-decoration: line-through; color: #ffa657; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="title">Text Decoration Test</div>
+  <div class="underline">This text is underlined</div>
+  <div class="strikethrough">This text has strikethrough</div>
+  <div class="both">This has both underline and strikethrough</div>
+  <div class="mixed" data-sg-group="mixed">
+    Normal text, <span class="u">underlined part</span>, and <span class="s">struck through</span>.
+  </div>
+</div>
+</body>
+</html>

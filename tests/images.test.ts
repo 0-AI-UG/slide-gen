@@ -82,6 +82,7 @@ describe("image support", () => {
         height: 1080,
         backgroundColor: "rgb(26, 26, 46)",
         rects: [],
+        tables: [],
         texts: [],
         images: [{
           x: 100,
@@ -106,6 +107,7 @@ describe("image support", () => {
         height: 1080,
         backgroundColor: "rgb(255, 255, 255)",
         rects: [],
+        tables: [],
         texts: [],
         images: [
           { x: 100, y: 100, width: 200, height: 200, base64 },
@@ -128,6 +130,7 @@ describe("image support", () => {
         height: 1080,
         backgroundColor: "rgb(0, 0, 0)",
         rects: [],
+        tables: [],
         texts: [],
         images: [],
       }];

@@ -62,6 +62,80 @@ export function parseBorderRadius(computed: CSSStyleDeclaration, width?: number,
   return Math.max(tl, tr, br, bl);
 }
 
+/** Parse per-corner border-radius values (in px). Returns null if all corners are 0. */
+export function parseBorderRadii(computed: CSSStyleDeclaration, width?: number, height?: number): { topLeft: number; topRight: number; bottomRight: number; bottomLeft: number } | null {
+  const w = width ?? 0;
+  const h = height ?? 0;
+  const needsResolve = w > 0 && h > 0;
+
+  let tl: number, tr: number, br: number, bl: number;
+  if (needsResolve) {
+    tl = resolveRadius(computed.borderTopLeftRadius, w, h);
+    tr = resolveRadius(computed.borderTopRightRadius, w, h);
+    br = resolveRadius(computed.borderBottomRightRadius, w, h);
+    bl = resolveRadius(computed.borderBottomLeftRadius, w, h);
+  } else {
+    tl = parseFloat(computed.borderTopLeftRadius) || 0;
+    tr = parseFloat(computed.borderTopRightRadius) || 0;
+    br = parseFloat(computed.borderBottomRightRadius) || 0;
+    bl = parseFloat(computed.borderBottomLeftRadius) || 0;
+  }
+
+  if (tl === 0 && tr === 0 && br === 0 && bl === 0) return null;
+  return { topLeft: tl, topRight: tr, bottomRight: br, bottomLeft: bl };
+}
+
+/**
+ * Parse a CSS box-shadow or text-shadow value into a ShadowInfo object.
+ * Handles formats like:
+ *   rgba(0, 0, 0, 0.5) 2px 4px 8px 0px   (box-shadow with spread)
+ *   rgba(0, 0, 0, 0.5) 2px 4px 8px        (text-shadow, no spread)
+ *   rgb(0, 0, 0) 2px 4px 8px
+ *   2px 4px 8px rgba(0, 0, 0, 0.5)
+ * Returns null for "none" or unparseable values.
+ */
+export function parseShadow(value: string): { offsetX: number; offsetY: number; blurRadius: number; spreadRadius?: number; color: string } | null {
+  if (!value || value === "none") return null;
+
+  // Only take the first shadow if multiple are specified (comma-separated)
+  // Be careful not to split inside rgba() parentheses
+  let firstShadow = value;
+  let depth = 0;
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] === "(") depth++;
+    else if (value[i] === ")") depth--;
+    else if (value[i] === "," && depth === 0) {
+      firstShadow = value.slice(0, i).trim();
+      break;
+    }
+  }
+
+  // Extract color (rgb/rgba or hex) and numeric values separately
+  const colorMatch = firstShadow.match(/rgba?\([^)]+\)/);
+  const hexMatch = !colorMatch ? firstShadow.match(/#[0-9a-fA-F]{3,8}/) : null;
+  const color = colorMatch ? colorMatch[0] : hexMatch ? hexMatch[0] : "rgb(0, 0, 0)";
+
+  // Remove the color from the string to isolate numeric values
+  let numericPart = firstShadow;
+  if (colorMatch) numericPart = numericPart.replace(colorMatch[0], "");
+  else if (hexMatch) numericPart = numericPart.replace(hexMatch[0], "");
+
+  // Parse px values (can be negative)
+  const pxValues = numericPart.match(/-?[\d.]+px/g);
+  if (!pxValues || pxValues.length < 2) return null;
+
+  const nums = pxValues.map(v => parseFloat(v));
+  const offsetX = nums[0];
+  const offsetY = nums[1];
+  const blurRadius = nums[2] ?? 0;
+  const spreadRadius = nums[3] !== undefined ? nums[3] : undefined;
+
+  // Skip shadows with zero offset and zero blur (invisible)
+  if (offsetX === 0 && offsetY === 0 && blurRadius === 0) return null;
+
+  return { offsetX, offsetY, blurRadius, spreadRadius, color };
+}
+
 /** Extract rotation angle (degrees) from a CSS transform matrix. */
 export function getRotation(computed: CSSStyleDeclaration): number {
   const transform = computed.transform;
@@ -73,4 +147,48 @@ export function getRotation(computed: CSSStyleDeclaration): number {
     return Math.round(angle * 100) / 100;
   }
   return 0;
+}
+
+export interface TransformInfo {
+  rotation: number;    // degrees
+  scaleX: number;
+  scaleY: number;
+  translateX: number;  // px
+  translateY: number;  // px
+  skewX: number;       // degrees
+}
+
+/** Decompose a CSS transform matrix(a,b,c,d,tx,ty) into components. */
+export function getTransformInfo(computed: CSSStyleDeclaration): TransformInfo {
+  const result: TransformInfo = { rotation: 0, scaleX: 1, scaleY: 1, translateX: 0, translateY: 0, skewX: 0 };
+  const transform = computed.transform;
+  if (!transform || transform === "none") return result;
+
+  const m = transform.match(/matrix\(([^)]+)\)/);
+  if (!m) return result;
+
+  const [a, b, c, d, tx, ty] = m[1].split(",").map(v => parseFloat(v.trim()));
+
+  result.translateX = tx;
+  result.translateY = ty;
+
+  // Decompose 2x2 part: [a b; c d]
+  const rotation = Math.atan2(b, a);
+  result.rotation = Math.round(rotation * (180 / Math.PI) * 100) / 100;
+
+  const cosR = Math.cos(rotation);
+  const sinR = Math.sin(rotation);
+
+  // Remove rotation to get scale + skew
+  // [a b; c d] = [cosR -sinR; sinR cosR] * [sx skewX*sy; 0 sy]
+  result.scaleX = Math.round((a * cosR + b * sinR) * 1000) / 1000;
+  result.scaleY = Math.round((d * cosR - c * sinR) * 1000) / 1000;
+
+  // Skew: atan of the remaining shear
+  if (Math.abs(result.scaleY) > 0.001) {
+    const skewRad = Math.atan2(c * cosR + d * sinR, result.scaleY);
+    result.skewX = Math.round(skewRad * (180 / Math.PI) * 100) / 100;
+  }
+
+  return result;
 }

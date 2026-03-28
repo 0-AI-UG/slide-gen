@@ -1,0 +1,14 @@
+{
+  "JetBrainsMono": {
+    "regularWeight": 400,
+    "boldWeight": 800,
+    "boldThreshold": 600,
+    "internalName": "JetBrains Mono"
+  },
+  "Sora": {
+    "regularWeight": 400,
+    "boldWeight": 800,
+    "boldThreshold": 600,
+    "internalName": "Sora"
+  }
+}

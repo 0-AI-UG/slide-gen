@@ -18,5 +18,13 @@ export type {
   ConvertResult,
   ConvertBufferOptions,
   ConvertBufferResult,
+  ShadowInfo,
+  CornerRadii,
+  TableElement,
+  TableRow,
+  TableCell,
+  MasterSlideConfig,
+  ProgressEvent,
+  ProgressCallback,
 } from "./types";
 export { SlideGenError, BrowserError, FontError, PptxBuildError, RenderError } from "./errors";

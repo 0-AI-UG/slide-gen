@@ -35,4 +35,7 @@ export const REL_TYPES = {
   tableStyles: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/tableStyles",
   slideLayout: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
   image: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+  hyperlink: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+  notesSlide: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide",
+  notesMaster: "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesMaster",
 } as const;

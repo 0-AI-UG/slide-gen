@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { margin: 0; }
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background: #1a1a2e;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    padding: 80px;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .columns {
+    display: flex;
+    gap: 100px;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding-left: 40px;
+  }
+
+  li {
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+
+  ul.nested-demo ul {
+    list-style-type: circle;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <h2>List Examples</h2>
+    <div class="columns">
+      <div class="column">
+        <ul>
+          <li>First bullet point</li>
+          <li>Second bullet point</li>
+          <li>Third bullet point</li>
+        </ul>
+      </div>
+      <div class="column">
+        <ol>
+          <li>Step one</li>
+          <li>Step two</li>
+          <li>Step three</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <h2>Nested Lists</h2>
+    <ul class="nested-demo">
+      <li>Top-level item
+        <ul>
+          <li>Nested item A</li>
+          <li>Nested item B</li>
+        </ul>
+      </li>
+      <li>Another top-level item</li>
+    </ul>
+  </div>
+</body>
+</html>

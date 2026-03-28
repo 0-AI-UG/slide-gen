@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: 'Sora', sans-serif;
+      color: #E2E8F0;
+    }
+    .slide + .slide { page-break-before: always; }
+
+    :root {
+      --bg: #0F172A;
+      --surface: #1E293B;
+      --border: #334155;
+      --cyan: #22D3EE;
+      --lime: #A3E635;
+      --amber: #FBBF24;
+      --muted: #64748B;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 1 — Workshop Title                                     -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Introduce yourself. Set expectations for hands-on workshop.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Geometric decoration: diagonal stripes -->
+    <div style="position: absolute; top: -200px; right: -100px; width: 800px; height: 800px;
+                background: repeating-linear-gradient(
+                  -45deg,
+                  rgba(34, 211, 238, 0.03),
+                  rgba(34, 211, 238, 0.03) 2px,
+                  transparent 2px,
+                  transparent 40px
+                );"></div>
+
+    <!-- Workshop type pill -->
+    <div style="position: absolute; top: 80px; left: 100px;
+                display: inline-flex; align-items: center; gap: 10px;
+                background: rgba(34, 211, 238, 0.08); border: 1px solid rgba(34, 211, 238, 0.2);
+                border-radius: 8px; padding: 10px 20px;">
+      <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--cyan);"></div>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--cyan);
+                   text-transform: uppercase; letter-spacing: 0.1em;">Hands-On Workshop · 90 Minutes</span>
+    </div>
+
+    <!-- Big title -->
+    <div style="position: absolute; top: 240px; left: 100px; width: 1300px;">
+      <div style="font-size: 80px; font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;">
+        Building Production<br/>APIs with <span style="color: var(--cyan);">TypeScript</span>
+      </div>
+      <div style="margin-top: 32px; font-size: 22px; color: var(--muted); line-height: 1.6; width: 700px;">
+        From zero to deployed — type-safe routes, database integration, auth middleware, and CI/CD. Everything you need to ship confidently.
+      </div>
+    </div>
+
+    <!-- Instructor info -->
+    <div style="position: absolute; bottom: 120px; left: 100px;
+                display: flex; align-items: center; gap: 20px;">
+      <div style="width: 56px; height: 56px; border-radius: 12px;
+                  background: linear-gradient(135deg, var(--cyan), var(--lime));"></div>
+      <div>
+        <div style="font-size: 18px; font-weight: 600;">Devon Hartley</div>
+        <div style="font-size: 15px; color: var(--muted);">Staff Engineer @ Vercel · @devonhartley</div>
+      </div>
+    </div>
+
+    <!-- Prereqs -->
+    <div style="position: absolute; bottom: 120px; right: 100px;
+                font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted); text-align: right;">
+      Prerequisites: Node 20+, Docker, VS Code<br/>
+      Repo: github.com/devon/ts-api-workshop
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 2 — Agenda / Timeline                                  -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Walk through the agenda. Emphasize that each section has exercises.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">Agenda</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);">02 / 08</span>
+    </div>
+
+    <div style="position: absolute; top: 160px; left: 100px;">
+      <div style="font-size: 48px; font-weight: 700; letter-spacing: -0.02em;">
+        What we'll build today.
+      </div>
+    </div>
+
+    <!-- Timeline items -->
+    <div style="position: absolute; top: 300px; left: 100px; right: 100px;">
+      <!-- Vertical line -->
+      <div style="position: absolute; left: 63px; top: 20px; bottom: 20px; width: 2px; background: var(--border);"></div>
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <!-- Item 1 -->
+        <div style="display: flex; align-items: flex-start; gap: 32px; padding: 20px 0;">
+          <div style="width: 128px; text-align: right; flex-shrink: 0;
+                      font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--cyan); padding-top: 4px;">
+            0:00 – 0:15
+          </div>
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--cyan);
+                      flex-shrink: 0; margin-top: 6px; z-index: 1;"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 22px; font-weight: 600;">Project setup & scaffolding</div>
+            <div style="font-size: 16px; color: var(--muted); margin-top: 6px;">
+              Initialize a Hono app with TypeScript strict mode, configure ESLint, Prettier, and path aliases.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div style="display: flex; align-items: flex-start; gap: 32px; padding: 20px 0;">
+          <div style="width: 128px; text-align: right; flex-shrink: 0;
+                      font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--lime); padding-top: 4px;">
+            0:15 – 0:35
+          </div>
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--lime);
+                      flex-shrink: 0; margin-top: 6px; z-index: 1;"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 22px; font-weight: 600;">Type-safe routes with Zod</div>
+            <div style="font-size: 16px; color: var(--muted); margin-top: 6px;">
+              Define request/response schemas, build validated endpoints, and generate OpenAPI docs automatically.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div style="display: flex; align-items: flex-start; gap: 32px; padding: 20px 0;">
+          <div style="width: 128px; text-align: right; flex-shrink: 0;
+                      font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--amber); padding-top: 4px;">
+            0:35 – 0:55
+          </div>
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: var(--amber);
+                      flex-shrink: 0; margin-top: 6px; z-index: 1;"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 22px; font-weight: 600;">Database with Drizzle ORM</div>
+            <div style="font-size: 16px; color: var(--muted); margin-top: 6px;">
+              Connect Postgres via Docker, define schemas, run migrations, and write type-safe queries.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div style="display: flex; align-items: flex-start; gap: 32px; padding: 20px 0;">
+          <div style="width: 128px; text-align: right; flex-shrink: 0;
+                      font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #F472B6; padding-top: 4px;">
+            0:55 – 1:15
+          </div>
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: #F472B6;
+                      flex-shrink: 0; margin-top: 6px; z-index: 1;"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 22px; font-weight: 600;">Auth middleware & testing</div>
+            <div style="font-size: 16px; color: var(--muted); margin-top: 6px;">
+              JWT auth middleware, role-based guards, integration tests with Vitest, and test fixtures.
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div style="display: flex; align-items: flex-start; gap: 32px; padding: 20px 0;">
+          <div style="width: 128px; text-align: right; flex-shrink: 0;
+                      font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #818CF8; padding-top: 4px;">
+            1:15 – 1:30
+          </div>
+          <div style="width: 14px; height: 14px; border-radius: 50%; background: #818CF8;
+                      flex-shrink: 0; margin-top: 6px; z-index: 1;"></div>
+          <div style="flex: 1;">
+            <div style="font-size: 22px; font-weight: 600;">Deploy to production</div>
+            <div style="font-size: 16px; color: var(--muted); margin-top: 6px;">
+              Dockerfile, GitHub Actions CI, deploy to Fly.io, health checks, and monitoring basics.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 3 — Concept Slide (type-safe APIs)                     -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Explain the mental model before diving into code.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 24px; height: 24px; border-radius: 6px; background: var(--lime);
+                    display: flex; align-items: center; justify-content: center;
+                    font-size: 13px; font-weight: 700; color: var(--bg);">2</div>
+        <span style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">Type-Safe Routes</span>
+      </div>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);">03 / 08</span>
+    </div>
+
+    <!-- Left column: concept -->
+    <div style="position: absolute; top: 160px; left: 100px; width: 760px;">
+      <div style="font-size: 48px; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em;">
+        The type system is<br/>your <span style="color: var(--lime);">runtime guard</span>.
+      </div>
+      <div style="margin-top: 28px; font-size: 18px; color: var(--muted); line-height: 1.7;" data-sg-wrap="true">
+        Define your API contract once with Zod schemas. Get compile-time safety, runtime validation, and auto-generated documentation — from a single source of truth.
+      </div>
+
+      <!-- Three key benefits -->
+      <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(163, 230, 53, 0.1);
+                      border: 1px solid rgba(163, 230, 53, 0.2);
+                      display: flex; align-items: center; justify-content: center;
+                      font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--lime);">01</div>
+          <div>
+            <div style="font-size: 17px; font-weight: 600;">Compile-time errors, not runtime crashes</div>
+            <div style="font-size: 15px; color: var(--muted); margin-top: 2px;">TypeScript catches schema mismatches before you deploy</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(163, 230, 53, 0.1);
+                      border: 1px solid rgba(163, 230, 53, 0.2);
+                      display: flex; align-items: center; justify-content: center;
+                      font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--lime);">02</div>
+          <div>
+            <div style="font-size: 17px; font-weight: 600;">Automatic request validation</div>
+            <div style="font-size: 15px; color: var(--muted); margin-top: 2px;">Zod parses and validates every incoming request body</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(163, 230, 53, 0.1);
+                      border: 1px solid rgba(163, 230, 53, 0.2);
+                      display: flex; align-items: center; justify-content: center;
+                      font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--lime);">03</div>
+          <div>
+            <div style="font-size: 17px; font-weight: 600;">OpenAPI docs for free</div>
+            <div style="font-size: 15px; color: var(--muted); margin-top: 2px;">Generate Swagger UI from your Zod schemas — always in sync</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: code block -->
+    <div style="position: absolute; top: 160px; right: 100px; width: 880px; height: 780px;
+                background: #0D1117; border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+      <!-- Editor header -->
+      <div style="height: 40px; background: #161B22; border-bottom: 1px solid var(--border);
+                  display: flex; align-items: center; padding: 0 16px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--muted);">routes/users.ts</span>
+      </div>
+      <!-- Code content -->
+      <div style="padding: 24px 28px; font-family: 'JetBrains Mono', monospace; font-size: 14px; line-height: 1.9;">
+        <div><span style="color: #FF7B72;">import</span> <span style="color: #E2E8F0;">{ z }</span> <span style="color: #FF7B72;">from</span> <span style="color: #A5D6FF;">'zod'</span></div>
+        <div><span style="color: #FF7B72;">import</span> <span style="color: #E2E8F0;">{ Hono }</span> <span style="color: #FF7B72;">from</span> <span style="color: #A5D6FF;">'hono'</span></div>
+        <div><span style="color: #FF7B72;">import</span> <span style="color: #E2E8F0;">{ zValidator }</span> <span style="color: #FF7B72;">from</span> <span style="color: #A5D6FF;">'@hono/zod-validator'</span></div>
+        <div style="color: var(--border);"><br/></div>
+        <div><span style="color: #8B949E;">// Define the contract once</span></div>
+        <div><span style="color: #FF7B72;">const</span> <span style="color: #79C0FF;">CreateUser</span> <span style="color: #FF7B72;">=</span> <span style="color: #E2E8F0;">z.object({</span></div>
+        <div><span style="color: #E2E8F0;">  name: z.string().min(</span><span style="color: #79C0FF;">1</span><span style="color: #E2E8F0;">),</span></div>
+        <div><span style="color: #E2E8F0;">  email: z.string().email(),</span></div>
+        <div><span style="color: #E2E8F0;">  role: z.enum([</span><span style="color: #A5D6FF;">'admin'</span><span style="color: #E2E8F0;">, </span><span style="color: #A5D6FF;">'user'</span><span style="color: #E2E8F0;">]),</span></div>
+        <div><span style="color: #E2E8F0;">})</span></div>
+        <div style="color: var(--border);"><br/></div>
+        <div><span style="color: #8B949E;">// Route is fully typed + validated</span></div>
+        <div><span style="color: #E2E8F0;">app.post(</span></div>
+        <div><span style="color: #E2E8F0;">  </span><span style="color: #A5D6FF;">'/users'</span><span style="color: #E2E8F0;">,</span></div>
+        <div><span style="color: #E2E8F0;">  zValidator(</span><span style="color: #A5D6FF;">'json'</span><span style="color: #E2E8F0;">, CreateUser),</span></div>
+        <div><span style="color: #E2E8F0;">  </span><span style="color: #FF7B72;">async</span><span style="color: #E2E8F0;"> (c) </span><span style="color: #FF7B72;">=></span><span style="color: #E2E8F0;"> {</span></div>
+        <div><span style="color: #E2E8F0;">    </span><span style="color: #8B949E;">// body is typed as CreateUser</span></div>
+        <div><span style="color: #E2E8F0;">    </span><span style="color: #FF7B72;">const</span><span style="color: #E2E8F0;"> body </span><span style="color: #FF7B72;">=</span><span style="color: #E2E8F0;"> c.req.valid(</span><span style="color: #A5D6FF;">'json'</span><span style="color: #E2E8F0;">)</span></div>
+        <div><span style="color: #E2E8F0;">    </span><span style="color: #FF7B72;">const</span><span style="color: #E2E8F0;"> user </span><span style="color: #FF7B72;">=</span><span style="color: #E2E8F0;"> </span><span style="color: #FF7B72;">await</span><span style="color: #E2E8F0;"> db.insert(users)</span></div>
+        <div><span style="color: #E2E8F0;">      .values(body).returning()</span></div>
+        <div><span style="color: #E2E8F0;">    </span><span style="color: #FF7B72;">return</span><span style="color: #E2E8F0;"> c.json(user, </span><span style="color: #79C0FF;">201</span><span style="color: #E2E8F0;">)</span></div>
+        <div><span style="color: #E2E8F0;">  }</span></div>
+        <div><span style="color: #E2E8F0;">)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 4 — Exercise Slide                                     -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Give people 10 minutes. Walk around and help.">
+    <div style="position: absolute; inset: 0; background: #0C1222;"></div>
+
+    <!-- Large exercise badge -->
+    <div style="position: absolute; top: 80px; left: 100px;
+                display: inline-flex; align-items: center; gap: 12px;
+                background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.25);
+                border-radius: 10px; padding: 12px 24px;">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 600; color: var(--amber);
+                   text-transform: uppercase; letter-spacing: 0.1em;">Exercise 2 · 10 Minutes</span>
+    </div>
+
+    <!-- Title -->
+    <div style="position: absolute; top: 180px; left: 100px; width: 900px;">
+      <div style="font-size: 56px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;">
+        Build a <span style="color: var(--amber);">CRUD API</span> for a<br/>todo list.
+      </div>
+    </div>
+
+    <!-- Two columns: tasks and hints -->
+    <div style="position: absolute; top: 400px; left: 100px; right: 100px;
+                display: flex; gap: 40px;">
+      <!-- Tasks -->
+      <div style="flex: 1.2;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--amber); text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 24px;">Your Tasks</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+                      padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; border: 2px solid var(--amber);
+                        flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+                        font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--amber);">1</div>
+            <div style="font-size: 16px;">Define a <span style="font-family: 'JetBrains Mono', monospace; color: var(--cyan); font-size: 14px;">TodoSchema</span> with Zod (title, completed, priority)</div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+                      padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; border: 2px solid var(--amber);
+                        flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+                        font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--amber);">2</div>
+            <div style="font-size: 16px;">Create <span style="font-family: 'JetBrains Mono', monospace; color: var(--cyan); font-size: 14px;">GET /todos</span> with optional <span style="font-family: 'JetBrains Mono', monospace; color: var(--cyan); font-size: 14px;">?completed=true</span> filter</div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+                      padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; border: 2px solid var(--amber);
+                        flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+                        font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--amber);">3</div>
+            <div style="font-size: 16px;">Create <span style="font-family: 'JetBrains Mono', monospace; color: var(--cyan); font-size: 14px;">POST /todos</span> with validated JSON body</div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+                      padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; border: 2px solid var(--amber);
+                        flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+                        font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--amber);">4</div>
+            <div style="font-size: 16px;">Create <span style="font-family: 'JetBrains Mono', monospace; color: var(--cyan); font-size: 14px;">PATCH /todos/:id</span> with partial update schema</div>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+                      padding: 20px 24px; display: flex; align-items: center; gap: 16px;">
+            <div style="width: 28px; height: 28px; border-radius: 7px; border: 2px solid var(--lime);
+                        flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+                        font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--lime);">★</div>
+            <div style="font-size: 16px; color: var(--lime);">Bonus: Add pagination with <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px;">?page=1&limit=10</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hints -->
+      <div style="flex: 0.8;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 24px;">Hints</div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                    padding: 28px; font-family: 'JetBrains Mono', monospace; font-size: 14px;
+                    line-height: 2.0; color: rgba(226, 232, 240, 0.7);">
+          <div><span style="color: #8B949E;">// Partial schemas for PATCH:</span></div>
+          <div>CreateTodo<span style="color: var(--cyan);">.partial()</span></div>
+          <div><br/></div>
+          <div><span style="color: #8B949E;">// Query param validation:</span></div>
+          <div>zValidator(<span style="color: #A5D6FF;">'query'</span>, schema)</div>
+          <div><br/></div>
+          <div><span style="color: #8B949E;">// Coerce query strings:</span></div>
+          <div>z.coerce.number().default(<span style="color: #79C0FF;">1</span>)</div>
+          <div><br/></div>
+          <div><span style="color: #8B949E;">// Check the solution:</span></div>
+          <div>git checkout <span style="color: var(--lime);">solution/ex-2</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 5 — Comparison / Before-After                          -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Show the contrast. This is the 'aha' moment.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">Why It Matters</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);">05 / 08</span>
+    </div>
+
+    <div style="position: absolute; top: 160px; left: 100px;">
+      <div style="font-size: 48px; font-weight: 700; letter-spacing: -0.02em;">
+        What changes.
+      </div>
+    </div>
+
+    <!-- Before / After columns -->
+    <div style="position: absolute; top: 300px; left: 100px; right: 100px;
+                display: flex; gap: 32px;">
+      <!-- Before -->
+      <div style="flex: 1; background: rgba(220, 38, 38, 0.04); border: 1px solid rgba(220, 38, 38, 0.15);
+                  border-radius: 16px; padding: 40px;">
+        <div style="font-size: 14px; font-weight: 700; color: #EF4444; text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 32px;">Before · Untyped Express</div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: #EF4444; margin-top: 2px;">✕</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              Manual <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #EF4444;">req.body</span> parsing — crashes on malformed JSON
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: #EF4444; margin-top: 2px;">✕</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              API docs written by hand — stale within a week
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: #EF4444; margin-top: 2px;">✕</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              Type errors discovered in production at 3am
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: #EF4444; margin-top: 2px;">✕</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              Frontend and backend types drift silently
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: #EF4444; margin-top: 2px;">✕</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              400+ lines of validation boilerplate per route
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- After -->
+      <div style="flex: 1; background: rgba(34, 211, 238, 0.04); border: 1px solid rgba(34, 211, 238, 0.15);
+                  border-radius: 16px; padding: 40px;">
+        <div style="font-size: 14px; font-weight: 700; color: var(--cyan); text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 32px;">After · Hono + Zod + Drizzle</div>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: var(--cyan); margin-top: 2px;">✓</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              Auto-validated requests — invalid input returns 400 with details
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: var(--cyan); margin-top: 2px;">✓</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              OpenAPI spec generated from schemas — always accurate
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: var(--cyan); margin-top: 2px;">✓</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              Type errors caught at compile time — before code review
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: var(--cyan); margin-top: 2px;">✓</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              Shared Zod schemas between frontend and backend
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="font-size: 18px; color: var(--cyan); margin-top: 2px;">✓</div>
+            <div style="font-size: 17px; color: rgba(226, 232, 240, 0.7); line-height: 1.5;">
+              5 lines of schema = validation + types + docs
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact stat -->
+    <div style="position: absolute; bottom: 80px; left: 100px; right: 100px;
+                background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                padding: 28px 40px; display: flex; align-items: center; gap: 32px;">
+      <div style="font-size: 48px; font-weight: 800; color: var(--lime);">67%</div>
+      <div style="font-size: 18px; color: var(--muted);">
+        fewer production type-related incidents in teams that adopted this stack (Source: 2025 State of TypeScript Report)
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 6 — Key Takeaways                                      -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Wrap up. These are the three things to remember.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Decorative diagonal stripes mirrored -->
+    <div style="position: absolute; top: -200px; left: -100px; width: 800px; height: 800px;
+                background: repeating-linear-gradient(
+                  45deg,
+                  rgba(34, 211, 238, 0.03),
+                  rgba(34, 211, 238, 0.03) 2px,
+                  transparent 2px,
+                  transparent 40px
+                );"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">Key Takeaways</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--muted);">06 / 08</span>
+    </div>
+
+    <!-- Large takeaways -->
+    <div style="position: absolute; top: 200px; left: 100px; right: 100px;">
+      <!-- Takeaway 1 -->
+      <div style="display: flex; align-items: flex-start; gap: 40px; padding: 48px 0;
+                  border-bottom: 1px solid var(--border);">
+        <div style="font-size: 80px; font-weight: 800; color: rgba(34, 211, 238, 0.15);
+                    font-family: 'JetBrains Mono', monospace; line-height: 1; width: 120px; flex-shrink: 0;">01</div>
+        <div>
+          <div style="font-size: 32px; font-weight: 700; line-height: 1.3;">
+            Define your contract once — in Zod — and let everything else derive from it.
+          </div>
+          <div style="font-size: 17px; color: var(--muted); margin-top: 12px;">
+            Types, validation, documentation, and client SDK generation. Single source of truth eliminates drift.
+          </div>
+        </div>
+      </div>
+
+      <!-- Takeaway 2 -->
+      <div style="display: flex; align-items: flex-start; gap: 40px; padding: 48px 0;
+                  border-bottom: 1px solid var(--border);">
+        <div style="font-size: 80px; font-weight: 800; color: rgba(163, 230, 53, 0.15);
+                    font-family: 'JetBrains Mono', monospace; line-height: 1; width: 120px; flex-shrink: 0;">02</div>
+        <div>
+          <div style="font-size: 32px; font-weight: 700; line-height: 1.3;">
+            Test the integration, not the units. Hit a real database in tests.
+          </div>
+          <div style="font-size: 17px; color: var(--muted); margin-top: 12px;">
+            Docker Compose + test fixtures + transactions = fast, reliable, realistic tests that catch real bugs.
+          </div>
+        </div>
+      </div>
+
+      <!-- Takeaway 3 -->
+      <div style="display: flex; align-items: flex-start; gap: 40px; padding: 48px 0;">
+        <div style="font-size: 80px; font-weight: 800; color: rgba(251, 191, 36, 0.15);
+                    font-family: 'JetBrains Mono', monospace; line-height: 1; width: 120px; flex-shrink: 0;">03</div>
+        <div>
+          <div style="font-size: 32px; font-weight: 700; line-height: 1.3;">
+            Ship on day one. Iterate from production, not localhost.
+          </div>
+          <div style="font-size: 17px; color: var(--muted); margin-top: 12px;">
+            A deployed "hello world" with CI/CD is worth more than a perfect local setup. Get the pipeline working first.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 7 — Resources / Thank You                              -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Share the links. Mention the Discord for follow-up questions.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Centered thank you -->
+    <div style="position: absolute; top: 200px; left: 0; right: 0; text-align: center;">
+      <div style="font-size: 72px; font-weight: 800; letter-spacing: -0.03em;">
+        Thanks for building<br/>with me today.
+      </div>
+    </div>
+
+    <!-- Resources grid -->
+    <div style="position: absolute; top: 480px; left: 240px; right: 240px;
+                display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  padding: 28px;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--cyan); text-transform: uppercase;
+                    letter-spacing: 0.08em; margin-bottom: 12px;">Workshop Repo</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--muted);">
+          github.com/devon/<br/>ts-api-workshop
+        </div>
+      </div>
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  padding: 28px;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--lime); text-transform: uppercase;
+                    letter-spacing: 0.08em; margin-bottom: 12px;">Slides & Notes</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--muted);">
+          devon.dev/talks/<br/>ts-api-workshop
+        </div>
+      </div>
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  padding: 28px;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--amber); text-transform: uppercase;
+                    letter-spacing: 0.08em; margin-bottom: 12px;">Questions?</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--muted);">
+          Discord: devon.dev/chat<br/>Twitter: @devonhartley
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended reading -->
+    <div style="position: absolute; bottom: 120px; left: 240px; right: 240px;
+                border-top: 1px solid var(--border); padding-top: 28px;
+                display: flex; align-items: center; gap: 40px;">
+      <span style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase;
+                   letter-spacing: 0.08em; white-space: nowrap;">Further Reading</span>
+      <div style="display: flex; gap: 24px; font-size: 15px; color: rgba(226, 232, 240, 0.5);">
+        <span>hono.dev/docs</span>
+        <span style="color: var(--border);">·</span>
+        <span>zod.dev</span>
+        <span style="color: var(--border);">·</span>
+        <span>orm.drizzle.team</span>
+        <span style="color: var(--border);">·</span>
+        <span>fly.io/docs</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

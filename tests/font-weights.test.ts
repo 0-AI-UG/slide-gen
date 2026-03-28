@@ -9,6 +9,7 @@ function makeTextSlide(runs: Array<Partial<TextRun> & { text: string; fontFamily
     height: 1080,
     backgroundColor: "rgb(255, 255, 255)",
     rects: [],
+    tables: [],
     texts: runs.map((r, i) => ({
       runs: [{
         text: r.text,

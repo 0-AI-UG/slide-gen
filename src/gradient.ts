@@ -44,12 +44,56 @@ function downsampleStops(stops: GradientInfo["stops"], maxCount: number): Gradie
   return result;
 }
 
+/** Normalize non-monotonic stop positions (CSS clamping: each pos >= previous) */
+function normalizeStopPositions(stops: GradientInfo["stops"]): GradientInfo["stops"] {
+  let maxPos = -Infinity;
+  return stops.map(s => {
+    const pos = Math.max(s.position, maxPos);
+    maxPos = pos;
+    return { ...s, position: pos };
+  });
+}
+
+/** Tile repeating gradient stops to fill 0-100% */
+function tileRepeatingStops(stops: GradientInfo["stops"]): GradientInfo["stops"] {
+  if (stops.length < 2) return stops;
+  // CSS clamps each stop position to be >= the previous one
+  stops = normalizeStopPositions(stops);
+  const range = stops[stops.length - 1].position - stops[0].position;
+  if (range <= 0 || range >= 100) return stops;
+
+  const result: GradientInfo["stops"] = [];
+  let offset = stops[0].position >= 0 ? 0 : stops[0].position;
+  while (offset < 100) {
+    for (const stop of stops) {
+      const pos = offset + (stop.position - stops[0].position);
+      if (pos > 100) break;
+      result.push({ color: stop.color, position: Math.min(pos, 100) });
+    }
+    offset += range;
+  }
+  return result.length >= 2 ? result : stops;
+}
+
 /** Build OOXML <a:gradFill> XML from gradient info */
 export function buildGradFillXml(gradient: GradientInfo, warnings?: string[]): string {
+  // Conic gradients have no OOXML equivalent — fall back to radial approximation
+  if (gradient.type === "conic") {
+    warnings?.push("Conic gradient approximated as radial (no OOXML equivalent)");
+    // Treat as radial with the same stops
+    const fallback: GradientInfo = { ...gradient, type: "radial" };
+    return buildGradFillXml(fallback, warnings);
+  }
+
+  // For repeating gradients, tile stops to fill 0-100%
+  let baseStops = gradient.repeating
+    ? tileRepeatingStops(gradient.stops)
+    : gradient.stops;
+
   // For radial gradients, interpolate extra stops to reduce banding
   let effectiveStops = gradient.type === "radial"
-    ? interpolateStops(gradient.stops, 3)
-    : gradient.stops;
+    ? interpolateStops(baseStops, 3)
+    : baseStops;
 
   if (effectiveStops.length > MAX_GRADIENT_STOPS) {
     warnings?.push(`Gradient stop count ${effectiveStops.length} exceeded limit, capped to ${MAX_GRADIENT_STOPS}`);
@@ -71,13 +115,77 @@ export function buildGradFillXml(gradient: GradientInfo, warnings?: string[]): s
   if (gradient.type === "radial") {
     const cx = gradient.radialPosition?.x ?? 50;
     const cy = gradient.radialPosition?.y ?? 50;
-    const l = Math.round(cx * 1000);
-    const t = Math.round(cy * 1000);
-    const r = Math.round((100 - cx) * 1000);
-    const b = Math.round((100 - cy) * 1000);
-    // Use path="circle" for all radial gradients; asymmetric fillToRect bounds produce ellipses
-    const pathType = "circle";
-    return `<a:gradFill rotWithShape="0">${gsLst}<a:path path="${pathType}"><a:fillToRect l="${l}" t="${t}" r="${r}" b="${b}"/></a:path></a:gradFill>`;
+    const extent = gradient.radialExtent ?? "farthest-corner";
+
+    // OOXML path gradients fill from center to fillToRect edges.
+    // CSS farthest-corner (default) extends gradient to the farthest corner of the element,
+    // which creates a much larger circle than the element bounds.
+    // The key difference: CSS distributes stops across the full radius to farthest corner,
+    // while OOXML distributes them across the fillToRect.
+    //
+    // Strategy: scale the fillToRect to better approximate CSS behavior.
+    // For farthest-corner, CSS extends ~1.41x (sqrt(2)) beyond the closest side,
+    // but OOXML fills exactly to the fillToRect bounds.
+    //
+    // We also compress stops for transparent-fading gradients to reduce the visible orb size.
+
+    let fillScale = 1.0;  // Scale factor for fillToRect bounds
+    let stopScale = 1.0;  // Scale factor for stop positions
+
+    if (extent === "closest-side") {
+      fillScale = 0.3;
+    } else if (extent === "closest-corner") {
+      fillScale = 0.45;
+    } else if (extent === "farthest-side") {
+      fillScale = 0.7;
+    } else {
+      // farthest-corner (default)
+      // Check if gradient fades to transparent — these are typically decorative orbs
+      // that look much too large in OOXML without compression
+      const lastStop = effectiveStops[effectiveStops.length - 1];
+      const lastAlpha = parseCssColorAndAlpha(lastStop.color).alpha;
+      const firstStop = effectiveStops[0];
+      const firstAlpha = parseCssColorAndAlpha(firstStop.color).alpha;
+
+      if (lastAlpha < 0.1 && firstAlpha > lastAlpha) {
+        // Gradient fades from visible to transparent — compress the fill region
+        // The more transparent the gradient is overall, the more we compress
+        fillScale = 0.5;
+        // Also compress stops: push the visible portion towards center
+        stopScale = 0.7;
+      }
+    }
+
+    // Apply stop compression if needed
+    if (stopScale !== 1.0) {
+      effectiveStops = effectiveStops.map(s => ({
+        ...s,
+        position: Math.min(100, s.position * stopScale),
+      }));
+      // Rebuild gsEntries with compressed stops
+      const compressedEntries = effectiveStops.map((stop) => {
+        const { hex, alpha } = parseCssColorAndAlpha(stop.color);
+        const pos = Math.round(stop.position * 1000);
+        let alphaTag = "";
+        if (alpha < ALPHA_OPAQUE_THRESHOLD) {
+          alphaTag = `<a:alpha val="${Math.round(alpha * 100000)}"/>`;
+        }
+        return `<a:gs pos="${pos}"><a:srgbClr val="${hex}">${alphaTag}</a:srgbClr></a:gs>`;
+      }).join("");
+      const compressedGsLst = `<a:gsLst>${compressedEntries}</a:gsLst>`;
+
+      const l = Math.round(cx * 1000 * fillScale);
+      const t = Math.round(cy * 1000 * fillScale);
+      const r = Math.round((100 - cx) * 1000 * fillScale);
+      const b = Math.round((100 - cy) * 1000 * fillScale);
+      return `<a:gradFill rotWithShape="0">${compressedGsLst}<a:path path="circle"><a:fillToRect l="${l}" t="${t}" r="${r}" b="${b}"/></a:path></a:gradFill>`;
+    }
+
+    const l = Math.round(cx * 1000 * fillScale);
+    const t = Math.round(cy * 1000 * fillScale);
+    const r = Math.round((100 - cx) * 1000 * fillScale);
+    const b = Math.round((100 - cy) * 1000 * fillScale);
+    return `<a:gradFill rotWithShape="0">${gsLst}<a:path path="circle"><a:fillToRect l="${l}" t="${t}" r="${r}" b="${b}"/></a:path></a:gradFill>`;
   }
 
   // Linear gradient: CSS angle → OOXML angle

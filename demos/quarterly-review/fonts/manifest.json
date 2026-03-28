@@ -1,0 +1,14 @@
+{
+  "Inter": {
+    "regularWeight": 400,
+    "boldWeight": 800,
+    "boldThreshold": 600,
+    "internalName": "Inter"
+  },
+  "Fraunces": {
+    "regularWeight": 700,
+    "boldWeight": 700,
+    "boldThreshold": 600,
+    "internalName": "Fraunces"
+  }
+}

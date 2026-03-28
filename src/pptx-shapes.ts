@@ -1,42 +1,43 @@
 /**
- * Shape XML builders for PPTX slides.
- * Each function returns an XML string for a shape element inside <p:spTree>.
+ * Shape XML builders for PPTX slides — geometry, background, rect, and image shapes.
+ * Text and table shapes are in ./pptx-text-shapes.ts.
  */
 
-import type { GradientInfo } from "./types";
+import type { GradientInfo, CornerRadii } from "./types";
 import { buildGradFillXml } from "./gradient";
-import { ALPHA_OPAQUE_THRESHOLD } from "./constants";
-import { parseCssColorAndAlpha } from "./color";
+import { inToEmu, solidFillXml, buildOuterShadowXml } from "./pptx-xml-helpers";
+import type { ShadowInfo } from "./types";
+
+// Re-export shared primitives and text/table builders so existing consumers don't break
+export { EMU_PER_INCH, inToEmu, escapeXml } from "./pptx-xml-helpers";
+export { buildTextBoxXml, buildTableXml, type TextRunOpts, type TextBoxOpts, type TableShapeOpts } from "./pptx-text-shapes";
 
 // ---------------------------------------------------------------------------
-// Unit conversions
+// Custom rounded rectangle geometry (per-corner radii)
 // ---------------------------------------------------------------------------
 
-export const EMU_PER_INCH = 914400;
+function buildCustomRoundedRectGeom(wEmu: number, hEmu: number, radii: CornerRadii): string {
+  const tl = inToEmu(radii.topLeft);
+  const tr = inToEmu(radii.topRight);
+  const br = inToEmu(radii.bottomRight);
+  const bl = inToEmu(radii.bottomLeft);
 
-export function inToEmu(inches: number): number {
-  return Math.round(inches * EMU_PER_INCH);
-}
+  const ANG_90 = 5400000;  // 90° in 60000ths
+  const ANG_180 = 10800000;
+  const ANG_270 = 16200000;
 
-// ---------------------------------------------------------------------------
-// XML helpers
-// ---------------------------------------------------------------------------
+  let path = `<a:moveTo><a:pt x="${tl}" y="0"/></a:moveTo>`;
+  path += `<a:lnTo><a:pt x="${wEmu - tr}" y="0"/></a:lnTo>`;
+  if (tr > 0) path += `<a:arcTo wR="${tr}" hR="${tr}" stAng="${ANG_270}" swAng="${ANG_90}"/>`;
+  path += `<a:lnTo><a:pt x="${wEmu}" y="${hEmu - br}"/></a:lnTo>`;
+  if (br > 0) path += `<a:arcTo wR="${br}" hR="${br}" stAng="0" swAng="${ANG_90}"/>`;
+  path += `<a:lnTo><a:pt x="${bl}" y="${hEmu}"/></a:lnTo>`;
+  if (bl > 0) path += `<a:arcTo wR="${bl}" hR="${bl}" stAng="${ANG_90}" swAng="${ANG_90}"/>`;
+  path += `<a:lnTo><a:pt x="0" y="${tl}"/></a:lnTo>`;
+  if (tl > 0) path += `<a:arcTo wR="${tl}" hR="${tl}" stAng="${ANG_180}" swAng="${ANG_90}"/>`;
+  path += `<a:close/>`;
 
-export function escapeXml(text: string): string {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&apos;");
-}
-
-function solidFillXml(color: string, transparency?: number): string {
-  if (transparency !== undefined && transparency > 0) {
-    const alpha = Math.round((1 - transparency / 100) * 100000);
-    return `<a:solidFill><a:srgbClr val="${color}"><a:alpha val="${alpha}"/></a:srgbClr></a:solidFill>`;
-  }
-  return `<a:solidFill><a:srgbClr val="${color}"/></a:solidFill>`;
+  return `<a:custGeom><a:avLst/><a:gdLst/><a:ahLst/><a:cxnLst/><a:rect l="0" t="0" r="0" b="0"/><a:pathLst><a:path w="${wEmu}" h="${hEmu}">${path}</a:path></a:pathLst></a:custGeom>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -67,6 +68,11 @@ export interface RectShapeOpts {
   fillTransparency: number; // 0-100
   gradient?: GradientInfo;
   borderRadius?: number; // inches
+  borderRadii?: CornerRadii; // inches, per-corner
+  boxShadow?: ShadowInfo;
+  borderColor?: string; // hex without #
+  borderWidth?: number; // inches
+  noFill?: boolean; // true = transparent fill
   warnings?: string[];
 }
 
@@ -76,24 +82,42 @@ export function buildRectShapeXml(opts: RectShapeOpts): string {
   const wEmu = inToEmu(opts.w);
   const hEmu = inToEmu(opts.h);
 
-  const isRounded = (opts.borderRadius ?? 0) > 0;
-  const prst = isRounded ? "roundRect" : "rect";
-
-  let avLst = "";
-  if (isRounded) {
-    const radiusEmu = inToEmu(opts.borderRadius!);
-    const adj = Math.min(50000, Math.round((radiusEmu / Math.min(wEmu, hEmu)) * 100000));
-    avLst = `<a:gd name="adj" fmla="val ${adj}"/>`;
+  let geomXml: string;
+  if (opts.borderRadii) {
+    geomXml = buildCustomRoundedRectGeom(wEmu, hEmu, opts.borderRadii);
+  } else {
+    const isRounded = (opts.borderRadius ?? 0) > 0;
+    const prst = isRounded ? "roundRect" : "rect";
+    let avLst = "";
+    if (isRounded) {
+      const radiusEmu = inToEmu(opts.borderRadius!);
+      const adj = Math.min(50000, Math.round((radiusEmu / Math.min(wEmu, hEmu)) * 100000));
+      avLst = `<a:gd name="adj" fmla="val ${adj}"/>`;
+    }
+    geomXml = `<a:prstGeom prst="${prst}"><a:avLst>${avLst}</a:avLst></a:prstGeom>`;
   }
 
   let fillXml: string;
-  if (opts.gradient && opts.gradient.stops.length >= 2) {
+  if (opts.noFill) {
+    fillXml = "<a:noFill/>";
+  } else if (opts.gradient && opts.gradient.stops.length >= 2) {
     fillXml = buildGradFillXml(opts.gradient, opts.warnings);
   } else {
     fillXml = solidFillXml(opts.fillColor, opts.fillTransparency);
   }
 
-  return `<p:sp><p:nvSpPr><p:cNvPr id="${opts.id}" name="Shape ${opts.id}"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="${xEmu}" y="${yEmu}"/><a:ext cx="${wEmu}" cy="${hEmu}"/></a:xfrm><a:prstGeom prst="${prst}"><a:avLst>${avLst}</a:avLst></a:prstGeom>${fillXml}<a:ln/></p:spPr></p:sp>`;
+  // Line/border
+  let lnXml: string;
+  if (opts.borderColor && opts.borderWidth) {
+    const lnW = inToEmu(opts.borderWidth);
+    lnXml = `<a:ln w="${lnW}"><a:solidFill><a:srgbClr val="${opts.borderColor}"/></a:solidFill></a:ln>`;
+  } else {
+    lnXml = "<a:ln/>";
+  }
+
+  const effectXml = opts.boxShadow ? buildOuterShadowXml(opts.boxShadow) : "";
+
+  return `<p:sp><p:nvSpPr><p:cNvPr id="${opts.id}" name="Shape ${opts.id}"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="${xEmu}" y="${yEmu}"/><a:ext cx="${wEmu}" cy="${hEmu}"/></a:xfrm>${geomXml}${fillXml}${lnXml}${effectXml}</p:spPr></p:sp>`;
 }
 
 // ---------------------------------------------------------------------------
@@ -116,123 +140,4 @@ export function buildImageShapeXml(opts: ImageShapeOpts): string {
   const hEmu = inToEmu(opts.h);
 
   return `<p:pic><p:nvPicPr><p:cNvPr id="${opts.id}" name="Image ${opts.id}"/><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="${opts.rId}"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr><a:xfrm><a:off x="${xEmu}" y="${yEmu}"/><a:ext cx="${wEmu}" cy="${hEmu}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></p:spPr></p:pic>`;
-}
-
-// ---------------------------------------------------------------------------
-// Text box shape
-// ---------------------------------------------------------------------------
-
-export interface TextRunOpts {
-  text: string;
-  fontSize: number; // points
-  fontFace?: string;
-  color: string; // hex
-  bold?: boolean;
-  italic?: boolean;
-  charSpacing?: number; // points
-  transparency?: number; // 0-100
-}
-
-export interface TextBoxOpts {
-  id: number;
-  x: number; // inches
-  y: number;
-  w: number;
-  h: number;
-  runs: TextRunOpts[];
-  align?: "l" | "ctr" | "r" | "just";
-  wrap: boolean;
-  rotate?: number; // degrees (0-360)
-  lineSpacingMultiple?: number;
-  shrinkToFit?: boolean;
-}
-
-function buildRunPropsXml(run: TextRunOpts): string {
-  const sz = Math.round(run.fontSize * 100); // 1/100th of a point
-  const attrs: string[] = [`lang="en-US"`, `sz="${sz}"`, `dirty="0"`];
-
-  if (run.bold) attrs.push(`b="1"`);
-  if (run.italic) attrs.push(`i="1"`);
-  if (run.charSpacing !== undefined) {
-    const spc = Math.round(run.charSpacing * 100); // 1/100th of a point
-    attrs.push(`spc="${spc}"`);
-  }
-
-  let children = "";
-
-  // Color fill
-  if (run.transparency !== undefined && run.transparency > 0) {
-    const alpha = Math.round((1 - run.transparency / 100) * 100000);
-    children += `<a:solidFill><a:srgbClr val="${run.color}"><a:alpha val="${alpha}"/></a:srgbClr></a:solidFill>`;
-  } else {
-    children += `<a:solidFill><a:srgbClr val="${run.color}"/></a:solidFill>`;
-  }
-
-  // Font refs
-  if (run.fontFace) {
-    const face = escapeXml(run.fontFace);
-    children += `<a:latin typeface="${face}" pitchFamily="34" charset="0"/>`;
-    children += `<a:ea typeface="${face}" pitchFamily="34" charset="-122"/>`;
-    children += `<a:cs typeface="${face}" pitchFamily="34" charset="-120"/>`;
-  }
-
-  return `<a:rPr ${attrs.join(" ")}>${children}</a:rPr>`;
-}
-
-export function buildTextBoxXml(opts: TextBoxOpts): string {
-  const xEmu = inToEmu(opts.x);
-  const yEmu = inToEmu(opts.y);
-  const wEmu = inToEmu(opts.w);
-  const hEmu = inToEmu(opts.h);
-
-  // Body properties
-  const wrapAttr = opts.wrap ? "square" : "none";
-  let bodyPrAttrs = `wrap="${wrapAttr}" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="t"`;
-  if (opts.rotate) {
-    const rotVal = Math.round(opts.rotate * 60000); // 1/60000th degree
-    bodyPrAttrs += ` rot="${rotVal}"`;
-  }
-
-  const autoFit = opts.shrinkToFit ? "<a:normAutofit/>" : "";
-  const bodyPr = `<a:bodyPr ${bodyPrAttrs}>${autoFit}</a:bodyPr>`;
-
-  // Build paragraph properties
-  const algn = opts.align ? ` algn="${opts.align}"` : "";
-  let lnSpcXml = "";
-  if (opts.lineSpacingMultiple && opts.lineSpacingMultiple > 0) {
-    const val = Math.round(opts.lineSpacingMultiple * 100000);
-    lnSpcXml = `<a:lnSpc><a:spcPct val="${val}"/></a:lnSpc>`;
-  }
-  const pPrContent = `<a:spcBef><a:spcPts val="0"/></a:spcBef><a:spcAft><a:spcPts val="0"/></a:spcAft>${lnSpcXml}<a:buNone/>`;
-  const pPr = `<a:pPr indent="0" marL="0"${algn}>${pPrContent}</a:pPr>`;
-
-  // Split runs into paragraphs on newline boundaries
-  const paragraphs: TextRunOpts[][] = [[]];
-  for (const run of opts.runs) {
-    const parts = run.text.split("\n");
-    for (let pi = 0; pi < parts.length; pi++) {
-      if (pi > 0) paragraphs.push([]);
-      if (parts[pi].length > 0) {
-        paragraphs[paragraphs.length - 1].push({ ...run, text: parts[pi] });
-      }
-    }
-  }
-
-  // Build paragraph XML
-  const lastRun = opts.runs[opts.runs.length - 1];
-  const endParaSz = lastRun ? Math.round(lastRun.fontSize * 100) : 1800;
-
-  const parasXml = paragraphs
-    .map((paraRuns) => {
-      const runsXml = paraRuns
-        .map((run) => {
-          const rPr = buildRunPropsXml(run);
-          return `<a:r>${rPr}<a:t>${escapeXml(run.text)}</a:t></a:r>`;
-        })
-        .join("");
-      return `<a:p>${pPr}${runsXml}<a:endParaRPr lang="en-US" sz="${endParaSz}" dirty="0"/></a:p>`;
-    })
-    .join("");
-
-  return `<p:sp><p:nvSpPr><p:cNvPr id="${opts.id}" name="Text ${opts.id}"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="${xEmu}" y="${yEmu}"/><a:ext cx="${wEmu}" cy="${hEmu}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:noFill/><a:ln/></p:spPr><p:txBody>${bodyPr}<a:lstStyle/>${parasXml}</p:txBody></p:sp>`;
 }

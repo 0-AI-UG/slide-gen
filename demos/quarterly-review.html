@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      color: #1A1A1A;
+    }
+    .slide + .slide { page-break-before: always; }
+
+    :root {
+      --cream: #F8F6F0;
+      --warm: #E8E4DA;
+      --dark: #1A1A1A;
+      --green: #16A34A;
+      --red: #DC2626;
+      --blue: #2563EB;
+      --muted: #78716C;
+      --accent: #B45309;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 1 — Cover                                              -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Keep it brief. The cover sets the tone — warm, confident, editorial.">
+    <div style="position: absolute; inset: 0; background: var(--cream);"></div>
+
+    <!-- Decorative thin lines -->
+    <div style="position: absolute; top: 60px; left: 80px; right: 80px; height: 1px; background: rgba(26, 26, 26, 0.1);"></div>
+    <div style="position: absolute; bottom: 60px; left: 80px; right: 80px; height: 1px; background: rgba(26, 26, 26, 0.1);"></div>
+
+    <!-- Logo / Company -->
+    <div style="position: absolute; top: 90px; left: 100px;">
+      <span style="font-size: 18px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--dark);">Meridian</span>
+    </div>
+
+    <!-- Quarter badge -->
+    <div style="position: absolute; top: 88px; right: 100px;
+                font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: 0.05em;">
+      Board Presentation · March 2026
+    </div>
+
+    <!-- Large accent block -->
+    <div style="position: absolute; top: 220px; left: 100px; width: 6px; height: 240px;
+                background: var(--accent); border-radius: 3px;"></div>
+
+    <!-- Title -->
+    <div style="position: absolute; top: 220px; left: 140px;">
+      <div style="font-family: 'Fraunces', serif; font-size: 88px; font-weight: 700; line-height: 1.1;
+                  letter-spacing: -0.02em; color: var(--dark);">
+        Q1 2026<br/>Business Review
+      </div>
+      <div style="margin-top: 32px; font-size: 22px; color: var(--muted); line-height: 1.6; width: 600px;">
+        Strong revenue growth paired with operational efficiency gains. On track for full-year targets.
+      </div>
+    </div>
+
+    <!-- Bottom KPI strip -->
+    <div style="position: absolute; bottom: 100px; left: 100px; right: 100px;
+                display: flex; gap: 0;">
+      <div style="flex: 1; padding: 32px 40px; border-top: 2px solid var(--dark);">
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Revenue</div>
+        <div data-sg-group="rev-kpi" style="margin-top: 8px;">
+          <span style="font-size: 42px; font-weight: 800; color: var(--dark);">$34.2M</span>
+          <span style="font-size: 16px; font-weight: 600; color: var(--green); margin-left: 12px;">+24% YoY</span>
+        </div>
+      </div>
+      <div style="flex: 1; padding: 32px 40px; border-top: 2px solid var(--dark);">
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">EBITDA</div>
+        <div data-sg-group="ebitda-kpi" style="margin-top: 8px;">
+          <span style="font-size: 42px; font-weight: 800; color: var(--dark);">$6.8M</span>
+          <span style="font-size: 16px; font-weight: 600; color: var(--green); margin-left: 12px;">20% margin</span>
+        </div>
+      </div>
+      <div style="flex: 1; padding: 32px 40px; border-top: 2px solid var(--dark);">
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Headcount</div>
+        <div data-sg-group="hc-kpi" style="margin-top: 8px;">
+          <span style="font-size: 42px; font-weight: 800; color: var(--dark);">248</span>
+          <span style="font-size: 16px; font-weight: 600; color: var(--muted); margin-left: 12px;">+18 net new</span>
+        </div>
+      </div>
+      <div style="flex: 1; padding: 32px 40px; border-top: 2px solid var(--dark);">
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">NPS</div>
+        <div data-sg-group="nps-kpi" style="margin-top: 8px;">
+          <span style="font-size: 42px; font-weight: 800; color: var(--dark);">72</span>
+          <span style="font-size: 16px; font-weight: 600; color: var(--green); margin-left: 12px;">+8 pts</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 2 — Executive Summary                                  -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Three wins, one challenge. Frame the narrative upfront.">
+    <div style="position: absolute; inset: 0; background: var(--cream);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;
+                padding-bottom: 24px; border-bottom: 1px solid rgba(26, 26, 26, 0.1);">
+      <span style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Executive Summary</span>
+      <span style="font-size: 14px; color: var(--muted);">02</span>
+    </div>
+
+    <!-- Main heading -->
+    <div style="position: absolute; top: 170px; left: 100px; width: 800px;">
+      <div style="font-family: 'Fraunces', serif; font-size: 52px; font-weight: 700; line-height: 1.2;
+                  letter-spacing: -0.01em; color: var(--dark);">
+        A quarter of disciplined<br/>growth and margin expansion.
+      </div>
+    </div>
+
+    <!-- Two-column layout -->
+    <div style="position: absolute; top: 380px; left: 100px; right: 100px;
+                display: flex; gap: 60px;">
+      <!-- Wins column -->
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--green); text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 28px; padding-bottom: 12px;
+                    border-bottom: 2px solid var(--green);">Highlights</div>
+        <div style="margin-bottom: 28px;">
+          <div style="font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 8px;">Enterprise pipeline doubled</div>
+          <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+            New outbound motion generated $14M in qualified pipeline. 6 deals >$500K in late stage.
+          </div>
+        </div>
+        <div style="margin-bottom: 28px;">
+          <div style="font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 8px;">APAC launch ahead of plan</div>
+          <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+            Tokyo office opened Feb 3. First three deals closed (Rakuten, SoftBank, MUFG). $1.2M TCV in 7 weeks.
+          </div>
+        </div>
+        <div style="margin-bottom: 28px;">
+          <div style="font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 8px;">Platform V3 shipped on schedule</div>
+          <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+            Real-time analytics, custom dashboards, and SSO/SCIM. Reduced churn driver #1 by 40%.
+          </div>
+        </div>
+      </div>
+      <!-- Challenges column -->
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--red); text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 28px; padding-bottom: 12px;
+                    border-bottom: 2px solid var(--red);">Watch Items</div>
+        <div style="margin-bottom: 28px;">
+          <div style="font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 8px;">SMB churn ticked up</div>
+          <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+            Logo churn rose to 4.2% (from 3.1%). Root cause: pricing sensitivity in sub-$10K cohort. Mitigation plan in place — launching starter tier in April.
+          </div>
+        </div>
+        <div style="margin-bottom: 28px;">
+          <div style="font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 8px;">Engineering hiring behind</div>
+          <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+            Filled 6 of 12 planned roles. Senior backend remains competitive. Adjusted comp bands and added referral bonus ($10K → $15K).
+          </div>
+        </div>
+        <div style="margin-bottom: 28px;">
+          <div style="font-size: 20px; font-weight: 600; color: var(--dark); margin-bottom: 8px;">Infrastructure costs rising</div>
+          <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+            Cloud spend grew 32% QoQ vs. 24% revenue growth. Migration to reserved instances underway — expect 20% savings by Q3.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 3 — Financial Performance                              -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Walk through the table row by row. Highlight EBITDA improvement.">
+    <div style="position: absolute; inset: 0; background: var(--cream);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;
+                padding-bottom: 24px; border-bottom: 1px solid rgba(26, 26, 26, 0.1);">
+      <span style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Financial Performance</span>
+      <span style="font-size: 14px; color: var(--muted);">03</span>
+    </div>
+
+    <div style="position: absolute; top: 160px; left: 100px;">
+      <div style="font-family: 'Fraunces', serif; font-size: 44px; font-weight: 700; letter-spacing: -0.01em;">
+        Revenue & profitability trending up.
+      </div>
+    </div>
+
+    <!-- Financial table -->
+    <div style="position: absolute; top: 280px; left: 100px; right: 100px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 17px;">
+        <thead>
+          <tr>
+            <th style="text-align: left; padding: 16px 20px; font-size: 13px; font-weight: 600;
+                       color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+                       border-bottom: 2px solid var(--dark);">Metric</th>
+            <th style="text-align: right; padding: 16px 20px; font-size: 13px; font-weight: 600;
+                       color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+                       border-bottom: 2px solid var(--dark);">Q1 '25</th>
+            <th style="text-align: right; padding: 16px 20px; font-size: 13px; font-weight: 600;
+                       color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+                       border-bottom: 2px solid var(--dark);">Q2 '25</th>
+            <th style="text-align: right; padding: 16px 20px; font-size: 13px; font-weight: 600;
+                       color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+                       border-bottom: 2px solid var(--dark);">Q3 '25</th>
+            <th style="text-align: right; padding: 16px 20px; font-size: 13px; font-weight: 600;
+                       color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+                       border-bottom: 2px solid var(--dark);">Q4 '25</th>
+            <th style="text-align: right; padding: 16px 20px; font-size: 13px; font-weight: 700;
+                       color: var(--dark); text-transform: uppercase; letter-spacing: 0.08em;
+                       border-bottom: 2px solid var(--dark); background: rgba(26, 26, 26, 0.04);">Q1 '26</th>
+            <th style="text-align: right; padding: 16px 20px; font-size: 13px; font-weight: 600;
+                       color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;
+                       border-bottom: 2px solid var(--dark);">YoY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 18px 20px; font-weight: 600; border-bottom: 1px solid rgba(26, 26, 26, 0.08);">Revenue</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$27.6M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$29.1M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$30.8M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$32.4M</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 700; border-bottom: 1px solid rgba(26, 26, 26, 0.08); background: rgba(26, 26, 26, 0.04);">$34.2M</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 600; color: var(--green); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">+24%</td>
+          </tr>
+          <tr>
+            <td style="padding: 18px 20px; font-weight: 600; border-bottom: 1px solid rgba(26, 26, 26, 0.08);">Gross Profit</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$20.7M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$22.0M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$23.6M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$25.1M</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 700; border-bottom: 1px solid rgba(26, 26, 26, 0.08); background: rgba(26, 26, 26, 0.04);">$26.7M</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 600; color: var(--green); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">+29%</td>
+          </tr>
+          <tr>
+            <td style="padding: 18px 20px; font-weight: 600; border-bottom: 1px solid rgba(26, 26, 26, 0.08);">Gross Margin</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">75%</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">76%</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">77%</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">77%</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 700; border-bottom: 1px solid rgba(26, 26, 26, 0.08); background: rgba(26, 26, 26, 0.04);">78%</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 600; color: var(--green); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">+3pp</td>
+          </tr>
+          <tr>
+            <td style="padding: 18px 20px; font-weight: 600; border-bottom: 1px solid rgba(26, 26, 26, 0.08);">EBITDA</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$3.3M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$4.1M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$5.2M</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">$5.9M</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 700; border-bottom: 1px solid rgba(26, 26, 26, 0.08); background: rgba(26, 26, 26, 0.04);">$6.8M</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 600; color: var(--green); border-bottom: 1px solid rgba(26, 26, 26, 0.08);">+106%</td>
+          </tr>
+          <tr>
+            <td style="padding: 18px 20px; font-weight: 600;">EBITDA Margin</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted);">12%</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted);">14%</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted);">17%</td>
+            <td style="padding: 18px 20px; text-align: right; color: var(--muted);">18%</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 700; background: rgba(26, 26, 26, 0.04);">20%</td>
+            <td style="padding: 18px 20px; text-align: right; font-weight: 600; color: var(--green);">+8pp</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Callout -->
+    <div style="position: absolute; bottom: 100px; left: 100px; right: 100px;
+                background: rgba(22, 163, 74, 0.06); border-left: 3px solid var(--green);
+                padding: 24px 32px; border-radius: 0 8px 8px 0;">
+      <div style="font-size: 17px; line-height: 1.5; color: var(--dark);">
+        <strong>Key takeaway:</strong> EBITDA margin expanded from 12% to 20% in four quarters while revenue grew 24% — demonstrating that growth and profitability are not tradeoffs at our scale.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 4 — Product & Engineering                              -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Focus on the V3 launch. Mention customer-requested features.">
+    <div style="position: absolute; inset: 0; background: var(--dark);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;
+                padding-bottom: 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+      <span style="font-size: 14px; font-weight: 600; color: rgba(255, 255, 255, 0.4); text-transform: uppercase; letter-spacing: 0.1em;">Product & Engineering</span>
+      <span style="font-size: 14px; color: rgba(255, 255, 255, 0.4);">04</span>
+    </div>
+
+    <div style="position: absolute; top: 160px; left: 100px;">
+      <div style="font-family: 'Fraunces', serif; font-size: 44px; font-weight: 700; color: #F8F6F0; letter-spacing: -0.01em;">
+        Platform V3: shipped & adopted.
+      </div>
+    </div>
+
+    <!-- Metrics row -->
+    <div style="position: absolute; top: 280px; left: 100px; right: 100px;
+                display: flex; gap: 24px;">
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 48px; font-weight: 800; color: #F8F6F0;">94%</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 8px;">Sprint velocity (story points delivered vs. committed)</div>
+      </div>
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 48px; font-weight: 800; color: #F8F6F0;">99.97%</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 8px;">Uptime SLA maintained across all tiers</div>
+      </div>
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 48px; font-weight: 800; color: #F8F6F0;">3.2×</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 8px;">Deploy frequency increase after CI/CD overhaul</div>
+      </div>
+      <div style="flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 12px; padding: 32px;">
+        <div style="font-size: 48px; font-weight: 800; color: var(--green);">-40%</div>
+        <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 8px;">Reduction in #1 churn driver (reporting gaps)</div>
+      </div>
+    </div>
+
+    <!-- Shipped features -->
+    <div style="position: absolute; top: 500px; left: 100px; right: 100px;
+                display: flex; gap: 40px;">
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--green); text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 24px;">Shipped This Quarter</div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 20px 24px;
+                      display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--green);"></div>
+            <div>
+              <div style="font-size: 17px; font-weight: 600; color: #F8F6F0;">Real-time analytics engine</div>
+              <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 4px;">Sub-second dashboards replacing batch jobs</div>
+            </div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 20px 24px;
+                      display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--green);"></div>
+            <div>
+              <div style="font-size: 17px; font-weight: 600; color: #F8F6F0;">SSO + SCIM provisioning</div>
+              <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 4px;">Okta, Azure AD, OneLogin — auto user sync</div>
+            </div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 20px 24px;
+                      display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--green);"></div>
+            <div>
+              <div style="font-size: 17px; font-weight: 600; color: #F8F6F0;">Custom dashboard builder</div>
+              <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 4px;">Drag-and-drop widgets, shareable views</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--blue); text-transform: uppercase;
+                    letter-spacing: 0.1em; margin-bottom: 24px;">Q2 Roadmap</div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 20px 24px;
+                      display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--blue);"></div>
+            <div>
+              <div style="font-size: 17px; font-weight: 600; color: #F8F6F0;">AI-powered anomaly detection</div>
+              <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 4px;">Automatic alerting on metric deviations</div>
+            </div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 20px 24px;
+                      display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--blue);"></div>
+            <div>
+              <div style="font-size: 17px; font-weight: 600; color: #F8F6F0;">Starter tier ($49/mo)</div>
+              <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 4px;">SMB retention play — self-serve onboarding</div>
+            </div>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.04); border-radius: 8px; padding: 20px 24px;
+                      display: flex; align-items: center; gap: 16px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--blue);"></div>
+            <div>
+              <div style="font-size: 17px; font-weight: 600; color: #F8F6F0;">Workflow automation engine</div>
+              <div style="font-size: 14px; color: rgba(255, 255, 255, 0.4); margin-top: 4px;">If-this-then-that rules for data pipelines</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom note -->
+    <div style="position: absolute; bottom: 80px; left: 100px;
+                font-size: 14px; color: rgba(255, 255, 255, 0.3); font-style: italic;">
+      Full product changelog available at meridian.io/changelog
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 5 — People & Culture                                   -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Acknowledge the hiring gap honestly. Show the plan to close it.">
+    <div style="position: absolute; inset: 0; background: var(--cream);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;
+                padding-bottom: 24px; border-bottom: 1px solid rgba(26, 26, 26, 0.1);">
+      <span style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">People & Culture</span>
+      <span style="font-size: 14px; color: var(--muted);">05</span>
+    </div>
+
+    <div style="position: absolute; top: 160px; left: 100px;">
+      <div style="font-family: 'Fraunces', serif; font-size: 44px; font-weight: 700; letter-spacing: -0.01em;">
+        Growing the team thoughtfully.
+      </div>
+    </div>
+
+    <!-- Department breakdown -->
+    <div style="position: absolute; top: 290px; left: 100px; right: 100px;
+                display: flex; gap: 20px;">
+      <div style="flex: 1; border: 1px solid rgba(26, 26, 26, 0.1); border-radius: 12px; padding: 32px;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">Engineering</div>
+        <div style="font-size: 40px; font-weight: 800; margin-top: 12px;">104</div>
+        <div style="margin-top: 16px; height: 6px; background: rgba(26, 26, 26, 0.06); border-radius: 3px; overflow: hidden;">
+          <div style="width: 42%; height: 100%; background: var(--blue); border-radius: 3px;"></div>
+        </div>
+        <div style="font-size: 13px; color: var(--muted); margin-top: 8px;">42% of company</div>
+      </div>
+      <div style="flex: 1; border: 1px solid rgba(26, 26, 26, 0.1); border-radius: 12px; padding: 32px;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">Sales & CS</div>
+        <div style="font-size: 40px; font-weight: 800; margin-top: 12px;">68</div>
+        <div style="margin-top: 16px; height: 6px; background: rgba(26, 26, 26, 0.06); border-radius: 3px; overflow: hidden;">
+          <div style="width: 27%; height: 100%; background: var(--green); border-radius: 3px;"></div>
+        </div>
+        <div style="font-size: 13px; color: var(--muted); margin-top: 8px;">27% of company</div>
+      </div>
+      <div style="flex: 1; border: 1px solid rgba(26, 26, 26, 0.1); border-radius: 12px; padding: 32px;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">Product & Design</div>
+        <div style="font-size: 40px; font-weight: 800; margin-top: 12px;">38</div>
+        <div style="margin-top: 16px; height: 6px; background: rgba(26, 26, 26, 0.06); border-radius: 3px; overflow: hidden;">
+          <div style="width: 15%; height: 100%; background: var(--accent); border-radius: 3px;"></div>
+        </div>
+        <div style="font-size: 13px; color: var(--muted); margin-top: 8px;">15% of company</div>
+      </div>
+      <div style="flex: 1; border: 1px solid rgba(26, 26, 26, 0.1); border-radius: 12px; padding: 32px;">
+        <div style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em;">G&A</div>
+        <div style="font-size: 40px; font-weight: 800; margin-top: 12px;">38</div>
+        <div style="margin-top: 16px; height: 6px; background: rgba(26, 26, 26, 0.06); border-radius: 3px; overflow: hidden;">
+          <div style="width: 15%; height: 100%; background: var(--muted); border-radius: 3px;"></div>
+        </div>
+        <div style="font-size: 13px; color: var(--muted); margin-top: 8px;">15% of company</div>
+      </div>
+    </div>
+
+    <!-- Key people metrics -->
+    <div style="position: absolute; top: 560px; left: 100px; right: 100px;
+                display: flex; gap: 40px;">
+      <div style="flex: 1; padding: 32px 0; border-top: 2px solid var(--dark);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 17px; font-weight: 600;">Voluntary attrition</span>
+          <span style="font-size: 24px; font-weight: 700; color: var(--green);">8%</span>
+        </div>
+        <div style="font-size: 14px; color: var(--muted); margin-top: 8px;">Annualized. Down from 12% in Q1 '25.</div>
+      </div>
+      <div style="flex: 1; padding: 32px 0; border-top: 2px solid var(--dark);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 17px; font-weight: 600;">eNPS score</span>
+          <span style="font-size: 24px; font-weight: 700;">+62</span>
+        </div>
+        <div style="font-size: 14px; color: var(--muted); margin-top: 8px;">Top quartile for SaaS companies of our size.</div>
+      </div>
+      <div style="flex: 1; padding: 32px 0; border-top: 2px solid var(--dark);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 17px; font-weight: 600;">Offer acceptance rate</span>
+          <span style="font-size: 24px; font-weight: 700;">88%</span>
+        </div>
+        <div style="font-size: 14px; color: var(--muted); margin-top: 8px;">Up 6pp after comp refresh in January.</div>
+      </div>
+      <div style="flex: 1; padding: 32px 0; border-top: 2px solid var(--dark);">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span style="font-size: 17px; font-weight: 600;">Diversity (URG)</span>
+          <span style="font-size: 24px; font-weight: 700;">36%</span>
+        </div>
+        <div style="font-size: 14px; color: var(--muted); margin-top: 8px;">Leadership: 44%. Target: 40% overall by EOY.</div>
+      </div>
+    </div>
+
+    <!-- Open roles callout -->
+    <div style="position: absolute; bottom: 100px; left: 100px; right: 100px;
+                background: rgba(180, 83, 9, 0.06); border-left: 3px solid var(--accent);
+                padding: 24px 32px; border-radius: 0 8px 8px 0;">
+      <div style="font-size: 17px; line-height: 1.5; color: var(--dark);">
+        <strong>Hiring update:</strong> 22 open roles, 6 of 12 engineering positions filled. Increased referral bonus to $15K and expanded recruiting partnerships to address senior backend pipeline.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 6 — Looking Ahead                                      -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="End with confidence. Reiterate the full-year targets.">
+    <div style="position: absolute; inset: 0; background: var(--cream);"></div>
+
+    <!-- Header -->
+    <div style="position: absolute; top: 80px; left: 100px; right: 100px;
+                display: flex; justify-content: space-between; align-items: center;
+                padding-bottom: 24px; border-bottom: 1px solid rgba(26, 26, 26, 0.1);">
+      <span style="font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Looking Ahead</span>
+      <span style="font-size: 14px; color: var(--muted);">06</span>
+    </div>
+
+    <div style="position: absolute; top: 160px; left: 100px; width: 900px;">
+      <div style="font-family: 'Fraunces', serif; font-size: 52px; font-weight: 700; line-height: 1.2;
+                  letter-spacing: -0.01em; color: var(--dark);">
+        On track for <em style="color: var(--accent);">$145M ARR</em><br/>by year-end.
+      </div>
+    </div>
+
+    <!-- Priorities grid -->
+    <div style="position: absolute; top: 380px; left: 100px; right: 100px;
+                display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div style="border: 1px solid rgba(26, 26, 26, 0.1); border-radius: 12px; padding: 40px 32px;">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #B45309, #F59E0B);
+                    margin-bottom: 24px;"></div>
+        <div style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Enterprise expansion</div>
+        <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+          Close 10+ deals over $500K. Launch dedicated enterprise CS team with named accounts.
+        </div>
+      </div>
+      <div style="border: 1px solid rgba(26, 26, 26, 0.1); border-radius: 12px; padding: 40px 32px;">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #2563EB, #06B6D4);
+                    margin-bottom: 24px;"></div>
+        <div style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">APAC acceleration</div>
+        <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+          Grow Tokyo team to 12. Open Sydney office in Q3. Target $8M APAC ARR by EOY.
+        </div>
+      </div>
+      <div style="border: 1px solid rgba(26, 26, 26, 0.1); border-radius: 12px; padding: 40px 32px;">
+        <div style="width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(135deg, #16A34A, #10B981);
+                    margin-bottom: 24px;"></div>
+        <div style="font-size: 22px; font-weight: 700; margin-bottom: 12px;">Platform moat</div>
+        <div style="font-size: 16px; color: var(--muted); line-height: 1.6;" data-sg-wrap="true">
+          Ship AI features, workflow engine, and marketplace. Increase switching costs for enterprise.
+        </div>
+      </div>
+    </div>
+
+    <!-- Annual targets -->
+    <div style="position: absolute; bottom: 100px; left: 100px; right: 100px;
+                border-top: 2px solid var(--dark); padding-top: 32px;
+                display: flex; gap: 60px;">
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">FY26 Revenue Target</div>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px;">$145M</div>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">EBITDA Target</div>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px;">$29M</div>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Headcount EOY</div>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px;">320</div>
+      </div>
+      <div>
+        <div style="font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em;">Net Magic Number</div>
+        <div style="font-size: 36px; font-weight: 800; margin-top: 8px;">1.4×</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #F5F5F0;
+    }
+    .slide + .slide { page-break-before: always; }
+
+    :root {
+      --bg: #0A0A0F;
+      --accent: #FF6B35;
+      --accent2: #7C3AED;
+      --muted: #6B7280;
+      --surface: #16161F;
+      --border: #2A2A3A;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 1 — Title / Hero                                       -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Open with energy. Pause after the tagline.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Large decorative gradient orb -->
+    <div style="position: absolute; top: -200px; right: -100px; width: 900px; height: 900px;
+                background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.15), rgba(124, 58, 237, 0.08) 50%, transparent 70%);
+                border-radius: 50%;"></div>
+
+    <!-- Grid accent lines -->
+    <div style="position: absolute; top: 0; left: 120px; width: 1px; height: 1080px; background: rgba(255, 107, 53, 0.08);"></div>
+    <div style="position: absolute; top: 0; left: 480px; width: 1px; height: 1080px; background: rgba(255, 107, 53, 0.08);"></div>
+    <div style="position: absolute; top: 0; left: 840px; width: 1px; height: 1080px; background: rgba(255, 107, 53, 0.08);"></div>
+
+    <!-- Brand pill -->
+    <div style="position: absolute; top: 80px; left: 120px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #FF6B35, #7C3AED);"></div>
+      <span style="font-size: 22px; font-weight: 600; letter-spacing: 0.02em;">Luminar</span>
+    </div>
+
+    <!-- Series badge -->
+    <div style="position: absolute; top: 84px; right: 120px;
+                font-family: 'DM Mono', monospace; font-size: 14px; color: var(--accent);
+                border: 1px solid rgba(255, 107, 53, 0.3); border-radius: 20px;
+                padding: 8px 20px; letter-spacing: 0.1em; text-transform: uppercase;">
+      Series B · $42M Raise
+    </div>
+
+    <!-- Hero text block -->
+    <div style="position: absolute; top: 300px; left: 120px; width: 1200px;">
+      <div style="font-family: 'DM Mono', monospace; font-size: 15px; color: var(--accent);
+                  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 28px;">
+        Infrastructure for the AI Era
+      </div>
+      <div style="font-size: 96px; font-weight: 700; line-height: 1.0; letter-spacing: -0.03em;">
+        Deploy models<br/>at the speed<br/>of thought.
+      </div>
+    </div>
+
+    <!-- Bottom stats bar -->
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 140px;
+                border-top: 1px solid var(--border);
+                display: flex; align-items: center;">
+      <div style="flex: 1; padding-left: 120px;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">ARR</div>
+        <div style="font-size: 36px; font-weight: 700; color: var(--accent);">$18.4M</div>
+      </div>
+      <div style="width: 1px; height: 60px; background: var(--border);"></div>
+      <div style="flex: 1; padding-left: 60px;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Customers</div>
+        <div style="font-size: 36px; font-weight: 700;">340+</div>
+      </div>
+      <div style="width: 1px; height: 60px; background: var(--border);"></div>
+      <div style="flex: 1; padding-left: 60px;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Team</div>
+        <div style="font-size: 36px; font-weight: 700;">86</div>
+      </div>
+      <div style="width: 1px; height: 60px; background: var(--border);"></div>
+      <div style="flex: 1; padding-left: 60px;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">NRR</div>
+        <div style="font-size: 36px; font-weight: 700; color: #10B981;">142%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 2 — The Problem                                        -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Emphasize the pain. Each point should resonate with technical buyers.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Section indicator -->
+    <div style="position: absolute; top: 80px; left: 120px; display: flex; align-items: center; gap: 16px;">
+      <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></div>
+      <span style="font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">01 / The Problem</span>
+    </div>
+
+    <!-- Main heading -->
+    <div style="position: absolute; top: 180px; left: 120px; width: 900px;">
+      <div style="font-size: 64px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;">
+        ML teams waste <em style="color: var(--accent); font-style: normal;">73% of their time</em> on infrastructure.
+      </div>
+    </div>
+
+    <!-- Pain point cards -->
+    <div style="position: absolute; top: 440px; left: 120px; right: 120px;
+                display: flex; gap: 24px;">
+      <!-- Card 1 -->
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 48px 40px;">
+        <div style="font-size: 56px; font-weight: 700; color: var(--accent); margin-bottom: 16px;">6 weeks</div>
+        <div style="font-size: 20px; color: var(--muted); line-height: 1.5;">
+          Average time from model training to first production deployment
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 48px 40px;">
+        <div style="font-size: 56px; font-weight: 700; color: var(--accent2); margin-bottom: 16px;">$2.1M</div>
+        <div style="font-size: 20px; color: var(--muted); line-height: 1.5;">
+          Annual cost of idle GPU compute from poor orchestration
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 48px 40px;">
+        <div style="font-size: 56px; font-weight: 700; margin-bottom: 16px;">4.2×</div>
+        <div style="font-size: 20px; color: var(--muted); line-height: 1.5;">
+          More engineers needed vs. companies with modern MLOps tooling
+        </div>
+      </div>
+    </div>
+
+    <!-- Source footnote -->
+    <div style="position: absolute; bottom: 60px; left: 120px;
+                font-family: 'DM Mono', monospace; font-size: 12px; color: rgba(107, 114, 128, 0.6);">
+      Source: Gartner MLOps Survey 2025 · n=1,200 ML teams
+    </div>
+
+    <!-- Slide number -->
+    <div style="position: absolute; bottom: 60px; right: 120px;
+                font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted);">02</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 3 — Solution / Product                                 -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Demo the product here. Show the CLI flow live if possible.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Section indicator -->
+    <div style="position: absolute; top: 80px; left: 120px; display: flex; align-items: center; gap: 16px;">
+      <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></div>
+      <span style="font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">02 / The Solution</span>
+    </div>
+
+    <!-- Heading -->
+    <div style="position: absolute; top: 170px; left: 120px; width: 700px;">
+      <div style="font-size: 56px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;">
+        One command.<br/>Production-ready.
+      </div>
+      <div style="margin-top: 24px; font-size: 20px; color: var(--muted); line-height: 1.6; width: 560px;">
+        Luminar abstracts away GPU provisioning, model packaging, traffic routing, and monitoring — so your team ships models, not YAML.
+      </div>
+    </div>
+
+    <!-- Faux terminal -->
+    <div style="position: absolute; top: 160px; right: 120px; width: 820px; height: 420px;
+                background: #0D0D12; border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+      <!-- Terminal header -->
+      <div style="height: 44px; background: #111118; border-bottom: 1px solid var(--border);
+                  display: flex; align-items: center; padding: 0 16px; gap: 8px;">
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: #EF4444;"></div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: #F59E0B;"></div>
+        <div style="width: 12px; height: 12px; border-radius: 50%; background: #22C55E;"></div>
+        <span style="margin-left: 12px; font-family: 'DM Mono', monospace; font-size: 13px; color: var(--muted);">terminal</span>
+      </div>
+      <!-- Terminal content -->
+      <div style="padding: 28px 28px; font-family: 'DM Mono', monospace; font-size: 15px; line-height: 2.0;">
+        <div><span style="color: #22C55E;">$</span> <span style="color: #F5F5F0;">luminar deploy ./model</span></div>
+        <div style="color: var(--muted);">  ⣾ Packaging model artifacts...</div>
+        <div style="color: var(--muted);">  ✓ Container built (2.1s)</div>
+        <div style="color: var(--muted);">  ✓ GPU cluster allocated (A100×4)</div>
+        <div style="color: var(--muted);">  ✓ Canary deployed → 100% traffic</div>
+        <div style="color: #22C55E;">  ✓ Live at api.luminar.ai/v1/predict</div>
+        <div><br/></div>
+        <div><span style="color: #22C55E;">$</span> <span style="color: var(--muted);">_</span></div>
+      </div>
+    </div>
+
+    <!-- Feature pills row -->
+    <div style="position: absolute; top: 640px; left: 120px; right: 120px;
+                display: flex; gap: 20px;">
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 36px 32px;">
+        <div style="font-size: 13px; font-family: 'DM Mono', monospace; color: var(--accent);
+                    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Auto-scaling</div>
+        <div style="font-size: 17px; line-height: 1.5; color: rgba(245, 245, 240, 0.7);">
+          Scale from zero to thousands of GPUs based on real-time demand. Pay only for what you use.
+        </div>
+      </div>
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 36px 32px;">
+        <div style="font-size: 13px; font-family: 'DM Mono', monospace; color: var(--accent);
+                    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Model Registry</div>
+        <div style="font-size: 17px; line-height: 1.5; color: rgba(245, 245, 240, 0.7);">
+          Version, tag, and rollback any model with full lineage tracking and audit logs.
+        </div>
+      </div>
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 36px 32px;">
+        <div style="font-size: 13px; font-family: 'DM Mono', monospace; color: var(--accent);
+                    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Observability</div>
+        <div style="font-size: 17px; line-height: 1.5; color: rgba(245, 245, 240, 0.7);">
+          Latency, throughput, drift detection — built-in dashboards with PagerDuty integration.
+        </div>
+      </div>
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 36px 32px;">
+        <div style="font-size: 13px; font-family: 'DM Mono', monospace; color: var(--accent);
+                    text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Multi-Cloud</div>
+        <div style="font-size: 17px; line-height: 1.5; color: rgba(245, 245, 240, 0.7);">
+          Deploy across AWS, GCP, and Azure with unified networking and cost management.
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide number -->
+    <div style="position: absolute; bottom: 60px; right: 120px;
+                font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted);">03</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 4 — Traction / Growth                                  -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Revenue chart is the star. Let the numbers speak.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Section indicator -->
+    <div style="position: absolute; top: 80px; left: 120px; display: flex; align-items: center; gap: 16px;">
+      <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></div>
+      <span style="font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">03 / Traction</span>
+    </div>
+
+    <div style="position: absolute; top: 170px; left: 120px;">
+      <div style="font-size: 56px; font-weight: 700; letter-spacing: -0.02em;">
+        Hockey-stick <em style="color: var(--accent); font-style: normal;">revenue</em>.
+      </div>
+    </div>
+
+    <!-- Revenue chart (bar chart visualization) -->
+    <div style="position: absolute; top: 320px; left: 120px; right: 540px; bottom: 160px;
+                display: flex; align-items: flex-end; gap: 18px;">
+      <!-- Q labels row will be at bottom -->
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div style="width: 100%; height: 32px; background: linear-gradient(180deg, rgba(255, 107, 53, 0.3), rgba(255, 107, 53, 0.1));
+                    border-radius: 6px 6px 0 0;"></div>
+        <span style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);">Q1 '24</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div style="width: 100%; height: 58px; background: linear-gradient(180deg, rgba(255, 107, 53, 0.35), rgba(255, 107, 53, 0.12));
+                    border-radius: 6px 6px 0 0;"></div>
+        <span style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);">Q2 '24</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div style="width: 100%; height: 100px; background: linear-gradient(180deg, rgba(255, 107, 53, 0.4), rgba(255, 107, 53, 0.15));
+                    border-radius: 6px 6px 0 0;"></div>
+        <span style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);">Q3 '24</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div style="width: 100%; height: 165px; background: linear-gradient(180deg, rgba(255, 107, 53, 0.5), rgba(255, 107, 53, 0.18));
+                    border-radius: 6px 6px 0 0;"></div>
+        <span style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);">Q4 '24</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div style="width: 100%; height: 260px; background: linear-gradient(180deg, rgba(255, 107, 53, 0.6), rgba(255, 107, 53, 0.2));
+                    border-radius: 6px 6px 0 0;"></div>
+        <span style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);">Q1 '25</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div style="width: 100%; height: 380px; background: linear-gradient(180deg, rgba(255, 107, 53, 0.7), rgba(255, 107, 53, 0.25));
+                    border-radius: 6px 6px 0 0;"></div>
+        <span style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted);">Q2 '25</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        <div style="width: 100%; height: 500px; background: linear-gradient(180deg, #FF6B35, rgba(255, 107, 53, 0.3));
+                    border-radius: 6px 6px 0 0;"></div>
+        <span style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent);">Q3 '25</span>
+      </div>
+    </div>
+
+    <!-- Right-side metrics -->
+    <div style="position: absolute; top: 320px; right: 120px; width: 360px;">
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--border);">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Annual Recurring Revenue</div>
+        <div style="font-size: 48px; font-weight: 700; color: var(--accent); margin-top: 8px;">$18.4M</div>
+      </div>
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--border);">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">QoQ Growth</div>
+        <div style="font-size: 48px; font-weight: 700; color: #10B981; margin-top: 8px;">38%</div>
+      </div>
+      <div style="padding: 32px 0; border-bottom: 1px solid var(--border);">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Net Revenue Retention</div>
+        <div style="font-size: 48px; font-weight: 700; margin-top: 8px;">142%</div>
+      </div>
+      <div style="padding: 32px 0;">
+        <div style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;">Gross Margin</div>
+        <div style="font-size: 48px; font-weight: 700; margin-top: 8px;">78%</div>
+      </div>
+    </div>
+
+    <!-- Slide number -->
+    <div style="position: absolute; bottom: 60px; right: 120px;
+                font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted);">04</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 5 — Customers / Logos                                  -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Name-drop the big logos. Mention Stripe case study.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Section indicator -->
+    <div style="position: absolute; top: 80px; left: 120px; display: flex; align-items: center; gap: 16px;">
+      <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></div>
+      <span style="font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">04 / Customers</span>
+    </div>
+
+    <div style="position: absolute; top: 170px; left: 120px; width: 1000px;">
+      <div style="font-size: 56px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;">
+        Trusted by teams who<br/>ship models at scale.
+      </div>
+    </div>
+
+    <!-- Logo grid (placeholder boxes with company names) -->
+    <div style="position: absolute; top: 380px; left: 120px; right: 120px;
+                display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Stripe</div>
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Datadog</div>
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Coinbase</div>
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Figma</div>
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Notion</div>
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Ramp</div>
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Vercel</div>
+      <div style="height: 120px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+                  display: flex; align-items: center; justify-content: center;
+                  font-size: 28px; font-weight: 500; color: rgba(245, 245, 240, 0.4);">Scale AI</div>
+    </div>
+
+    <!-- Quote -->
+    <div style="position: absolute; bottom: 100px; left: 120px; right: 120px;
+                background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+                border-radius: 0 12px 12px 0; padding: 40px 48px;
+                display: flex; align-items: center; gap: 48px;">
+      <div style="flex: 1;">
+        <div style="font-size: 22px; line-height: 1.6; color: rgba(245, 245, 240, 0.85); font-style: italic;">
+          "Luminar cut our deployment time from 3 weeks to under 10 minutes. Our ML team can finally focus on models instead of infrastructure."
+        </div>
+      </div>
+      <div style="width: 1px; height: 60px; background: var(--border);"></div>
+      <div style="width: 240px;">
+        <div style="font-size: 18px; font-weight: 600;">Sarah Chen</div>
+        <div style="font-size: 15px; color: var(--muted); margin-top: 4px;">VP of Engineering, Stripe</div>
+      </div>
+    </div>
+
+    <!-- Slide number -->
+    <div style="position: absolute; bottom: 60px; right: 120px;
+                font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted);">05</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 6 — Team                                               -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Highlight the Google Brain and Meta AI pedigree.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Section indicator -->
+    <div style="position: absolute; top: 80px; left: 120px; display: flex; align-items: center; gap: 16px;">
+      <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></div>
+      <span style="font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;">05 / Team</span>
+    </div>
+
+    <div style="position: absolute; top: 170px; left: 120px;">
+      <div style="font-size: 56px; font-weight: 700; letter-spacing: -0.02em;">
+        Built by operators.
+      </div>
+    </div>
+
+    <!-- Team cards -->
+    <div style="position: absolute; top: 320px; left: 120px; right: 120px;
+                display: flex; gap: 24px;">
+      <!-- Person 1 -->
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 48px 36px;">
+        <div style="width: 72px; height: 72px; border-radius: 50%;
+                    background: linear-gradient(135deg, #FF6B35, #F59E0B); margin-bottom: 24px;"></div>
+        <div style="font-size: 24px; font-weight: 600;">Alex Rivera</div>
+        <div style="font-size: 15px; color: var(--accent); margin-top: 6px;">CEO & Co-founder</div>
+        <div style="font-size: 15px; color: var(--muted); margin-top: 16px; line-height: 1.6;">
+          Ex-Google Brain. Led TFX serving infra (10B+ predictions/day). Stanford CS PhD.
+        </div>
+      </div>
+      <!-- Person 2 -->
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 48px 36px;">
+        <div style="width: 72px; height: 72px; border-radius: 50%;
+                    background: linear-gradient(135deg, #7C3AED, #3B82F6); margin-bottom: 24px;"></div>
+        <div style="font-size: 24px; font-weight: 600;">Priya Mehta</div>
+        <div style="font-size: 15px; color: var(--accent); margin-top: 6px;">CTO & Co-founder</div>
+        <div style="font-size: 15px; color: var(--muted); margin-top: 16px; line-height: 1.6;">
+          Ex-Meta AI. Built PyTorch distributed training. 40+ papers. MIT EECS.
+        </div>
+      </div>
+      <!-- Person 3 -->
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 48px 36px;">
+        <div style="width: 72px; height: 72px; border-radius: 50%;
+                    background: linear-gradient(135deg, #10B981, #06B6D4); margin-bottom: 24px;"></div>
+        <div style="font-size: 24px; font-weight: 600;">James Park</div>
+        <div style="font-size: 15px; color: var(--accent); margin-top: 6px;">VP Engineering</div>
+        <div style="font-size: 15px; color: var(--muted); margin-top: 16px; line-height: 1.6;">
+          Ex-Databricks. Scaled MLflow from 0→50M downloads. UC Berkeley EECS.
+        </div>
+      </div>
+      <!-- Person 4 -->
+      <div style="flex: 1; background: var(--surface); border: 1px solid var(--border);
+                  border-radius: 12px; padding: 48px 36px;">
+        <div style="width: 72px; height: 72px; border-radius: 50%;
+                    background: linear-gradient(135deg, #F43F5E, #FF6B35); margin-bottom: 24px;"></div>
+        <div style="font-size: 24px; font-weight: 600;">Maria Santos</div>
+        <div style="font-size: 15px; color: var(--accent); margin-top: 6px;">VP Sales</div>
+        <div style="font-size: 15px; color: var(--muted); margin-top: 16px; line-height: 1.6;">
+          Ex-Snowflake. Built enterprise sales from $20M→$400M ARR. Wharton MBA.
+        </div>
+      </div>
+    </div>
+
+    <!-- Investor logos -->
+    <div style="position: absolute; bottom: 100px; left: 120px; right: 120px;
+                border-top: 1px solid var(--border); padding-top: 40px;
+                display: flex; align-items: center; gap: 48px;">
+      <span style="font-family: 'DM Mono', monospace; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;">Backed by</span>
+      <div style="display: flex; gap: 40px; align-items: center;">
+        <span style="font-size: 22px; font-weight: 500; color: rgba(245, 245, 240, 0.35);">a16z</span>
+        <span style="font-size: 22px; font-weight: 500; color: rgba(245, 245, 240, 0.35);">Sequoia</span>
+        <span style="font-size: 22px; font-weight: 500; color: rgba(245, 245, 240, 0.35);">Lightspeed</span>
+        <span style="font-size: 22px; font-weight: 500; color: rgba(245, 245, 240, 0.35);">Index Ventures</span>
+        <span style="font-size: 22px; font-weight: 500; color: rgba(245, 245, 240, 0.35);">GV</span>
+      </div>
+    </div>
+
+    <!-- Slide number -->
+    <div style="position: absolute; bottom: 60px; right: 120px;
+                font-family: 'DM Mono', monospace; font-size: 14px; color: var(--muted);">06</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SLIDE 7 — The Ask / Close                                    -->
+  <!-- ============================================================ -->
+  <div class="slide" data-notes="Be direct about the ask. $42M at $420M pre-money.">
+    <div style="position: absolute; inset: 0; background: var(--bg);"></div>
+
+    <!-- Large gradient orb -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                width: 1200px; height: 1200px;
+                background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1), rgba(124, 58, 237, 0.05) 40%, transparent 65%);
+                border-radius: 50%;"></div>
+
+    <!-- Content centered -->
+    <div style="position: absolute; top: 200px; left: 0; right: 0; text-align: center;">
+      <div style="font-family: 'DM Mono', monospace; font-size: 15px; color: var(--accent);
+                  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 28px;">
+        Series B
+      </div>
+      <div style="font-size: 120px; font-weight: 700; letter-spacing: -0.03em;">$42M</div>
+      <div style="font-size: 24px; color: var(--muted); margin-top: 12px;">$420M pre-money valuation</div>
+    </div>
+
+    <!-- Use of funds -->
+    <div style="position: absolute; top: 560px; left: 360px; right: 360px;
+                display: flex; gap: 2px; height: 48px; border-radius: 8px; overflow: hidden;">
+      <div style="flex: 5; background: var(--accent); display: flex; align-items: center; justify-content: center;
+                  font-size: 14px; font-weight: 600; color: #0A0A0F;">R&D — 50%</div>
+      <div style="flex: 3; background: var(--accent2); display: flex; align-items: center; justify-content: center;
+                  font-size: 14px; font-weight: 600; color: #F5F5F0;">GTM — 30%</div>
+      <div style="flex: 2; background: #10B981; display: flex; align-items: center; justify-content: center;
+                  font-size: 14px; font-weight: 600; color: #0A0A0F;">Ops — 20%</div>
+    </div>
+
+    <!-- Goals list -->
+    <div style="position: absolute; top: 660px; left: 360px; right: 360px;
+                display: flex; gap: 24px;">
+      <div style="flex: 1; padding: 28px 0; border-top: 2px solid var(--accent);">
+        <div style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">$50M ARR</div>
+        <div style="font-size: 15px; color: var(--muted); line-height: 1.5;">Hit $50M ARR by Q4 2026 with enterprise expansion</div>
+      </div>
+      <div style="flex: 1; padding: 28px 0; border-top: 2px solid var(--accent2);">
+        <div style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">EU Launch</div>
+        <div style="font-size: 15px; color: var(--muted); line-height: 1.5;">Open London & Berlin offices, SOC 2 Type II + GDPR</div>
+      </div>
+      <div style="flex: 1; padding: 28px 0; border-top: 2px solid #10B981;">
+        <div style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Platform V2</div>
+        <div style="font-size: 15px; color: var(--muted); line-height: 1.5;">Fine-tuning pipelines, multi-modal, and edge deployment</div>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div style="position: absolute; bottom: 80px; left: 0; right: 0; text-align: center;">
+      <div style="font-size: 18px; color: var(--muted);">
+        alex@luminar.ai · luminar.ai/investors
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

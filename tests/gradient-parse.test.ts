@@ -1,5 +1,5 @@
 import { describe, test, expect } from "bun:test";
-import { parseGradient } from "../src/dom-extract/gradient-parse";
+import { parseGradient, detectGradient, detectGradients } from "../src/dom-extract/gradient-parse";
 
 describe("parseGradient", () => {
   describe("linear gradients", () => {
@@ -88,5 +88,112 @@ describe("parseGradient", () => {
       expect(result).not.toBeNull();
       expect(result.stops).toHaveLength(2);
     });
+  });
+
+  describe("conic gradients", () => {
+    test("parses simple conic gradient", () => {
+      const result = parseGradient("conic", "#ff0000, #00ff00, #0000ff");
+      expect(result).not.toBeNull();
+      expect(result.type).toBe("conic");
+      expect(result.stops).toHaveLength(3);
+    });
+
+    test("parses conic with from angle", () => {
+      const result = parseGradient("conic", "from 45deg, #ff0000, #0000ff");
+      expect(result).not.toBeNull();
+      expect(result.conicAngle).toBe(45);
+    });
+
+    test("parses conic with position", () => {
+      const result = parseGradient("conic", "from 0deg at 25% 75%, #ff0000, #0000ff");
+      expect(result).not.toBeNull();
+      expect(result.conicAngle).toBe(0);
+      expect(result.radialPosition).toEqual({ x: 25, y: 75 });
+    });
+  });
+});
+
+describe("detectGradient", () => {
+  test("detects linear-gradient", () => {
+    const result = detectGradient("linear-gradient(90deg, #ff0000, #0000ff)");
+    expect(result).not.toBeNull();
+    expect(result.type).toBe("linear");
+    expect(result.repeating).toBeUndefined();
+  });
+
+  test("detects repeating-linear-gradient", () => {
+    const result = detectGradient("repeating-linear-gradient(90deg, #ff0000 0%, #0000ff 25%)");
+    expect(result).not.toBeNull();
+    expect(result.type).toBe("linear");
+    expect(result.repeating).toBe(true);
+  });
+
+  test("detects repeating-radial-gradient", () => {
+    const result = detectGradient("repeating-radial-gradient(#ff0000 0%, #0000ff 25%)");
+    expect(result).not.toBeNull();
+    expect(result.type).toBe("radial");
+    expect(result.repeating).toBe(true);
+  });
+
+  test("detects conic-gradient", () => {
+    const result = detectGradient("conic-gradient(from 45deg, #ff0000, #0000ff)");
+    expect(result).not.toBeNull();
+    expect(result.type).toBe("conic");
+    expect(result.conicAngle).toBe(45);
+  });
+
+  test("returns null for none", () => {
+    expect(detectGradient("none")).toBeNull();
+  });
+
+  test("returns null for url()", () => {
+    expect(detectGradient("url(image.png)")).toBeNull();
+  });
+
+  test("returns first gradient from multi-layer background", () => {
+    const result = detectGradient("linear-gradient(90deg, #ff0000, #0000ff), radial-gradient(#00ff00, #000000)");
+    expect(result).not.toBeNull();
+    expect(result.type).toBe("linear");
+    expect(result.angle).toBe(90);
+  });
+});
+
+describe("detectGradients", () => {
+  test("returns empty array for none", () => {
+    expect(detectGradients("none")).toEqual([]);
+  });
+
+  test("returns single gradient in array", () => {
+    const results = detectGradients("linear-gradient(90deg, #ff0000, #0000ff)");
+    expect(results).toHaveLength(1);
+    expect(results[0].type).toBe("linear");
+  });
+
+  test("returns multiple gradient layers", () => {
+    const results = detectGradients("linear-gradient(90deg, #ff0000, #0000ff), radial-gradient(#00ff00, #000000)");
+    expect(results).toHaveLength(2);
+    expect(results[0].type).toBe("linear");
+    expect(results[0].angle).toBe(90);
+    expect(results[1].type).toBe("radial");
+  });
+
+  test("handles three gradient layers with rgba colors", () => {
+    const results = detectGradients(
+      "linear-gradient(45deg, rgba(255,0,0,0.5), rgba(0,0,255,0.5)), " +
+      "radial-gradient(circle at 50% 50%, #00ff00, #000000), " +
+      "linear-gradient(to bottom, #ffffff, #000000)"
+    );
+    expect(results).toHaveLength(3);
+    expect(results[0].type).toBe("linear");
+    expect(results[0].angle).toBe(45);
+    expect(results[1].type).toBe("radial");
+    expect(results[2].type).toBe("linear");
+    expect(results[2].angle).toBe(180);
+  });
+
+  test("skips url() layers, returns only gradients", () => {
+    const results = detectGradients("url(bg.png), linear-gradient(90deg, #ff0000, #0000ff)");
+    expect(results).toHaveLength(1);
+    expect(results[0].type).toBe("linear");
   });
 });

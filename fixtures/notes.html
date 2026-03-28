@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .slide {
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+    background: #1e293b;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  .title {
+    position: absolute;
+    top: 200px;
+    left: 160px;
+    font-size: 64px;
+    color: #ffffff;
+  }
+  .subtitle {
+    position: absolute;
+    top: 350px;
+    left: 160px;
+    font-size: 36px;
+    color: #94a3b8;
+  }
+  .notes {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="slide" data-notes="Speaker notes from data attribute. Remember to mention the key points.">
+  <div class="title">Slide With Data Notes</div>
+  <div class="subtitle">Notes are in the data-notes attribute</div>
+</div>
+<div class="slide">
+  <div class="title">Slide With Element Notes</div>
+  <div class="subtitle">Notes are in a hidden .notes element</div>
+  <div class="notes">These are speaker notes from a hidden element.
+They can span multiple lines.
+Third line of notes.</div>
+</div>
+<div class="slide">
+  <div class="title">Slide Without Notes</div>
+  <div class="subtitle">This slide has no speaker notes</div>
+</div>
+</body>
+</html>
