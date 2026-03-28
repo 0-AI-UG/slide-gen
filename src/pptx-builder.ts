@@ -163,7 +163,7 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
       let borderColorHex: string | undefined;
       let borderWidthIn: number | undefined;
       if (hasBorder) {
-        borderColorHex = parseCssColor(rect.borderColor!);
+        borderColorHex = parseCssColor(rect.borderColor!) ?? undefined;
         borderWidthIn = rect.borderWidth! * sx;
       }
 
