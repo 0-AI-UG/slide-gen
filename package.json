@@ -1,6 +1,6 @@
 {
   "name": "@0-ai/slide-gen",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Convert HTML slide decks to PPTX, PDF, and PNG",
   "license": "MIT",
   "type": "module",
