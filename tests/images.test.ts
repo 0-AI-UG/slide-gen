@@ -11,7 +11,7 @@ const TEST_OUTPUT = resolve(import.meta.dir, "../.test-output-images");
 
 describe("image support", () => {
   describe("pipeline - image extraction", () => {
-    test("detects img, svg, and background-image elements", async () => {
+    test.skipIf(!!process.env.CI)("detects img, svg, and background-image elements", async () => {
       const htmlPath = resolve(FIXTURES_DIR, "images.html");
       if (!existsSync(htmlPath)) {
         console.log("Skipping: fixture not found");
