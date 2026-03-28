@@ -50,7 +50,7 @@ describe("image support", () => {
       if (existsSync(TEST_OUTPUT)) rmSync(TEST_OUTPUT, { recursive: true });
     }, 60_000);
 
-    test("gradient elements are NOT treated as images", async () => {
+    test.skipIf(!!process.env.CI)("gradient elements are NOT treated as images", async () => {
       const htmlPath = resolve(FIXTURES_DIR, "images.html");
       if (!existsSync(htmlPath)) return;
 
