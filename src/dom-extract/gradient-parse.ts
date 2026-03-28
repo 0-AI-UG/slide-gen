@@ -30,7 +30,7 @@ export function parseSingleGradientLayer(layer: string): any | null {
   for (const { regex, type, repeating } of patterns) {
     const match = layer.match(regex);
     if (match) {
-      const result = parseGradient(type, match[1]);
+      const result = parseGradient(type, match[1]!);
       if (result && repeating) result.repeating = true;
       return result;
     }
@@ -91,7 +91,7 @@ export function parseGradient(type: "linear" | "radial" | "conic", inner: string
       if (first) {
         const degMatch = first.match(/^([\d.]+)deg$/);
         if (degMatch) {
-          angle = parseFloat(degMatch[1]);
+          angle = parseFloat(degMatch[1]!);
           colorTokenStart = 1;
         } else if (first.startsWith("to ")) {
           const dir = first.replace("to ", "").trim();
@@ -103,7 +103,7 @@ export function parseGradient(type: "linear" | "radial" | "conic", inner: string
             "top left": 315, "left top": 315,
           };
           if (dir in dirMap) {
-            angle = dirMap[dir];
+            angle = dirMap[dir]!;
             colorTokenStart = 1;
           }
         }
@@ -113,20 +113,20 @@ export function parseGradient(type: "linear" | "radial" | "conic", inner: string
       const first = tokens[0];
       if (first) {
         const fromMatch = first.match(/from\s+([\d.]+)deg/);
-        if (fromMatch) conicAngle = parseFloat(fromMatch[1]);
+        if (fromMatch) conicAngle = parseFloat(fromMatch[1]!);
         const atMatch = first.match(/at\s+([\d.]+)%\s+([\d.]+)%/);
-        if (atMatch) conicPosition = { x: parseFloat(atMatch[1]), y: parseFloat(atMatch[2]) };
+        if (atMatch) conicPosition = { x: parseFloat(atMatch[1]!), y: parseFloat(atMatch[2]!) };
         // If the first token has "from" or "at", it's not a color stop
         if (fromMatch || atMatch) colorTokenStart = 1;
       }
     }
 
     for (let i = colorTokenStart; i < tokens.length; i++) {
-      const token = tokens[i].trim();
+      const token = tokens[i]!.trim();
       // Match color + optional position (percentage or px)
       const colorMatch = token.match(/^(#[0-9a-fA-F]{3,8}|rgba?\([^)]+\))\s*([\d.]+(%|px))?$/);
       if (colorMatch) {
-        const color = colorMatch[1];
+        const color = colorMatch[1]!;
         let pos: number;
         if (colorMatch[2]) {
           if (colorMatch[3] === "px") {
@@ -144,7 +144,7 @@ export function parseGradient(type: "linear" | "radial" | "conic", inner: string
         const bareColor = token.match(/^(\S+)\s+([\d.]+(%|px))?$/);
         if (bareColor) {
           const temp = document.createElement("div");
-          temp.style.color = bareColor[1];
+          temp.style.color = bareColor[1]!;
           document.body.appendChild(temp);
           const resolved = getComputedStyle(temp).color;
           document.body.removeChild(temp);
@@ -173,10 +173,10 @@ export function parseGradient(type: "linear" | "radial" | "conic", inner: string
     const result: any = { type, stops };
     if (type === "linear") result.angle = angle;
     if (type === "radial" && tokens.length > 0) {
-      const firstToken = tokens[0];
+      const firstToken = tokens[0]!;
       const posMatch = firstToken.match(/at\s+([\d.]+)%\s+([\d.]+)%/);
       if (posMatch) {
-        result.radialPosition = { x: parseFloat(posMatch[1]), y: parseFloat(posMatch[2]) };
+        result.radialPosition = { x: parseFloat(posMatch[1]!), y: parseFloat(posMatch[2]!) };
       }
       if (firstToken.includes("circle")) {
         result.radialShape = "circle";

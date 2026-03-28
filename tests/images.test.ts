@@ -28,7 +28,7 @@ describe("image support", () => {
         onProgress: () => {},
       });
 
-      const slide = result.slideData[0];
+      const slide = result.slideData[0]!;
       expect(slide).toBeDefined();
       expect(slide.images).toBeDefined();
       expect(Array.isArray(slide.images)).toBe(true);
@@ -64,7 +64,7 @@ describe("image support", () => {
         onProgress: () => {},
       });
 
-      const slide = result.slideData[0];
+      const slide = result.slideData[0]!;
       // gradient-not-image div should appear in rects, not images
       expect(slide.images.length).toBe(4); // only the 3 actual images
       // The gradient rect should exist

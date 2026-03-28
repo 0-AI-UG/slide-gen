@@ -61,12 +61,12 @@ export async function convertHtmlBuffers(
       log(`Capturing ${imageRefs.length} images...`);
       const slideEls = await ctx.page.$$(".slide");
       for (let i = 0; i < imageRefs.length; i++) {
-        const ref = imageRefs[i];
+        const ref = imageRefs[i]!;
         emit?.({ phase: "extract", message: `Capturing image ${i + 1}/${imageRefs.length}`, current: i + 1, total: imageRefs.length });
         const imgEl = await slideEls[ref.slideIndex]?.$(ref.selector);
         if (!imgEl) continue;
         const buffer = await imgEl.screenshot({ type: "png", omitBackground: true });
-        slideData[ref.slideIndex].images.push({
+        slideData[ref.slideIndex]!.images.push({
           x: ref.x,
           y: ref.y,
           width: ref.width,
@@ -182,7 +182,7 @@ export async function convertHtmlToSlides(
   // Write PNGs to disk
   for (let i = 0; i < bufferResult.pngBuffers.length; i++) {
     const pngPath = resolve(outputDir, `slide-${i + 1}.png`);
-    await Bun.write(pngPath, bufferResult.pngBuffers[i]);
+    await Bun.write(pngPath, bufferResult.pngBuffers[i]!);
     result.pngPaths.push(pngPath);
   }
 

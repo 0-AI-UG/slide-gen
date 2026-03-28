@@ -27,7 +27,7 @@ describe("data-sg-wrap attribute", () => {
     expect(result.warnings).toBeInstanceOf(Array);
 
     // Slide 1 has 3 text elements with explicit wrap attributes
-    const slide1 = result.slideData[0];
+    const slide1 = result.slideData[0]!;
     expect(slide1.texts.length).toBeGreaterThanOrEqual(3);
 
     // Find the heading (data-sg-wrap="false")
@@ -68,7 +68,7 @@ describe("data-sg-group attribute", () => {
     });
 
     // Slide 2 has grouped metrics
-    const slide2 = result.slideData[1];
+    const slide2 = result.slideData[1]!;
 
     // The "metric-revenue" group should produce a single text element with 2 runs
     const revenueText = slide2.texts.find(t => t.text.includes("$2.4M"));

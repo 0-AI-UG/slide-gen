@@ -43,7 +43,7 @@ Options:
   process.exit(values.help ? 0 : 1);
 }
 
-const htmlPath = resolve(process.cwd(), positionals[0]);
+const htmlPath = resolve(process.cwd(), positionals[0]!);
 
 convertHtmlToSlides(htmlPath, {
   outputDir: resolve(process.cwd(), values["output-dir"]!),

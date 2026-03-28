@@ -175,16 +175,16 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
 
         if (visibleBorders.length === 4) {
           // All 4 sides have visible borders — check if uniform
-          const allSameColor = visibleBorders.every(b => b.color === visibleBorders[0].color);
-          const allSameWidth = visibleBorders.every(b => Math.abs(b.width - visibleBorders[0].width) < 0.5);
+          const allSameColor = visibleBorders.every(b => b.color === visibleBorders[0]!.color);
+          const allSameWidth = visibleBorders.every(b => Math.abs(b.width - visibleBorders[0]!.width) < 0.5);
           if (allSameColor && allSameWidth) {
             // Emit as a single rect with border properties (whether or not it has a background)
             if (!hasBg && !gradient) {
               const rectData: any = {
                 x, y, width: w, height: h,
                 backgroundColor: "rgba(0,0,0,0)",
-                borderColor: applyOpacityToColor(visibleBorders[0].color, accOpacity),
-                borderWidth: visibleBorders[0].width,
+                borderColor: applyOpacityToColor(visibleBorders[0]!.color, accOpacity),
+                borderWidth: visibleBorders[0]!.width,
               };
               const br = parseBorderRadius(computed, w, h);
               if (br > 0) rectData.borderRadius = br;
@@ -198,8 +198,8 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
               // Background rect already emitted above — add border info to it
               const lastRect = data.rects[data.rects.length - 1];
               if (lastRect && lastRect.x === x && lastRect.y === y) {
-                lastRect.borderColor = applyOpacityToColor(visibleBorders[0].color, accOpacity);
-                lastRect.borderWidth = visibleBorders[0].width;
+                lastRect.borderColor = applyOpacityToColor(visibleBorders[0]!.color, accOpacity);
+                lastRect.borderWidth = visibleBorders[0]!.width;
               }
             }
           } else {
@@ -211,7 +211,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
               { prop: 1, rx: x + w, ry: y, rw: 0, rh: h, isHoriz: false },
             ];
             for (const side of sides) {
-              const bp = borderProps[side.prop];
+              const bp = borderProps[side.prop]!;
               if (bp.width >= 1 && bp.style !== "none" && bp.color && bp.color !== "rgba(0, 0, 0, 0)" && bp.color !== "transparent") {
                 const lineRect = side.isHoriz
                   ? { x: side.rx, y: side.ry - bp.width / 2, width: side.rw, height: bp.width, backgroundColor: applyOpacityToColor(bp.color, accOpacity) }
@@ -229,7 +229,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
             { prop: 3, rx: x, ry: y, rw: 0, rh: h, isHoriz: false },
           ];
           for (const side of sides) {
-            const bp = borderProps[side.prop];
+            const bp = borderProps[side.prop]!;
             if (bp.width >= 1 && bp.style !== "none" && bp.color && bp.color !== "rgba(0, 0, 0, 0)" && bp.color !== "transparent") {
               const lineRect = side.isHoriz
                 ? { x: side.rx, y: side.ry - bp.width / 2, width: side.rw, height: bp.width, backgroundColor: applyOpacityToColor(bp.color, accOpacity) }
@@ -333,7 +333,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
             const computed = getComputedStyle(el);
             if (!firstTextComputed) firstTextComputed = computed;
 
-            const fontFamily = computed.fontFamily.split(",")[0].trim().replace(/['"]/g, "");
+            const fontFamily = computed.fontFamily.split(",")[0]!.trim().replace(/['"]/g, "");
             const fsVal = parseFloat(computed.fontSize);
             const textAccOpacity = getAccumulatedOpacity(el, slide);
             const adjustedColor = applyOpacityToColor(computed.color, textAccOpacity);
@@ -358,7 +358,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
 
           if (liRuns.length === 0) return;
 
-          const firstRun = liRuns[0];
+          const firstRun = liRuns[0]!;
           const fc = firstTextComputed || liComputed;
           const x = liRect.left - slideRect.left;
           const y = liRect.top - slideRect.top;
@@ -449,7 +449,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
               if (!el) continue;
 
               const computed = getComputedStyle(el);
-              const fontFamily = computed.fontFamily.split(",")[0].trim().replace(/['"]/g, "");
+              const fontFamily = computed.fontFamily.split(",")[0]!.trim().replace(/['"]/g, "");
               const fsVal = parseFloat(computed.fontSize);
               const textAccOpacity = getAccumulatedOpacity(el, slide);
               const adjustedColor = applyOpacityToColor(computed.color, textAccOpacity);
@@ -469,8 +469,8 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
 
             // Fall back to <col> background if cell has none
             let effectiveBg = hasCellBg ? cellBg : "";
-            if (!hasCellBg && cellIdx < colBackgrounds.length && colBackgrounds[cellIdx]) {
-              effectiveBg = colBackgrounds[cellIdx];
+            if (!hasCellBg && cellIdx < colBackgrounds.length && colBackgrounds[cellIdx]!) {
+              effectiveBg = colBackgrounds[cellIdx]!;
             }
             // Also check <tr> background
             if (!effectiveBg) {
@@ -582,7 +582,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
           const rangeRect = range.getBoundingClientRect();
 
           const computed = getComputedStyle(el);
-          const fontFamily = computed.fontFamily.split(",")[0].trim().replace(/['"]/g, "");
+          const fontFamily = computed.fontFamily.split(",")[0]!.trim().replace(/['"]/g, "");
           const letterSpacing = parseFloat(computed.letterSpacing) || 0;
           const txInfo = getTransformInfo(computed);
           const rotation = txInfo.rotation;
@@ -645,7 +645,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
         if (rangeRect.width < 1 || rangeRect.height < 1) continue;
 
         const computed = getComputedStyle(el);
-        const fontFamily = computed.fontFamily.split(",")[0].trim().replace(/['"]/g, "");
+        const fontFamily = computed.fontFamily.split(",")[0]!.trim().replace(/['"]/g, "");
         const letterSpacing = parseFloat(computed.letterSpacing) || 0;
         const txInfo = getTransformInfo(computed);
         let rotation = txInfo.rotation;
@@ -731,7 +731,7 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
 
       const allGroups: [Element, RawTextRun[]][] = [];
       for (const [, runs] of groupsByKey) {
-        allGroups.push([runs[0].blockAncestor, runs]);
+        allGroups.push([runs[0]!.blockAncestor, runs]);
       }
       for (const [blkEl, runs] of groupsByAncestor) {
         allGroups.push([blkEl, runs]);
@@ -754,41 +754,42 @@ export async function extractSlideData(page: Page): Promise<{ slides: SlideData[
         const parentWidth = blockRect.width;
         const parentHeight = blockRect.height;
 
-        const firstRun = runs[0];
+        const firstRun = runs[0]!;
         const rotation = firstRun.rotation;
         const isRotated = Math.abs(rotation) > 0.5;
 
         const textRuns: any[] = [];
         for (let ri = 0; ri < runs.length; ri++) {
-          if (ri > 0 && hasBrBetween(runs[ri - 1].textNode, runs[ri].textNode, groupBlockEl)) {
+          const curRun = runs[ri]!;
+          if (ri > 0 && hasBrBetween(runs[ri - 1]!.textNode, curRun.textNode, groupBlockEl)) {
             textRuns.push({
               text: "\n",
-              fontSize: runs[ri].fontSize,
-              fontFamily: runs[ri].fontFamily,
-              fontWeight: runs[ri].fontWeight,
-              fontStyle: runs[ri].fontStyle,
-              color: runs[ri].color,
-              letterSpacing: runs[ri].letterSpacing,
+              fontSize: curRun.fontSize,
+              fontFamily: curRun.fontFamily,
+              fontWeight: curRun.fontWeight,
+              fontStyle: curRun.fontStyle,
+              color: curRun.color,
+              letterSpacing: curRun.letterSpacing,
               textTransform: "none",
-              lineHeight: runs[ri].lineHeight,
+              lineHeight: curRun.lineHeight,
             });
           }
           const run: any = {
-            text: runs[ri].text,
-            fontSize: runs[ri].fontSize,
-            fontFamily: runs[ri].fontFamily,
-            fontWeight: runs[ri].fontWeight,
-            fontStyle: runs[ri].fontStyle,
-            color: runs[ri].color,
-            letterSpacing: runs[ri].letterSpacing,
-            textTransform: runs[ri].textTransform,
-            lineHeight: runs[ri].lineHeight,
+            text: curRun.text,
+            fontSize: curRun.fontSize,
+            fontFamily: curRun.fontFamily,
+            fontWeight: curRun.fontWeight,
+            fontStyle: curRun.fontStyle,
+            color: curRun.color,
+            letterSpacing: curRun.letterSpacing,
+            textTransform: curRun.textTransform,
+            lineHeight: curRun.lineHeight,
           };
-          const dec = runs[ri].textDecoration;
+          const dec = curRun.textDecoration;
           if (dec && dec !== "none") run.textDecoration = dec;
-          if (runs[ri].href) run.href = runs[ri].href;
-          if (runs[ri].textShadow) run.textShadow = runs[ri].textShadow;
-          if (runs[ri].gradientFill) run.gradientFill = runs[ri].gradientFill;
+          if (curRun.href) run.href = curRun.href;
+          if (curRun.textShadow) run.textShadow = curRun.textShadow;
+          if (curRun.gradientFill) run.gradientFill = curRun.gradientFill;
           textRuns.push(run);
         }
 

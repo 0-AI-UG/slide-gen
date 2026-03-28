@@ -125,10 +125,10 @@ export function parseShadow(value: string): { offsetX: number; offsetY: number; 
   if (!pxValues || pxValues.length < 2) return null;
 
   const nums = pxValues.map(v => parseFloat(v));
-  const offsetX = nums[0];
-  const offsetY = nums[1];
+  const offsetX = nums[0]!;
+  const offsetY = nums[1]!;
   const blurRadius = nums[2] ?? 0;
-  const spreadRadius = nums[3] !== undefined ? nums[3] : undefined;
+  const spreadRadius = nums[3];
 
   // Skip shadows with zero offset and zero blur (invisible)
   if (offsetX === 0 && offsetY === 0 && blurRadius === 0) return null;
@@ -142,8 +142,8 @@ export function getRotation(computed: CSSStyleDeclaration): number {
   if (!transform || transform === "none") return 0;
   const m = transform.match(/matrix\(([^)]+)\)/);
   if (m) {
-    const vals = m[1].split(",").map((v) => parseFloat(v.trim()));
-    const angle = Math.atan2(vals[1], vals[0]) * (180 / Math.PI);
+    const vals = m[1]!.split(",").map((v) => parseFloat(v.trim()));
+    const angle = Math.atan2(vals[1]!, vals[0]!) * (180 / Math.PI);
     return Math.round(angle * 100) / 100;
   }
   return 0;
@@ -167,7 +167,8 @@ export function getTransformInfo(computed: CSSStyleDeclaration): TransformInfo {
   const m = transform.match(/matrix\(([^)]+)\)/);
   if (!m) return result;
 
-  const [a, b, c, d, tx, ty] = m[1].split(",").map(v => parseFloat(v.trim()));
+  const parts = m[1]!.split(",").map(v => parseFloat(v.trim()));
+  const [a, b, c, d, tx, ty] = parts as [number, number, number, number, number, number];
 
   result.translateX = tx;
   result.translateY = ty;

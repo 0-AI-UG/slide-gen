@@ -23,7 +23,7 @@ export function parseFontNameTable(buffer: ArrayBuffer, nameOffset: number): str
     // Decode as UTF-16BE (platform 0 and 3 use UTF-16BE)
     let name = "";
     for (let j = 0; j < bytes.length; j += 2) {
-      name += String.fromCharCode((bytes[j] << 8) | bytes[j + 1]);
+      name += String.fromCharCode((bytes[j]! << 8) | bytes[j + 1]!);
     }
     if (name) return name;
   }

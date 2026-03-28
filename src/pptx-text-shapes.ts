@@ -146,8 +146,8 @@ export function buildTextBoxXml(opts: TextBoxOpts): string {
     const parts = run.text.split("\n");
     for (let pi = 0; pi < parts.length; pi++) {
       if (pi > 0) paragraphs.push([]);
-      if (parts[pi].length > 0) {
-        paragraphs[paragraphs.length - 1].push({ ...run, text: parts[pi] });
+      if (parts[pi]!.length > 0) {
+        paragraphs[paragraphs.length - 1]!.push({ ...run, text: parts[pi]! });
       }
     }
   }

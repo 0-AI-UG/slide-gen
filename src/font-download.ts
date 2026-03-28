@@ -157,7 +157,7 @@ export async function downloadStaticWeight(
         return null;
       }
       // Download whatever format is available
-      const fontData = await download(woff2Match[1]);
+      const fontData = await download(woff2Match[1]!);
       if (!fontData) {
         const msg = `Failed to download font file for '${family}' weight ${weight}`;
         log(`  Warning: ${msg}`);
@@ -171,7 +171,7 @@ export async function downloadStaticWeight(
       return woff2Path;
     }
 
-    const fontData = await download(urlMatch[1]);
+    const fontData = await download(urlMatch[1]!);
     if (!fontData) {
       const msg = `Failed to download font file for '${family}' weight ${weight}`;
       log(`  Warning: ${msg}`);

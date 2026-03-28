@@ -47,7 +47,7 @@ describe("pipeline integration", () => {
     expect(result.slideData.length).toBeGreaterThan(0);
 
     // Verify slide data structure
-    const slide = result.slideData[0];
+    const slide = result.slideData[0]!;
     expect(slide.width).toBe(1920);
     expect(slide.height).toBe(1080);
     expect(slide.backgroundColor).toBeDefined();

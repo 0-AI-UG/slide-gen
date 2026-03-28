@@ -8,9 +8,9 @@ function interpolateStops(stops: GradientInfo["stops"], intermediateCount: numbe
   const result: GradientInfo["stops"] = [];
 
   for (let i = 0; i < stops.length - 1; i++) {
-    result.push(stops[i]);
-    const s1 = stops[i];
-    const s2 = stops[i + 1];
+    const s1 = stops[i]!;
+    const s2 = stops[i + 1]!;
+    result.push(s1);
     const c1 = parseCssColorAndAlpha(s1.color);
     const c2 = parseCssColorAndAlpha(s2.color);
 
@@ -29,7 +29,7 @@ function interpolateStops(stops: GradientInfo["stops"], intermediateCount: numbe
       result.push({ color: `rgba(${r},${g},${b},${a})`, position: pos });
     }
   }
-  result.push(stops[stops.length - 1]);
+  result.push(stops[stops.length - 1]!);
   return result;
 }
 
@@ -39,7 +39,7 @@ function downsampleStops(stops: GradientInfo["stops"], maxCount: number): Gradie
   const result: GradientInfo["stops"] = [];
   for (let i = 0; i < maxCount; i++) {
     const idx = Math.round(i * (stops.length - 1) / (maxCount - 1));
-    result.push(stops[idx]);
+    result.push(stops[idx]!);
   }
   return result;
 }
@@ -59,14 +59,16 @@ function tileRepeatingStops(stops: GradientInfo["stops"]): GradientInfo["stops"]
   if (stops.length < 2) return stops;
   // CSS clamps each stop position to be >= the previous one
   stops = normalizeStopPositions(stops);
-  const range = stops[stops.length - 1].position - stops[0].position;
+  const firstStop = stops[0]!;
+  const lastStop = stops[stops.length - 1]!;
+  const range = lastStop.position - firstStop.position;
   if (range <= 0 || range >= 100) return stops;
 
   const result: GradientInfo["stops"] = [];
-  let offset = stops[0].position >= 0 ? 0 : stops[0].position;
+  let offset = firstStop.position >= 0 ? 0 : firstStop.position;
   while (offset < 100) {
     for (const stop of stops) {
-      const pos = offset + (stop.position - stops[0].position);
+      const pos = offset + (stop.position - firstStop.position);
       if (pos > 100) break;
       result.push({ color: stop.color, position: Math.min(pos, 100) });
     }
@@ -142,9 +144,9 @@ export function buildGradFillXml(gradient: GradientInfo, warnings?: string[]): s
       // farthest-corner (default)
       // Check if gradient fades to transparent — these are typically decorative orbs
       // that look much too large in OOXML without compression
-      const lastStop = effectiveStops[effectiveStops.length - 1];
+      const lastStop = effectiveStops[effectiveStops.length - 1]!;
       const lastAlpha = parseCssColorAndAlpha(lastStop.color).alpha;
-      const firstStop = effectiveStops[0];
+      const firstStop = effectiveStops[0]!;
       const firstAlpha = parseCssColorAndAlpha(firstStop.color).alpha;
 
       if (lastAlpha < 0.1 && firstAlpha > lastAlpha) {

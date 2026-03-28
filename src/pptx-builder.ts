@@ -39,8 +39,8 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
   const fontNameMap = options.fontPrepResult?.fontNameMap ?? new Map();
   const weightToFontName = options.fontPrepResult?.weightToFontName ?? new Map();
 
-  const htmlW = slideData[0].width;
-  const htmlH = slideData[0].height;
+  const htmlW = slideData[0]!.width;
+  const htmlH = slideData[0]!.height;
   const sx = SLIDE_W_IN / htmlW;
   const sy = SLIDE_H_IN / htmlH;
 
@@ -93,7 +93,7 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
 
   // ── Build each slide ────────────────────────────────────────────────
   for (let slideIdx = 0; slideIdx < slideData.length; slideIdx++) {
-    const sd = slideData[slideIdx];
+    const sd = slideData[slideIdx]!;
     const slideRels = new RelationshipManager();
     slideRels.add(REL_TYPES.slideLayout, "../slideLayouts/slideLayout1.xml");
 
@@ -192,7 +192,7 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
         // OOXML shapes stack later-on-top, so we reverse the order
         const reversed = [...rect.gradients].reverse();
         for (let gi = 0; gi < reversed.length; gi++) {
-          const grad = reversed[gi];
+          const grad = reversed[gi]!;
           shapesXml += buildRectShapeXml({
             id: shapeId++,
             ...commonRectOpts,
@@ -353,7 +353,7 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
 
       // Post-process: merge indentation into content runs
       for (let ri = pptxRuns.length - 2; ri >= 0; ri--) {
-        const cur = pptxRuns[ri];
+        const cur = pptxRuns[ri]!;
         const next = pptxRuns[ri + 1];
         if (!next) continue;
         if (/^[\u00A0 \t]+$/.test(cur.text)) {
@@ -363,8 +363,8 @@ export async function buildPptx(slideData: SlideData[], options: PptxBuildOption
         }
         const trailingMatch = cur.text.match(/^([\s\S]*\n)([\u00A0 \t]+)$/);
         if (trailingMatch) {
-          cur.text = trailingMatch[1];
-          next.text = trailingMatch[2] + next.text;
+          cur.text = trailingMatch[1]!;
+          next.text = trailingMatch[2]! + next.text;
         }
       }
 

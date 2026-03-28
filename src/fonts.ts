@@ -98,8 +98,8 @@ export async function prepareFontsFromSlideData(
 
   for (const [family, weights] of Object.entries(familyWeights)) {
     const unique = [...new Set(weights)].sort((a, b) => a - b);
-    const regularW = unique[0];
-    const boldW = unique[unique.length - 1];
+    const regularW = unique[0] ?? 400;
+    const boldW = unique[unique.length - 1] ?? 400;
     const key = family.replace(/\s+/g, "");
 
     let internalName: string | null = null;

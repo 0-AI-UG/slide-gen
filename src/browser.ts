@@ -67,7 +67,7 @@ export async function generateSlidePngBuffers(page: Page): Promise<Buffer[]> {
     const slides = await page.$$(".slide");
     const buffers: Buffer[] = [];
     for (let i = 0; i < slides.length; i++) {
-      const buffer = await slides[i].screenshot({ type: "png" });
+      const buffer = await slides[i]!.screenshot({ type: "png" });
       buffers.push(buffer);
     }
     return buffers;
@@ -82,7 +82,7 @@ export async function generateSlidePngs(page: Page, outputDir: string): Promise<
     const paths: string[] = [];
     for (let i = 0; i < slides.length; i++) {
       const pngPath = resolve(outputDir, `slide-${i + 1}.png`);
-      await slides[i].screenshot({ path: pngPath });
+      await slides[i]!.screenshot({ path: pngPath });
       paths.push(pngPath);
     }
     return paths;

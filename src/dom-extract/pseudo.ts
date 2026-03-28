@@ -82,7 +82,7 @@ export function extractPseudo(
 
   // Build text element if there's text content
   if (textContent) {
-    const fontFamily = computed.fontFamily.split(",")[0].trim().replace(/['"]/g, "");
+    const fontFamily = computed.fontFamily.split(",")[0]!.trim().replace(/['"]/g, "");
     const fsVal = parseFloat(computed.fontSize) || 16;
     const adjustedColor = applyOpacityToColor(computed.color, parentAccOpacity);
     const lhVal = parseFloat(computed.lineHeight);
